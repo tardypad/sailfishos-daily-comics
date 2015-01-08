@@ -9,6 +9,14 @@
 
 
 Comic::Comic(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    m_currentStripUrl(QUrl())
 {
+}
+
+void Comic::fetchCurrentStripUrl()
+{
+    QUrl stripUrl = extractStripUrl();
+    setCurrentStripUrl(stripUrl);
+    emit currentStripUrlFetched();
 }

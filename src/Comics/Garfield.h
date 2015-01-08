@@ -22,7 +22,7 @@ public:
     virtual inline QString author() const { return _author; }
     virtual inline QUrl homepage() const { return _homepage; }
 
-    virtual QUrl getCurrentStripUrl();
+    virtual QUrl extractStripUrl();
 
 protected:
     virtual inline QUrl stripSourceUrl() const { return _stripSourceUrl; }

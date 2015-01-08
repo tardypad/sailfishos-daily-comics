@@ -58,7 +58,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     case HomepageRole:
         return m_list.at(index.row())->homepage();
     case ImageRole:
-        return m_list.at(index.row())->getCurrentStripUrl();
+        return m_list.at(index.row())->currentStripUrl();
     }
 
     return QVariant();

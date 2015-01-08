@@ -29,4 +29,5 @@ Page {
         anchors.fill: parent
     }
 
+    Component.onCompleted: comic.fetchCurrentStrip()
 }

@@ -42,7 +42,7 @@ QUrl ComicProxy::homepage() const
 
 QUrl ComicProxy::currentStripUrl()
 {
-    return m_comic ? m_comic->getCurrentStripUrl() : QUrl();
+    return m_comic ? m_comic->currentStripUrl() : QUrl();
 }
 
 void ComicProxy::setComicId(const QString comicId)
@@ -50,4 +50,12 @@ void ComicProxy::setComicId(const QString comicId)
     delete m_comic;
     m_comic = ComicFactory::create(comicId);
     emit comicIdChanged();
+    connect(m_comic, SIGNAL(currentStripUrlFetched()), this, SIGNAL(currentStripUrlChanged()));
+}
+
+void ComicProxy::fetchCurrentStrip()
+{
+    if (m_comic) {
+        m_comic->fetchCurrentStripUrl();
+    }
 }
