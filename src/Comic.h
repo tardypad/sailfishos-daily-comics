@@ -12,18 +12,22 @@
 
 #include <QUrl>
 
+class QNetworkAccessManager;
+class QNetworkReply;
+
 class Comic : public QObject
 {
     Q_OBJECT
 
 public:
     explicit Comic(QObject *parent = 0);
+    ~Comic();
 
     virtual QString id() const = 0;
     virtual QString name() const = 0;
     virtual QString author() const = 0;
     virtual QUrl homepage() const = 0;
-    virtual QUrl extractStripUrl() = 0;
+    virtual QUrl extractStripUrl(QByteArray data) = 0;
 
     QUrl currentStripUrl() const { return m_currentStripUrl; }
 
@@ -34,11 +38,16 @@ protected:
 
     void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
 
+private slots:
+    void parse();
+
 signals:
     void currentStripUrlFetched();
 
 protected:
     QUrl m_currentStripUrl;
+    QNetworkAccessManager* m_networkManager;
+    QNetworkReply* m_currentReply;
 };
 
 #endif // COMIC_H

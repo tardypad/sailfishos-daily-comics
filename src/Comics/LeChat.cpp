@@ -18,7 +18,7 @@ const QString LeChat::_author      = QString("Philippe Geluck");
 const QUrl LeChat::_homepage       = QUrl("http://geluck.com/");
 const QUrl LeChat::_stripSourceUrl = QUrl("http://geluck.com/dessin.html");
 
-QUrl LeChat::extractStripUrl()
+QUrl LeChat::extractStripUrl(QByteArray data)
 {
     return QUrl("http://geluck.com/dpics/strip/150107-9903019_FR.jpg");
 }

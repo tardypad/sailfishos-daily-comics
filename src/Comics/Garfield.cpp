@@ -18,7 +18,7 @@ const QString Garfield::_author      = QString("Jim Davis");
 const QUrl Garfield::_homepage       = QUrl("http://garfield.com/");
 const QUrl Garfield::_stripSourceUrl = QUrl("http://garfield.com/comic/");
 
-QUrl Garfield::extractStripUrl()
+QUrl Garfield::extractStripUrl(QByteArray data)
 {
     return QUrl("http://assets.amuniversal.com/25f8ab6035fd0132a5ab005056a9545d");
 }
