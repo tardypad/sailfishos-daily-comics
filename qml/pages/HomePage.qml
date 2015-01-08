@@ -31,7 +31,7 @@ Page {
         model: _comicsModel
 
         function _goToComicPage(id, image) {
-            pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"id": id, "image": image})
+            pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"comicId": id})
         }
     }
 

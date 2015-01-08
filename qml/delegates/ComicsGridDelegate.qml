@@ -17,5 +17,5 @@ BackgroundItem {
         anchors.fill: parent
     }
 
-    onClicked: gridView._goToComicPage(id, image)
+    onClicked: gridView._goToComicPage(id)
 }

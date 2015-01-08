@@ -8,14 +8,20 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Page {
+import Comics 1.0
 
-    property alias image: image.source
+Page {
 
     allowedOrientations: Orientation.All
 
+    property alias comicId: comic.comicId
+
+    Comic {
+        id: comic
+    }
+
     Image {
-        id: image
+        source: comic.currentStripUrl
         fillMode: Image.PreserveAspectFit
         smooth: true
         clip: true
