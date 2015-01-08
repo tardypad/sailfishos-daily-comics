@@ -25,8 +25,6 @@ public:
     virtual QUrl homepage() const = 0;
     virtual QUrl getCurrentStripUrl() = 0;
 
-    static Comic *create(QString id);
-
 protected:
     virtual QUrl stripSourceUrl() const = 0;
 };

@@ -5,10 +5,15 @@
  * file 'LICENSE', which is part of this source code package.
  **/
 
+#ifndef COMICFACTORY_H
+#define COMICFACTORY_H
+
 #include "Comic.h"
 
-
-Comic::Comic(QObject *parent) :
-    QObject(parent)
+class ComicFactory
 {
-}
+public:
+    static Comic *create(QString id);
+};
+
+#endif // COMICFACTORY_H

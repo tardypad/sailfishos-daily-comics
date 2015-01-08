@@ -8,6 +8,7 @@
 #include "ComicsModel.h"
 
 #include "Comic.h"
+#include "ComicFactory.h"
 
 ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
@@ -66,11 +67,11 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
 void ComicsModel::load()
 {
     beginInsertRows(QModelIndex(), 0, 5);
-    m_list.append(Comic::create("calvinandhobbes"));
-    m_list.append(Comic::create("dilbert"));
-    m_list.append(Comic::create("garfield"));
-    m_list.append(Comic::create("lechat"));
-    m_list.append(Comic::create("peanuts"));
-    m_list.append(Comic::create("xkcd"));
+    m_list.append(ComicFactory::create("calvinandhobbes"));
+    m_list.append(ComicFactory::create("dilbert"));
+    m_list.append(ComicFactory::create("garfield"));
+    m_list.append(ComicFactory::create("lechat"));
+    m_list.append(ComicFactory::create("peanuts"));
+    m_list.append(ComicFactory::create("xkcd"));
     endInsertRows();
 }
