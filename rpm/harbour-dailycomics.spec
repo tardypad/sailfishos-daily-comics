@@ -21,6 +21,7 @@ URL:        http://tardypad.me
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-dailycomics.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   qt5-plugin-imageformat-gif
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Core)
