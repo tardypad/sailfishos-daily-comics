@@ -30,7 +30,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[IdRole] = "id";
     roleNames[NameRole] = "name";
     roleNames[AuthorRole] = "author";
-    roleNames[UrlRole] = "url";
+    roleNames[HomepageRole] = "homepage";
     roleNames[ImageRole] = "image";
 
     return roleNames;
@@ -54,8 +54,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->name();
     case AuthorRole:
         return m_list.at(index.row())->author();
-    case UrlRole:
-        return m_list.at(index.row())->url();
+    case HomepageRole:
+        return m_list.at(index.row())->homepage();
     case ImageRole:
         return m_list.at(index.row())->getCurrentStripUrl();
     }

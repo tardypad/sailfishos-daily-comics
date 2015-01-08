@@ -12,11 +12,11 @@ Garfield::Garfield(QObject *parent) :
 {
 }
 
-const QString Garfield::_id     = QString("garfield");
-const QString Garfield::_name   = QString("Garfield");
-const QString Garfield::_author = QString("Jim Davis");
-const QUrl Garfield::_url       = QUrl("http://garfield.com/");
-const QUrl Garfield::_stripUrl  = QUrl("http://garfield.com/comic/");
+const QString Garfield::_id          = QString("garfield");
+const QString Garfield::_name        = QString("Garfield");
+const QString Garfield::_author      = QString("Jim Davis");
+const QUrl Garfield::_homepage       = QUrl("http://garfield.com/");
+const QUrl Garfield::_stripSourceUrl = QUrl("http://garfield.com/comic/");
 
 QUrl Garfield::getCurrentStripUrl()
 {

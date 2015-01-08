@@ -12,11 +12,11 @@ CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
 {
 }
 
-const QString CalvinAndHobbes::_id     = QString("calvinandhobbes");
-const QString CalvinAndHobbes::_name   = QString("Calvin and Hobbes");
-const QString CalvinAndHobbes::_author = QString("Bill Watterson");
-const QUrl CalvinAndHobbes::_url       = QUrl("http://www.gocomics.com/calvinandhobbes/");
-const QUrl CalvinAndHobbes::_stripUrl  = QUrl("http://www.gocomics.com/calvinandhobbes/");
+const QString CalvinAndHobbes::_id          = QString("calvinandhobbes");
+const QString CalvinAndHobbes::_name        = QString("Calvin and Hobbes");
+const QString CalvinAndHobbes::_author      = QString("Bill Watterson");
+const QUrl CalvinAndHobbes::_homepage       = QUrl("http://www.gocomics.com/calvinandhobbes/");
+const QUrl CalvinAndHobbes::_stripSourceUrl = QUrl("http://www.gocomics.com/calvinandhobbes/");
 
 QUrl CalvinAndHobbes::getCurrentStripUrl()
 {

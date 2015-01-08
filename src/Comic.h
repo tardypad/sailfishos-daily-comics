@@ -22,13 +22,13 @@ public:
     virtual QString id() const = 0;
     virtual QString name() const = 0;
     virtual QString author() const = 0;
-    virtual QUrl url() const = 0;
+    virtual QUrl homepage() const = 0;
     virtual QUrl getCurrentStripUrl() = 0;
 
     static Comic *create(QString id);
 
 protected:
-    virtual QUrl stripUrl() const = 0;
+    virtual QUrl stripSourceUrl() const = 0;
 };
 
 #endif // COMIC_H

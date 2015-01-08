@@ -12,11 +12,11 @@ Dilbert::Dilbert(QObject *parent) :
 {
 }
 
-const QString Dilbert::_id     = QString("dilbert");
-const QString Dilbert::_name   = QString("Dilbert");
-const QString Dilbert::_author = QString("Scott Adams");
-const QUrl Dilbert::_url       = QUrl("http://www.dilbert.com/");
-const QUrl Dilbert::_stripUrl  = QUrl("http://www.dilbert.com/strips/");
+const QString Dilbert::_id          = QString("dilbert");
+const QString Dilbert::_name        = QString("Dilbert");
+const QString Dilbert::_author      = QString("Scott Adams");
+const QUrl Dilbert::_homepage       = QUrl("http://www.dilbert.com/");
+const QUrl Dilbert::_stripSourceUrl = QUrl("http://www.dilbert.com/strips/");
 
 QUrl Dilbert::getCurrentStripUrl()
 {

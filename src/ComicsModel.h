@@ -21,7 +21,7 @@ public:
         IdRole = Qt::UserRole + 1,
         NameRole,
         AuthorRole,
-        UrlRole,
+        HomepageRole,
         ImageRole
     };
 

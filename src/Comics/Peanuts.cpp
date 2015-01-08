@@ -12,11 +12,11 @@ Peanuts::Peanuts(QObject *parent) :
 {
 }
 
-const QString Peanuts::_id     = QString("peanuts");
-const QString Peanuts::_name   = QString("Peanuts");
-const QString Peanuts::_author = QString("Charles Monroe Schulz");
-const QUrl Peanuts::_url       = QUrl("http://www.peanuts.com/");
-const QUrl Peanuts::_stripUrl  = QUrl("http://www.peanuts.com/comics/");
+const QString Peanuts::_id          = QString("peanuts");
+const QString Peanuts::_name        = QString("Peanuts");
+const QString Peanuts::_author      = QString("Charles Monroe Schulz");
+const QUrl Peanuts::_homepage       = QUrl("http://www.peanuts.com/");
+const QUrl Peanuts::_stripSourceUrl = QUrl("http://www.peanuts.com/comics/");
 
 QUrl Peanuts::getCurrentStripUrl()
 {

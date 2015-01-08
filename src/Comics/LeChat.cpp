@@ -12,11 +12,11 @@ LeChat::LeChat(QObject *parent) :
 {
 }
 
-const QString LeChat::_id     = QString("lechat");
-const QString LeChat::_name   = QString("Le Chat");
-const QString LeChat::_author = QString("Philippe Geluck");
-const QUrl LeChat::_url       = QUrl("http://geluck.com/");
-const QUrl LeChat::_stripUrl  = QUrl("http://geluck.com/dessin.html");
+const QString LeChat::_id          = QString("lechat");
+const QString LeChat::_name        = QString("Le Chat");
+const QString LeChat::_author      = QString("Philippe Geluck");
+const QUrl LeChat::_homepage       = QUrl("http://geluck.com/");
+const QUrl LeChat::_stripSourceUrl = QUrl("http://geluck.com/dessin.html");
 
 QUrl LeChat::getCurrentStripUrl()
 {
