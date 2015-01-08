@@ -22,6 +22,8 @@ public:
     virtual inline QString author() const { return _author; }
     virtual inline QUrl url() const { return _url; }
 
+    virtual QUrl getCurrentStripUrl();
+
 protected:
     virtual inline QUrl stripUrl() const { return _stripUrl; }
 

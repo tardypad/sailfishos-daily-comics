@@ -13,9 +13,9 @@ BackgroundItem {
     height: gridView.cellHeight
 
     Image {
-        source: Qt.resolvedUrl("../../images/comics/"+comicId+".jpg")
+        source: Qt.resolvedUrl("../../images/comics/"+id+".jpg")
         anchors.fill: parent
     }
 
-    onClicked: gridView._goToComicPage(comicId, url)
+    onClicked: gridView._goToComicPage(id, image)
 }

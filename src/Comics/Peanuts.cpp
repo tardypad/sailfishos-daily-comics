@@ -17,3 +17,8 @@ const QString Peanuts::_name   = QString("Peanuts");
 const QString Peanuts::_author = QString("Charles Monroe Schulz");
 const QUrl Peanuts::_url       = QUrl("http://www.peanuts.com/");
 const QUrl Peanuts::_stripUrl  = QUrl("http://www.peanuts.com/comics/");
+
+QUrl Peanuts::getCurrentStripUrl()
+{
+    return QUrl("http://www.peanuts.com/wp-content/comic-strip/color-low-resolution/desktop/2015/daily/pe_c150107.jpg");
+}

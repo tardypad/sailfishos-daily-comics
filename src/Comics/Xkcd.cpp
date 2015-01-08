@@ -17,3 +17,8 @@ const QString Xkcd::_name   = QString("xkcd");
 const QString Xkcd::_author = QString("Randall Munroe");
 const QUrl Xkcd::_url       = QUrl("http://xkcd.com/");
 const QUrl Xkcd::_stripUrl  = QUrl("http://xkcd.com/");
+
+QUrl Xkcd::getCurrentStripUrl()
+{
+    return QUrl("http://imgs.xkcd.com/comics/worrying.png");
+}

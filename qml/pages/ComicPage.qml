@@ -10,7 +10,7 @@ import Sailfish.Silica 1.0
 
 Page {
 
-    property alias url: image.source
+    property alias image: image.source
 
     allowedOrientations: Orientation.All
 
