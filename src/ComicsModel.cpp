@@ -7,6 +7,8 @@
 
 #include "ComicsModel.h"
 
+#include <QDebug>
+
 #include "Comic.h"
 #include "ComicFactory.h"
 
@@ -32,6 +34,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[AuthorRole] = "author";
     roleNames[HomepageRole] = "homepage";
     roleNames[ImageRole] = "image";
+    roleNames[SelectedRole] = "selected";
 
     return roleNames;
 }
@@ -58,6 +61,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->homepage();
     case ImageRole:
         return m_list.at(index.row())->currentStripUrl();
+    case SelectedRole:
+        return m_list.at(index.row())->selected();
     }
 
     return QVariant();
@@ -73,4 +78,10 @@ void ComicsModel::loadAll()
     m_list.append(ComicFactory::create("peanuts"));
     m_list.append(ComicFactory::create("xkcd"));
     endInsertRows();
+}
+
+void ComicsModel::setSelected(int row, bool selected)
+{
+    m_list.at(row)->setSelected(selected);
+    emit dataChanged(this->index(row), this->index(row));
 }

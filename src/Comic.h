@@ -30,6 +30,9 @@ public:
     virtual QUrl extractStripUrl(QByteArray data) = 0;
 
     QUrl currentStripUrl() const { return m_currentStripUrl; }
+    bool selected() const { return m_selected; }
+
+    void setSelected(const bool selected) { m_selected = selected; }
 
     void fetchCurrentStripUrl();
 
@@ -48,6 +51,7 @@ protected:
     QUrl m_currentStripUrl;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
+    bool m_selected;
 };
 
 #endif // COMIC_H

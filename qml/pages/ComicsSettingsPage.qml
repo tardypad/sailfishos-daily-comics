@@ -20,28 +20,17 @@ Page {
         id: gridView
 
         property int cellSize: (orientation === Orientation.Portrait || orientation === Orientation.PortraitInverted)
-                               ? parent.width / 2
-                               : parent.width / 4
+                               ? parent.width / 3
+                               : parent.width / 5
 
         anchors.fill: parent
         cellWidth: cellSize
         cellHeight: cellSize
         header: PageHeader {
-            title: "Daily Comics"
+            title: "Select favorites"
         }
-        delegate: ComicsGridDelegate { }
+        delegate: ComicsSettingsGridDelegate { }
         model: comicsModel
-
-        PullDownMenu {
-            MenuItem {
-                text: "Settings"
-                onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
-            }
-        }
-
-        function _goToComicPage(id, image) {
-            pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"comicId": id})
-        }
     }
 
     ComicsModel {

@@ -22,7 +22,8 @@ public:
         NameRole,
         AuthorRole,
         HomepageRole,
-        ImageRole
+        ImageRole,
+        SelectedRole
     };
 
 public:
@@ -32,6 +33,7 @@ public:
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     Q_INVOKABLE void loadAll();
+    Q_INVOKABLE void setSelected(int row, bool selected);
 
 private:
     QList<Comic*> m_list;
