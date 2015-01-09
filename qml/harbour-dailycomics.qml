@@ -13,7 +13,7 @@ import "cover"
 
 ApplicationWindow
 {
-    initialPage: Component { HomePage { } }
+    initialPage: Component { FavoritesPage { } }
     cover: DefaultCover { }
 }
 
