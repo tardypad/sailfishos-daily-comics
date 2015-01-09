@@ -7,6 +7,10 @@
 
 #include "CalvinAndHobbes.h"
 
+#include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
     Comic(parent)
 {
@@ -20,5 +24,15 @@ const QUrl CalvinAndHobbes::_stripSourceUrl = QUrl("http://www.gocomics.com/calv
 
 QUrl CalvinAndHobbes::extractStripUrl(QByteArray data)
 {
-    return QUrl("http://assets.amuniversal.com/fdc547e04b3b0132acb2005056a9545d");
+    QString html(data);
+    QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
+    QRegularExpressionMatch match = reg.match(html);
+
+    if (!match.hasMatch()) {
+        return QUrl();
+    }
+
+    QString src = match.captured(1);
+
+    return QUrl(src);
 }

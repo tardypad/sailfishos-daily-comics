@@ -7,6 +7,10 @@
 
 #include "Dilbert.h"
 
+#include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 Dilbert::Dilbert(QObject *parent) :
     Comic(parent)
 {
@@ -20,5 +24,15 @@ const QUrl Dilbert::_stripSourceUrl = QUrl("http://www.dilbert.com/strips/");
 
 QUrl Dilbert::extractStripUrl(QByteArray data)
 {
-    return QUrl("http://www.dilbert.com/dyn/str_strip/000000000/00000000/0000000/200000/30000/6000/600/236663/236663.strip.gif");
+    QString html(data);
+    QRegularExpression reg("<img[^>]*src=\"(.*\\.strip\\.gif)\"");
+    QRegularExpressionMatch match = reg.match(html);
+
+    if (!match.hasMatch()) {
+        return QUrl();
+    }
+
+    QString src = match.captured(1);
+
+    return QUrl("http://www.dilbert.com" + src);
 }

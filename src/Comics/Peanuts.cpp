@@ -7,6 +7,10 @@
 
 #include "Peanuts.h"
 
+#include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 Peanuts::Peanuts(QObject *parent) :
     Comic(parent)
 {
@@ -20,5 +24,15 @@ const QUrl Peanuts::_stripSourceUrl = QUrl("http://www.peanuts.com/comics/");
 
 QUrl Peanuts::extractStripUrl(QByteArray data)
 {
-    return QUrl("http://www.peanuts.com/wp-content/comic-strip/color-low-resolution/desktop/2015/daily/pe_c150107.jpg");
+    QString html(data);
+    QRegularExpression reg("<img[^>]*src=\"(.*/comic-strip/[^\"]*)\"");
+    QRegularExpressionMatch match = reg.match(html);
+
+    if (!match.hasMatch()) {
+        return QUrl();
+    }
+
+    QString src = match.captured(1);
+
+    return QUrl(src);
 }

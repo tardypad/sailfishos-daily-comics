@@ -7,6 +7,10 @@
 
 #include "Xkcd.h"
 
+#include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 Xkcd::Xkcd(QObject *parent) :
     Comic(parent)
 {
@@ -20,5 +24,15 @@ const QUrl Xkcd::_stripSourceUrl = QUrl("http://xkcd.com/");
 
 QUrl Xkcd::extractStripUrl(QByteArray data)
 {
-    return QUrl("http://imgs.xkcd.com/comics/worrying.png");
+    QString html(data);
+    QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");
+    QRegularExpressionMatch match = reg.match(html);
+
+    if (!match.hasMatch()) {
+        return QUrl();
+    }
+
+    QString src = match.captured(1);
+
+    return QUrl(src);
 }

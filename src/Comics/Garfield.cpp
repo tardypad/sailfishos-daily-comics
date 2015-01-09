@@ -7,6 +7,10 @@
 
 #include "Garfield.h"
 
+#include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 Garfield::Garfield(QObject *parent) :
     Comic(parent)
 {
@@ -16,9 +20,19 @@ const QString Garfield::_id          = QString("garfield");
 const QString Garfield::_name        = QString("Garfield");
 const QString Garfield::_author      = QString("Jim Davis");
 const QUrl Garfield::_homepage       = QUrl("http://garfield.com/");
-const QUrl Garfield::_stripSourceUrl = QUrl("http://garfield.com/comic/");
+const QUrl Garfield::_stripSourceUrl = QUrl("http://garfield.com/");
 
 QUrl Garfield::extractStripUrl(QByteArray data)
 {
-    return QUrl("http://assets.amuniversal.com/25f8ab6035fd0132a5ab005056a9545d");
+    QString html(data);
+    QRegularExpression reg("<img[^>]*src=\"(.*/strips/[^\"]*)\"");
+    QRegularExpressionMatch match = reg.match(html);
+
+    if (!match.hasMatch()) {
+        return QUrl();
+    }
+
+    QString src = match.captured(1);
+
+    return QUrl(src);
 }
