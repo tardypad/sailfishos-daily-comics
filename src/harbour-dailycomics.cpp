@@ -23,14 +23,10 @@
 int main(int argc, char *argv[])
 {
     qmlRegisterType<ComicProxy>("Comics", 1, 0, "Comic");
+    qmlRegisterType<ComicsModel>("Comics", 1, 0, "ComicsModel");
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
-
-    QQmlContext* context = view->rootContext();
-
-    QScopedPointer<ComicsModel> comicsModel(new ComicsModel());
-    context->setContextProperty("_comicsModel", comicsModel.data());
 
     view->setSource(SailfishApp::pathTo("qml/harbour-dailycomics.qml"));
     view->show();

@@ -31,7 +31,7 @@ public:
     virtual QHash<int,QByteArray> roleNames() const;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    void load();
+    Q_INVOKABLE void loadAll();
 
 private:
     QList<Comic*> m_list;

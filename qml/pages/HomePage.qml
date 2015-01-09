@@ -8,6 +8,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import Comics 1.0
+
 import "../delegates"
 
 Page {
@@ -28,11 +30,16 @@ Page {
             title: "Daily Comics"
         }
         delegate: ComicsGridDelegate { }
-        model: _comicsModel
+        model: comicsModel
 
         function _goToComicPage(id, image) {
             pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"comicId": id})
         }
+    }
+
+    ComicsModel {
+        id: comicsModel
+        Component.onCompleted: comicsModel.loadAll()
     }
 
 }

@@ -14,7 +14,6 @@ ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
     m_list(QList<Comic*>())
 {
-    load();
 }
 
 ComicsModel::~ComicsModel()
@@ -64,7 +63,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void ComicsModel::load()
+void ComicsModel::loadAll()
 {
     beginInsertRows(QModelIndex(), 0, 5);
     m_list.append(ComicFactory::create("calvinandhobbes"));
