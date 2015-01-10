@@ -31,4 +31,6 @@ void FavoriteComicsModel::loadAll()
     }
 
     endInsertRows();
+
+    emit countChanged();
 }

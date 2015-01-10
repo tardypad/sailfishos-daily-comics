@@ -98,12 +98,16 @@ void ComicsModel::loadAll()
     }
 
     endInsertRows();
+
+    emit countChanged();
+    emit favoritesCountChanged();
 }
 
 void ComicsModel::setFavorite(int row, bool favorite)
 {
     m_list.at(row)->setFavorite(favorite);
     emit dataChanged(this->index(row), this->index(row));
+    emit favoritesCountChanged();
 }
 
 QStringList ComicsModel::favoriteIds()
@@ -116,4 +120,33 @@ QStringList ComicsModel::favoriteIds()
     }
 
     return favoriteIds;
+}
+
+void ComicsModel::favoriteAll(bool favorite)
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        setFavorite(row, favorite);
+    }
+}
+
+void ComicsModel::unfavoriteAll()
+{
+    favoriteAll(false);
+}
+
+int ComicsModel::count() const
+{
+    return this->rowCount();
+}
+
+int ComicsModel::favoritesCount() const
+{
+    int favoritesCount = 0;
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (m_list.at(row)->favorite())
+          favoritesCount++;
+    }
+
+    return favoritesCount;
 }

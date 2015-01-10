@@ -31,6 +31,20 @@ Page {
         }
         delegate: ComicsSettingsGridDelegate { }
         model: comicsModel
+
+        PullDownMenu {
+            MenuItem {
+                text: "Clear all"
+                onClicked: comicsModel.unfavoriteAll()
+                visible: comicsModel.favoritesCount > 0
+
+            }
+            MenuItem {
+                text: "Select all"
+                onClicked: comicsModel.favoriteAll()
+                visible: comicsModel.favoritesCount !== comicsModel.count
+            }
+        }
     }
 
     ComicsModel {
