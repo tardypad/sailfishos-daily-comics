@@ -45,6 +45,8 @@ Page {
                 visible: comicsModel.favoritesCount !== comicsModel.count
             }
         }
+
+        VerticalScrollDecorator { flickable: gridView }
     }
 
     ComicsModel {

@@ -39,6 +39,8 @@ Page {
             }
         }
 
+        VerticalScrollDecorator { flickable: gridView }
+
         function _goToComicPage(id, image) {
             pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"comicId": id})
         }
