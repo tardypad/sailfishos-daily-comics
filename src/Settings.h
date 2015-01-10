@@ -19,7 +19,7 @@ class Settings : public QObject
     static const QString _favoritesField;
 
 public:
-    explicit Settings(QObject *parent = 0);
+    static Settings* instance();
     ~Settings();
     Q_INVOKABLE QStringList favoriteIds();
     Q_INVOKABLE void saveFavoriteIds(QStringList favoriteIds);
@@ -29,7 +29,14 @@ protected:
     void setValue(const QString &key, const QVariant &value);
 
 private:
-     QSettings* m_settings;
+    explicit Settings(QObject *parent = 0);
+
+signals:
+    void favoritesChanged();
+
+private:
+    QSettings* m_settings;
+    static Settings* m_instance;
 };
 
 #endif // SETTINGS_H

@@ -7,12 +7,25 @@
 
 #include "Settings.h"
 
+#include <QDebug>
+
+Settings* Settings::m_instance = NULL;
+
 const QString Settings::_favoritesField = QString("favorites");
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
 {
     m_settings = new QSettings(this);
+}
+
+Settings* Settings::instance()
+{
+    if (!m_instance) {
+        m_instance = new Settings();
+    }
+
+    return m_instance;
 }
 
 Settings::~Settings()
@@ -32,6 +45,7 @@ QStringList Settings::favoriteIds()
 void Settings::saveFavoriteIds(QStringList favoriteIds)
 {
     setValue(_favoritesField, favoriteIds);
+    emit favoritesChanged();
 }
 
 QVariant Settings::value(const QString &key)

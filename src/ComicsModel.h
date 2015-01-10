@@ -11,6 +11,7 @@
 #include <QAbstractListModel>
 
 class Comic;
+class Settings;
 
 class ComicsModel : public QAbstractListModel
 {
@@ -32,12 +33,16 @@ public:
     virtual QHash<int,QByteArray> roleNames() const;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    Q_INVOKABLE void loadAll(QStringList favoriteIds = QStringList());
+    Q_INVOKABLE virtual void loadAll();
     Q_INVOKABLE void setFavorite(int row, bool favorite);
     Q_INVOKABLE QStringList favoriteIds();
 
-private:
+protected:
+    void clear();
+
+protected:
     QList<Comic*> m_list;
+    Settings *m_settings;
 };
 
 #endif // COMICSMODEL_H

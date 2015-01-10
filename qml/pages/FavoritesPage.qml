@@ -44,7 +44,7 @@ Page {
         }
     }
 
-    ComicsModel {
+    FavoriteComicsModel {
         id: comicsModel
         Component.onCompleted: comicsModel.loadAll()
     }

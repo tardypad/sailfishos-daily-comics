@@ -11,14 +11,21 @@
 
 #include "Comic.h"
 #include "ComicFactory.h"
+#include "Settings.h"
 
 ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
     m_list(QList<Comic*>())
 {
+    m_settings = Settings::instance();
 }
 
 ComicsModel::~ComicsModel()
+{
+    clear();
+}
+
+void ComicsModel::clear()
 {
     beginResetModel();
     qDeleteAll(m_list);
@@ -68,9 +75,14 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void ComicsModel::loadAll(QStringList favoriteIds)
+void ComicsModel::loadAll()
 {
+    clear();
+
+    QStringList favoriteIds = m_settings->favoriteIds();
+
     beginInsertRows(QModelIndex(), 0, 5);
+
     m_list.append(ComicFactory::create("calvinandhobbes"));
     m_list.append(ComicFactory::create("dilbert"));
     m_list.append(ComicFactory::create("garfield"));
