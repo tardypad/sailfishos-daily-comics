@@ -19,11 +19,13 @@
 
 #include "src/ComicsModel.h"
 #include "src/ComicProxy.h"
+#include "src/Settings.h"
 
 int main(int argc, char *argv[])
 {
     qmlRegisterType<ComicProxy>("Comics", 1, 0, "Comic");
     qmlRegisterType<ComicsModel>("Comics", 1, 0, "ComicsModel");
+    qmlRegisterType<Settings>("Settings", 1, 0, "Settings");
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());

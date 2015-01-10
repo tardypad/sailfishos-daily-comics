@@ -9,6 +9,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 import Comics 1.0
+import Settings 1.0
 
 import "../delegates"
 
@@ -35,7 +36,20 @@ Page {
 
     ComicsModel {
         id: comicsModel
-        Component.onCompleted: comicsModel.loadAll()
+    }
+
+    Settings {
+        id: settings
+    }
+
+    Component.onCompleted: {
+        comicsModel.loadAll(settings.favoriteIds())
+    }
+
+    onStatusChanged: {
+        if (status === PageStatus.Deactivating) {
+            settings.saveFavoriteIds(comicsModel.selected());
+        }
     }
 
 }

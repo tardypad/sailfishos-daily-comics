@@ -68,7 +68,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void ComicsModel::loadAll()
+void ComicsModel::loadAll(QStringList favoriteIds)
 {
     beginInsertRows(QModelIndex(), 0, 5);
     m_list.append(ComicFactory::create("calvinandhobbes"));
@@ -77,6 +77,14 @@ void ComicsModel::loadAll()
     m_list.append(ComicFactory::create("lechat"));
     m_list.append(ComicFactory::create("peanuts"));
     m_list.append(ComicFactory::create("xkcd"));
+
+    if (!favoriteIds.empty()) {
+        for (int i = 0; i < m_list.size(); ++i) {
+            if (favoriteIds.contains(m_list.at(i)->id()))
+                m_list.at(i)->setSelected(true);
+        }
+    }
+
     endInsertRows();
 }
 
@@ -84,4 +92,16 @@ void ComicsModel::setSelected(int row, bool selected)
 {
     m_list.at(row)->setSelected(selected);
     emit dataChanged(this->index(row), this->index(row));
+}
+
+QStringList ComicsModel::selected()
+{
+    QStringList selectedList;
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (m_list.at(row)->selected())
+          selectedList.append(m_list.at(row)->id());
+    }
+
+    return selectedList;
 }

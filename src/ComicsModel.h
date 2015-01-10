@@ -32,8 +32,9 @@ public:
     virtual QHash<int,QByteArray> roleNames() const;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    Q_INVOKABLE void loadAll();
+    Q_INVOKABLE void loadAll(QStringList favoriteIds = QStringList());
     Q_INVOKABLE void setSelected(int row, bool selected);
+    Q_INVOKABLE QStringList selected();
 
 private:
     QList<Comic*> m_list;
