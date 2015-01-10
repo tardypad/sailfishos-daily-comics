@@ -18,7 +18,7 @@ BackgroundItem {
     }
 
     Rectangle {
-        property bool active: selected
+        property bool active: favorite
 
         anchors.fill: parent
         color: Theme.highlightBackgroundColor
@@ -31,5 +31,5 @@ BackgroundItem {
         }
     }
 
-    onClicked: comicsModel.setSelected(index, !selected)
+    onClicked: comicsModel.setFavorite(index, !favorite)
 }

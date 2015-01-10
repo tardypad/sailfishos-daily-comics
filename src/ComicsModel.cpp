@@ -34,7 +34,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[AuthorRole] = "author";
     roleNames[HomepageRole] = "homepage";
     roleNames[ImageRole] = "image";
-    roleNames[SelectedRole] = "selected";
+    roleNames[FavoriteRole] = "favorite";
 
     return roleNames;
 }
@@ -61,8 +61,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->homepage();
     case ImageRole:
         return m_list.at(index.row())->currentStripUrl();
-    case SelectedRole:
-        return m_list.at(index.row())->selected();
+    case FavoriteRole:
+        return m_list.at(index.row())->favorite();
     }
 
     return QVariant();
@@ -81,27 +81,27 @@ void ComicsModel::loadAll(QStringList favoriteIds)
     if (!favoriteIds.empty()) {
         for (int i = 0; i < m_list.size(); ++i) {
             if (favoriteIds.contains(m_list.at(i)->id()))
-                m_list.at(i)->setSelected(true);
+                m_list.at(i)->setFavorite(true);
         }
     }
 
     endInsertRows();
 }
 
-void ComicsModel::setSelected(int row, bool selected)
+void ComicsModel::setFavorite(int row, bool favorite)
 {
-    m_list.at(row)->setSelected(selected);
+    m_list.at(row)->setFavorite(favorite);
     emit dataChanged(this->index(row), this->index(row));
 }
 
-QStringList ComicsModel::selected()
+QStringList ComicsModel::favoriteIds()
 {
-    QStringList selectedList;
+    QStringList favoriteIds;
 
     for(int row = 0; row < m_list.size(); ++row) {
-      if (m_list.at(row)->selected())
-          selectedList.append(m_list.at(row)->id());
+      if (m_list.at(row)->favorite())
+          favoriteIds.append(m_list.at(row)->id());
     }
 
-    return selectedList;
+    return favoriteIds;
 }

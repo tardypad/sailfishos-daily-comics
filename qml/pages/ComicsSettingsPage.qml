@@ -48,7 +48,7 @@ Page {
 
     onStatusChanged: {
         if (status === PageStatus.Deactivating) {
-            settings.saveFavoriteIds(comicsModel.selected());
+            settings.saveFavoriteIds(comicsModel.favoriteIds());
         }
     }
 
