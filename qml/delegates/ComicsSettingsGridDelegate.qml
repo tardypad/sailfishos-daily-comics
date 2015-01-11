@@ -24,6 +24,19 @@ BackgroundItem {
         color: Theme.highlightBackgroundColor
         opacity: active ? 0.7 : 0.0
 
+        Image {
+            source: "image://theme/icon-l-favorite"
+            height: Theme.iconSizeSmall
+            width: Theme.iconSizeSmall
+            anchors {
+                left: parent.left
+                top: parent.top
+                leftMargin: Theme.paddingSmall
+                topMargin: Theme.paddingSmall
+            }
+            fillMode: Image.PreserveAspectFit
+        }
+
         Behavior on opacity {
             FadeAnimation {
                 duration: 100
