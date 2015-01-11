@@ -11,6 +11,8 @@
 #include <QObject>
 
 #include <QUrl>
+#include <QDate>
+#include <QLocale>
 
 class Comic;
 
@@ -21,6 +23,10 @@ class ComicProxy : public QObject
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString author READ author NOTIFY authorChanged)
     Q_PROPERTY(QUrl homepage READ homepage NOTIFY homepageChanged)
+    Q_PROPERTY(QLocale::Country country READ country NOTIFY countryChanged)
+    Q_PROPERTY(QLocale::Language language READ language NOTIFY languageChanged)
+    Q_PROPERTY(QDate startDate READ startDate NOTIFY startDateChanged)
+    Q_PROPERTY(QDate endDate READ endDate NOTIFY endDateChanged)
     Q_PROPERTY(QUrl currentStripUrl READ currentStripUrl NOTIFY currentStripUrlChanged)
 
 public:
@@ -30,6 +36,10 @@ public:
     QString name() const;
     QString author() const;
     QUrl homepage() const;
+    QLocale::Country country() const;
+    QLocale::Language language() const;
+    QDate startDate() const;
+    QDate endDate() const;
     QUrl currentStripUrl();
 
     void setComicId(const QString comicId);
@@ -41,6 +51,10 @@ signals:
     void nameChanged();
     void authorChanged();
     void homepageChanged();
+    void countryChanged();
+    void languageChanged();
+    void startDateChanged();
+    void endDateChanged();
     void currentStripUrlChanged();
 
 private:

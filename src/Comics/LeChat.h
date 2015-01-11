@@ -10,6 +10,9 @@
 
 #include "../Comic.h"
 
+#include <QLocale>
+#include <QDate>
+
 class LeChat : public Comic
 {
     Q_OBJECT
@@ -21,6 +24,10 @@ public:
     virtual inline QString name() const { return _name; }
     virtual inline QString author() const { return _author; }
     virtual inline QUrl homepage() const { return _homepage; }
+    virtual inline QLocale::Country country() const { return _country; }
+    virtual inline QLocale::Language language() const { return _language; }
+    virtual inline QDate startDate() const { return _startDate; }
+    virtual inline QDate endDate() const { return _endDate; }
 
     virtual QUrl extractStripUrl(QByteArray data);
 
@@ -32,6 +39,10 @@ private:
     static const QString _name;
     static const QString _author;
     static const QUrl _homepage;
+    static const QLocale::Country _country;
+    static const QLocale::Language _language;
+    static const QDate _startDate;
+    static const QDate _endDate;
     static const QUrl _stripSourceUrl;
 };
 

@@ -16,11 +16,15 @@ Dilbert::Dilbert(QObject *parent) :
 {
 }
 
-const QString Dilbert::_id          = QString("dilbert");
-const QString Dilbert::_name        = QString("Dilbert");
-const QString Dilbert::_author      = QString("Scott Adams");
-const QUrl Dilbert::_homepage       = QUrl("http://www.dilbert.com/");
-const QUrl Dilbert::_stripSourceUrl = QUrl("http://www.dilbert.com/strips/");
+const QString Dilbert::_id                 = QString("dilbert");
+const QString Dilbert::_name               = QString("Dilbert");
+const QString Dilbert::_author             = QString("Scott Adams");
+const QUrl Dilbert::_homepage              = QUrl("http://www.dilbert.com/");
+const QLocale::Country Dilbert::_country   = QLocale::UnitedStates;
+const QLocale::Language Dilbert::_language = QLocale::English;
+const QDate Dilbert::_startDate            = QDate::fromString("1989-04-16", Qt::ISODate);
+const QDate Dilbert::_endDate              = QDate::currentDate();
+const QUrl Dilbert::_stripSourceUrl        = QUrl("http://www.dilbert.com/strips/");
 
 QUrl Dilbert::extractStripUrl(QByteArray data)
 {

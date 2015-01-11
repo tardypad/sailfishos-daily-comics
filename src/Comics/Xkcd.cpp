@@ -16,11 +16,15 @@ Xkcd::Xkcd(QObject *parent) :
 {
 }
 
-const QString Xkcd::_id          = QString("xkcd");
-const QString Xkcd::_name        = QString("xkcd");
-const QString Xkcd::_author      = QString("Randall Munroe");
-const QUrl Xkcd::_homepage       = QUrl("http://xkcd.com/");
-const QUrl Xkcd::_stripSourceUrl = QUrl("http://xkcd.com/");
+const QString Xkcd::_id                 = QString("xkcd");
+const QString Xkcd::_name               = QString("xkcd");
+const QString Xkcd::_author             = QString("Randall Munroe");
+const QUrl Xkcd::_homepage              = QUrl("http://xkcd.com/");
+const QLocale::Country Xkcd::_country   = QLocale::UnitedStates;
+const QLocale::Language Xkcd::_language = QLocale::English;
+const QDate Xkcd::_startDate            = QDate::fromString("2005-09", "yyyy-MM");
+const QDate Xkcd::_endDate              = QDate::currentDate();
+const QUrl Xkcd::_stripSourceUrl        = QUrl("http://xkcd.com/");
 
 QUrl Xkcd::extractStripUrl(QByteArray data)
 {

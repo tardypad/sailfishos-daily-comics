@@ -17,6 +17,10 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(comicIdChanged()), SIGNAL(nameChanged()));
     connect(this, SIGNAL(comicIdChanged()), SIGNAL(authorChanged()));
     connect(this, SIGNAL(comicIdChanged()), SIGNAL(homepageChanged()));
+    connect(this, SIGNAL(comicIdChanged()), SIGNAL(countryChanged()));
+    connect(this, SIGNAL(comicIdChanged()), SIGNAL(languageChanged()));
+    connect(this, SIGNAL(comicIdChanged()), SIGNAL(startDateChanged()));
+    connect(this, SIGNAL(comicIdChanged()), SIGNAL(endDateChanged()));
     connect(this, SIGNAL(comicIdChanged()), SIGNAL(currentStripUrlChanged()));
 }
 
@@ -38,6 +42,26 @@ QString ComicProxy::author() const
 QUrl ComicProxy::homepage() const
 {
     return m_comic ? m_comic->homepage() : QUrl();
+}
+
+QLocale::Country ComicProxy::country() const
+{
+    return m_comic ? m_comic->country() : QLocale::AnyCountry;
+}
+
+QLocale::Language ComicProxy::language() const
+{
+    return m_comic ? m_comic->language() : QLocale::AnyLanguage;
+}
+
+QDate ComicProxy::startDate() const
+{
+    return m_comic ? m_comic->startDate() : QDate();
+}
+
+QDate ComicProxy::endDate() const
+{
+    return m_comic ? m_comic->endDate() : QDate();
 }
 
 QUrl ComicProxy::currentStripUrl()

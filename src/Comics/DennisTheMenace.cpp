@@ -16,11 +16,15 @@ DennisTheMenace::DennisTheMenace(QObject *parent) :
 {
 }
 
-const QString DennisTheMenace::_id          = QString("dennisthemenace");
-const QString DennisTheMenace::_name        = QString("Dennis The Menace");
-const QString DennisTheMenace::_author      = QString("Hank Ketcham");
-const QUrl DennisTheMenace::_homepage       = QUrl("http://dennisthemenace.com/");
-const QUrl DennisTheMenace::_stripSourceUrl = QUrl("http://dennisthemenace.com/");
+const QString DennisTheMenace::_id                 = QString("dennisthemenace");
+const QString DennisTheMenace::_name               = QString("Dennis The Menace");
+const QString DennisTheMenace::_author             = QString("Hank Ketcham");
+const QUrl DennisTheMenace::_homepage              = QUrl("http://dennisthemenace.com/");
+const QLocale::Country DennisTheMenace::_country   = QLocale::UnitedStates;
+const QLocale::Language DennisTheMenace::_language = QLocale::English;
+const QDate DennisTheMenace::_startDate            = QDate::fromString("1951-03-12", Qt::ISODate);
+const QDate DennisTheMenace::_endDate              = QDate::currentDate();
+const QUrl DennisTheMenace::_stripSourceUrl        = QUrl("http://dennisthemenace.com/");
 
 QUrl DennisTheMenace::extractStripUrl(QByteArray data)
 {

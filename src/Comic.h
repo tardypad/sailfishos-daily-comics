@@ -11,6 +11,7 @@
 #include <QObject>
 
 #include <QUrl>
+#include <QLocale>
 
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -27,6 +28,10 @@ public:
     virtual QString name() const = 0;
     virtual QString author() const = 0;
     virtual QUrl homepage() const = 0;
+    virtual QLocale::Country country() const = 0;
+    virtual QLocale::Language language() const = 0;
+    virtual QDate startDate() const = 0;
+    virtual QDate endDate() const = 0;
     virtual QUrl extractStripUrl(QByteArray data) = 0;
 
     QUrl currentStripUrl() const { return m_currentStripUrl; }

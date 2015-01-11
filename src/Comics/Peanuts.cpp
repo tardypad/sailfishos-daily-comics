@@ -16,11 +16,15 @@ Peanuts::Peanuts(QObject *parent) :
 {
 }
 
-const QString Peanuts::_id          = QString("peanuts");
-const QString Peanuts::_name        = QString("Peanuts");
-const QString Peanuts::_author      = QString("Charles Monroe Schulz");
-const QUrl Peanuts::_homepage       = QUrl("http://www.peanuts.com/");
-const QUrl Peanuts::_stripSourceUrl = QUrl("http://www.peanuts.com/comics/");
+const QString Peanuts::_id                 = QString("peanuts");
+const QString Peanuts::_name               = QString("Peanuts");
+const QString Peanuts::_author             = QString("Charles Monroe Schulz");
+const QUrl Peanuts::_homepage              = QUrl("http://www.peanuts.com/");
+const QLocale::Country Peanuts::_country   = QLocale::UnitedStates;
+const QLocale::Language Peanuts::_language = QLocale::English;
+const QDate Peanuts::_startDate            = QDate::fromString("1950-10-02", Qt::ISODate);
+const QDate Peanuts::_endDate              = QDate::fromString("2000-02-13", Qt::ISODate);
+const QUrl Peanuts::_stripSourceUrl        = QUrl("http://www.peanuts.com/comics/");
 
 QUrl Peanuts::extractStripUrl(QByteArray data)
 {

@@ -16,11 +16,15 @@ CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
 {
 }
 
-const QString CalvinAndHobbes::_id          = QString("calvinandhobbes");
-const QString CalvinAndHobbes::_name        = QString("Calvin and Hobbes");
-const QString CalvinAndHobbes::_author      = QString("Bill Watterson");
-const QUrl CalvinAndHobbes::_homepage       = QUrl("http://www.gocomics.com/calvinandhobbes/");
-const QUrl CalvinAndHobbes::_stripSourceUrl = QUrl("http://www.gocomics.com/calvinandhobbes/");
+const QString CalvinAndHobbes::_id                 = QString("calvinandhobbes");
+const QString CalvinAndHobbes::_name               = QString("Calvin and Hobbes");
+const QString CalvinAndHobbes::_author             = QString("Bill Watterson");
+const QUrl CalvinAndHobbes::_homepage              = QUrl("http://www.gocomics.com/calvinandhobbes/");
+const QLocale::Country CalvinAndHobbes::_country   = QLocale::UnitedStates;
+const QLocale::Language CalvinAndHobbes::_language = QLocale::English;
+const QDate CalvinAndHobbes::_startDate            = QDate::fromString("1985-11-18", Qt::ISODate);
+const QDate CalvinAndHobbes::_endDate              = QDate::fromString("1995-12-31", Qt::ISODate);
+const QUrl CalvinAndHobbes::_stripSourceUrl        = QUrl("http://www.gocomics.com/calvinandhobbes/");
 
 QUrl CalvinAndHobbes::extractStripUrl(QByteArray data)
 {

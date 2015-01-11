@@ -25,6 +25,10 @@ public:
         NameRole,
         AuthorRole,
         HomepageRole,
+        CountryRole,
+        LanguageRole,
+        StartDateRole,
+        EndDateRole,
         ImageRole,
         FavoriteRole
     };
