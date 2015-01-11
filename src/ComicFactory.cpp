@@ -13,32 +13,30 @@
 #include "Comics/LeChat.h"
 #include "Comics/Peanuts.h"
 #include "Comics/Xkcd.h"
+#include "Comics/DennisTheMenace.h"
 
 Comic *ComicFactory::create(QString id)
 {
-    if (id == "calvinandhobbes") {
+    if (id == "calvinandhobbes")
         return new CalvinAndHobbes();
-    }
 
-    if (id == "dilbert") {
+    if (id == "dilbert")
         return new Dilbert();
-    }
 
-    if (id == "garfield") {
+    if (id == "garfield")
         return new Garfield();
-    }
 
-    if (id == "lechat") {
+    if (id == "lechat")
         return new LeChat();
-    }
 
-    if (id == "peanuts") {
+    if (id == "peanuts")
         return new Peanuts();
-    }
 
-    if (id == "xkcd") {
+    if (id == "xkcd")
         return new Xkcd();
-    }
+
+    if (id == "dennisthemenace")
+        return new DennisTheMenace();
 
     return NULL;
 }

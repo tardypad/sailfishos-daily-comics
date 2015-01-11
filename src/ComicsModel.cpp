@@ -81,7 +81,7 @@ void ComicsModel::loadAll()
 
     QStringList favoriteIds = m_settings->favoriteIds();
 
-    beginInsertRows(QModelIndex(), 0, 5);
+    beginInsertRows(QModelIndex(), 0, 6);
 
     m_list.append(ComicFactory::create("calvinandhobbes"));
     m_list.append(ComicFactory::create("dilbert"));
@@ -89,6 +89,7 @@ void ComicsModel::loadAll()
     m_list.append(ComicFactory::create("lechat"));
     m_list.append(ComicFactory::create("peanuts"));
     m_list.append(ComicFactory::create("xkcd"));
+    m_list.append(ComicFactory::create("dennisthemenace"));
 
     if (!favoriteIds.empty()) {
         for (int i = 0; i < m_list.size(); ++i) {
