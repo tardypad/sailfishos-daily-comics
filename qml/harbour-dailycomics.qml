@@ -13,6 +13,10 @@ import "cover"
 
 ApplicationWindow
 {
+    id: window
+
+    property bool portrait: orientation === Orientation.Portrait || orientation === Orientation.PortraitInverted
+
     initialPage: Component { FavoritesPage { } }
     cover: DefaultCover { }
 }

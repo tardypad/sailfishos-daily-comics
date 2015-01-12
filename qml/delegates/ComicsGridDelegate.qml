@@ -13,7 +13,7 @@ BackgroundItem {
     height: gridView.cellHeight
 
     Image {
-        source: Qt.resolvedUrl("../../images/comics/"+id+".jpg")
+        source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
         anchors.fill: parent
     }
 

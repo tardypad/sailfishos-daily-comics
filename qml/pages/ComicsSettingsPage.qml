@@ -11,6 +11,7 @@ import Sailfish.Silica 1.0
 import Comics 1.0
 
 import "../delegates"
+import "../components"
 
 Page {
 
@@ -19,9 +20,7 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellSize: (orientation === Orientation.Portrait || orientation === Orientation.PortraitInverted)
-                               ? parent.width / 3
-                               : parent.width / 5
+        property int cellSize: window.portrait ? parent.width / 3 : parent.width / 5
 
         anchors.fill: parent
         cellWidth: cellSize
@@ -52,6 +51,10 @@ Page {
     ComicsModel {
         id: comicsModel
         Component.onCompleted: comicsModel.loadAll()
+    }
+
+    ComicInfoPanel {
+        id: comicInfoPanel
     }
 
     onStatusChanged: {

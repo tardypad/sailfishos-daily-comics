@@ -44,14 +44,14 @@ QUrl ComicProxy::homepage() const
     return m_comic ? m_comic->homepage() : QUrl();
 }
 
-QLocale::Country ComicProxy::country() const
+QString ComicProxy::country() const
 {
-    return m_comic ? m_comic->country() : QLocale::AnyCountry;
+    return m_comic ? QLocale::countryToString(m_comic->country()) : "";
 }
 
-QLocale::Language ComicProxy::language() const
+QString ComicProxy::language() const
 {
-    return m_comic ? m_comic->language() : QLocale::AnyLanguage;
+    return m_comic ? QLocale::languageToString(m_comic->language()) : "";
 }
 
 QDate ComicProxy::startDate() const

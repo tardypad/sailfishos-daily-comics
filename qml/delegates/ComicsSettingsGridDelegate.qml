@@ -14,7 +14,7 @@ BackgroundItem {
 
     Image {
         anchors.fill: parent
-        source: Qt.resolvedUrl("../../images/comics/"+id+".jpg")
+        source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
     }
 
     Rectangle {
@@ -45,4 +45,6 @@ BackgroundItem {
     }
 
     onClicked: comicsModel.setFavorite(index, !favorite)
+
+    onPressAndHold: comicInfoPanel.showComic(id)
 }
