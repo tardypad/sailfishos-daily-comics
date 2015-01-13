@@ -37,6 +37,12 @@ Page {
             }
         }
 
+        ViewPlaceholder {
+            enabled: gridView.count == 0
+            text: "No comic selected"
+            hintText: "Choose your favorite comics in the settings page"
+        }
+
         VerticalScrollDecorator { flickable: gridView }
 
         function _goToComicPage(id, image) {
