@@ -11,9 +11,9 @@ import Sailfish.Silica 1.0
 import harbour.dailycomics.Comics 1.0
 
 import "../delegates"
-import "../components"
 
 Page {
+    id: comicPage
 
     allowedOrientations: Orientation.All
 
@@ -45,6 +45,14 @@ Page {
             }
         }
 
+        function _showComicInfo(id) {
+            if (infoPanelLoader.status === Loader.Null) {
+                infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
+                infoPanelLoader.item.parent = comicPage
+            }
+            infoPanelLoader.item.showComic(id)
+        }
+
         VerticalScrollDecorator { flickable: gridView }
     }
 
@@ -53,8 +61,8 @@ Page {
         Component.onCompleted: comicsModel.loadAll()
     }
 
-    ComicInfoPanel {
-        id: comicInfoPanel
+    Loader {
+        id: infoPanelLoader
     }
 
     onStatusChanged: {

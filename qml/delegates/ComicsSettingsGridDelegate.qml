@@ -46,5 +46,5 @@ BackgroundItem {
 
     onClicked: comicsModel.setFavorite(index, !favorite)
 
-    onPressAndHold: comicInfoPanel.showComic(id)
+    onPressAndHold: gridView._showComicInfo(id)
 }
