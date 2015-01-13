@@ -16,6 +16,7 @@ OTHER_FILES = \
     $$files(qml/pages/*.qml) \
     $$files(qml/delegates/*.qml) \
     $$files(qml/components/*.qml) \
+    $$files(qml/utils/*.qml) \
     rpm/$${TARGET}.yaml \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop

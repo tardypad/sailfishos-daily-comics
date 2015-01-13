@@ -73,11 +73,18 @@ void ComicProxy::setComicId(const QString comicId)
 {
     delete m_comic;
     m_comic = ComicFactory::create(comicId);
+
     emit comicIdChanged();
-    connect(m_comic, SIGNAL(currentStripUrlFetched()), this, SIGNAL(currentStripUrlChanged()));
+
+    connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
+    connect(m_comic, SIGNAL(dataParsed()), this, SIGNAL(dataParsed()));
+    connect(m_comic, SIGNAL(networkError()), this, SIGNAL(networkError()));
+    connect(m_comic, SIGNAL(parsingError()), this, SIGNAL(parsingError()));
+    connect(m_comic, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
+    connect(m_comic, SIGNAL(dataParsed()), this, SIGNAL(currentStripUrlChanged()));
 }
 
-void ComicProxy::fetchCurrentStrip()
+void ComicProxy::fetch()
 {
     if (m_comic) {
         m_comic->fetchCurrentStripUrl();

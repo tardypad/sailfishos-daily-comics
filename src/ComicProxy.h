@@ -44,7 +44,7 @@ public:
 
     void setComicId(const QString comicId);
 
-    Q_INVOKABLE void fetchCurrentStrip();
+    Q_INVOKABLE void fetch();
 
 signals:
     void comicIdChanged();
@@ -56,6 +56,12 @@ signals:
     void startDateChanged();
     void endDateChanged();
     void currentStripUrlChanged();
+
+    void fetchStarted();
+    void dataParsed();
+    void networkError();
+    void parsingError();
+    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 private:
     Comic* m_comic;

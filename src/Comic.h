@@ -50,7 +50,11 @@ private slots:
     void parse();
 
 signals:
-    void currentStripUrlFetched();
+    void fetchStarted();
+    void dataParsed();
+    void networkError();
+    void parsingError();
+    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 protected:
     QUrl m_currentStripUrl;

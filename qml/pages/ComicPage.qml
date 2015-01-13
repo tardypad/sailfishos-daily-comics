@@ -10,6 +10,8 @@ import Sailfish.Silica 1.0
 
 import Comics 1.0
 
+import "../utils"
+
 Page {
 
     allowedOrientations: Orientation.All
@@ -20,14 +22,30 @@ Page {
         id: comic
     }
 
-    Image {
-        source: comic.currentStripUrl
-        fillMode: Image.PreserveAspectFit
-        smooth: true
-        clip: true
-        asynchronous: true
-        anchors.fill: parent
-    }
+    SilicaFlickable {
+        id: comicView
 
-    Component.onCompleted: comic.fetchCurrentStrip()
+        anchors.fill: parent
+
+        Image {
+            source: comic.currentStripUrl
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            clip: true
+            asynchronous: true
+            anchors.fill: parent
+        }
+
+        LoadingIndicator {
+            id: indicator
+            model: comic
+            flickable: comicView
+            loadingText: "Loading comic"
+            defaultErrorText: "Can't display comic"
+            networkErrorText: "Can't download comic"
+            parsingErrorText: "Can't extract comic"
+        }
+
+        Component.onCompleted: comic.fetch()
+    }
 }
