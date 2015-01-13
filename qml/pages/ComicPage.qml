@@ -34,6 +34,12 @@ Page {
             clip: true
             asynchronous: true
             anchors.fill: parent
+
+            BusyIndicator {
+                running: parent.status === Image.Loading
+                size: BusyIndicatorSize.Large
+                anchors.centerIn: parent
+            }
         }
 
         LoadingIndicator {
