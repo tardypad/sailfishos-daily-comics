@@ -12,6 +12,7 @@
 Settings* Settings::m_instance = NULL;
 
 const QString Settings::_favoritesField = QString("favorites");
+const QStringList Settings::_initialFavoriteIds = QStringList() << "calvinandhobbes" << "peanuts";
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
@@ -36,7 +37,7 @@ Settings::~Settings()
 QStringList Settings::favoriteIds()
 {
     if (!m_settings->contains(_favoritesField)) {
-        return QStringList();
+        return _initialFavoriteIds;
     }
 
     return value(_favoritesField).toStringList();
