@@ -10,6 +10,8 @@ Sources:
 Description: Read every day your favorite comic strips
 Configure: none
 Builder: qtc5
+QMakeOptions:
+- VERSION=%{version}
 PkgConfigBR:
 - Qt5Quick
 - Qt5Qml

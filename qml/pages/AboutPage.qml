@@ -69,7 +69,7 @@ Page {
                         horizontalCenter: parent.horizontalCenter
                     }
                     width: parent.width
-                    text: "version 0.1"
+                    text: "version " + Qt.application.version
                     font.pixelSize: Theme.fontSizeExtraSmall
                     horizontalAlignment: Text.AlignHCenter
                 }

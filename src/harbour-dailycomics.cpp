@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
+    app->setApplicationVersion(QString(APP_VERSION));
+
     QQmlContext* context = view->rootContext();
 
     QScopedPointer<Settings> settings(Settings::instance());

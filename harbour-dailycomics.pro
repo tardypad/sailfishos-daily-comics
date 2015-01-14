@@ -32,3 +32,5 @@ images.files = \
 images.path = /usr/share/$${TARGET}/images
 
 INSTALLS += images
+
+DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
