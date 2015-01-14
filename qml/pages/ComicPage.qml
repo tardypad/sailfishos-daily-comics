@@ -54,4 +54,9 @@ Page {
 
         Component.onCompleted: comic.fetch()
     }
+
+    onStatusChanged: {
+        if (status === PageStatus.Inactive)
+            comic.abortFetching()
+    }
 }

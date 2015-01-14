@@ -40,6 +40,7 @@ public:
     void setFavorite(const bool favorite) { m_favorite = favorite; }
 
     void fetchCurrentStripUrl();
+    void abortFetching();
 
 protected:
     virtual QUrl stripSourceUrl() const = 0;

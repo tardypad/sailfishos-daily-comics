@@ -45,6 +45,7 @@ public:
     void setComicId(const QString comicId);
 
     Q_INVOKABLE void fetch();
+    Q_INVOKABLE void abortFetching();
 
 signals:
     void comicIdChanged();

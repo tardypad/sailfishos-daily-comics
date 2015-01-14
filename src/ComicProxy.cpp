@@ -90,3 +90,10 @@ void ComicProxy::fetch()
         m_comic->fetchCurrentStripUrl();
     }
 }
+
+void ComicProxy::abortFetching()
+{
+    if (m_comic) {
+        m_comic->abortFetching();
+    }
+}

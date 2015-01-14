@@ -29,6 +29,10 @@ Comic::~Comic()
 
 void Comic::fetchCurrentStripUrl()
 {
+    abortFetching();
+    delete m_currentReply;
+    m_currentReply = NULL;
+
     QNetworkRequest request(stripSourceUrl());
     m_currentReply = m_networkManager->get(request);
 
@@ -37,6 +41,14 @@ void Comic::fetchCurrentStripUrl()
     connect(m_currentReply, SIGNAL(finished()), this, SLOT(parse()));
     connect(m_currentReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SIGNAL(networkError()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
+}
+
+void Comic::abortFetching()
+{
+    if (m_currentReply != NULL && m_currentReply->isRunning()) {
+        m_currentReply->disconnect(this);
+        m_currentReply->abort();
+    }
 }
 
 void Comic::parse()
