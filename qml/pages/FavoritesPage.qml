@@ -30,6 +30,17 @@ Page {
         delegate: ComicsGridDelegate { }
         model: comicsModel
 
+        Rectangle {
+            property bool active: gridView.currentItem && gridView.currentItem.down
+            width: gridView.cellWidth
+            height: gridView.cellHeight
+            color: Theme.highlightBackgroundColor
+            opacity: active ? 0.5 : 0
+            x: gridView.currentItem != null ? gridView.currentItem.x : 0
+            y: gridView.currentItem != null ? gridView.currentItem.y - gridView.contentY : 0
+            z: gridView.currentItem != null ? gridView.currentItem.z + 1 : 0
+        }
+
         PullDownMenu {
             MenuItem {
                 text: "Settings"
