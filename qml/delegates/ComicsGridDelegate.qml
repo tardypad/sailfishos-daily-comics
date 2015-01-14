@@ -19,7 +19,7 @@ BackgroundItem {
 
     Rectangle {
         opacity: newStrip ? 1.0 : 0.0
-        color: "black"
+        color: Qt.darker(idColor, 1.1)
         anchors {
             right: parent.right
             bottom: parent.bottom

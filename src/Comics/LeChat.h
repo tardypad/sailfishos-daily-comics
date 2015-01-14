@@ -12,6 +12,7 @@
 
 #include <QLocale>
 #include <QDate>
+#include <QColor>
 
 class LeChat : public Comic
 {
@@ -22,6 +23,7 @@ public:
 
     virtual inline QString id() const { return _id; }
     virtual inline QString name() const { return _name; }
+    virtual inline QColor color() const { return _color; }
     virtual inline QString author() const { return _author; }
     virtual inline QUrl homepage() const { return _homepage; }
     virtual inline QLocale::Country country() const { return _country; }
@@ -37,6 +39,7 @@ protected:
 private:
     static const QString _id;
     static const QString _name;
+    static const QColor _color;
     static const QString _author;
     static const QUrl _homepage;
     static const QLocale::Country _country;

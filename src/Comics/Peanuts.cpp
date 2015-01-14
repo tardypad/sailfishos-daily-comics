@@ -18,6 +18,7 @@ Peanuts::Peanuts(QObject *parent) :
 
 const QString Peanuts::_id                 = QString("peanuts");
 const QString Peanuts::_name               = QString("Peanuts");
+const QColor Peanuts::_color               = QColor(133, 248, 255);
 const QString Peanuts::_author             = QString("Charles Monroe Schulz");
 const QUrl Peanuts::_homepage              = QUrl("http://www.peanuts.com/");
 const QLocale::Country Peanuts::_country   = QLocale::UnitedStates;

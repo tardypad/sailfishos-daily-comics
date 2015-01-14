@@ -18,6 +18,7 @@ CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
 
 const QString CalvinAndHobbes::_id                 = QString("calvinandhobbes");
 const QString CalvinAndHobbes::_name               = QString("Calvin and Hobbes");
+const QColor CalvinAndHobbes::_color               = QColor(255, 141, 117);
 const QString CalvinAndHobbes::_author             = QString("Bill Watterson");
 const QUrl CalvinAndHobbes::_homepage              = QUrl("http://www.gocomics.com/calvinandhobbes/");
 const QLocale::Country CalvinAndHobbes::_country   = QLocale::UnitedStates;

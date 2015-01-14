@@ -18,6 +18,7 @@ DennisTheMenace::DennisTheMenace(QObject *parent) :
 
 const QString DennisTheMenace::_id                 = QString("dennisthemenace");
 const QString DennisTheMenace::_name               = QString("Dennis The Menace");
+const QColor DennisTheMenace::_color               = QColor(246, 255, 84);
 const QString DennisTheMenace::_author             = QString("Hank Ketcham");
 const QUrl DennisTheMenace::_homepage              = QUrl("http://dennisthemenace.com/");
 const QLocale::Country DennisTheMenace::_country   = QLocale::UnitedStates;

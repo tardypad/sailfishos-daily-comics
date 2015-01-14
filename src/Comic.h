@@ -26,6 +26,7 @@ public:
 
     virtual QString id() const = 0;
     virtual QString name() const = 0;
+    virtual QColor color() const = 0;
     virtual QString author() const = 0;
     virtual QUrl homepage() const = 0;
     virtual QLocale::Country country() const = 0;

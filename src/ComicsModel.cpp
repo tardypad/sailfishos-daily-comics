@@ -9,6 +9,7 @@
 
 #include <QDebug>
 #include <QDate>
+#include <QColor>
 
 #include "Comic.h"
 #include "ComicFactory.h"
@@ -39,6 +40,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     QHash<int, QByteArray> roleNames;
     roleNames[IdRole] = "id";
     roleNames[NameRole] = "name";
+    roleNames[ColorRole] = "idColor";
     roleNames[AuthorRole] = "author";
     roleNames[HomepageRole] = "homepage";
     roleNames[CountryRole] = "country";
@@ -68,6 +70,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->id();
     case NameRole:
         return m_list.at(index.row())->name();
+    case ColorRole:
+        return m_list.at(index.row())->color();
     case AuthorRole:
         return m_list.at(index.row())->author();
     case HomepageRole:
