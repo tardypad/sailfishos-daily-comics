@@ -30,7 +30,8 @@ public:
         StartDateRole,
         EndDateRole,
         ImageRole,
-        FavoriteRole
+        FavoriteRole,
+        NewStripRole
     };
 
 public:

@@ -47,6 +47,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[EndDateRole] = "endDate";
     roleNames[ImageRole] = "image";
     roleNames[FavoriteRole] = "favorite";
+    roleNames[NewStripRole] = "newStrip";
 
     return roleNames;
 }
@@ -83,6 +84,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->currentStripUrl();
     case FavoriteRole:
         return m_list.at(index.row())->favorite();
+    case NewStripRole:
+        return m_list.at(index.row())->newStrip();
     }
 
     return QVariant();

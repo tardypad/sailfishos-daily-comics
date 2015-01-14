@@ -16,7 +16,8 @@ Comic::Comic(QObject *parent) :
     QObject(parent),
     m_currentStripUrl(QUrl()),
     m_currentReply(NULL),
-    m_favorite(false)
+    m_favorite(false),
+    m_newStrip(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
 }

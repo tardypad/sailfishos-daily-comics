@@ -36,8 +36,10 @@ public:
 
     QUrl currentStripUrl() const { return m_currentStripUrl; }
     bool favorite() const { return m_favorite; }
+    bool newStrip() const { return m_newStrip; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
+    void setNewStrip(const bool newStrip) { m_newStrip = newStrip; }
 
     void fetchCurrentStripUrl();
     void abortFetching();
@@ -62,6 +64,7 @@ protected:
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     bool m_favorite;
+    bool m_newStrip;
 };
 
 #endif // COMIC_H
