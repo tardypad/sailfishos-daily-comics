@@ -24,12 +24,13 @@ const QLocale::Country Dilbert::_country   = QLocale::UnitedStates;
 const QLocale::Language Dilbert::_language = QLocale::English;
 const QDate Dilbert::_startDate            = QDate::fromString("1989-04-16", Qt::ISODate);
 const QDate Dilbert::_endDate              = QDate::currentDate();
-const QUrl Dilbert::_stripSourceUrl        = QUrl("http://www.dilbert.com/strips/");
+const QUrl Dilbert::_stripSourceUrl        = QUrl("http://www.dilbert.com/");
 
 QUrl Dilbert::extractStripUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*\\.strip\\.gif)\"");
+
+    QRegularExpression reg("<img[^>]*img-comic.*src=\"([^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
@@ -38,5 +39,5 @@ QUrl Dilbert::extractStripUrl(QByteArray data)
 
     QString src = match.captured(1);
 
-    return QUrl("http://www.dilbert.com" + src);
+    return QUrl(src);
 }
