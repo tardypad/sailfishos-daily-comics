@@ -10,6 +10,8 @@ import Sailfish.Silica 1.0
 
 import harbour.dailycomics.Comics 1.0
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 DockedPanel {
     id: comicInfoPanel
 
@@ -170,7 +172,7 @@ DockedPanel {
     PushUpMenu {
         MenuItem {
             text: "Go to homepage"
-            onClicked: Qt.openUrlExternally(comic.homepage)
+            onClicked: ExternalLinks.browse(comic.homepage)
         }
     }
 }

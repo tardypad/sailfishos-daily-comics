@@ -8,6 +8,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 Page {
 
     allowedOrientations: Orientation.All
@@ -113,7 +115,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: Qt.openUrlExternally("https://twitter.com/tardypad")
+                        onClicked: ExternalLinks.browse("https://twitter.com/tardypad")
                     }
 
                     IconButton {
@@ -125,7 +127,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: Qt.openUrlExternally("https://github.com/tardypad")
+                        onClicked: ExternalLinks.browse("https://github.com/tardypad")
                     }
 
                     IconButton {
@@ -137,7 +139,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: Qt.openUrlExternally("mailto:damien@tardypad.me?subject=[Daily Comics Sailfish app] ")
+                        onClicked: ExternalLinks.mail("damien@tardypad.me", "[Daily Comics Sailfish app] ")
                     }
                 }
 
@@ -155,7 +157,7 @@ Page {
                 horizontalAlignment: Text.AlignHCenter
                 textFormat: Text.StyledText
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: ExternalLinks.browse(link)
             }
 
             Label {
