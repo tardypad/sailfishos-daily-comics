@@ -37,6 +37,13 @@ Page {
             }
         }
 
+        PushUpMenu {
+            MenuItem {
+                text: "About"
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
+        }
+
         ViewPlaceholder {
             enabled: gridView.count == 0
             text: "No comic selected"

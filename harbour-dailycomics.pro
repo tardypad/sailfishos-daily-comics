@@ -21,7 +21,11 @@ OTHER_FILES = \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop
 
-images.files = images/comics
+images.files = \
+    images/comics \
+    images/icons \
+    $$files(images/*.jpg)
+
 images.path = /usr/share/$${TARGET}/images
 
 INSTALLS += images
