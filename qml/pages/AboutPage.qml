@@ -111,7 +111,7 @@ Page {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
-                            source: Qt.resolvedUrl("../../images/icons/icon-m-twitter.png")
+                            source: "qrc:/icon/medium/twitter"
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
@@ -123,7 +123,7 @@ Page {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
-                            source: Qt.resolvedUrl("../../images/icons/icon-m-github.png")
+                            source: "qrc:/icon/medium/github"
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }

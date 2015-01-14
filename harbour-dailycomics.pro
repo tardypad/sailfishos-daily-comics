@@ -22,6 +22,8 @@ OTHER_FILES = \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop
 
+RESOURCES += $${TARGET}.qrc
+
 images.files = \
     images/comics \
     images/icons \

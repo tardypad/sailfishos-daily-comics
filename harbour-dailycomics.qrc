@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icon/medium">
+        <file alias="twitter">images/icons/icon-m-twitter.png</file>
+        <file alias="github">images/icons/icon-m-github.png</file>
+    </qresource>
+</RCC>
