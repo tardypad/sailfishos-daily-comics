@@ -18,20 +18,24 @@ Page {
         anchors.fill: parent
 
         contentWidth: parent.width;
-        contentHeight: contentColumn.height + Theme.paddingLarge
+        contentHeight: pageHeader.height + contentColumn.height + Theme.paddingLarge
 
         flickableDirection: Flickable.VerticalFlick
+
+        PageHeader {
+            id: pageHeader
+            title: "About"
+        }
 
         Column {
             id: contentColumn
 
             spacing: Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width
-
-            PageHeader {
-                title: "About"
+            anchors {
+                top: pageHeader.bottom
+                horizontalCenter: parent.horizontalCenter
             }
+            width: parent.width
 
             Rectangle {
                 color: "transparent"
