@@ -149,9 +149,12 @@ Page {
                 id: codeLabel
                 width: parent.width - 2*Theme.paddingLarge
                 text: "The source code is available at
-                          <br/><a href='https://github.com/tardypad/daily-comics'>https://github.com/tardypad/daily-comics</a>
-                          <br/>You can contact me for any remarks,
-                          <br/>bugs, feature requests, ideas,... "
+                       <br/><a href='https://github.com/tardypad/daily-comics'>https://github.com/tardypad/daily-comics</a>
+                       <br/>You can contact me for any remarks,
+                       <br/>bugs, feature requests, ideas,...
+                       <br/>
+                       <br/> Let me know as well which additional comics
+                       <br/> you would like to be in the list"
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 font.pixelSize: Theme.fontSizeExtraSmall
                 horizontalAlignment: Text.AlignHCenter
