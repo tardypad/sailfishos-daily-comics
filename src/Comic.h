@@ -38,9 +38,11 @@ public:
     QUrl currentStripUrl() const { return m_currentStripUrl; }
     bool favorite() const { return m_favorite; }
     bool newStrip() const { return m_newStrip; }
+    bool error() const { return m_error; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
+    void setError(const bool error) { m_error = error; emit errorChanged(this);}
 
     void fetchCurrentStripUrl();
     void abortFetching();
@@ -52,6 +54,7 @@ protected:
 
 private slots:
     void parse();
+    void flagError();
 
 signals:
     void fetchStarted();
@@ -59,7 +62,9 @@ signals:
     void networkError();
     void parsingError();
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+
     void newStripChanged(Comic* comic);
+    void errorChanged(Comic* comic);
 
 protected:
     QUrl m_currentStripUrl;
@@ -67,6 +72,7 @@ protected:
     QNetworkReply* m_currentReply;
     bool m_favorite;
     bool m_newStrip;
+    bool m_error;
 };
 
 #endif // COMIC_H

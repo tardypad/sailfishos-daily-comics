@@ -32,7 +32,8 @@ public:
         EndDateRole,
         ImageRole,
         FavoriteRole,
-        NewStripRole
+        NewStripRole,
+        ErrorRole
     };
 
 public:
@@ -60,6 +61,7 @@ protected:
 
 protected slots:
     void emitNewStripChanged(Comic* comic);
+    void emitErrorChanged(Comic* comic);
 
 signals:
     void countChanged();

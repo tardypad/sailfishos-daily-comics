@@ -18,7 +18,7 @@ BackgroundItem {
     }
 
     Rectangle {
-        opacity: newStrip ? 1.0 : 0.0
+        opacity: (newStrip || error) ? 1.0 : 0.0
         color: Qt.darker(idColor, 1.1)
         anchors {
             right: parent.right
@@ -35,7 +35,7 @@ BackgroundItem {
                 bottom: parent.bottom
                 bottomMargin: Theme.paddingSmall
             }
-            source: "image://theme/icon-s-update"
+            source: newStrip ? "image://theme/icon-s-update" : "image://theme/icon-system-warning"
             height: Theme.iconSizeSmall
             width: Theme.iconSizeSmall
             fillMode: Image.PreserveAspectFit
@@ -49,7 +49,7 @@ BackgroundItem {
                 bottom: parent.bottom
                 bottomMargin: Theme.paddingSmall
             }
-            text: "New"
+            text: newStrip ? "New" : "Error"
             font.pixelSize: Theme.fontSizeExtraSmall
         }
 

@@ -17,7 +17,8 @@ Comic::Comic(QObject *parent) :
     m_currentStripUrl(QUrl()),
     m_currentReply(NULL),
     m_favorite(false),
-    m_newStrip(false)
+    m_newStrip(false),
+    m_error(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
 }
@@ -42,6 +43,9 @@ void Comic::fetchCurrentStripUrl()
     connect(m_currentReply, SIGNAL(finished()), this, SLOT(parse()));
     connect(m_currentReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SIGNAL(networkError()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
+
+    connect(this, SIGNAL(networkError()), this, SLOT(flagError()));
+    connect(this, SIGNAL(parsingError()), this, SLOT(flagError()));
 }
 
 void Comic::abortFetching()
@@ -67,6 +71,12 @@ void Comic::parse()
 
     setCurrentStripUrl(stripUrl);
     setNewStrip(true);
+    setError(false);
 
     emit dataParsed();
+}
+
+void Comic::flagError()
+{
+    setError(true);
 }

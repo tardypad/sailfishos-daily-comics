@@ -50,6 +50,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[ImageRole] = "image";
     roleNames[FavoriteRole] = "favorite";
     roleNames[NewStripRole] = "newStrip";
+    roleNames[ErrorRole] = "error";
 
     return roleNames;
 }
@@ -90,6 +91,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->favorite();
     case NewStripRole:
         return m_list.at(index.row())->newStrip();
+    case ErrorRole:
+        return m_list.at(index.row())->error();
     }
 
     return QVariant();
@@ -128,6 +131,7 @@ void ComicsModel::initComicConnections()
 {
     for(int row = 0; row < m_list.size(); ++row) {
         connect(m_list.at(row), SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
+        connect(m_list.at(row), SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
     }
 }
 
@@ -143,6 +147,16 @@ void ComicsModel::emitNewStripChanged(Comic *comic)
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
             this->emitDataChanged(row, NewStripRole);
+            return;
+        }
+    }
+}
+
+void ComicsModel::emitErrorChanged(Comic *comic)
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        if (m_list.at(row) == comic) {
+            this->emitDataChanged(row, ErrorRole);
             return;
         }
     }
