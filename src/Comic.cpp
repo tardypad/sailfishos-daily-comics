@@ -66,6 +66,7 @@ void Comic::parse()
     }
 
     setCurrentStripUrl(stripUrl);
+    setNewStrip(true);
 
     emit dataParsed();
 }

@@ -15,7 +15,7 @@
 FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
     ComicsModel(parent)
 {
-    connect(m_settings, SIGNAL(favoritesChanged()), this, SLOT(loadAll()));
+    connect(m_settings, SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
 }
 
 void FavoriteComicsModel::loadAll()
@@ -31,6 +31,8 @@ void FavoriteComicsModel::loadAll()
     }
 
     endInsertRows();
+
+    this->initComicConnections();
 
     emit countChanged();
 }

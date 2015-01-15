@@ -41,7 +41,6 @@ public:
     virtual QHash<int,QByteArray> roleNames() const;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    Q_INVOKABLE virtual void loadAll();
     Q_INVOKABLE void setFavorite(int row, bool favorite);
     Q_INVOKABLE QStringList favoriteIds();
     Q_INVOKABLE void favoriteAll(bool favorite = true);
@@ -50,8 +49,17 @@ public:
     int count() const;
     int favoritesCount() const;
 
+public slots:
+    Q_INVOKABLE virtual void loadAll();
+    Q_INVOKABLE void fetchAll();
+
 protected:
     void clear();
+    void initComicConnections();
+    void emitDataChanged(int row, Roles role);
+
+protected slots:
+    void emitNewStripChanged(Comic* comic);
 
 signals:
     void countChanged();

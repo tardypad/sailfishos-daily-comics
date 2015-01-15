@@ -70,7 +70,18 @@ Page {
 
     FavoriteComicsModel {
         id: comicsModel
-        Component.onCompleted: comicsModel.loadAll()
+        Component.onCompleted: {
+            comicsModel.loadAll()
+            comicsModel.fetchAll()
+        }
+    }
+
+    Connections {
+        target: comicsModel
+        onFavoritesChanged: {
+            comicsModel.loadAll()
+            comicsModel.fetchAll()
+        }
     }
 
 }

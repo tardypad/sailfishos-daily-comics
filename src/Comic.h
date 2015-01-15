@@ -40,7 +40,7 @@ public:
     bool newStrip() const { return m_newStrip; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
-    void setNewStrip(const bool newStrip) { m_newStrip = newStrip; }
+    void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
 
     void fetchCurrentStripUrl();
     void abortFetching();
@@ -59,6 +59,7 @@ signals:
     void networkError();
     void parsingError();
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void newStripChanged(Comic* comic);
 
 protected:
     QUrl m_currentStripUrl;

@@ -124,10 +124,41 @@ void ComicsModel::loadAll()
     emit favoritesCountChanged();
 }
 
+void ComicsModel::initComicConnections()
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        connect(m_list.at(row), SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
+    }
+}
+
+void ComicsModel::emitDataChanged(int row, ComicsModel::Roles role)
+{
+    QVector<int> roleVector;
+    roleVector << role;
+    emit dataChanged(this->index(row), this->index(row), roleVector);
+}
+
+void ComicsModel::emitNewStripChanged(Comic *comic)
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        if (m_list.at(row) == comic) {
+            this->emitDataChanged(row, NewStripRole);
+            return;
+        }
+    }
+}
+
+void ComicsModel::fetchAll()
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        m_list.at(row)->fetchCurrentStripUrl();
+    }
+}
+
 void ComicsModel::setFavorite(int row, bool favorite)
 {
     m_list.at(row)->setFavorite(favorite);
-    emit dataChanged(this->index(row), this->index(row));
+    this->emitDataChanged(row, FavoriteRole);
     emit favoritesCountChanged();
 }
 

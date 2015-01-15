@@ -18,6 +18,9 @@ public:
 
 public slots:
     Q_INVOKABLE virtual void loadAll();
+
+signals:
+    void favoritesChanged();
 };
 
 #endif // FAVORITECOMICSMODEL_H
