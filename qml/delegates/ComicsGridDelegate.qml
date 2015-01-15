@@ -23,6 +23,7 @@ BackgroundItem {
         color: Qt.darker(idColor, 1.1)
         hasNew: newStrip
         hasError: error
+        isFetching: fetching
 
         anchors {
             right: parent.right

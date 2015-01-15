@@ -39,10 +39,12 @@ public:
     bool favorite() const { return m_favorite; }
     bool newStrip() const { return m_newStrip; }
     bool error() const { return m_error; }
+    bool fetching() const { return m_fetching; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
+    void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
 
     void fetchCurrentStripUrl();
     void abortFetching();
@@ -65,6 +67,7 @@ signals:
 
     void newStripChanged(Comic* comic);
     void errorChanged(Comic* comic);
+    void fetchingChanged(Comic* comic);
 
 protected:
     QUrl m_currentStripUrl;
@@ -73,6 +76,7 @@ protected:
     bool m_favorite;
     bool m_newStrip;
     bool m_error;
+    bool m_fetching;
 };
 
 #endif // COMIC_H
