@@ -8,6 +8,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import "../components/"
+
 BackgroundItem {
     width: gridView.cellWidth
     height: gridView.cellHeight
@@ -17,44 +19,16 @@ BackgroundItem {
         anchors.fill: parent
     }
 
-    Rectangle {
-        opacity: (newStrip || error) ? 1.0 : 0.0
+    StatusRectangle {
         color: Qt.darker(idColor, 1.1)
+        hasNew: newStrip
+        hasError: error
+
         anchors {
             right: parent.right
             bottom: parent.bottom
         }
-        width: newImage.width + newLabel.width + 3*Theme.paddingSmall
-        height: newImage.height + 2*Theme.paddingSmall
-
-        Image {
-            id: newImage
-            anchors {
-                left: parent.left
-                leftMargin: Theme.paddingSmall
-                bottom: parent.bottom
-                bottomMargin: Theme.paddingSmall
-            }
-            source: newStrip ? "image://theme/icon-s-update" : "image://theme/icon-system-warning"
-            height: Theme.iconSizeSmall
-            width: Theme.iconSizeSmall
-            fillMode: Image.PreserveAspectFit
-        }
-
-        Label {
-            id: newLabel
-            anchors {
-                left: newImage.right
-                leftMargin: Theme.paddingSmall
-                bottom: parent.bottom
-                bottomMargin: Theme.paddingSmall
-            }
-            text: newStrip ? "New" : "Error"
-            font.pixelSize: Theme.fontSizeExtraSmall
-        }
-
     }
-
 
     onClicked: gridView._goToComicPage(id)
 
