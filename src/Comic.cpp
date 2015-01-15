@@ -48,6 +48,9 @@ void Comic::fetchCurrentStripUrl()
 
     connect(this, SIGNAL(networkError()), this, SLOT(flagError()));
     connect(this, SIGNAL(parsingError()), this, SLOT(flagError()));
+
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT(flagStoppedFetching()));
+    connect(m_currentReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(flagStoppedFetching()));
 }
 
 void Comic::abortFetching()
@@ -60,8 +63,6 @@ void Comic::abortFetching()
 
 void Comic::parse()
 {
-    setFetching(false);
-
     if (m_currentReply->error() != QNetworkReply::NoError)
         return;
 
@@ -83,4 +84,9 @@ void Comic::parse()
 void Comic::flagError()
 {
     setError(true);
+}
+
+void Comic::flagStoppedFetching()
+{
+    setFetching(false);
 }

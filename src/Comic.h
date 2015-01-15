@@ -57,6 +57,7 @@ protected:
 private slots:
     void parse();
     void flagError();
+    void flagStoppedFetching();
 
 signals:
     void fetchStarted();
