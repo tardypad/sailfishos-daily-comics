@@ -20,12 +20,12 @@ const QString Dilbert::_id                 = QString("dilbert");
 const QString Dilbert::_name               = QString("Dilbert");
 const QColor Dilbert::_color               = QColor(69, 142, 197);
 const QString Dilbert::_author             = QString("Scott Adams");
-const QUrl Dilbert::_homepage              = QUrl("http://www.dilbert.com/");
+const QUrl Dilbert::_homepage              = QUrl("http://dilbert.com/");
 const QLocale::Country Dilbert::_country   = QLocale::UnitedStates;
 const QLocale::Language Dilbert::_language = QLocale::English;
 const QDate Dilbert::_startDate            = QDate::fromString("1989-04-16", Qt::ISODate);
 const QDate Dilbert::_endDate              = QDate::currentDate();
-const QUrl Dilbert::_stripSourceUrl        = QUrl("http://www.dilbert.com/");
+const QUrl Dilbert::_stripSourceUrl        = QUrl("http://dilbert.com/");
 
 QUrl Dilbert::extractStripUrl(QByteArray data)
 {
