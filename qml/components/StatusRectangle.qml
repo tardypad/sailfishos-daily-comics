@@ -32,6 +32,14 @@ Rectangle {
         height: Theme.iconSizeSmall
         width: Theme.iconSizeSmall
         fillMode: Image.PreserveAspectFit
+
+        RotationAnimation on rotation {
+            id: imageRotation
+            loops: Animation.Infinite
+            from: 0
+            to: 360
+            duration: 1000
+        }
     }
 
     Label {
@@ -51,20 +59,23 @@ Rectangle {
           name: "invisible"
           when: !isFetching && !hasNew && !hasError
           PropertyChanges { target: statusRectangle; opacity: 0.0 }
+          PropertyChanges { target: imageRotation;   running: false }
         },
         State {
             name: "new"
             when: !isFetching && hasNew
             PropertyChanges { target: statusRectangle; opacity: 1.0 }
-            PropertyChanges { target: image;           source: "image://theme/icon-s-update" }
+            PropertyChanges { target: image;           source: "image://theme/icon-s-update"; rotation: 0 }
             PropertyChanges { target: label;           text: "New"; visible: true; }
+            PropertyChanges { target: imageRotation;   running: false }
         },
         State {
             name: "error"
             when: !isFetching && hasError
             PropertyChanges { target: statusRectangle; opacity: 1.0 }
-            PropertyChanges { target: image;           source: "image://theme/icon-system-warning" }
+            PropertyChanges { target: image;           source: "image://theme/icon-system-warning"; rotation: 0 }
             PropertyChanges { target: label;           text: "Error"; visible: true; }
+            PropertyChanges { target: imageRotation;   running: false }
         },
         State {
             name: "fetching"
@@ -72,5 +83,6 @@ Rectangle {
             PropertyChanges { target: statusRectangle; opacity: 1.0 }
             PropertyChanges { target: image;           source: "image://theme/icon-s-sync" }
             PropertyChanges { target: label;           visible: false }
+            PropertyChanges { target: imageRotation;   running: true }
         }]
 }
