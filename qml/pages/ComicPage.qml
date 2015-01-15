@@ -13,6 +13,7 @@ import harbour.dailycomics.Comics 1.0
 import "../utils"
 
 Page {
+    id: comicPage
 
     allowedOrientations: Orientation.All
 
@@ -52,7 +53,26 @@ Page {
             parsingErrorText: "Can't extract comic"
         }
 
+        PullDownMenu {
+            MenuItem {
+                text: "Show comic info"
+                onClicked: comicView._showComicInfo(comicId)
+            }
+        }
+
+        function _showComicInfo(id) {
+            if (infoPanelLoader.status === Loader.Null) {
+                infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
+                infoPanelLoader.item.parent = comicPage
+            }
+            infoPanelLoader.item.showComic(id)
+        }
+
         Component.onCompleted: comic.fetch()
+    }
+
+    Loader {
+        id: infoPanelLoader
     }
 
     onStatusChanged: {
