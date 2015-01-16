@@ -8,6 +8,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 Item {
     id: loadingIndicator
 
@@ -39,6 +41,11 @@ Item {
         parent: flickable
     }
 
+    Loader {
+        id: devContactLoader
+        parent: flickable
+    }
+
     Component {
         id: errorComponent
         ViewPlaceholder {
@@ -54,6 +61,50 @@ Item {
                 icon.source: "image://theme/icon-m-refresh"
                 onClicked: _fetch()
                 z: 10
+            }
+        }
+    }
+
+    Component {
+        id: devContactComponent
+        Rectangle {
+            color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity / 3)
+            x: flickable.originX + flickable.width - (width + Theme.paddingLarge)
+            y: flickable.originY + flickable.height - (height + Theme.paddingLarge)
+            width: devLabel.width + mailButton.width + 3*Theme.paddingSmall
+            height: devLabel.height + 2*Theme.paddingSmall
+
+            Label {
+                id: devLabel
+                anchors {
+                    top: parent.top
+                    topMargin: Theme.paddingSmall
+                    left: parent.left
+                    leftMargin: Theme.paddingSmall
+                }
+                text: "Please contact me\nif the problem persists"
+                font.pixelSize: Theme.fontSizeExtraSmall
+            }
+
+            IconButton {
+                id: mailButton
+                height: Theme.iconSizeMedium
+                width: Theme.iconSizeMedium
+                anchors {
+                    left: devLabel.right
+                    leftMargin: Theme.paddingSmall
+                    verticalCenter: parent.verticalCenter
+                }
+                icon {
+                    source: "image://theme/icon-lock-email"
+                    height: Theme.iconSizeMedium
+                    fillMode: Image.PreserveAspectFit
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: ExternalLinks.mail("damien@tardypad.me", "[Daily Comics Sailfish app error] ")
             }
         }
     }
@@ -93,6 +144,12 @@ Item {
         }
     }
 
+    function removeDevContact() {
+        if (devContactLoader.status === Loader.Ready) {
+            devContactLoader.item.visible = false
+        }
+    }
+
     states: [
         State {
             name: "init"
@@ -102,7 +159,10 @@ Item {
             name: "fetching"
             PropertyChanges { target: loadingIndicator; visible: true }
             StateChangeScript {
-                script: removePlaceholder()
+                script: {
+                    removePlaceholder()
+                    removeDevContact()
+                }
             }
         },
         State {
@@ -112,6 +172,8 @@ Item {
                 script: {
                     placeholderLoader.sourceComponent = errorComponent
                     placeholderLoader.item.enabled = true
+                    devContactLoader.sourceComponent = devContactComponent
+                    devContactLoader.item.visible = true
                 }
             }
         },
@@ -119,7 +181,10 @@ Item {
             name: "complete"
             PropertyChanges { target: loadingIndicator; visible: false }
             StateChangeScript {
-                script: removePlaceholder()
+                script: {
+                    removePlaceholder()
+                    removeDevContact()
+                }
             }
         }]
 }
