@@ -15,18 +15,21 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 DockedPanel {
     id: comicInfoPanel
 
+    property int index
+    property ComicsModel comicsModel
+
     width: window.portrait ? parent.width : parent.height
     height: window.portrait
             ? infoColumn.height + 2*Theme.paddingMedium
             : parent.height
     dock: window.portrait ? Dock.Bottom : Dock.Right
 
-    function showComic(comicId) {
-        comic.comicId = comicId
+    function showComicInfo() {
+        comic.setComic(comicsModel.comicAt(index))
         show()
     }
 
-    Comic {
+    ComicProxy {
         id: comic
     }
 
@@ -152,7 +155,7 @@ DockedPanel {
 
             Image {
                 id: exampleImage
-                source: comic.comicId ? Qt.resolvedUrl("../../images/comics/examples/"+comic.comicId+".jpg") : ''
+                source: comic.id ? Qt.resolvedUrl("../../images/comics/examples/"+comic.id+".jpg") : ''
                 fillMode: Image.PreserveAspectFit
                 smooth: true
                 asynchronous: true

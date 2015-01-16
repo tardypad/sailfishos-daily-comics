@@ -31,7 +31,7 @@ BackgroundItem {
         }
     }
 
-    onClicked: gridView._goToComicPage(id)
+    onClicked: gridView._goToComicPage(index)
 
     onPressed: gridView.currentIndex = index
 }

@@ -19,12 +19,14 @@
 
 #include "src/ComicsModel.h"
 #include "FavoriteComicsModel.h"
+#include "src/Comic.h"
 #include "src/ComicProxy.h"
 #include "src/Settings.h"
 
 int main(int argc, char *argv[])
 {
-    qmlRegisterType<ComicProxy>("harbour.dailycomics.Comics", 1, 0, "Comic");
+    qmlRegisterType<ComicProxy>("harbour.dailycomics.Comics", 1, 0, "ComicProxy");
+    qmlRegisterType<Comic>();
     qmlRegisterType<ComicsModel>("harbour.dailycomics.Comics", 1, 0, "ComicsModel");
     qmlRegisterType<FavoriteComicsModel>("harbour.dailycomics.Comics", 1, 0, "FavoriteComicsModel");
 

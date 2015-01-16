@@ -19,7 +19,7 @@ class Comic;
 class ComicProxy : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString comicId READ comicId WRITE setComicId NOTIFY comicIdChanged)
+    Q_PROPERTY(QString id READ id NOTIFY idChanged)
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString author READ author NOTIFY authorChanged)
     Q_PROPERTY(QUrl homepage READ homepage NOTIFY homepageChanged)
@@ -32,7 +32,7 @@ class ComicProxy : public QObject
 public:
     explicit ComicProxy(QObject *parent = 0);
 
-    QString comicId() const;
+    QString id() const;
     QString name() const;
     QString author() const;
     QUrl homepage() const;
@@ -42,13 +42,13 @@ public:
     QDate endDate() const;
     QUrl currentStripUrl();
 
-    void setComicId(const QString comicId);
+    Q_INVOKABLE void setComic(Comic* comic);
 
     Q_INVOKABLE void fetch();
     Q_INVOKABLE void abortFetching();
 
 signals:
-    void comicIdChanged();
+    void idChanged();
     void nameChanged();
     void authorChanged();
     void homepageChanged();

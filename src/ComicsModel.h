@@ -47,6 +47,7 @@ public:
     Q_INVOKABLE QStringList favoriteIds();
     Q_INVOKABLE void favoriteAll(bool favorite = true);
     Q_INVOKABLE void unfavoriteAll();
+    Q_INVOKABLE Comic *comicAt(int row);
 
     int count() const;
     int favoritesCount() const;

@@ -45,12 +45,14 @@ Page {
             }
         }
 
-        function _showComicInfo(id) {
+        function _showComicInfo(index) {
             if (infoPanelLoader.status === Loader.Null) {
                 infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
                 infoPanelLoader.item.parent = comicPage
+                infoPanelLoader.item.comicsModel = comicsModel
             }
-            infoPanelLoader.item.showComic(id)
+            infoPanelLoader.item.index = index
+            infoPanelLoader.item.showComicInfo()
         }
 
         VerticalScrollDecorator { flickable: gridView }

@@ -14,17 +14,17 @@ ComicProxy::ComicProxy(QObject *parent) :
     QObject(parent),
     m_comic(NULL)
 {
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(nameChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(authorChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(homepageChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(countryChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(languageChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(startDateChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(endDateChanged()));
-    connect(this, SIGNAL(comicIdChanged()), SIGNAL(currentStripUrlChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(nameChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(authorChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(homepageChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(countryChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(startDateChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(endDateChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(currentStripUrlChanged()));
 }
 
-QString ComicProxy::comicId() const
+QString ComicProxy::id() const
 {
     return m_comic ? m_comic->id() : QString();
 }
@@ -69,12 +69,11 @@ QUrl ComicProxy::currentStripUrl()
     return m_comic ? m_comic->currentStripUrl() : QUrl();
 }
 
-void ComicProxy::setComicId(const QString comicId)
+void ComicProxy::setComic(Comic *comic)
 {
-    delete m_comic;
-    m_comic = ComicFactory::create(comicId);
+    m_comic = comic;
 
-    emit comicIdChanged();
+    emit idChanged();
 
     connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
     connect(m_comic, SIGNAL(dataParsed()), this, SIGNAL(dataParsed()));

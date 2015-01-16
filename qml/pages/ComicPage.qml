@@ -17,9 +17,10 @@ Page {
 
     allowedOrientations: Orientation.All
 
-    property alias comicId: comic.comicId
+    property int index
+    property ComicsModel comicsModel
 
-    Comic {
+    ComicProxy {
         id: comic
     }
 
@@ -57,19 +58,19 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: "Show comic info"
-                onClicked: comicView._showComicInfo(comicId)
+                onClicked: comicView._showComicInfo()
             }
         }
 
-        function _showComicInfo(id) {
+        function _showComicInfo() {
             if (infoPanelLoader.status === Loader.Null) {
                 infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
                 infoPanelLoader.item.parent = comicPage
+                infoPanelLoader.item.index = index
+                infoPanelLoader.item.comicsModel = comicsModel
             }
-            infoPanelLoader.item.showComic(id)
+            infoPanelLoader.item.showComicInfo()
         }
-
-        Component.onCompleted: comic.fetch()
     }
 
     Loader {
@@ -79,5 +80,11 @@ Page {
     onStatusChanged: {
         if (status === PageStatus.Inactive)
             comic.abortFetching()
+    }
+
+    Component.onCompleted: {
+        comic.setComic(comicsModel.comicAt(index))
+        if (!comic.currentStripUrl)
+            comic.fetch()
     }
 }

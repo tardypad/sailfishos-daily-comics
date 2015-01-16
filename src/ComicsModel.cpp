@@ -214,6 +214,14 @@ void ComicsModel::unfavoriteAll()
     favoriteAll(false);
 }
 
+Comic *ComicsModel::comicAt(int row)
+{
+    if (row < 0 || row >= m_list.size())
+        return NULL;
+
+    return m_list.at(row);
+}
+
 int ComicsModel::count() const
 {
     return this->rowCount();
