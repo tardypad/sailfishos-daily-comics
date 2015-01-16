@@ -19,6 +19,7 @@ Item {
     property string defaultErrorText
     property string networkErrorText
     property string parsingErrorText
+    property string devContactErrorMessage
 
     parent: flickable.contentItem
 
@@ -104,7 +105,8 @@ Item {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: ExternalLinks.mail("damien@tardypad.me", "[Daily Comics Sailfish app error] ")
+                onClicked: ExternalLinks.mail("damien@tardypad.me", "[SailfishOS][Daily comics][Error]  ",
+                                              "Yo man, " + devContactErrorMessage)
             }
         }
     }

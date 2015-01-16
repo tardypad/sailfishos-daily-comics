@@ -143,7 +143,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: ExternalLinks.mail("damien@tardypad.me", "[Daily Comics Sailfish app] ")
+                        onClicked: ExternalLinks.mail("damien@tardypad.me", "[SailfishOS][Daily comics] ", "Yo man,")
                     }
                 }
 

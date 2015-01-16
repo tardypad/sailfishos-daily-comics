@@ -51,6 +51,7 @@ Page {
             defaultErrorText: "Can't display comic"
             networkErrorText: "Can't download comic"
             parsingErrorText: "Can't extract comic"
+            devContactErrorMessage: "There is a problem with comic \"" + comic.name + "\""
         }
 
         PullDownMenu {

@@ -12,7 +12,10 @@ function browse(url)
     Qt.openUrlExternally(url)
 }
 
-function mail(email, subject)
+function mail(email, subject, body)
 {
-    Qt.openUrlExternally("mailto:"+email+"?subject="+subject)
+    var subjectText = (subject !== undefined) ? subject : '';
+    var bodyText    = (body !== undefined) ? body : '';
+
+    Qt.openUrlExternally("mailto:"+email+"?subject="+subjectText+"&body="+bodyText)
 }
