@@ -7,10 +7,25 @@
 
 #include "ComicsModelProxy.h"
 
+#include <QDebug>
+
 ComicsModelProxy::ComicsModelProxy(QObject *parent) :
     QSortFilterProxyModel(parent)
 {
     connect(this, SIGNAL(sourceModelChanged()), this, SIGNAL(comicsModelChanged()));
+}
+
+bool ComicsModelProxy::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+{
+    Q_UNUSED(source_parent);
+
+    QModelIndex index = sourceModel()->index(source_row, 0);
+
+    bool hasNewStrip = sourceModel()->data(index, ComicsModel::NewStripRole).toBool();
+    if (filterRole() == ComicsModel::NewStripRole && !hasNewStrip)
+        return false;
+
+    return true;
 }
 
 void ComicsModelProxy::setComicsModel(ComicsModel *comicsModel)

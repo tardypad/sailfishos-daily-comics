@@ -19,6 +19,7 @@ class ComicsModel : public QAbstractListModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
     Q_PROPERTY(int favoritesCount READ favoritesCount NOTIFY favoritesCountChanged)
     Q_PROPERTY(int newCount READ newCount NOTIFY newCountChanged)
+    Q_ENUMS(Roles)
 
 public:
     enum Roles {

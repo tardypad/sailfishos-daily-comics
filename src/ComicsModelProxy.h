@@ -16,9 +16,12 @@ class ComicsModelProxy : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(ComicsModel* comicsModel READ comicsModel WRITE setComicsModel NOTIFY comicsModelChanged)
+    Q_ENUMS(ComicsModel::Roles)
 
 public:
     explicit ComicsModelProxy(QObject *parent = 0);
+    virtual bool filterAcceptsRow (int source_row, const QModelIndex& source_parent) const;
+
     ComicsModel* comicsModel() const { return m_comicsModel; }
     void setComicsModel(ComicsModel* comicsModel);
 
