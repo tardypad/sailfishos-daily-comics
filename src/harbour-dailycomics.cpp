@@ -18,7 +18,8 @@
 #include <QtQml>
 
 #include "src/ComicsModel.h"
-#include "FavoriteComicsModel.h"
+#include "src/ComicsModelProxy.h"
+#include "src/FavoriteComicsModel.h"
 #include "src/Comic.h"
 #include "src/ComicProxy.h"
 #include "src/Settings.h"
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<ComicProxy>("harbour.dailycomics.Comics", 1, 0, "ComicProxy");
     qmlRegisterType<Comic>();
     qmlRegisterType<ComicsModel>("harbour.dailycomics.Comics", 1, 0, "ComicsModel");
+    qmlRegisterType<ComicsModelProxy>("harbour.dailycomics.Comics", 1, 0, "ComicsModelProxy");
     qmlRegisterType<FavoriteComicsModel>("harbour.dailycomics.Comics", 1, 0, "FavoriteComicsModel");
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));

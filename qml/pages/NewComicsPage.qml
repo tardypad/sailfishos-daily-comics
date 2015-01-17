@@ -8,15 +8,17 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import harbour.dailycomics.Comics 1.0
+
 Page {
-    property alias comicsModel: slideshowView.model
+    property alias comicsModel: comicsModelProxy.comicsModel
 
     allowedOrientations: Orientation.All
 
     SlideshowView {
         id: slideshowView
 
-        model: comicsModel
+        model: comicsModelProxy
 
         delegate: Image {
             width: parent.width
@@ -34,5 +36,9 @@ Page {
                 anchors.centerIn: parent
             }
         }
+    }
+
+    ComicsModelProxy {
+        id: comicsModelProxy
     }
 }
