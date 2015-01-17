@@ -46,6 +46,10 @@ Page {
                 text: "Settings"
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
             }
+            MenuItem {
+                text: "Read all new comics"
+                onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": comicsModel})
+            }
         }
 
         PushUpMenu {
