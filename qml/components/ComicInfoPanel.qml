@@ -17,12 +17,13 @@ DockedPanel {
 
     property int index
     property ComicsModel comicsModel
+    property bool isPortrait: parent.isPortrait
 
-    width: window.portrait ? parent.width : parent.height
-    height: window.portrait
+    width: isPortrait ? parent.width : parent.height
+    height: isPortrait
             ? infoColumn.height + 2*Theme.paddingMedium
             : parent.height
-    dock: window.portrait ? Dock.Bottom : Dock.Right
+    dock: isPortrait ? Dock.Bottom : Dock.Right
 
     function showComicInfo() {
         comic.setComic(comicsModel.comicAt(index))
@@ -161,7 +162,7 @@ DockedPanel {
                 asynchronous: true
 
                 width: parent.width - 2 * Theme.paddingMedium
-                height: window.portrait
+                height: isPortrait
                         ? Math.min(window.height / 4, implicitHeight)
                         : comicInfoPanel.height - (nameLabel.height + 7 * Theme.paddingMedium
                           + authorLabel.height + countryLabel.height + languageLabel.height + publicationLabel.height)

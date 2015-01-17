@@ -15,7 +15,7 @@ ApplicationWindow
 {
     id: window
 
-    property bool portrait: orientation === Orientation.Portrait || orientation === Orientation.PortraitInverted
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape | Orientation.LandscapeInverted
 
     initialPage: Component { FavoritesPage { } }
     cover: DefaultCover { }

@@ -20,7 +20,7 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellSize: window.portrait ? parent.width / 3 : parent.width / 5
+        property int cellSize: isPortrait ? parent.width / 3 : parent.width / 5
 
         anchors.fill: parent
         cellWidth: cellSize
