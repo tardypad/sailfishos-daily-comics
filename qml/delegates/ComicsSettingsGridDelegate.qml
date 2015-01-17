@@ -31,10 +31,10 @@ BackgroundItem {
             height: Theme.iconSizeSmall
             width: Theme.iconSizeSmall
             anchors {
-                left: parent.left
-                top: parent.top
-                leftMargin: Theme.paddingSmall
-                topMargin: Theme.paddingSmall
+                right: parent.right
+                bottom: parent.bottom
+                rightMargin: Theme.paddingSmall
+                bottomMargin: Theme.paddingSmall
             }
             fillMode: Image.PreserveAspectFit
         }
