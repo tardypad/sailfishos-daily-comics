@@ -47,8 +47,9 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
             }
             MenuItem {
-                text: "Read all new comics"
+                text: comicsModel.newCount > 0 ? "Read all new comics" : "No new comic"
                 onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": comicsModel})
+                enabled: comicsModel.newCount > 0
             }
         }
 

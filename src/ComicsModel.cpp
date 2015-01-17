@@ -20,6 +20,10 @@ ComicsModel::ComicsModel(QObject *parent) :
     m_list(QList<Comic*>())
 {
     m_settings = Settings::instance();
+
+    connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
+    connect(this, SIGNAL(modelReset()), this, SIGNAL(favoritesCountChanged()));
+    connect(this, SIGNAL(modelReset()), this, SIGNAL(newCountChanged()));
 }
 
 ComicsModel::~ComicsModel()
@@ -151,6 +155,7 @@ void ComicsModel::emitNewStripChanged(Comic *comic)
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
             this->emitDataChanged(row, NewStripRole);
+            emit newCountChanged();
             return;
         }
     }
@@ -237,4 +242,16 @@ int ComicsModel::favoritesCount() const
     }
 
     return favoritesCount;
+}
+
+int ComicsModel::newCount() const
+{
+    int newCount = 0;
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (m_list.at(row)->newStrip())
+          newCount++;
+    }
+
+    return newCount;
 }
