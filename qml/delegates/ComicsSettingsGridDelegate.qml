@@ -15,6 +15,8 @@ BackgroundItem {
     Image {
         anchors.fill: parent
         source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
+        sourceSize.width: Screen.width / 2
+        sourceSize.height: Screen.width / 2
     }
 
     Rectangle {

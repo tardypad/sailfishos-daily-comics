@@ -32,6 +32,8 @@ Rectangle {
         height: Theme.iconSizeSmall
         width: Theme.iconSizeSmall
         fillMode: Image.PreserveAspectFit
+        smooth: true
+        asynchronous: true
 
         RotationAnimation on rotation {
             id: imageRotation

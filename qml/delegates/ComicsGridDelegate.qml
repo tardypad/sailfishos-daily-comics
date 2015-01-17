@@ -17,6 +17,8 @@ BackgroundItem {
     Image {
         source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
         anchors.fill: parent
+        sourceSize.width: Screen.width / 2
+        sourceSize.height: Screen.width / 2
     }
 
     StatusRectangle {
