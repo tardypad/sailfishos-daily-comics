@@ -19,24 +19,26 @@ FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
     connect(m_settings, SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
 }
 
-void FavoriteComicsModel::loadAll()
+void FavoriteComicsModel::loadAll(bool full)
 {
     clear();
 
-    Comic* comic;
     QStringList favoriteIds = m_settings->favoriteIds();
 
     beginInsertRows(QModelIndex(), 0, favoriteIds.size() - 1);
 
     for (int i = 0; i < favoriteIds.size(); ++i) {
-        comic = ComicFactory::create(favoriteIds.at(i), this);
-        comic->load();
-        m_list.append(comic);
+        m_list.append(ComicFactory::create(favoriteIds.at(i), this));
+    }
+
+    if (full) {
+        for (int i = 0; i < m_list.size(); ++i) {
+            m_list.at(i)->load();
+        }
+        initComicConnections();
     }
 
     endInsertRows();
-
-    initComicConnections();
 
     emit countChanged();
 }

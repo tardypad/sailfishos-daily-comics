@@ -105,7 +105,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void ComicsModel::loadAll()
+void ComicsModel::loadAll(bool full)
 {
     clear();
 
@@ -126,6 +126,13 @@ void ComicsModel::loadAll()
             if (favoriteIds.contains(m_list.at(i)->id()))
                 m_list.at(i)->setFavorite(true);
         }
+    }
+
+    if (full) {
+        for (int i = 0; i < m_list.size(); ++i) {
+            m_list.at(i)->load();
+        }
+        initComicConnections();
     }
 
     endInsertRows();

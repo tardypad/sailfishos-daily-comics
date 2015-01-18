@@ -76,7 +76,7 @@ Page {
     FavoriteComicsModel {
         id: comicsModel
         Component.onCompleted: {
-            comicsModel.loadAll()
+            comicsModel.loadAll(true)
             comicsModel.fetchAll()
         }
     }
@@ -84,7 +84,7 @@ Page {
     Connections {
         target: comicsModel
         onFavoritesChanged: {
-            comicsModel.loadAll()
+            comicsModel.loadAll(true)
             comicsModel.fetchAll()
         }
     }

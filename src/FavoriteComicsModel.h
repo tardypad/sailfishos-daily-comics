@@ -17,7 +17,7 @@ public:
     explicit FavoriteComicsModel(QObject *parent = 0);
 
 public slots:
-    Q_INVOKABLE virtual void loadAll();
+    Q_INVOKABLE virtual void loadAll(bool full = false);
 
 signals:
     void favoritesChanged();
