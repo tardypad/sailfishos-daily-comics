@@ -17,7 +17,7 @@ DockedPanel {
 
     property int index
     property ComicsModel comicsModel
-    property bool isPortrait: parent.isPortrait
+    property bool isPortrait: (parent.isPortrait !== undefined) ? parent.isPortrait : true
 
     width: isPortrait ? parent.width : parent.height
     height: isPortrait
