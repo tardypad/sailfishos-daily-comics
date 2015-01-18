@@ -32,7 +32,7 @@ void FavoriteComicsModel::loadAll()
 
     endInsertRows();
 
-    this->initComicConnections();
+    initComicConnections();
 
     emit countChanged();
 }

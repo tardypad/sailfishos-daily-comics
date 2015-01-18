@@ -147,14 +147,14 @@ void ComicsModel::emitDataChanged(int row, ComicsModel::Roles role)
 {
     QVector<int> roleVector;
     roleVector << role;
-    emit dataChanged(this->index(row), this->index(row), roleVector);
+    emit dataChanged(index(row), index(row), roleVector);
 }
 
 void ComicsModel::emitNewStripChanged(Comic *comic)
 {
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
-            this->emitDataChanged(row, NewStripRole);
+            emitDataChanged(row, NewStripRole);
             emit newCountChanged();
             return;
         }
@@ -165,7 +165,7 @@ void ComicsModel::emitErrorChanged(Comic *comic)
 {
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
-            this->emitDataChanged(row, ErrorRole);
+            emitDataChanged(row, ErrorRole);
             return;
         }
     }
@@ -175,7 +175,7 @@ void ComicsModel::emitFetchingChanged(Comic *comic)
 {
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
-            this->emitDataChanged(row, FetchingRole);
+            emitDataChanged(row, FetchingRole);
             return;
         }
     }
@@ -191,7 +191,7 @@ void ComicsModel::fetchAll()
 void ComicsModel::setFavorite(int row, bool favorite)
 {
     m_list.at(row)->setFavorite(favorite);
-    this->emitDataChanged(row, FavoriteRole);
+    emitDataChanged(row, FavoriteRole);
     emit favoritesCountChanged();
 }
 
@@ -229,7 +229,7 @@ Comic *ComicsModel::comicAt(int row)
 
 int ComicsModel::count() const
 {
-    return this->rowCount();
+    return rowCount();
 }
 
 int ComicsModel::favoritesCount() const
