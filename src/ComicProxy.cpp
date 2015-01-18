@@ -71,6 +71,9 @@ QUrl ComicProxy::currentStripUrl()
 
 void ComicProxy::setComic(Comic *comic)
 {
+    if (comic == NULL)
+        return;
+
     m_comic = comic;
 
     emit idChanged();

@@ -13,7 +13,7 @@
 class ComicFactory
 {
 public:
-    static Comic *create(QString id);
+    static Comic *create(QString id, QObject *parent = 0);
 };
 
 #endif // COMICFACTORY_H

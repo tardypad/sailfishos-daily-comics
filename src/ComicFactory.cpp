@@ -15,28 +15,28 @@
 #include "Comics/Xkcd.h"
 #include "Comics/DennisTheMenace.h"
 
-Comic *ComicFactory::create(QString id)
+Comic *ComicFactory::create(QString id, QObject *parent)
 {
     if (id == "calvinandhobbes")
-        return new CalvinAndHobbes();
+        return new CalvinAndHobbes(parent);
 
     if (id == "dilbert")
-        return new Dilbert();
+        return new Dilbert(parent);
 
     if (id == "garfield")
-        return new Garfield();
+        return new Garfield(parent);
 
     if (id == "lechat")
-        return new LeChat();
+        return new LeChat(parent);
 
     if (id == "peanuts")
-        return new Peanuts();
+        return new Peanuts(parent);
 
     if (id == "xkcd")
-        return new Xkcd();
+        return new Xkcd(parent);
 
     if (id == "dennisthemenace")
-        return new DennisTheMenace();
+        return new DennisTheMenace(parent);
 
     return NULL;
 }

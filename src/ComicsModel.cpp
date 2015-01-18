@@ -113,13 +113,13 @@ void ComicsModel::loadAll()
 
     beginInsertRows(QModelIndex(), 0, 6);
 
-    m_list.append(ComicFactory::create("calvinandhobbes"));
-    m_list.append(ComicFactory::create("dilbert"));
-    m_list.append(ComicFactory::create("garfield"));
-    m_list.append(ComicFactory::create("lechat"));
-    m_list.append(ComicFactory::create("peanuts"));
-    m_list.append(ComicFactory::create("xkcd"));
-    m_list.append(ComicFactory::create("dennisthemenace"));
+    m_list.append(ComicFactory::create("calvinandhobbes", this));
+    m_list.append(ComicFactory::create("dilbert", this));
+    m_list.append(ComicFactory::create("garfield", this));
+    m_list.append(ComicFactory::create("lechat", this));
+    m_list.append(ComicFactory::create("peanuts", this));
+    m_list.append(ComicFactory::create("xkcd", this));
+    m_list.append(ComicFactory::create("dennisthemenace", this));
 
     if (!favoriteIds.empty()) {
         for (int i = 0; i < m_list.size(); ++i) {
