@@ -24,6 +24,9 @@ OTHER_FILES = \
 
 RESOURCES += $${TARGET}.qrc
 
+QT += \
+    sql
+
 images.files = \
     images/comics \
     images/icons \

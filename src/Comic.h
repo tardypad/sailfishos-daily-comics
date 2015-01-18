@@ -12,9 +12,11 @@
 
 #include <QUrl>
 #include <QLocale>
+#include <QDateTime>
 
 class QNetworkAccessManager;
 class QNetworkReply;
+class ComicDatabaseResource;
 
 class Comic : public QObject
 {
@@ -40,12 +42,17 @@ public:
     bool newStrip() const { return m_newStrip; }
     bool error() const { return m_error; }
     bool fetching() const { return m_fetching; }
+    QDateTime lastStripFetchTime() const { return m_lastStripFetchTime; }
+    QUrl lastStripUrl() const { return m_lastStripUrl; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
+    void setLastStripFetchTime(const QDateTime lastStripFetchTime) { m_lastStripFetchTime = lastStripFetchTime; }
+    void setLastStripUrl(const QUrl lastStripUrl){ m_lastStripUrl = lastStripUrl; }
 
+    void load();
     void fetchCurrentStripUrl();
     void abortFetching();
 
@@ -53,6 +60,9 @@ protected:
     virtual QUrl stripSourceUrl() const = 0;
 
     void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
+
+    ComicDatabaseResource* dbResource() const { return m_dbResource; }
+    void setDbResource(ComicDatabaseResource* dbResource) { m_dbResource = dbResource; }
 
 private slots:
     void parse();
@@ -71,6 +81,7 @@ signals:
     void fetchingChanged(Comic* comic);
 
 protected:
+    ComicDatabaseResource* m_dbResource;
     QUrl m_currentStripUrl;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
@@ -78,6 +89,9 @@ protected:
     bool m_newStrip;
     bool m_error;
     bool m_fetching;
+
+    QDateTime m_lastStripFetchTime;
+    QUrl m_lastStripUrl;
 };
 
 #endif // COMIC_H

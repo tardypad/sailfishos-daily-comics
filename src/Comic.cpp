@@ -12,6 +12,8 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 
+#include "ComicDatabaseResource.h"
+
 Comic::Comic(QObject *parent) :
     QObject(parent),
     m_currentStripUrl(QUrl()),
@@ -22,12 +24,18 @@ Comic::Comic(QObject *parent) :
     m_fetching(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
+    setDbResource(ComicDatabaseResource::instance());
 }
 
 Comic::~Comic()
 {
     delete m_currentReply;
     delete m_networkManager;
+}
+
+void Comic::load()
+{
+    dbResource()->load(this);
 }
 
 void Comic::fetchCurrentStripUrl()
@@ -77,6 +85,10 @@ void Comic::parse()
     setCurrentStripUrl(stripUrl);
     setNewStrip(true);
     setError(false);
+
+    setLastStripFetchTime(QDateTime::currentDateTime());
+    setLastStripUrl(stripUrl);
+    dbResource()->save(this);
 
     emit dataParsed();
 }
