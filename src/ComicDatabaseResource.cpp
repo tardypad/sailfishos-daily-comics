@@ -54,7 +54,8 @@ bool ComicDatabaseResource::load(Comic *comic)
 {
     QSqlQuery query("SELECT time, url FROM " + _comicsTableName + " WHERE id='" + comic->id() + "'");
 
-    query.first();
+    if (!query.first())
+        return false;
 
     QDateTime time = query.value(0).toDateTime();
     QUrl url = query.value(1).toUrl();
