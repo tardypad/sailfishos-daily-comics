@@ -23,19 +23,17 @@ ComicDatabaseResource* ComicDatabaseResource::m_instance = NULL;
 ComicDatabaseResource::ComicDatabaseResource(QObject *parent) :
     QObject(parent),
     m_dbDirPath(""),
-    m_dFilePath("")
+    m_dbFilePath("")
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
-
-    if (!db.isOpen())
-        openDb();
-    checkStructure();
 }
 
 ComicDatabaseResource* ComicDatabaseResource::instance()
 {
     if (!m_instance) {
         m_instance = new ComicDatabaseResource();
+        m_instance->openDb();
+        m_instance->checkStructure();
     }
 
     return m_instance;
@@ -52,16 +50,18 @@ bool ComicDatabaseResource::openDb()
 
 bool ComicDatabaseResource::load(Comic *comic)
 {
-    QSqlQuery query("SELECT time, url FROM " + _comicsTableName + " WHERE id='" + comic->id() + "'");
+    QSqlQuery query("SELECT time, url, favorite FROM " + _comicsTableName +  " WHERE id='" + comic->id() + "'");
 
     if (!query.first())
         return false;
 
     QDateTime time = query.value(0).toDateTime();
-    QUrl url = query.value(1).toUrl();
+    QUrl url       = query.value(1).toUrl();
+    bool favorite  = query.value(2).toBool();
 
     comic->setLastStripFetchTime(time);
     comic->setLastStripUrl(url);
+    comic->setFavorite(favorite);
 
     return true;
 }
@@ -69,14 +69,27 @@ bool ComicDatabaseResource::load(Comic *comic)
 bool ComicDatabaseResource::save(Comic *comic)
 {
     QSqlQuery query(db);
-    query.prepare("REPLACE INTO " + _comicsTableName + "(id, time, url) \n"
-                  "VALUES (:id, :time, :url)");
+    query.prepare("REPLACE INTO " + _comicsTableName + " (id, time, url, favorite) \n"
+                  "VALUES (:id, :time, :url, :favorite)");
 
-    query.bindValue(":time",  comic->lastStripFetchTime());
-    query.bindValue(":url",   comic->lastStripUrl());
-    query.bindValue(":id",    comic->id());
+    query.bindValue(":time",     comic->lastStripFetchTime());
+    query.bindValue(":url",      comic->lastStripUrl());
+    query.bindValue(":id",       comic->id());
+    query.bindValue(":favorite", comic->favorite());
 
     return query.exec();
+}
+
+QStringList ComicDatabaseResource::favoriteIds()
+{
+    QSqlQuery query("SELECT id FROM " + _comicsTableName +  " WHERE favorite <> 0");
+    QStringList favoriteIds;
+
+    while (query.next()) {
+        favoriteIds.append(query.value(0).toString());
+    }
+
+    return favoriteIds;
 }
 
 QString ComicDatabaseResource::dbDirPath()
@@ -89,10 +102,11 @@ QString ComicDatabaseResource::dbDirPath()
 
 QString ComicDatabaseResource::dbFilePath()
 {
-    if (m_dFilePath.isEmpty()) {
-        m_dFilePath = dbDirPath().append(QDir::separator()).append(_databaseName);
+    if (m_dbFilePath.isEmpty()) {
+        m_dbFilePath = dbDirPath().append(QDir::separator()).append(_databaseName);
     }
-    return m_dFilePath;
+
+    return m_dbFilePath;
 }
 
 bool ComicDatabaseResource::createDbFile()
@@ -119,9 +133,10 @@ bool ComicDatabaseResource::createStructure()
         return false;
 
     QSqlQuery query("CREATE TABLE " + _comicsTableName + " (\n"
-                    "id   VARCHAR(50)  PRIMARY KEY,  -- comic id \n"
-                    "time DATETIME     DEFAULT NULL, -- last successful fetch time \n"
-                    "url  VARCHAR(300) DEFAULT NULL  -- last retrieved image url \n"
+                    "id       VARCHAR(50)  PRIMARY KEY,  -- comic id \n"
+                    "time     DATETIME     DEFAULT NULL, -- last successful fetch time \n"
+                    "url      VARCHAR(300) DEFAULT NULL, -- last retrieved image url \n"
+                    "favorite INTEGER(1)   DEFAULT 0     -- 0 if not favorite \n"
                     ")", db);
 
     return query.exec();

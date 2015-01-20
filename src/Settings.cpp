@@ -11,8 +11,6 @@
 
 Settings* Settings::m_instance = NULL;
 
-const QString Settings::_favoritesField = QString("favorites");
-const QStringList Settings::_initialFavoriteIds = QStringList() << "calvinandhobbes" << "peanuts";
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
@@ -34,18 +32,8 @@ Settings::~Settings()
     delete m_settings;
 }
 
-QStringList Settings::favoriteIds()
+void Settings::emitFavoritesChanged()
 {
-    if (!m_settings->contains(_favoritesField)) {
-        return _initialFavoriteIds;
-    }
-
-    return value(_favoritesField).toStringList();
-}
-
-void Settings::saveFavoriteIds(QStringList favoriteIds)
-{
-    setValue(_favoritesField, favoriteIds);
     emit favoritesChanged();
 }
 

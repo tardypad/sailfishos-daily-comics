@@ -25,6 +25,7 @@ public:
     bool openDb();
     bool load(Comic* comic);
     bool save(Comic* comic);
+    QStringList favoriteIds();
 
 private:
     explicit ComicDatabaseResource(QObject *parent = 0);
@@ -38,7 +39,7 @@ private:
     static ComicDatabaseResource* m_instance;
     QSqlDatabase db;
     QString m_dbDirPath;
-    QString m_dFilePath;
+    QString m_dbFilePath;
 };
 
 #endif // COMICDATABASERESOURCE_H

@@ -9,34 +9,34 @@
 
 #include <QDebug>
 
-#include "Settings.h"
 #include "ComicFactory.h"
 #include "Comic.h"
+#include "ComicDatabaseResource.h"
+#include "Settings.h"
 
 FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
     ComicsModel(parent)
 {
-    connect(m_settings, SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
+    connect(Settings::instance(), SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
 }
 
-void FavoriteComicsModel::loadAll(bool full)
+void FavoriteComicsModel::loadAll()
 {
     clear();
 
-    QStringList favoriteIds = m_settings->favoriteIds();
+    QStringList favoriteIds = dbResource->favoriteIds();
+
+    Comic *comic;
 
     beginInsertRows(QModelIndex(), 0, favoriteIds.size() - 1);
 
     for (int i = 0; i < favoriteIds.size(); ++i) {
-        m_list.append(ComicFactory::create(favoriteIds.at(i), this));
+        comic = ComicFactory::create(favoriteIds.at(i), this);
+        comic->load();
+        m_list.append(comic);
     }
 
-    if (full) {
-        for (int i = 0; i < m_list.size(); ++i) {
-            m_list.at(i)->load();
-        }
-        initComicConnections();
-    }
+    initComicConnections();
 
     endInsertRows();
 

@@ -16,14 +16,10 @@ class Settings : public QObject
 {
     Q_OBJECT
 
-    static const QString _favoritesField;
-    static const QStringList _initialFavoriteIds;
-
 public:
     static Settings* instance();
     ~Settings();
-    Q_INVOKABLE QStringList favoriteIds();
-    Q_INVOKABLE void saveFavoriteIds(QStringList favoriteIds);
+    Q_INVOKABLE void emitFavoritesChanged();
 
 protected:
     QVariant value(const QString &key);

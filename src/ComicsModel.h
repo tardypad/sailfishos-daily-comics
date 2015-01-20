@@ -11,7 +11,7 @@
 #include <QAbstractListModel>
 
 class Comic;
-class Settings;
+class ComicDatabaseResource;
 
 class ComicsModel : public QAbstractListModel
 {
@@ -46,9 +46,9 @@ public:
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     Q_INVOKABLE void setFavorite(int row, bool favorite);
-    Q_INVOKABLE QStringList favoriteIds();
     Q_INVOKABLE void favoriteAll(bool favorite = true);
     Q_INVOKABLE void unfavoriteAll();
+    Q_INVOKABLE void saveAll();
     Q_INVOKABLE Comic *comicAt(int row);
 
     int count() const;
@@ -56,7 +56,7 @@ public:
     int newCount() const;
 
 public slots:
-    Q_INVOKABLE virtual void loadAll(bool full = false);
+    Q_INVOKABLE virtual void loadAll();
     Q_INVOKABLE void fetchAll();
 
 protected:
@@ -76,7 +76,7 @@ signals:
 
 protected:
     QList<Comic*> m_list;
-    Settings *m_settings;
+    ComicDatabaseResource* dbResource;
 };
 
 #endif // COMICSMODEL_H

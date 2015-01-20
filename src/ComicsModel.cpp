@@ -13,13 +13,13 @@
 
 #include "Comic.h"
 #include "ComicFactory.h"
-#include "Settings.h"
+#include "ComicDatabaseResource.h"
 
 ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
     m_list(QList<Comic*>())
 {
-    m_settings = Settings::instance();
+    dbResource = ComicDatabaseResource::instance();
 
     connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
     connect(this, SIGNAL(modelReset()), this, SIGNAL(favoritesCountChanged()));
@@ -105,34 +105,27 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void ComicsModel::loadAll(bool full)
+void ComicsModel::loadAll()
 {
     clear();
 
-    QStringList favoriteIds = m_settings->favoriteIds();
+    QStringList comicsList = QStringList()
+            << "calvinandhobbes"
+            << "dilbert"
+            << "garfield"
+            << "lechat"
+            << "peanuts"
+            << "xkcd"
+            << "dennisthemenace";
 
-    beginInsertRows(QModelIndex(), 0, 6);
+    Comic *comic;
 
-    m_list.append(ComicFactory::create("calvinandhobbes", this));
-    m_list.append(ComicFactory::create("dilbert", this));
-    m_list.append(ComicFactory::create("garfield", this));
-    m_list.append(ComicFactory::create("lechat", this));
-    m_list.append(ComicFactory::create("peanuts", this));
-    m_list.append(ComicFactory::create("xkcd", this));
-    m_list.append(ComicFactory::create("dennisthemenace", this));
+    beginInsertRows(QModelIndex(), 0, comicsList.count() - 1);
 
-    if (!favoriteIds.empty()) {
-        for (int i = 0; i < m_list.size(); ++i) {
-            if (favoriteIds.contains(m_list.at(i)->id()))
-                m_list.at(i)->setFavorite(true);
-        }
-    }
-
-    if (full) {
-        for (int i = 0; i < m_list.size(); ++i) {
-            m_list.at(i)->load();
-        }
-        initComicConnections();
+    for (int i = 0; i < comicsList.size(); ++i) {
+        comic = ComicFactory::create(comicsList.at(i), this);
+        comic->load();
+        m_list.append(comic);
     }
 
     endInsertRows();
@@ -202,18 +195,6 @@ void ComicsModel::setFavorite(int row, bool favorite)
     emit favoritesCountChanged();
 }
 
-QStringList ComicsModel::favoriteIds()
-{
-    QStringList favoriteIds;
-
-    for(int row = 0; row < m_list.size(); ++row) {
-      if (m_list.at(row)->favorite())
-          favoriteIds.append(m_list.at(row)->id());
-    }
-
-    return favoriteIds;
-}
-
 void ComicsModel::favoriteAll(bool favorite)
 {
     for(int row = 0; row < m_list.size(); ++row) {
@@ -224,6 +205,13 @@ void ComicsModel::favoriteAll(bool favorite)
 void ComicsModel::unfavoriteAll()
 {
     favoriteAll(false);
+}
+
+void ComicsModel::saveAll()
+{
+    for(int row = 0; row < m_list.size(); ++row) {
+        m_list.at(row)->save();
+    }
 }
 
 Comic *ComicsModel::comicAt(int row)

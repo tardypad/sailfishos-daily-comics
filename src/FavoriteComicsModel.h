@@ -16,11 +16,11 @@ class FavoriteComicsModel : public ComicsModel
 public:
     explicit FavoriteComicsModel(QObject *parent = 0);
 
-public slots:
-    Q_INVOKABLE virtual void loadAll(bool full = false);
-
 signals:
     void favoritesChanged();
+
+public slots:
+    Q_INVOKABLE virtual void loadAll();
 };
 
 #endif // FAVORITECOMICSMODEL_H

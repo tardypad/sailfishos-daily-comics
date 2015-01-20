@@ -21,10 +21,12 @@ Comic::Comic(QObject *parent) :
     m_favorite(false),
     m_newStrip(false),
     m_error(false),
-    m_fetching(false)
+    m_fetching(false),
+    m_lastStripFetchTime(QDateTime()),
+    m_lastStripUrl(QUrl())
 {
     m_networkManager = new QNetworkAccessManager(this);
-    setDbResource(ComicDatabaseResource::instance());
+    dbResource = ComicDatabaseResource::instance();
 }
 
 Comic::~Comic()
@@ -35,7 +37,12 @@ Comic::~Comic()
 
 void Comic::load()
 {
-    dbResource()->load(this);
+    dbResource->load(this);
+}
+
+void Comic::save()
+{
+    dbResource->save(this);
 }
 
 void Comic::fetchCurrentStripUrl()
@@ -88,7 +95,7 @@ void Comic::parse()
 
     setLastStripFetchTime(QDateTime::currentDateTime());
     setLastStripUrl(stripUrl);
-    dbResource()->save(this);
+    save();
 
     emit dataParsed();
 }

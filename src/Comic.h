@@ -53,6 +53,8 @@ public:
     void setLastStripUrl(const QUrl lastStripUrl){ m_lastStripUrl = lastStripUrl; }
 
     void load();
+    void save();
+
     void fetchCurrentStripUrl();
     void abortFetching();
 
@@ -60,9 +62,6 @@ protected:
     virtual QUrl stripSourceUrl() const = 0;
 
     void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
-
-    ComicDatabaseResource* dbResource() const { return m_dbResource; }
-    void setDbResource(ComicDatabaseResource* dbResource) { m_dbResource = dbResource; }
 
 private slots:
     void parse();
@@ -81,7 +80,7 @@ signals:
     void fetchingChanged(Comic* comic);
 
 protected:
-    ComicDatabaseResource* m_dbResource;
+    ComicDatabaseResource* dbResource;
     QUrl m_currentStripUrl;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
@@ -89,7 +88,6 @@ protected:
     bool m_newStrip;
     bool m_error;
     bool m_fetching;
-
     QDateTime m_lastStripFetchTime;
     QUrl m_lastStripUrl;
 };
