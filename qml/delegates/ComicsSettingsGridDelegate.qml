@@ -46,7 +46,7 @@ BackgroundItem {
         }
     }
 
-    onClicked: comicsModel.setFavorite(index, !favorite)
+    onClicked: gridView._setFavorite(index, !favorite)
 
     onPressAndHold: gridView._showComicInfo(index)
 }

@@ -29,19 +29,19 @@ Page {
             title: "Select favorites"
         }
         delegate: ComicsSettingsGridDelegate { }
-        model: comicsModel
+        model: comicsModelProxy
 
         PullDownMenu {
             MenuItem {
                 text: "Clear all"
-                onClicked: comicsModel.unfavoriteAll()
-                visible: comicsModel.favoritesCount > 0
+                onClicked: settingsComicsModel.unfavoriteAll()
+                visible: settingsComicsModel.favoritesCount > 0
 
             }
             MenuItem {
                 text: "Select all"
-                onClicked: comicsModel.favoriteAll()
-                visible: comicsModel.favoritesCount !== comicsModel.count
+                onClicked: settingsComicsModel.favoriteAll()
+                visible: settingsComicsModel.favoritesCount !== settingsComicsModel.count
             }
         }
 
@@ -49,18 +49,28 @@ Page {
             if (infoPanelLoader.status === Loader.Null) {
                 infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
                 infoPanelLoader.item.parent = comicPage
-                infoPanelLoader.item.comicsModel = comicsModel
+                infoPanelLoader.item.comicsModel = settingsComicsModel
             }
-            infoPanelLoader.item.index = index
+            infoPanelLoader.item.index = comicsModelProxy.sourceRow(index)
             infoPanelLoader.item.showComicInfo()
+        }
+
+        function _setFavorite(index, favorite) {
+            settingsComicsModel.setFavorite(comicsModelProxy.sourceRow(index), favorite)
         }
 
         VerticalScrollDecorator { flickable: gridView }
     }
 
     ComicsModel {
-        id: comicsModel
-        Component.onCompleted: comicsModel.loadAll()
+        id: settingsComicsModel
+        Component.onCompleted: settingsComicsModel.loadAll()
+    }
+
+    ComicsModelProxy {
+        id: comicsModelProxy
+        comicsModel: settingsComicsModel
+        sortRole: ComicsModel.NameRole
     }
 
     Loader {
@@ -69,7 +79,7 @@ Page {
 
     onStatusChanged: {
         if (status === PageStatus.Deactivating) {
-            comicsModel.saveAll()
+            settingsComicsModel.saveAll()
             _settings.emitFavoritesChanged();
         }
     }
