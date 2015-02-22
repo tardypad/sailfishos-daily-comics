@@ -28,7 +28,7 @@ Page {
             title: "Daily Comics"
         }
         delegate: ComicsGridDelegate { }
-        model: comicsModel
+        model: comicsModelProxy
 
         Rectangle {
             property bool active: gridView.currentItem && gridView.currentItem.down
@@ -47,9 +47,9 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
             }
             MenuItem {
-                text: comicsModel.newCount > 0 ? "Read all new comics" : "No new comic"
-                onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": comicsModel})
-                enabled: comicsModel.newCount > 0
+                text: favoriteComicsModel.newCount > 0 ? "Read all new comics" : "No new comic"
+                onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": favoriteComicsModel})
+                enabled: favoriteComicsModel.newCount > 0
             }
         }
 
@@ -69,23 +69,32 @@ Page {
         VerticalScrollDecorator { flickable: gridView }
 
         function _goToComicPage(index) {
-            pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {"index": index, "comicsModel": comicsModel})
+            pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {
+                               "index": comicsModelProxy.sourceRow(index),
+                               "comicsModel": favoriteComicsModel
+                           })
         }
     }
 
     FavoriteComicsModel {
-        id: comicsModel
+        id: favoriteComicsModel
         Component.onCompleted: {
-            comicsModel.loadAll()
-            comicsModel.fetchAll()
+            favoriteComicsModel.loadAll()
+            favoriteComicsModel.fetchAll()
         }
     }
 
+    ComicsModelProxy {
+        id: comicsModelProxy
+        comicsModel: favoriteComicsModel
+        sortRole: ComicsModel.NameRole
+    }
+
     Connections {
-        target: comicsModel
+        target: favoriteComicsModel
         onFavoritesChanged: {
-            comicsModel.loadAll()
-            comicsModel.fetchAll()
+            favoriteComicsModel.loadAll()
+            favoriteComicsModel.fetchAll()
         }
     }
 

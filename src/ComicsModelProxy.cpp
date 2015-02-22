@@ -32,4 +32,10 @@ void ComicsModelProxy::setComicsModel(ComicsModel *comicsModel)
 {
     setSourceModel((QAbstractItemModel*) comicsModel);
     m_comicsModel = comicsModel;
+    sort(0);
+}
+
+int ComicsModelProxy::sourceRow(int row)
+{
+    return mapToSource(index(row, 0)).row();
 }

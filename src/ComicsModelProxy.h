@@ -21,6 +21,7 @@ class ComicsModelProxy : public QSortFilterProxyModel
 public:
     explicit ComicsModelProxy(QObject *parent = 0);
     virtual bool filterAcceptsRow (int source_row, const QModelIndex& source_parent) const;
+    Q_INVOKABLE int sourceRow(int row);
 
     ComicsModel* comicsModel() const { return m_comicsModel; }
     void setComicsModel(ComicsModel* comicsModel);
