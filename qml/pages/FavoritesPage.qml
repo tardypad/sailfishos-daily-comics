@@ -50,6 +50,7 @@ Page {
                 text: favoriteComicsModel.newCount > 0 ? "Read all new comics" : "No new comic"
                 onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": favoriteComicsModel})
                 enabled: favoriteComicsModel.newCount > 0
+                visible: favoriteComicsModel.count > 0
             }
         }
 
