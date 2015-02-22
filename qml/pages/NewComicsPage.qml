@@ -41,5 +41,6 @@ Page {
     ComicsModelProxy {
         id: comicsModelProxy
         filterRole: ComicsModel.NewStripRole
+        sortRole: ComicsModel.NameRole
     }
 }
