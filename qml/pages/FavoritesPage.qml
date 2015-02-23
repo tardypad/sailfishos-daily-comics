@@ -11,6 +11,7 @@ import Sailfish.Silica 1.0
 import harbour.dailycomics.Comics 1.0
 
 import "../delegates"
+import "../utils"
 
 Page {
 
@@ -75,6 +76,16 @@ Page {
                                "comicsModel": favoriteComicsModel
                            })
         }
+    }
+
+    ProgressInfoBar {
+        label: "Fetching comic strips"
+        open: favoriteComicsModel.fetchedCount < favoriteComicsModel.count
+        minimumValue: 0
+        maximumValue: favoriteComicsModel.count
+        value: favoriteComicsModel.fetchedCount
+
+        anchors.bottom: parent.bottom
     }
 
     FavoriteComicsModel {

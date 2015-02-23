@@ -24,6 +24,7 @@ ComicsModel::ComicsModel(QObject *parent) :
     connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
     connect(this, SIGNAL(modelReset()), this, SIGNAL(favoritesCountChanged()));
     connect(this, SIGNAL(modelReset()), this, SIGNAL(newCountChanged()));
+    connect(this, SIGNAL(modelReset()), this, SIGNAL(fetchedCountChanged()));
 }
 
 ComicsModel::~ComicsModel()
@@ -176,6 +177,7 @@ void ComicsModel::emitFetchingChanged(Comic *comic)
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
             emitDataChanged(row, FetchingRole);
+            emit fetchedCountChanged();
             return;
         }
     }
@@ -249,4 +251,16 @@ int ComicsModel::newCount() const
     }
 
     return newCount;
+}
+
+int ComicsModel::fetchedCount() const
+{
+    int fetchedCount = 0;
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (!m_list.at(row)->fetching())
+          fetchedCount++;
+    }
+
+    return fetchedCount;
 }

@@ -19,6 +19,7 @@ class ComicsModel : public QAbstractListModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
     Q_PROPERTY(int favoritesCount READ favoritesCount NOTIFY favoritesCountChanged)
     Q_PROPERTY(int newCount READ newCount NOTIFY newCountChanged)
+    Q_PROPERTY(int fetchedCount READ fetchedCount NOTIFY fetchedCountChanged)
     Q_ENUMS(Roles)
 
 public:
@@ -54,6 +55,7 @@ public:
     int count() const;
     int favoritesCount() const;
     int newCount() const;
+    int fetchedCount() const;
 
 public slots:
     Q_INVOKABLE virtual void loadAll();
@@ -73,6 +75,7 @@ signals:
     void countChanged();
     void favoritesCountChanged();
     void newCountChanged();
+    void fetchedCountChanged();
 
 protected:
     QList<Comic*> m_list;
