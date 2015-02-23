@@ -84,7 +84,7 @@ Page {
 
     Component.onCompleted: {
         comic.setComic(comicsModel.comicAt(index))
-        if (!comic.currentStripUrl)
+        if (comic.currentStripUrl == '')
             comic.fetch()
     }
 }
