@@ -14,12 +14,14 @@
 #include "Comic.h"
 #include "ComicFactory.h"
 #include "ComicDatabaseResource.h"
+#include "Settings.h"
 
 ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
     m_list(QList<Comic*>())
 {
     dbResource = ComicDatabaseResource::instance();
+    settings   = Settings::instance();
 
     connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
     connect(this, SIGNAL(modelReset()), this, SIGNAL(favoritesCountChanged()));
@@ -110,14 +112,7 @@ void ComicsModel::loadAll()
 {
     clear();
 
-    QStringList comicsList = QStringList()
-            << "calvinandhobbes"
-            << "dilbert"
-            << "garfield"
-            << "lechat"
-            << "peanuts"
-            << "xkcd"
-            << "dennisthemenace";
+    QStringList comicsList = settings->fullComicsList();
 
     Comic *comic;
 

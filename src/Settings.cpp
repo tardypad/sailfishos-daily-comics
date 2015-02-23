@@ -37,6 +37,18 @@ void Settings::emitFavoritesChanged()
     emit favoritesChanged();
 }
 
+QStringList Settings::fullComicsList()
+{
+    return QStringList()
+        << "calvinandhobbes"
+        << "dilbert"
+        << "garfield"
+        << "lechat"
+        << "peanuts"
+        << "xkcd"
+        << "dennisthemenace";
+}
+
 QVariant Settings::value(const QString &key)
 {
     return m_settings->value(key);

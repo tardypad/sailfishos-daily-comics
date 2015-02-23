@@ -12,6 +12,7 @@
 
 class Comic;
 class ComicDatabaseResource;
+class Settings;
 
 class ComicsModel : public QAbstractListModel
 {
@@ -80,6 +81,7 @@ signals:
 protected:
     QList<Comic*> m_list;
     ComicDatabaseResource* dbResource;
+    Settings* settings;
 };
 
 #endif // COMICSMODEL_H

@@ -20,6 +20,7 @@ public:
     static Settings* instance();
     ~Settings();
     Q_INVOKABLE void emitFavoritesChanged();
+    QStringList fullComicsList();
 
 protected:
     QVariant value(const QString &key);

@@ -17,7 +17,7 @@
 FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
     ComicsModel(parent)
 {
-    connect(Settings::instance(), SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
+    connect(settings, SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
 }
 
 void FavoriteComicsModel::loadAll()
