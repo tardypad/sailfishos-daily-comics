@@ -30,7 +30,7 @@ QT += \
 images.files = \
     images/comics \
     images/icons \
-    $$files(images/*.jpg)
+    $$files(images/*.png)
 
 images.path = /usr/share/$${TARGET}/images
 
