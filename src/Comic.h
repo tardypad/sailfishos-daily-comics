@@ -78,6 +78,7 @@ signals:
     void fetchingChanged(Comic* comic);
 
 protected:
+    static const int _minFetchDelay;
     ComicDatabaseResource* dbResource;
     QUrl m_currentStripUrl;
     QNetworkAccessManager* m_networkManager;

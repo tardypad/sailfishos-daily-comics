@@ -14,6 +14,8 @@
 
 #include "ComicDatabaseResource.h"
 
+const int Comic::_minFetchDelay = 1800;
+
 Comic::Comic(QObject *parent) :
     QObject(parent),
     m_currentStripUrl(QUrl()),
@@ -46,6 +48,10 @@ void Comic::save()
 
 void Comic::fetchCurrentStripUrl()
 {
+    if (!lastStripFetchTime().isNull() &&
+        QDateTime::currentDateTime().secsTo(lastStripFetchTime()) > -_minFetchDelay)
+        return;
+
     abortFetching();
     delete m_currentReply;
     m_currentReply = NULL;
