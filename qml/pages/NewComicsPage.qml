@@ -35,6 +35,16 @@ Page {
                 size: BusyIndicatorSize.Large
                 anchors.centerIn: parent
             }
+
+            onStatusChanged: {
+                if (status === Image.Ready && index === slideshowView.currentIndex)
+                    comicsModel.read(comicsModelProxy.sourceRow(index))
+            }
+        }
+
+        onCurrentIndexChanged: {
+            if (currentItem.status === Image.Ready)
+                comicsModel.read(comicsModelProxy.sourceRow(currentIndex))
         }
     }
 

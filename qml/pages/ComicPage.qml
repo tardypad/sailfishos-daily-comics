@@ -42,6 +42,11 @@ Page {
                 size: BusyIndicatorSize.Large
                 anchors.centerIn: parent
             }
+
+            onStatusChanged: {
+                if (status === Image.Ready)
+                    comic.read()
+            }
         }
 
         LoadingIndicator {

@@ -192,6 +192,11 @@ void ComicsModel::setFavorite(int row, bool favorite)
     emit favoritesCountChanged();
 }
 
+void ComicsModel::read(int row)
+{
+    m_list.at(row)->read();
+}
+
 void ComicsModel::favoriteAll(bool favorite)
 {
     for(int row = 0; row < m_list.size(); ++row) {

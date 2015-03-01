@@ -12,6 +12,8 @@
 ComicsModelProxy::ComicsModelProxy(QObject *parent) :
     QSortFilterProxyModel(parent)
 {
+    setDynamicSortFilter(false);
+
     connect(this, SIGNAL(sourceModelChanged()), this, SIGNAL(comicsModelChanged()));
 }
 

@@ -22,8 +22,7 @@ Comic::Comic(QObject *parent) :
     m_newStrip(false),
     m_error(false),
     m_fetching(false),
-    m_lastStripFetchTime(QDateTime()),
-    m_lastStripUrl(QUrl())
+    m_lastStripFetchTime(QDateTime())
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
@@ -76,6 +75,12 @@ void Comic::abortFetching()
     }
 }
 
+void Comic::read()
+{
+    setNewStrip(false);
+    save();
+}
+
 void Comic::parse()
 {
     if (m_currentReply->error() != QNetworkReply::NoError)
@@ -89,12 +94,14 @@ void Comic::parse()
         return;
     }
 
-    setCurrentStripUrl(stripUrl);
-    setNewStrip(true);
     setError(false);
 
+    if (stripUrl != currentStripUrl())
+        setNewStrip(true);
+
+    setCurrentStripUrl(stripUrl);
     setLastStripFetchTime(QDateTime::currentDateTime());
-    setLastStripUrl(stripUrl);
+
     save();
 
     emit dataParsed();

@@ -48,6 +48,7 @@ public:
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     Q_INVOKABLE void setFavorite(int row, bool favorite);
+    Q_INVOKABLE void read(int row);
     Q_INVOKABLE void favoriteAll(bool favorite = true);
     Q_INVOKABLE void unfavoriteAll();
     Q_INVOKABLE void saveAll();

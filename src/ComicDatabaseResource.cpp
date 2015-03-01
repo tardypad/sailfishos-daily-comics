@@ -50,17 +50,19 @@ bool ComicDatabaseResource::openDb()
 
 bool ComicDatabaseResource::load(Comic *comic)
 {
-    QSqlQuery query("SELECT time, url, favorite FROM " + _comicsTableName +  " WHERE id='" + comic->id() + "'");
+    QSqlQuery query("SELECT time, url, read, favorite FROM " + _comicsTableName +  " WHERE id='" + comic->id() + "'");
 
     if (!query.first())
         return false;
 
     QDateTime time = query.value(0).toDateTime();
     QUrl url       = query.value(1).toUrl();
-    bool favorite  = query.value(2).toBool();
+    bool read      = query.value(2).toBool();
+    bool favorite  = query.value(3).toBool();
 
     comic->setLastStripFetchTime(time);
-    comic->setLastStripUrl(url);
+    comic->setCurrentStripUrl(url);
+    comic->setNewStrip(!read);
     comic->setFavorite(favorite);
 
     return true;
@@ -69,11 +71,12 @@ bool ComicDatabaseResource::load(Comic *comic)
 bool ComicDatabaseResource::save(Comic *comic)
 {
     QSqlQuery query(db);
-    query.prepare("REPLACE INTO " + _comicsTableName + " (id, time, url, favorite) \n"
-                  "VALUES (:id, :time, :url, :favorite)");
+    query.prepare("REPLACE INTO " + _comicsTableName + " (id, time, url, read, favorite) \n"
+                  "VALUES (:id, :time, :url, :read, :favorite)");
 
     query.bindValue(":time",     comic->lastStripFetchTime());
-    query.bindValue(":url",      comic->lastStripUrl());
+    query.bindValue(":url",      comic->currentStripUrl());
+    query.bindValue(":read",     !comic->newStrip());
     query.bindValue(":id",       comic->id());
     query.bindValue(":favorite", comic->favorite());
 
@@ -136,6 +139,7 @@ bool ComicDatabaseResource::createStructure()
                     "id       VARCHAR(50)  PRIMARY KEY,  -- comic id \n"
                     "time     DATETIME     DEFAULT NULL, -- last successful fetch time \n"
                     "url      VARCHAR(300) DEFAULT NULL, -- last retrieved image url \n"
+                    "read     INTEGER(1)   DEFAULT 0,    -- 0 if not read \n"
                     "favorite INTEGER(1)   DEFAULT 0     -- 0 if not favorite \n"
                     ")", db);
 

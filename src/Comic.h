@@ -43,25 +43,23 @@ public:
     bool error() const { return m_error; }
     bool fetching() const { return m_fetching; }
     QDateTime lastStripFetchTime() const { return m_lastStripFetchTime; }
-    QUrl lastStripUrl() const { return m_lastStripUrl; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
     void setLastStripFetchTime(const QDateTime lastStripFetchTime) { m_lastStripFetchTime = lastStripFetchTime; }
-    void setLastStripUrl(const QUrl lastStripUrl){ m_lastStripUrl = lastStripUrl; }
+    void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
 
     void load();
     void save();
 
     void fetchCurrentStripUrl();
     void abortFetching();
+    void read();
 
 protected:
     virtual QUrl stripSourceUrl() const = 0;
-
-    void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
 
 private slots:
     void parse();
@@ -89,7 +87,6 @@ protected:
     bool m_error;
     bool m_fetching;
     QDateTime m_lastStripFetchTime;
-    QUrl m_lastStripUrl;
 };
 
 #endif // COMIC_H

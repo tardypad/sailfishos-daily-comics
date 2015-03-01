@@ -99,3 +99,10 @@ void ComicProxy::abortFetching()
         m_comic->abortFetching();
     }
 }
+
+void ComicProxy::read()
+{
+    if (m_comic) {
+        m_comic->read();
+    }
+}
