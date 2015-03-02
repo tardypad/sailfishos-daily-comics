@@ -60,8 +60,8 @@ bool ComicDatabaseResource::load(Comic *comic)
     bool read      = query.value(2).toBool();
     bool favorite  = query.value(3).toBool();
 
-    comic->setLastStripFetchTime(time);
-    comic->setCurrentStripUrl(url);
+    comic->setFetchTime(time);
+    comic->setStripUrl(url);
     comic->setNewStrip(!read);
     comic->setFavorite(favorite);
 
@@ -74,8 +74,8 @@ bool ComicDatabaseResource::save(Comic *comic)
     query.prepare("REPLACE INTO " + _comicsTableName + " (id, time, url, read, favorite) \n"
                   "VALUES (:id, :time, :url, :read, :favorite)");
 
-    query.bindValue(":time",     comic->lastStripFetchTime());
-    query.bindValue(":url",      comic->currentStripUrl());
+    query.bindValue(":time",     comic->fetchTime());
+    query.bindValue(":url",      comic->stripUrl());
     query.bindValue(":read",     !comic->newStrip());
     query.bindValue(":id",       comic->id());
     query.bindValue(":favorite", comic->favorite());

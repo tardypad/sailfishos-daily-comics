@@ -37,24 +37,24 @@ public:
     virtual QDate endDate() const = 0;
     virtual QUrl extractStripUrl(QByteArray data) = 0;
 
-    QUrl currentStripUrl() const { return m_currentStripUrl; }
+    QUrl stripUrl() const { return m_stripUrl; }
     bool favorite() const { return m_favorite; }
     bool newStrip() const { return m_newStrip; }
     bool error() const { return m_error; }
     bool fetching() const { return m_fetching; }
-    QDateTime lastStripFetchTime() const { return m_lastStripFetchTime; }
+    QDateTime fetchTime() const { return m_fetchTime; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; }
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
-    void setLastStripFetchTime(const QDateTime lastStripFetchTime) { m_lastStripFetchTime = lastStripFetchTime; }
-    void setCurrentStripUrl(const QUrl currentStripUrl) { m_currentStripUrl = currentStripUrl; }
+    void setFetchTime(const QDateTime fetchTime) { m_fetchTime = fetchTime; }
+    void setStripUrl(const QUrl stripUrl) { m_stripUrl = stripUrl; }
 
     void load();
     void save();
 
-    void fetchCurrentStripUrl();
+    void fetchStripUrl();
     void abortFetching();
     void read();
 
@@ -80,14 +80,14 @@ signals:
 protected:
     static const int _minFetchDelay;
     ComicDatabaseResource* dbResource;
-    QUrl m_currentStripUrl;
+    QUrl m_stripUrl;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     bool m_favorite;
     bool m_newStrip;
     bool m_error;
     bool m_fetching;
-    QDateTime m_lastStripFetchTime;
+    QDateTime m_fetchTime;
 };
 
 #endif // COMIC_H

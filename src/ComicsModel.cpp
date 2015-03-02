@@ -94,7 +94,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     case EndDateRole:
         return m_list.at(index.row())->endDate();
     case ImageRole:
-        return m_list.at(index.row())->currentStripUrl();
+        return m_list.at(index.row())->stripUrl();
     case FavoriteRole:
         return m_list.at(index.row())->favorite();
     case NewStripRole:
@@ -181,7 +181,7 @@ void ComicsModel::emitFetchingChanged(Comic *comic)
 void ComicsModel::fetchAll()
 {
     for(int row = 0; row < m_list.size(); ++row) {
-        m_list.at(row)->fetchCurrentStripUrl();
+        m_list.at(row)->fetchStripUrl();
     }
 }
 

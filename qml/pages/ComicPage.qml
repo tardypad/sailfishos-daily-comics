@@ -30,7 +30,7 @@ Page {
         anchors.fill: parent
 
         Image {
-            source: comic.currentStripUrl
+            source: comic.stripUrl
             fillMode: Image.PreserveAspectFit
             smooth: true
             clip: true
@@ -89,7 +89,7 @@ Page {
 
     Component.onCompleted: {
         comic.setComic(comicsModel.comicAt(index))
-        if (comic.currentStripUrl == '')
+        if (comic.stripUrl == '')
             comic.fetch()
     }
 }

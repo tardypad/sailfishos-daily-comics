@@ -21,7 +21,7 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(startDateChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(endDateChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(currentStripUrlChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(stripUrlChanged()));
 }
 
 QString ComicProxy::id() const
@@ -64,9 +64,9 @@ QDate ComicProxy::endDate() const
     return m_comic ? m_comic->endDate() : QDate();
 }
 
-QUrl ComicProxy::currentStripUrl()
+QUrl ComicProxy::stripUrl()
 {
-    return m_comic ? m_comic->currentStripUrl() : QUrl();
+    return m_comic ? m_comic->stripUrl() : QUrl();
 }
 
 void ComicProxy::setComic(Comic *comic)
@@ -83,13 +83,13 @@ void ComicProxy::setComic(Comic *comic)
     connect(m_comic, SIGNAL(networkError()), this, SIGNAL(networkError()));
     connect(m_comic, SIGNAL(parsingError()), this, SIGNAL(parsingError()));
     connect(m_comic, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_comic, SIGNAL(dataParsed()), this, SIGNAL(currentStripUrlChanged()));
+    connect(m_comic, SIGNAL(dataParsed()), this, SIGNAL(stripUrlChanged()));
 }
 
 void ComicProxy::fetch()
 {
     if (m_comic) {
-        m_comic->fetchCurrentStripUrl();
+        m_comic->fetchStripUrl();
     }
 }
 

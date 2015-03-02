@@ -18,13 +18,13 @@ const int Comic::_minFetchDelay = 1800;
 
 Comic::Comic(QObject *parent) :
     QObject(parent),
-    m_currentStripUrl(QUrl()),
+    m_stripUrl(QUrl()),
     m_currentReply(NULL),
     m_favorite(false),
     m_newStrip(false),
     m_error(false),
     m_fetching(false),
-    m_lastStripFetchTime(QDateTime())
+    m_fetchTime(QDateTime())
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
@@ -46,10 +46,10 @@ void Comic::save()
     dbResource->save(this);
 }
 
-void Comic::fetchCurrentStripUrl()
+void Comic::fetchStripUrl()
 {
-    if (!lastStripFetchTime().isNull() &&
-        QDateTime::currentDateTime().secsTo(lastStripFetchTime()) > -_minFetchDelay)
+    if (!fetchTime().isNull() &&
+        QDateTime::currentDateTime().secsTo(fetchTime()) > -_minFetchDelay)
         return;
 
     abortFetching();
@@ -93,20 +93,20 @@ void Comic::parse()
         return;
 
     QByteArray data = m_currentReply->readAll();
-    QUrl stripUrl = extractStripUrl(data);
+    QUrl extractedStripUrl = extractStripUrl(data);
 
-    if (!stripUrl.isValid()) {
+    if (!extractedStripUrl.isValid()) {
         emit parsingError();
         return;
     }
 
     setError(false);
 
-    if (stripUrl != currentStripUrl())
+    if (extractedStripUrl != stripUrl())
         setNewStrip(true);
 
-    setCurrentStripUrl(stripUrl);
-    setLastStripFetchTime(QDateTime::currentDateTime());
+    setStripUrl(extractedStripUrl);
+    setFetchTime(QDateTime::currentDateTime());
 
     save();
 

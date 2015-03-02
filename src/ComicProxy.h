@@ -27,7 +27,7 @@ class ComicProxy : public QObject
     Q_PROPERTY(QString language READ language NOTIFY languageChanged)
     Q_PROPERTY(QDate startDate READ startDate NOTIFY startDateChanged)
     Q_PROPERTY(QDate endDate READ endDate NOTIFY endDateChanged)
-    Q_PROPERTY(QUrl currentStripUrl READ currentStripUrl NOTIFY currentStripUrlChanged)
+    Q_PROPERTY(QUrl stripUrl READ stripUrl NOTIFY stripUrlChanged)
 
 public:
     explicit ComicProxy(QObject *parent = 0);
@@ -40,7 +40,7 @@ public:
     QString language() const;
     QDate startDate() const;
     QDate endDate() const;
-    QUrl currentStripUrl();
+    QUrl stripUrl();
 
     Q_INVOKABLE void setComic(Comic* comic);
 
@@ -57,7 +57,7 @@ signals:
     void languageChanged();
     void startDateChanged();
     void endDateChanged();
-    void currentStripUrlChanged();
+    void stripUrlChanged();
 
     void fetchStarted();
     void dataParsed();
