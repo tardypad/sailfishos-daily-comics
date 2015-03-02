@@ -10,9 +10,22 @@ import Sailfish.Silica 1.0
 
 CoverBackground {
 
-    Label {
+    Column {
+        spacing: Theme.paddingLarge
+
         anchors.centerIn: parent
-        text: "Daily Comics"
+
+        Label {
+            text: "Daily Comics"
+            color: Theme.highlightColor
+        }
+
+        Image {
+            fillMode: Image.PreserveAspectFit
+            source: "../../images/cover.png"
+            opacity: 0.6
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
     }
 
 }
