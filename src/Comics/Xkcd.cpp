@@ -39,5 +39,5 @@ QUrl Xkcd::extractStripUrl(QByteArray data)
 
     QString src = match.captured(1);
 
-    return QUrl(src);
+    return QUrl("http:" + src);
 }
