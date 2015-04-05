@@ -19,7 +19,7 @@ Garfield::Garfield(QObject *parent) :
 const QString Garfield::_id                 = QString("garfield");
 const QString Garfield::_name               = QString("Garfield");
 const QColor Garfield::_color               = QColor(236, 197, 57);
-const QString Garfield::_author             = QString("Jim Davis");
+const QStringList Garfield::_authors        = QStringList("Jim Davis");
 const QUrl Garfield::_homepage              = QUrl("http://garfield.com/");
 const QLocale::Country Garfield::_country   = QLocale::UnitedStates;
 const QLocale::Language Garfield::_language = QLocale::English;

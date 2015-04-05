@@ -15,7 +15,7 @@ ComicProxy::ComicProxy(QObject *parent) :
     m_comic(NULL)
 {
     connect(this, SIGNAL(idChanged()), SIGNAL(nameChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(authorChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(authorsChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(homepageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(countryChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
@@ -34,9 +34,9 @@ QString ComicProxy::name() const
     return m_comic ? m_comic->name() : QString();
 }
 
-QString ComicProxy::author() const
+QStringList ComicProxy::authors() const
 {
-    return m_comic ? m_comic->author() : QString();
+    return m_comic ? m_comic->authors() : QStringList();
 }
 
 QUrl ComicProxy::homepage() const

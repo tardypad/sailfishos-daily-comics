@@ -64,8 +64,8 @@ DockedPanel {
             Row {
                 spacing: Theme.paddingLarge
                 Label {
-                    id: authorHeaderLabel
-                    text: "Author"
+                    id: authorsHeaderLabel
+                    text: comic.authors.length > 1 ? "Authors" : "Author"
                     width: _headerWidth
                     font {
                         italic: true
@@ -75,11 +75,11 @@ DockedPanel {
                     horizontalAlignment: Text.AlignRight
                 }
                 Label {
-                    id: authorLabel
-                    text: comic.author
+                    id: authorsLabel
+                    text: comic.authors.join("\n")
                     width: _textWidth
                     font.pixelSize: Theme.fontSizeSmall
-                    anchors.baseline: authorHeaderLabel.baseline
+                    anchors.baseline: authorsHeaderLabel.baseline
                     truncationMode: TruncationMode.Fade
                 }
             }
@@ -166,7 +166,7 @@ DockedPanel {
                 height: isPortrait
                         ? Math.min(window.height / 4, implicitHeight)
                         : comicInfoPanel.height - (nameLabel.height + 7 * Theme.paddingMedium
-                          + authorLabel.height + countryLabel.height + languageLabel.height + publicationLabel.height)
+                          + authorsLabel.height + countryLabel.height + languageLabel.height + publicationLabel.height)
 
                 anchors.horizontalCenter: parent.horizontalCenter
             }

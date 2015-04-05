@@ -19,7 +19,7 @@ LeChat::LeChat(QObject *parent) :
 const QString LeChat::_id                 = QString("lechat");
 const QString LeChat::_name               = QString("Le Chat");
 const QColor LeChat::_color               = QColor(38, 203, 171);
-const QString LeChat::_author             = QString("Philippe Geluck");
+const QStringList LeChat::_authors        = QStringList("Philippe Geluck");
 const QUrl LeChat::_homepage              = QUrl("http://geluck.com/");
 const QLocale::Country LeChat::_country   = QLocale::Belgium;
 const QLocale::Language LeChat::_language = QLocale::French;

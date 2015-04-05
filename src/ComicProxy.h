@@ -21,7 +21,7 @@ class ComicProxy : public QObject
     Q_OBJECT
     Q_PROPERTY(QString id READ id NOTIFY idChanged)
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
-    Q_PROPERTY(QString author READ author NOTIFY authorChanged)
+    Q_PROPERTY(QStringList authors READ authors NOTIFY authorsChanged)
     Q_PROPERTY(QUrl homepage READ homepage NOTIFY homepageChanged)
     Q_PROPERTY(QString country READ country NOTIFY countryChanged)
     Q_PROPERTY(QString language READ language NOTIFY languageChanged)
@@ -34,7 +34,7 @@ public:
 
     QString id() const;
     QString name() const;
-    QString author() const;
+    QStringList authors() const;
     QUrl homepage() const;
     QString country() const;
     QString language() const;
@@ -51,7 +51,7 @@ public:
 signals:
     void idChanged();
     void nameChanged();
-    void authorChanged();
+    void authorsChanged();
     void homepageChanged();
     void countryChanged();
     void languageChanged();

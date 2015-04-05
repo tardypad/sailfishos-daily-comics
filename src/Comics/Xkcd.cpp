@@ -19,7 +19,7 @@ Xkcd::Xkcd(QObject *parent) :
 const QString Xkcd::_id                 = QString("xkcd");
 const QString Xkcd::_name               = QString("xkcd");
 const QColor Xkcd::_color               = QColor(150, 168, 200);
-const QString Xkcd::_author             = QString("Randall Munroe");
+const QStringList Xkcd::_authors        = QStringList("Randall Munroe");
 const QUrl Xkcd::_homepage              = QUrl("http://xkcd.com/");
 const QLocale::Country Xkcd::_country   = QLocale::UnitedStates;
 const QLocale::Language Xkcd::_language = QLocale::English;

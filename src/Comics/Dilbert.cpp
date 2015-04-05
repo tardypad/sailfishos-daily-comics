@@ -19,7 +19,7 @@ Dilbert::Dilbert(QObject *parent) :
 const QString Dilbert::_id                 = QString("dilbert");
 const QString Dilbert::_name               = QString("Dilbert");
 const QColor Dilbert::_color               = QColor(69, 142, 197);
-const QString Dilbert::_author             = QString("Scott Adams");
+const QStringList Dilbert::_authors        = QStringList("Scott Adams");
 const QUrl Dilbert::_homepage              = QUrl("http://dilbert.com/");
 const QLocale::Country Dilbert::_country   = QLocale::UnitedStates;
 const QLocale::Language Dilbert::_language = QLocale::English;
