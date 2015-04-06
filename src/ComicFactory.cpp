@@ -20,6 +20,7 @@
 #include "Comics/HagarTheHorrible.h"
 #include "Comics/Poyroot.h"
 #include "Comics/ShitHappens.h"
+#include "Comics/ViiviJaWagner.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -61,6 +62,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "shithappens")
         return new ShitHappens(parent);
+
+    if (id == "viivijawagner")
+        return new ViiviJaWagner(parent);
 
     return NULL;
 }
