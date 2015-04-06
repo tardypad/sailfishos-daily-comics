@@ -48,7 +48,8 @@ QStringList Settings::fullComicsList()
         << "xkcd"
         << "dennisthemenace"
         << "fingerpori"
-        << "foxtrot";
+        << "foxtrot"
+        << "cyanideandhappiness";
 }
 
 QVariant Settings::value(const QString &key)

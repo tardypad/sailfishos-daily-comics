@@ -16,6 +16,7 @@
 #include "Comics/DennisTheMenace.h"
 #include "Comics/Fingerpori.h"
 #include "Comics/FoxTrot.h"
+#include "Comics/CyanideAndHappiness.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -45,6 +46,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "foxtrot")
         return new FoxTrot(parent);
+
+    if (id == "cyanideandhappiness")
+        return new CyanideAndHappiness(parent);
 
     return NULL;
 }
