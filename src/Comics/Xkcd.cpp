@@ -8,8 +8,9 @@
 #include "Xkcd.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 
 Xkcd::Xkcd(QObject *parent) :
     Comic(parent)
@@ -25,19 +26,12 @@ const QLocale::Country Xkcd::_country   = QLocale::UnitedStates;
 const QLocale::Language Xkcd::_language = QLocale::English;
 const QDate Xkcd::_startDate            = QDate::fromString("2005-09", "yyyy-MM");
 const QDate Xkcd::_endDate              = QDate::currentDate();
-const QUrl Xkcd::_stripSourceUrl        = QUrl("http://xkcd.com/");
+const QUrl Xkcd::_stripSourceUrl        = QUrl("http://xkcd.com/info.0.json");
 
 QUrl Xkcd::extractStripUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
+    QString src = jsonDoc.object().value("img").toString();
 
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http:" + src);
+    return QUrl(src);
 }
