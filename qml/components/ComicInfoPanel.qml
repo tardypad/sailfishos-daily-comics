@@ -141,7 +141,9 @@ DockedPanel {
                     horizontalAlignment: Text.AlignRight
                 }
                 Label {
-                    property string _startYear: Qt.formatDate(comic.startDate, "yyyy")
+                    property string _startYear: comic.startDate != "Invalid Date"
+                                                ? Qt.formatDate(comic.startDate, "yyyy")
+                                                : "unknown"
                     property string _endYear: Qt.formatDate(comic.endDate, "yyyy") != Qt.formatDateTime(new Date(), "yyyy")
                                               ? Qt.formatDate(comic.endDate, "yyyy")
                                               : "present"
