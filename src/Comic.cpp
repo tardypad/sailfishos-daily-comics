@@ -48,7 +48,8 @@ void Comic::save()
 
 void Comic::fetchStripUrl()
 {
-    if (!fetchTime().isNull() &&
+    if (!error() &&
+        !fetchTime().isNull() &&
         QDateTime::currentDateTime().secsTo(fetchTime()) > -_minFetchDelay)
         return;
 
