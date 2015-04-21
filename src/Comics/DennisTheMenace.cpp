@@ -30,7 +30,7 @@ const QUrl DennisTheMenace::_stripSourceUrl        = QUrl("http://dennisthemenac
 QUrl DennisTheMenace::extractStripUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*content\\.php[^\"]*)\"");
+    QRegularExpression reg("<meta property=\"og:image\" content=\"([^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
