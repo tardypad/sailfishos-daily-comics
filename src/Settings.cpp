@@ -53,7 +53,8 @@ QStringList Settings::fullComicsList()
         << "hagarthehorrible"
         << "poyroot"
         << "shithappens"
-        << "viivijawagner";
+        << "viivijawagner"
+        << "smbc";
 }
 
 QVariant Settings::value(const QString &key)
