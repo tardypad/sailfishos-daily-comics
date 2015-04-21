@@ -22,6 +22,7 @@
 #include "Comics/ShitHappens.h"
 #include "Comics/ViiviJaWagner.h"
 #include "Comics/Smbc.h"
+#include "Comics/PhdComics.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -69,6 +70,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "smbc")
         return new Smbc(parent);
+
+    if (id == "phdcomics")
+        return new PhdComics(parent);
 
     return NULL;
 }
