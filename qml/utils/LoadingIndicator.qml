@@ -21,6 +21,8 @@ Item {
     property string parsingErrorText
     property string devContactErrorMessage
 
+    property bool busy: false
+
     parent: flickable.contentItem
 
     y: flickable.originY + (flickable.height - height) / 2
@@ -156,10 +158,12 @@ Item {
         State {
             name: "init"
             PropertyChanges { target: loadingIndicator; visible: false }
+            PropertyChanges { target: loadingIndicator; busy: false }
         },
         State {
             name: "fetching"
             PropertyChanges { target: loadingIndicator; visible: true }
+            PropertyChanges { target: loadingIndicator; busy: true }
             StateChangeScript {
                 script: {
                     removePlaceholder()
@@ -170,6 +174,7 @@ Item {
         State {
             name: "error"
             PropertyChanges { target: loadingIndicator; visible: false }
+            PropertyChanges { target: loadingIndicator; busy: true }
             StateChangeScript {
                 script: {
                     placeholderLoader.sourceComponent = errorComponent
@@ -182,6 +187,7 @@ Item {
         State {
             name: "complete"
             PropertyChanges { target: loadingIndicator; visible: false }
+            PropertyChanges { target: loadingIndicator; busy: false }
             StateChangeScript {
                 script: {
                     removePlaceholder()

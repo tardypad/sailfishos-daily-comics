@@ -30,7 +30,7 @@ Page {
         anchors.fill: parent
 
         Image {
-            source: !comic.error ? comic.stripUrl : ''
+            source: !comic.error && !indicator.busy ? comic.stripUrl : ''
             fillMode: Image.PreserveAspectFit
             smooth: true
             clip: true
