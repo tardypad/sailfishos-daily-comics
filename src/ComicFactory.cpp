@@ -23,6 +23,7 @@
 #include "Comics/ViiviJaWagner.h"
 #include "Comics/Smbc.h"
 #include "Comics/PhdComics.h"
+#include "Comics/FokIt.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -73,6 +74,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "phdcomics")
         return new PhdComics(parent);
+
+    if (id == "fokit")
+        return new FokIt(parent);
 
     return NULL;
 }
