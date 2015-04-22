@@ -24,6 +24,7 @@
 #include "Comics/Smbc.h"
 #include "Comics/PhdComics.h"
 #include "Comics/FokIt.h"
+#include "Comics/DieselSweeties.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -77,6 +78,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "fokit")
         return new FokIt(parent);
+
+    if (id == "dieselsweeties")
+        return new DieselSweeties(parent);
 
     return NULL;
 }
