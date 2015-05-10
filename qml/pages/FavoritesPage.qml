@@ -110,6 +110,20 @@ Page {
         }
     }
 
+    Timer {
+        running: true
+        repeat: true
+        interval: 3600000
+        onTriggered: favoriteComicsModel.fetchAll()
+    }
+
+    Connections {
+        target: window
+        onApplicationActiveChanged: {
+            if (applicationActive) {
+                favoriteComicsModel.fetchAll()
+            }
+        }
+    }
+
 }
-
-
