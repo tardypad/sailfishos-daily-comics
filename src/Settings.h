@@ -16,11 +16,16 @@ class Settings : public QObject
 {
     Q_OBJECT
 
+    static const QString _settingsFavoritesInfoHintField;
+
 public:
     static Settings* instance();
     ~Settings();
     Q_INVOKABLE void emitFavoritesChanged();
     QStringList fullComicsList();
+
+    Q_INVOKABLE bool settingsFavoritesInfoHint();
+    Q_INVOKABLE void hideSettingsFavoritesInfoHint();
 
 protected:
     QVariant value(const QString &key);

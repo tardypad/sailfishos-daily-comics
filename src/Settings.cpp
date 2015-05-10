@@ -11,6 +11,7 @@
 
 Settings* Settings::m_instance = NULL;
 
+const QString Settings::_settingsFavoritesInfoHintField = QString("hints/settings_favorites_info");
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
@@ -58,6 +59,20 @@ QStringList Settings::fullComicsList()
         << "phdcomics"
         << "fokit"
         << "dieselsweeties";
+}
+
+bool Settings::settingsFavoritesInfoHint()
+{
+    if (!m_settings->contains(_settingsFavoritesInfoHintField)) {
+        return true;
+    }
+
+    return value(_settingsFavoritesInfoHintField).toBool();
+}
+
+void Settings::hideSettingsFavoritesInfoHint()
+{
+    setValue(_settingsFavoritesInfoHintField, false);
 }
 
 QVariant Settings::value(const QString &key)
