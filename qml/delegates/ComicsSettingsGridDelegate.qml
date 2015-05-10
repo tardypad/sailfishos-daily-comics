@@ -38,15 +38,11 @@ BackgroundItem {
             }
             fillMode: Image.PreserveAspectFit
         }
-
-        Behavior on opacity {
-            FadeAnimation {
-                duration: 100
-            }
-        }
     }
 
     onClicked: gridView._setFavorite(index, !favorite)
 
     onPressAndHold: gridView._showComicInfo(index)
+
+    onPressed: gridView.currentIndex = index
 }
