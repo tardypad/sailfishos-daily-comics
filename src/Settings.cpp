@@ -58,7 +58,8 @@ QStringList Settings::fullComicsList()
         << "smbc"
         << "phdcomics"
         << "fokit"
-        << "dieselsweeties";
+        << "dieselsweeties"
+        << "commitstrip";
 }
 
 bool Settings::settingsFavoritesInfoHint()
