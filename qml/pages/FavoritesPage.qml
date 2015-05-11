@@ -20,8 +20,9 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellSize: isPortrait ? parent.width / 2 : parent.width / 4
-
+        property int cellSize: isPortrait
+                               ? (favoriteComicsModel.count > 8 ? parent.width / 3 : parent.width / 2)
+                               : (favoriteComicsModel.count > 8 ? parent.width / 5 : parent.width / 4)
         anchors.fill: parent
         cellWidth: cellSize
         cellHeight: cellSize
