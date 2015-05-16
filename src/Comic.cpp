@@ -59,6 +59,7 @@ void Comic::fetchStripUrl(QUrl stripUrl)
 
     QUrl requestUrl = !stripUrl.isEmpty() ? stripUrl : stripSourceUrl();
     QNetworkRequest request(requestUrl);
+    request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
     m_currentReply = m_networkManager->get(request);
 
     emit fetchStarted();

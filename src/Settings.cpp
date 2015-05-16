@@ -60,7 +60,8 @@ QStringList Settings::fullComicsList()
         << "fokit"
         << "dieselsweeties"
         << "commitstrip"
-        << "tubeytoons";
+        << "tubeytoons"
+        << "thehatandfat";
 }
 
 bool Settings::settingsFavoritesInfoHint()
