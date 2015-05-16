@@ -54,7 +54,7 @@ public:
     void load();
     void save();
 
-    void fetchStripUrl();
+    void fetchStripUrl(QUrl stripUrl = QUrl());
     void abortFetching();
     void read();
 
@@ -62,9 +62,8 @@ protected:
     virtual QUrl stripSourceUrl() const = 0;
 
 private slots:
+    void onFetchFinished();
     void parse();
-    void flagError();
-    void flagStoppedFetching();
 
 signals:
     void fetchStarted();

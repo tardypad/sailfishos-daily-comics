@@ -46,7 +46,7 @@ void Comic::save()
     dbResource->save(this);
 }
 
-void Comic::fetchStripUrl()
+void Comic::fetchStripUrl(QUrl stripUrl)
 {
     if (!error() &&
         !fetchTime().isNull() &&
@@ -57,21 +57,15 @@ void Comic::fetchStripUrl()
     delete m_currentReply;
     m_currentReply = NULL;
 
-    QNetworkRequest request(stripSourceUrl());
+    QUrl requestUrl = !stripUrl.isEmpty() ? stripUrl : stripSourceUrl();
+    QNetworkRequest request(requestUrl);
     m_currentReply = m_networkManager->get(request);
 
     emit fetchStarted();
     setFetching(true);
 
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(parse()));
-    connect(m_currentReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SIGNAL(networkError()));
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchFinished()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-
-    connect(this, SIGNAL(networkError()), this, SLOT(flagError()));
-    connect(this, SIGNAL(parsingError()), this, SLOT(flagError()));
-
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(flagStoppedFetching()));
-    connect(m_currentReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(flagStoppedFetching()));
 }
 
 void Comic::abortFetching()
@@ -88,15 +82,37 @@ void Comic::read()
     save();
 }
 
+void Comic::onFetchFinished()
+{
+    setFetching(false);
+
+    if (m_currentReply->error() != QNetworkReply::NoError) {
+        setError(true);
+        emit networkError();
+        return;
+    }
+
+    QVariant redirectAttribute = m_currentReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+
+    if (redirectAttribute.isValid()) {
+        QUrl redirectUrl = redirectAttribute.toUrl();
+        if (redirectUrl.isRelative()) {
+            redirectUrl = m_currentReply->url().resolved(redirectUrl);
+        }
+        fetchStripUrl(redirectUrl);
+        return;
+    }
+
+    parse();
+}
+
 void Comic::parse()
 {
-    if (m_currentReply->error() != QNetworkReply::NoError)
-        return;
-
     QByteArray data = m_currentReply->readAll();
     QUrl extractedStripUrl = extractStripUrl(data);
 
     if (!extractedStripUrl.isValid()) {
+        setError(true);
         emit parsingError();
         return;
     }
@@ -112,14 +128,4 @@ void Comic::parse()
     save();
 
     emit dataParsed();
-}
-
-void Comic::flagError()
-{
-    setError(true);
-}
-
-void Comic::flagStoppedFetching()
-{
-    setFetching(false);
 }
