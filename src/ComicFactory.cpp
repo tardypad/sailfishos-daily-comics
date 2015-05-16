@@ -31,6 +31,7 @@
 #include "Comics/TheAwkwardYeti.h"
 #include "Comics/Lunarbaboon.h"
 #include "Comics/SafelyEndangered.h"
+#include "Comics/BerkeleyMews.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -105,6 +106,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "safelyendangered")
         return new SafelyEndangered(parent);
+
+    if (id == "berkeleymews")
+        return new BerkeleyMews(parent);
 
     return NULL;
 }

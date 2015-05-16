@@ -64,7 +64,8 @@ QStringList Settings::fullComicsList()
         << "thehatandfat"
         << "theawkwardyeti"
         << "lunarbaboon"
-        << "safelyendangered";
+        << "safelyendangered"
+        << "berkeleymews";
 }
 
 bool Settings::settingsFavoritesInfoHint()
