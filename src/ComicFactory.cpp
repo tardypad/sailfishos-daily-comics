@@ -26,6 +26,7 @@
 #include "Comics/FokIt.h"
 #include "Comics/DieselSweeties.h"
 #include "Comics/CommitStrip.h"
+#include "Comics/TubeyToons.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -85,6 +86,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "commitstrip")
         return new CommitStrip(parent);
+
+    if (id == "tubeytoons")
+        return new TubeyToons(parent);
 
     return NULL;
 }
