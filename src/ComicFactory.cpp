@@ -28,6 +28,7 @@
 #include "Comics/CommitStrip.h"
 #include "Comics/TubeyToons.h"
 #include "Comics/TheHatAndFat.h"
+#include "Comics/TheAwkwardYeti.h"
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
@@ -93,6 +94,9 @@ Comic *ComicFactory::create(QString id, QObject *parent)
 
     if (id == "thehatandfat")
         return new TheHatAndFat(parent);
+
+    if (id == "theawkwardyeti")
+        return new TheAwkwardYeti(parent);
 
     return NULL;
 }
