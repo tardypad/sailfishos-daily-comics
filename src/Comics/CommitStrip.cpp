@@ -30,7 +30,8 @@ const QUrl CommitStrip::_stripSourceUrl        = QUrl("http://www.commitstrip.co
 QUrl CommitStrip::extractStripUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/wp-content/uploads/[^\"]*)\"");
+
+    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
