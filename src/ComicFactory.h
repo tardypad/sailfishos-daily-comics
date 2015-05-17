@@ -8,12 +8,24 @@
 #ifndef COMICFACTORY_H
 #define COMICFACTORY_H
 
+#include <QObject>
+
 #include "Comic.h"
 
-class ComicFactory
+class ComicFactory : public QObject
 {
+    Q_OBJECT
+
 public:
-    static Comic *create(QString id, QObject *parent = 0);
+    static ComicFactory* instance();
+    Comic *create(QString id, QObject *parent = 0);
+    QStringList fullList() const;
+
+private:
+    explicit ComicFactory(QObject *parent = 0);
+
+private:
+    static ComicFactory* m_instance;
 };
 
 #endif // COMICFACTORY_H

@@ -21,6 +21,7 @@ ComicsModel::ComicsModel(QObject *parent) :
     m_list(QList<Comic*>())
 {
     dbResource = ComicDatabaseResource::instance();
+    factory    = ComicFactory::instance();
     settings   = Settings::instance();
 
     connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
@@ -112,14 +113,14 @@ void ComicsModel::loadAll()
 {
     clear();
 
-    QStringList comicsList = settings->fullComicsList();
+    QStringList comicsList = factory->fullList();
 
     Comic *comic;
 
     beginInsertRows(QModelIndex(), 0, comicsList.count() - 1);
 
     for (int i = 0; i < comicsList.size(); ++i) {
-        comic = ComicFactory::create(comicsList.at(i), this);
+        comic = factory->create(comicsList.at(i), this);
         comic->load();
         m_list.append(comic);
     }

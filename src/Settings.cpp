@@ -38,36 +38,6 @@ void Settings::emitFavoritesChanged()
     emit favoritesChanged();
 }
 
-QStringList Settings::fullComicsList()
-{
-    return QStringList()
-        << "calvinandhobbes"
-        << "dilbert"
-        << "garfield"
-        << "lechat"
-        << "peanuts"
-        << "xkcd"
-        << "dennisthemenace"
-        << "fingerpori"
-        << "foxtrot"
-        << "cyanideandhappiness"
-        << "hagarthehorrible"
-        << "poyroot"
-        << "shithappens"
-        << "viivijawagner"
-        << "smbc"
-        << "phdcomics"
-        << "fokit"
-        << "dieselsweeties"
-        << "commitstrip"
-        << "tubeytoons"
-        << "thehatandfat"
-        << "theawkwardyeti"
-        << "lunarbaboon"
-        << "safelyendangered"
-        << "berkeleymews";
-}
-
 bool Settings::settingsFavoritesInfoHint()
 {
     if (!m_settings->contains(_settingsFavoritesInfoHintField)) {

@@ -11,6 +11,7 @@
 #include <QAbstractListModel>
 
 class Comic;
+class ComicFactory;
 class ComicDatabaseResource;
 class Settings;
 
@@ -81,6 +82,7 @@ signals:
 
 protected:
     QList<Comic*> m_list;
+    ComicFactory* factory;
     ComicDatabaseResource* dbResource;
     Settings* settings;
 };

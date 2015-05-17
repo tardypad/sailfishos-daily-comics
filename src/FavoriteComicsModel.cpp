@@ -31,7 +31,7 @@ void FavoriteComicsModel::loadAll()
     beginInsertRows(QModelIndex(), 0, favoriteIds.size() - 1);
 
     for (int i = 0; i < favoriteIds.size(); ++i) {
-        comic = ComicFactory::create(favoriteIds.at(i), this);
+        comic = factory->create(favoriteIds.at(i), this);
         comic->load();
         m_list.append(comic);
     }

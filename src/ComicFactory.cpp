@@ -33,6 +33,23 @@
 #include "Comics/SafelyEndangered.h"
 #include "Comics/BerkeleyMews.h"
 
+ComicFactory* ComicFactory::m_instance = NULL;
+
+ComicFactory::ComicFactory(QObject *parent) :
+    QObject(parent)
+{
+
+}
+
+ComicFactory* ComicFactory::instance()
+{
+    if (!m_instance) {
+        m_instance = new ComicFactory();
+    }
+
+    return m_instance;
+}
+
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
     if (id == "calvinandhobbes")
@@ -111,4 +128,34 @@ Comic *ComicFactory::create(QString id, QObject *parent)
         return new BerkeleyMews(parent);
 
     return NULL;
+}
+
+QStringList ComicFactory::fullList() const
+{
+    return QStringList()
+        << "calvinandhobbes"
+        << "dilbert"
+        << "garfield"
+        << "lechat"
+        << "peanuts"
+        << "xkcd"
+        << "dennisthemenace"
+        << "fingerpori"
+        << "foxtrot"
+        << "cyanideandhappiness"
+        << "hagarthehorrible"
+        << "poyroot"
+        << "shithappens"
+        << "viivijawagner"
+        << "smbc"
+        << "phdcomics"
+        << "fokit"
+        << "dieselsweeties"
+        << "commitstrip"
+        << "tubeytoons"
+        << "thehatandfat"
+        << "theawkwardyeti"
+        << "lunarbaboon"
+        << "safelyendangered"
+        << "berkeleymews";
 }

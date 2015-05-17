@@ -22,7 +22,6 @@ public:
     static Settings* instance();
     ~Settings();
     Q_INVOKABLE void emitFavoritesChanged();
-    QStringList fullComicsList();
 
     Q_INVOKABLE bool settingsFavoritesInfoHint();
     Q_INVOKABLE void hideSettingsFavoritesInfoHint();
