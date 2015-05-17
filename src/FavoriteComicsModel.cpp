@@ -44,3 +44,22 @@ void FavoriteComicsModel::loadAll()
     emit newCountChanged();
     emit fetchedCountChanged();
 }
+
+void FavoriteComicsModel::removeFavorite(int row)
+{
+    Comic* comic = comicAt(row);
+
+    if (comic == NULL)
+        return;
+
+    comic->setFavorite(false);
+    comic->save();
+
+    beginRemoveRows(QModelIndex(), row, row);
+    m_list.removeAt(row);
+    endRemoveRows();
+
+    emit countChanged();
+    emit newCountChanged();
+    emit fetchedCountChanged();
+}

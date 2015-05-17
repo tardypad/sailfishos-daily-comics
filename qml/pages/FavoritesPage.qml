@@ -20,9 +20,17 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellSize: isPortrait
-                               ? (favoriteComicsModel.count > 8 ? parent.width / 3 : parent.width / 2)
-                               : (favoriteComicsModel.count > 8 ? parent.width / 5 : parent.width / 4)
+        property int cellNumberPerRow: isPortrait
+                                       ? (favoriteComicsModel.count > 8 ? 3 : 2)
+                                       : (favoriteComicsModel.count > 8 ? 5 : 4)
+        property int cellSize: parent.width / cellNumberPerRow
+
+        property Item contextMenu
+        property int minOffsetIndex: contextMenu && contextMenu.parent
+                                     ? contextMenu.parent.idx - (contextMenu.parent.idx % cellNumberPerRow) + cellNumberPerRow
+                                     : 0
+        property bool contextMenuActive: contextMenu && contextMenu.active
+
         anchors.fill: parent
         cellWidth: cellSize
         cellHeight: cellSize
@@ -33,7 +41,7 @@ Page {
         model: comicsModelProxy
 
         Rectangle {
-            property bool active: gridView.currentItem && gridView.currentItem.down
+            property bool active: gridView.currentItem && gridView.currentItem.down && !gridView.contextMenuActive
             width: gridView.cellWidth
             height: gridView.cellHeight
             color: Theme.highlightBackgroundColor
@@ -71,11 +79,36 @@ Page {
 
         VerticalScrollDecorator { flickable: gridView }
 
+        function _showContextMenu(item) {
+            if (!contextMenu)
+                contextMenu = actionsComponent.createObject(gridView)
+            contextMenu.show(item)
+        }
+
+        Component {
+            id: actionsComponent
+            ContextMenu {
+                property Item delegate: parent
+                property int index: delegate ? delegate.idx : -1
+
+                width: gridView.width
+
+                MenuItem {
+                    text: "Remove from favorites"
+                    onClicked: gridView._removeFavorite(index)
+                }
+            }
+        }
+
         function _goToComicPage(index) {
             pageStack.push(Qt.resolvedUrl("ComicPage.qml"), {
                                "index": comicsModelProxy.sourceRow(index),
                                "comicsModel": favoriteComicsModel
                            })
+        }
+
+        function _removeFavorite(index) {
+            favoriteComicsModel.removeFavorite(comicsModelProxy.sourceRow(index))
         }
     }
 

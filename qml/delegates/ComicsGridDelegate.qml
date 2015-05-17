@@ -10,30 +10,61 @@ import Sailfish.Silica 1.0
 
 import "../components/"
 
-BackgroundItem {
+Item {
+    id: itemcontainer
+
+    property int idx: index
+    property string channelId: id
+    property bool down: comicItem.pressed && comicItem.containsMouse
+
+    property bool _hasContextMenu: gridView.contextMenu && gridView.contextMenu.parent === itemcontainer
+
     width: gridView.cellWidth
-    height: gridView.cellHeight
+    height: _hasContextMenu
+            ? gridView.cellHeight + gridView.contextMenu.height
+            : gridView.cellHeight
 
-    Image {
-        source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
-        anchors.fill: parent
-        sourceSize.width: Screen.width / 2
-        sourceSize.height: Screen.width / 2
-    }
+    opacity: !_hasContextMenu && gridView.contextMenuActive ? 0.2 : 1
 
-    StatusRectangle {
-        color: Qt.darker(idColor, 1.1)
-        hasNew: newStrip
-        hasError: error
-        isFetching: fetching
+    BackgroundItem {
+        id: comicItem
 
-        anchors {
-            right: parent.right
-            bottom: parent.bottom
+        width: gridView.cellWidth
+        height: gridView.cellHeight
+        y: gridView.contextMenu && index >= gridView.minOffsetIndex
+           ? gridView.contextMenu.height
+           : 0
+
+        highlighted: down || _hasContextMenu
+
+        Image {
+            source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
+            anchors.fill: parent
+            sourceSize.width: Screen.width / 2
+            sourceSize.height: Screen.width / 2
         }
+
+        StatusRectangle {
+            color: Qt.darker(idColor, 1.1)
+            hasNew: newStrip
+            hasError: error
+            isFetching: fetching
+
+            anchors {
+                right: parent.right
+                bottom: parent.bottom
+            }
+        }
+
+        onPressAndHold: gridView._showContextMenu(itemcontainer)
+
+        onClicked: gridView._goToComicPage(index)
+
+        onPressed: gridView.currentIndex = index
     }
 
-    onClicked: gridView._goToComicPage(index)
-
-    onPressed: gridView.currentIndex = index
+    GridView.onRemove: RemoveAnimation {
+        target: itemcontainer
+        duration: 700
+    }
 }

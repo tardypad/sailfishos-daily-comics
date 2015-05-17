@@ -15,6 +15,7 @@ class FavoriteComicsModel : public ComicsModel
     Q_OBJECT
 public:
     explicit FavoriteComicsModel(QObject *parent = 0);
+    Q_INVOKABLE void removeFavorite(int row);
 
 signals:
     void favoritesChanged();
