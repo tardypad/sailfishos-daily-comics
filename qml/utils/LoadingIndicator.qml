@@ -117,8 +117,8 @@ Item {
         id: connections
         onDataParsed: state = "complete"
         onFetchStarted: state = "fetching"
-        onNetworkError: _displayError("Network error", networkErrorText)
-        onParsingError: _displayError("Parsing error", parsingErrorText)
+        onNetworkError: displayError("Network error", networkErrorText)
+        onParsingError: displayError("Parsing error", parsingErrorText)
         onDownloadProgress: _updateProgress(bytesReceived, bytesTotal)
     }
 
@@ -136,7 +136,7 @@ Item {
         }
     }
 
-    function _displayError(text, hintText) {
+    function displayError(text, hintText) {
         state = "error"
         placeholderLoader.item.text = text
         placeholderLoader.item.hintText = hintText

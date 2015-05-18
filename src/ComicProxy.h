@@ -49,6 +49,7 @@ public:
     Q_INVOKABLE void fetch();
     Q_INVOKABLE void abortFetching();
     Q_INVOKABLE void read();
+    Q_INVOKABLE void setError();
 
 signals:
     void idChanged();

@@ -113,3 +113,10 @@ void ComicProxy::read()
         m_comic->read();
     }
 }
+
+void ComicProxy::setError()
+{
+    if (m_comic) {
+        m_comic->setError(true);
+    }
+}

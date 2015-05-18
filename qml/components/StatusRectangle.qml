@@ -65,7 +65,7 @@ Rectangle {
         },
         State {
             name: "new"
-            when: !isFetching && hasNew
+            when: !isFetching && hasNew && !hasError
             PropertyChanges { target: statusRectangle; opacity: 1.0 }
             PropertyChanges { target: image;           source: "image://theme/icon-s-update"; rotation: 0 }
             PropertyChanges { target: label;           text: "New"; visible: true; }

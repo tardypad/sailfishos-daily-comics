@@ -46,6 +46,10 @@ Page {
             onStatusChanged: {
                 if (status === Image.Ready)
                     comic.read()
+                else if (status === Image.Error) {
+                    indicator.displayError("Image error", "Can't display strip")
+                    comic.setError()
+                }
             }
         }
 
