@@ -36,9 +36,34 @@
 ComicFactory* ComicFactory::m_instance = NULL;
 
 ComicFactory::ComicFactory(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    m_map(QMap<QString, PCreateFunc>())
 {
-
+    registerComic<CalvinAndHobbes>("calvinandhobbes");
+    registerComic<Dilbert>("dilbert");
+    registerComic<Garfield>("garfield");
+    registerComic<LeChat>("lechat");
+    registerComic<Peanuts>("peanuts");
+    registerComic<Xkcd>("xkcd");
+    registerComic<DennisTheMenace>("dennisthemenace");
+    registerComic<Fingerpori>("fingerpori");
+    registerComic<FoxTrot>("foxtrot");
+    registerComic<CyanideAndHappiness>("cyanideandhappiness");
+    registerComic<HagarTheHorrible>("hagarthehorrible");
+    registerComic<Poyroot>("poyroot");
+    registerComic<ShitHappens>("shithappens");
+    registerComic<ViiviJaWagner>("viivijawagner");
+    registerComic<Smbc>("smbc");
+    registerComic<PhdComics>("phdcomics");
+    registerComic<FokIt>("fokit");
+    registerComic<DieselSweeties>("dieselsweeties");
+    registerComic<CommitStrip>("commitstrip");
+    registerComic<TubeyToons>("tubeytoons");
+    registerComic<TheHatAndFat>("thehatandfat");
+    registerComic<TheAwkwardYeti>("theawkwardyeti");
+    registerComic<Lunarbaboon>("lunarbaboon");
+    registerComic<SafelyEndangered>("safelyendangered");
+    registerComic<BerkeleyMews>("berkeleymews");
 }
 
 ComicFactory* ComicFactory::instance()
@@ -52,110 +77,16 @@ ComicFactory* ComicFactory::instance()
 
 Comic *ComicFactory::create(QString id, QObject *parent)
 {
-    if (id == "calvinandhobbes")
-        return new CalvinAndHobbes(parent);
+    QMap<QString, PCreateFunc>::iterator it = m_map.find(id);
 
-    if (id == "dilbert")
-        return new Dilbert(parent);
+    if (it == m_map.end())
+        return NULL;
 
-    if (id == "garfield")
-        return new Garfield(parent);
-
-    if (id == "lechat")
-        return new LeChat(parent);
-
-    if (id == "peanuts")
-        return new Peanuts(parent);
-
-    if (id == "xkcd")
-        return new Xkcd(parent);
-
-    if (id == "dennisthemenace")
-        return new DennisTheMenace(parent);
-
-    if (id == "fingerpori")
-        return new Fingerpori(parent);
-
-    if (id == "foxtrot")
-        return new FoxTrot(parent);
-
-    if (id == "cyanideandhappiness")
-        return new CyanideAndHappiness(parent);
-
-    if (id == "hagarthehorrible")
-        return new HagarTheHorrible(parent);
-
-    if (id == "poyroot")
-        return new Poyroot(parent);
-
-    if (id == "shithappens")
-        return new ShitHappens(parent);
-
-    if (id == "viivijawagner")
-        return new ViiviJaWagner(parent);
-
-    if (id == "smbc")
-        return new Smbc(parent);
-
-    if (id == "phdcomics")
-        return new PhdComics(parent);
-
-    if (id == "fokit")
-        return new FokIt(parent);
-
-    if (id == "dieselsweeties")
-        return new DieselSweeties(parent);
-
-    if (id == "commitstrip")
-        return new CommitStrip(parent);
-
-    if (id == "tubeytoons")
-        return new TubeyToons(parent);
-
-    if (id == "thehatandfat")
-        return new TheHatAndFat(parent);
-
-    if (id == "theawkwardyeti")
-        return new TheAwkwardYeti(parent);
-
-    if (id == "lunarbaboon")
-        return new Lunarbaboon(parent);
-
-    if (id == "safelyendangered")
-        return new SafelyEndangered(parent);
-
-    if (id == "berkeleymews")
-        return new BerkeleyMews(parent);
-
-    return NULL;
+    PCreateFunc cf = it.value();
+    return cf(parent);
 }
 
 QStringList ComicFactory::fullList() const
 {
-    return QStringList()
-        << "calvinandhobbes"
-        << "dilbert"
-        << "garfield"
-        << "lechat"
-        << "peanuts"
-        << "xkcd"
-        << "dennisthemenace"
-        << "fingerpori"
-        << "foxtrot"
-        << "cyanideandhappiness"
-        << "hagarthehorrible"
-        << "poyroot"
-        << "shithappens"
-        << "viivijawagner"
-        << "smbc"
-        << "phdcomics"
-        << "fokit"
-        << "dieselsweeties"
-        << "commitstrip"
-        << "tubeytoons"
-        << "thehatandfat"
-        << "theawkwardyeti"
-        << "lunarbaboon"
-        << "safelyendangered"
-        << "berkeleymews";
+    return m_map.keys();
 }
