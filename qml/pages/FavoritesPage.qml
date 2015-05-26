@@ -14,8 +14,11 @@ import "../delegates"
 import "../utils"
 
 Page {
+    objectName: "FavoritesPage"
 
     allowedOrientations: Orientation.All
+
+    property ComicsModel comicsModel: favoriteComicsModel
 
     SilicaGridView {
         id: gridView

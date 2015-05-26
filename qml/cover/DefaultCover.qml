@@ -90,4 +90,17 @@ CoverBackground {
         }
     }
 
+    CoverActionList {
+        iconBackground: true
+        enabled: newComics
+
+        CoverAction {
+            iconSource: "image://theme/icon-cover-next"
+            onTriggered: {
+                window.activate()
+                window.showNewComicsPage()
+            }
+        }
+    }
+
 }

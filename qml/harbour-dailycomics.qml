@@ -19,6 +19,12 @@ ApplicationWindow
 
     initialPage: Component { FavoritesPage { } }
     cover: DefaultCover { }
+
+    function showNewComicsPage() {
+        var favoritesPage = pageStack.find(function(page) { return page.objectName === "FavoritesPage" })
+        pageStack.pop(favoritesPage, PageStackAction.Immediate)
+        pageStack.push(Qt.resolvedUrl("pages/NewComicsPage.qml"), {"comicsModel": favoritesPage.comicsModel}, PageStackAction.Immediate)
+    }
 }
 
 
