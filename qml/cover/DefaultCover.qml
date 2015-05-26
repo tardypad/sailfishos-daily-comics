@@ -13,14 +13,41 @@ import harbour.dailycomics.Comics 1.0
 CoverBackground {
 
     property ComicsModel comicsModel
+    property int newComicsCount: comicsModel ? comicsModel.newCount : 0
+    property bool newComics: newComicsCount > 0
     property bool emptyComics: !comicsModel || comicsModel.count == 0
+
+    Item {
+        id: statusLabel
+        visible: newComics
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+        height: newComics ? Math.ceil(parent.height / 3.0) : 0
+
+        Label {
+            text: newComicsCount == 1 ? "1 new comic" : newComicsCount + " new comics"
+            color: Theme.highlightColor
+            anchors.centerIn: parent
+            horizontalAlignment: Text.AlignHCenter
+        }
+    }
 
     GridView {
         id: grid
-        anchors.fill: parent
+
+        anchors {
+            top: statusLabel.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         interactive: false
-        cellWidth: Math.floor(width / 2.0)
-        cellHeight: Math.ceil(height / 3.0)
+        cellWidth: Math.floor(parent.width / 2.0)
+        cellHeight: Math.ceil(parent.height / 3.0)
         model: comicsModel
 
         delegate: Image {
