@@ -14,7 +14,6 @@ Item {
     id: itemcontainer
 
     property int idx: index
-    property string channelId: id
     property bool down: comicItem.pressed && comicItem.containsMouse
 
     property bool _hasContextMenu: gridView.contextMenu && gridView.contextMenu.parent === itemcontainer
