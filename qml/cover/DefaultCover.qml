@@ -12,10 +12,22 @@ import harbour.dailycomics.Comics 1.0
 
 CoverBackground {
 
-    property ComicsModel comicsModel
-    property int newComicsCount: comicsModel ? comicsModel.newCount : 0
+    property ComicsModel favoritesComicsModel
+    property int newComicsCount: favoritesComicsModel ? favoritesComicsModel.newCount : 0
     property bool newComics: newComicsCount > 0
-    property bool emptyComics: !comicsModel || comicsModel.count == 0
+    property bool emptyComics: !favoritesComicsModel || favoritesComicsModel.count == 0
+
+    ComicsModelProxy {
+        id: comicsModelProxy
+        comicsModel: favoritesComicsModel
+        filterRole: newComics ? ComicsModel.NewStripRole : 0
+        sortRole: ComicsModel.NameRole
+    }
+
+    Connections {
+        target: favoritesComicsModel
+        onNewCountChanged: comicsModelProxy.invalidate()
+    }
 
     Item {
         id: statusLabel
@@ -48,7 +60,7 @@ CoverBackground {
         interactive: false
         cellWidth: Math.floor(parent.width / 2.0)
         cellHeight: Math.ceil(parent.height / 3.0)
-        model: comicsModel
+        model: comicsModelProxy
 
         delegate: Image {
             source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")

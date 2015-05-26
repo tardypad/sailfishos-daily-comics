@@ -125,7 +125,7 @@ Page {
     FavoriteComicsModel {
         id: favoriteComicsModel
         Component.onCompleted: {
-            window.cover.comicsModel = favoriteComicsModel
+            window.cover.favoritesComicsModel = favoriteComicsModel
             favoriteComicsModel.loadAll()
             favoriteComicsModel.fetchAll()
         }
