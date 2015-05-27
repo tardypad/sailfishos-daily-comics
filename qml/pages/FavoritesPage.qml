@@ -13,6 +13,8 @@ import harbour.dailycomics.Comics 1.0
 import "../delegates"
 import "../utils"
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 Page {
     objectName: "FavoritesPage"
 
@@ -58,6 +60,15 @@ Page {
             MenuItem {
                 text: "Settings"
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
+            }
+            MenuItem {
+                text: "Report problems with comics"
+                onClicked: {
+                    var comicsNamesList = "\"" + favoriteComicsModel.errorComicNames().join("\", \"") + "\""
+                    ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                                              constants.mailBodyHeader + "There are problems with comics: " + comicsNamesList)
+                }
+                visible: favoriteComicsModel.errorCount > 0
             }
             MenuItem {
                 text: favoriteComicsModel.newCount > 0 ? "Read all new comics" : "No new comic"

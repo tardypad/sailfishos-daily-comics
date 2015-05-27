@@ -163,6 +163,7 @@ void ComicsModel::emitErrorChanged(Comic *comic)
     for(int row = 0; row < m_list.size(); ++row) {
         if (m_list.at(row) == comic) {
             emitDataChanged(row, ErrorRole);
+            emit errorCountChanged();
             return;
         }
     }
@@ -225,6 +226,18 @@ Comic *ComicsModel::comicAt(int row)
     return m_list.at(row);
 }
 
+QStringList ComicsModel::errorComicNames()
+{
+    QStringList(errorComicNames);
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (m_list.at(row)->error())
+          errorComicNames << m_list.at(row)->name();
+    }
+
+    return errorComicNames;
+}
+
 int ComicsModel::count() const
 {
     return rowCount();
@@ -264,4 +277,16 @@ int ComicsModel::fetchedCount() const
     }
 
     return fetchedCount;
+}
+
+int ComicsModel::errorCount() const
+{
+    int errorCount = 0;
+
+    for(int row = 0; row < m_list.size(); ++row) {
+      if (m_list.at(row)->error())
+          errorCount++;
+    }
+
+    return errorCount;
 }

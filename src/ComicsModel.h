@@ -22,6 +22,7 @@ class ComicsModel : public QAbstractListModel
     Q_PROPERTY(int favoritesCount READ favoritesCount NOTIFY favoritesCountChanged)
     Q_PROPERTY(int newCount READ newCount NOTIFY newCountChanged)
     Q_PROPERTY(int fetchedCount READ fetchedCount NOTIFY fetchedCountChanged)
+    Q_PROPERTY(int errorCount READ errorCount NOTIFY errorCountChanged)
     Q_ENUMS(Roles)
 
 public:
@@ -54,11 +55,13 @@ public:
     Q_INVOKABLE void unfavoriteAll();
     Q_INVOKABLE void saveAll();
     Q_INVOKABLE Comic *comicAt(int row);
+    Q_INVOKABLE QStringList errorComicNames();
 
     int count() const;
     int favoritesCount() const;
     int newCount() const;
     int fetchedCount() const;
+    int errorCount() const;
 
 public slots:
     Q_INVOKABLE virtual void loadAll();
@@ -79,6 +82,7 @@ signals:
     void favoritesCountChanged();
     void newCountChanged();
     void fetchedCountChanged();
+    void errorCountChanged();
 
 protected:
     QList<Comic*> m_list;
