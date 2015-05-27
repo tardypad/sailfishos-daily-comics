@@ -12,6 +12,8 @@ import harbour.dailycomics.Comics 1.0
 
 import "../utils"
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 Page {
     id: comicPage
 
@@ -70,6 +72,16 @@ Page {
             MenuItem {
                 text: "Show comic info"
                 onClicked: comicView._showComicInfo()
+            }
+        }
+
+        PushUpMenu {
+            visible: !indicator.busy
+
+            MenuItem {
+                text: "Report a problem with the comic"
+                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                                              constants.mailBodyHeader + "There is a problem with comic \"" + comic.name + "\"")
             }
         }
 
