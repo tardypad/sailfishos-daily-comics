@@ -10,6 +10,7 @@ import Sailfish.Silica 1.0
 
 import "pages"
 import "cover"
+import "components"
 
 ApplicationWindow
 {
@@ -19,6 +20,10 @@ ApplicationWindow
 
     initialPage: Component { FavoritesPage { } }
     cover: DefaultCover { }
+
+    Constants {
+        id: constants
+    }
 
     function showNewComicsPage() {
         var favoritesPage = pageStack.find(function(page) { return page.objectName === "FavoritesPage" })

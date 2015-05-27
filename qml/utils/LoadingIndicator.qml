@@ -19,7 +19,10 @@ Item {
     property string defaultErrorText
     property string networkErrorText
     property string parsingErrorText
-    property string devContactErrorMessage
+
+    property string mailErrorMail
+    property string mailErrorSubject
+    property string mailErrorMessage
 
     property bool busy: false
 
@@ -107,8 +110,7 @@ Item {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: ExternalLinks.mail("damien@tardypad.me", "[SailfishOS][Daily comics][Error]  ",
-                                              "Yo man, " + devContactErrorMessage)
+                onClicked: ExternalLinks.mail(mailErrorMail, mailErrorSubject, mailErrorMessage)
             }
         }
     }

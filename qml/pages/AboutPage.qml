@@ -119,7 +119,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: ExternalLinks.browse("https://twitter.com/tardypad")
+                        onClicked: ExternalLinks.browse(constants.devTwitter)
                     }
 
                     IconButton {
@@ -131,7 +131,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: ExternalLinks.browse("https://github.com/tardypad")
+                        onClicked: ExternalLinks.browse(constants.devGithub)
                     }
 
                     IconButton {
@@ -143,7 +143,7 @@ Page {
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
-                        onClicked: ExternalLinks.mail("damien@tardypad.me", "[SailfishOS][Daily comics] ", "Yo man,")
+                        onClicked: ExternalLinks.mail(constants.devMail, constants.mailSubjectHeader, constants.mailBodyHeader)
                     }
                 }
 
@@ -153,7 +153,7 @@ Page {
                 id: codeLabel
                 width: parent.width - 2*Theme.paddingLarge
                 text: "The source code is available at
-                       <br/><a href='https://github.com/tardypad/daily-comics'>https://github.com/tardypad/daily-comics</a>
+                       <br/><a href='" + constants.repoGithub + "'>" + constants.repoGithub + "</a>
                        <br/>You can contact me for any remarks,
                        <br/>bugs, feature requests, ideas,...
                        <br/>
