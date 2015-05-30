@@ -131,6 +131,9 @@ void ComicsModel::loadAll()
     }
 
     endInsertRows();
+
+    // hack to fix the initialization of the cover...
+    emit countChanged();
 }
 
 void ComicsModel::emitCountsChanged()

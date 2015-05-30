@@ -26,6 +26,7 @@ CoverBackground {
 
     Connections {
         target: favoritesComicsModel
+        onCountChanged: comicsModelProxy.invalidate()
         onNewCountChanged: comicsModelProxy.invalidate()
     }
 
