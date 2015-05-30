@@ -11,6 +11,7 @@
 #include <QAbstractListModel>
 
 class Comic;
+
 class ComicFactory;
 class ComicDatabaseResource;
 class Settings;
@@ -71,6 +72,7 @@ protected:
     void clear();
     void initComicConnections();
     void emitDataChanged(int row, Roles role);
+    int roleCount(Roles role, QVariant test) const;
 
 protected slots:
     void emitNewStripChanged(Comic* comic);

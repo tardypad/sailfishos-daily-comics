@@ -243,50 +243,34 @@ int ComicsModel::count() const
     return rowCount();
 }
 
-int ComicsModel::favoritesCount() const
+int ComicsModel::roleCount(ComicsModel::Roles role, QVariant value) const
 {
-    int favoritesCount = 0;
+    int count = 0;
 
-    for(int row = 0; row < m_list.size(); ++row) {
-      if (m_list.at(row)->favorite())
-          favoritesCount++;
+    for (int row = 0; row < m_list.size(); ++row) {
+      if (data(index(row), role) == value)
+          count++;
     }
 
-    return favoritesCount;
+    return count;
+}
+
+int ComicsModel::favoritesCount() const
+{
+    return roleCount(FavoriteRole, true);
 }
 
 int ComicsModel::newCount() const
 {
-    int newCount = 0;
-
-    for(int row = 0; row < m_list.size(); ++row) {
-      if (m_list.at(row)->newStrip())
-          newCount++;
-    }
-
-    return newCount;
+    return roleCount(NewStripRole, true);
 }
 
 int ComicsModel::fetchedCount() const
 {
-    int fetchedCount = 0;
-
-    for(int row = 0; row < m_list.size(); ++row) {
-      if (!m_list.at(row)->fetching())
-          fetchedCount++;
-    }
-
-    return fetchedCount;
+    return roleCount(FetchingRole, false);
 }
 
 int ComicsModel::errorCount() const
 {
-    int errorCount = 0;
-
-    for(int row = 0; row < m_list.size(); ++row) {
-      if (m_list.at(row)->error())
-          errorCount++;
-    }
-
-    return errorCount;
+    return roleCount(ErrorRole, true);
 }
