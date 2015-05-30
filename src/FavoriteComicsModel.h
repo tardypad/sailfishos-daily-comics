@@ -20,8 +20,8 @@ public:
 signals:
     void favoritesChanged();
 
-public slots:
-    Q_INVOKABLE virtual void loadAll();
+protected:
+    virtual QStringList idLoadList();
 };
 
 #endif // FAVORITECOMICSMODEL_H

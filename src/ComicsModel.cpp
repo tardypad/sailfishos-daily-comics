@@ -24,10 +24,9 @@ ComicsModel::ComicsModel(QObject *parent) :
     factory    = ComicFactory::instance();
     settings   = Settings::instance();
 
-    connect(this, SIGNAL(modelReset()), this, SIGNAL(countChanged()));
-    connect(this, SIGNAL(modelReset()), this, SIGNAL(favoritesCountChanged()));
-    connect(this, SIGNAL(modelReset()), this, SIGNAL(newCountChanged()));
-    connect(this, SIGNAL(modelReset()), this, SIGNAL(fetchedCountChanged()));
+    connect(this, SIGNAL(modelReset()), this, SLOT(emitCountsChanged()));
+    connect(this, SIGNAL(rowsInserted(QModelIndex,int,int)), this, SLOT(emitCountsChanged()));
+    connect(this, SIGNAL(rowsRemoved(QModelIndex,int,int)), this, SLOT(emitCountsChanged()));
 }
 
 ComicsModel::~ComicsModel()
@@ -113,7 +112,7 @@ void ComicsModel::loadAll()
 {
     clear();
 
-    QStringList comicsList = factory->fullList();
+    QStringList comicsList = idLoadList();
 
     Comic *comic;
 
@@ -122,25 +121,30 @@ void ComicsModel::loadAll()
     for (int i = 0; i < comicsList.size(); ++i) {
         comic = factory->create(comicsList.at(i), this);
         comic->load();
+
+        connect(comic, SIGNAL(favoriteChanged(Comic*)), this, SLOT(emitFavoriteChanged(Comic*)));
+        connect(comic, SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
+        connect(comic, SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
+        connect(comic, SIGNAL(fetchingChanged(Comic*)), this, SLOT(emitFetchingChanged(Comic*)));
+
         m_list.append(comic);
     }
 
-    initComicConnections();
-
     endInsertRows();
-
-    emit countChanged();
-    emit favoritesCountChanged();
 }
 
-void ComicsModel::initComicConnections()
+void ComicsModel::emitCountsChanged()
 {
-    for(int row = 0; row < m_list.size(); ++row) {
-        connect(m_list.at(row), SIGNAL(favoriteChanged(Comic*)), this, SLOT(emitFavoriteChanged(Comic*)));
-        connect(m_list.at(row), SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
-        connect(m_list.at(row), SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
-        connect(m_list.at(row), SIGNAL(fetchingChanged(Comic*)), this, SLOT(emitFetchingChanged(Comic*)));
-    }
+    emit countChanged();
+    emit favoritesCountChanged();
+    emit newCountChanged();
+    emit fetchedCountChanged();
+    emit errorCountChanged();
+}
+
+QStringList ComicsModel::idLoadList()
+{
+    return factory->fullList();
 }
 
 bool ComicsModel::emitDataChanged(Comic *comic, ComicsModel::Roles role)

@@ -20,29 +20,9 @@ FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
     connect(settings, SIGNAL(favoritesChanged()), this, SIGNAL(favoritesChanged()));
 }
 
-void FavoriteComicsModel::loadAll()
+QStringList FavoriteComicsModel::idLoadList()
 {
-    clear();
-
-    QStringList favoriteIds = dbResource->favoriteIds();
-
-    Comic *comic;
-
-    beginInsertRows(QModelIndex(), 0, favoriteIds.size() - 1);
-
-    for (int i = 0; i < favoriteIds.size(); ++i) {
-        comic = factory->create(favoriteIds.at(i), this);
-        comic->load();
-        m_list.append(comic);
-    }
-
-    initComicConnections();
-
-    endInsertRows();
-
-    emit countChanged();
-    emit newCountChanged();
-    emit fetchedCountChanged();
+    return dbResource->favoriteIds();
 }
 
 void FavoriteComicsModel::removeFavorite(int row)
@@ -58,8 +38,4 @@ void FavoriteComicsModel::removeFavorite(int row)
     beginRemoveRows(QModelIndex(), row, row);
     m_list.removeAt(row);
     endRemoveRows();
-
-    emit countChanged();
-    emit newCountChanged();
-    emit fetchedCountChanged();
 }
