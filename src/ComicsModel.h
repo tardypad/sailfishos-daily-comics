@@ -71,10 +71,11 @@ public slots:
 protected:
     void clear();
     void initComicConnections();
-    void emitDataChanged(int row, Roles role);
+    bool emitDataChanged(Comic* comic, Roles role);
     int roleCount(Roles role, QVariant test) const;
 
 protected slots:
+    void emitFavoriteChanged(Comic* comic);
     void emitNewStripChanged(Comic* comic);
     void emitErrorChanged(Comic* comic);
     void emitFetchingChanged(Comic* comic);

@@ -125,6 +125,8 @@ void ComicsModel::loadAll()
         m_list.append(comic);
     }
 
+    initComicConnections();
+
     endInsertRows();
 
     emit countChanged();
@@ -134,50 +136,49 @@ void ComicsModel::loadAll()
 void ComicsModel::initComicConnections()
 {
     for(int row = 0; row < m_list.size(); ++row) {
+        connect(m_list.at(row), SIGNAL(favoriteChanged(Comic*)), this, SLOT(emitFavoriteChanged(Comic*)));
         connect(m_list.at(row), SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
         connect(m_list.at(row), SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
         connect(m_list.at(row), SIGNAL(fetchingChanged(Comic*)), this, SLOT(emitFetchingChanged(Comic*)));
     }
 }
 
-void ComicsModel::emitDataChanged(int row, ComicsModel::Roles role)
+bool ComicsModel::emitDataChanged(Comic *comic, ComicsModel::Roles role)
 {
-    QVector<int> roleVector;
-    roleVector << role;
-    emit dataChanged(index(row), index(row), roleVector);
+    for(int row = 0; row < m_list.size(); ++row) {
+        if (m_list.at(row) == comic) {
+            QVector<int> roleVector;
+            roleVector << role;
+            emit dataChanged(index(row), index(row), roleVector);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void ComicsModel::emitFavoriteChanged(Comic *comic)
+{
+    bool result = emitDataChanged(comic, FavoriteRole);
+    if (result) emit favoritesCountChanged();
 }
 
 void ComicsModel::emitNewStripChanged(Comic *comic)
 {
-    for(int row = 0; row < m_list.size(); ++row) {
-        if (m_list.at(row) == comic) {
-            emitDataChanged(row, NewStripRole);
-            emit newCountChanged();
-            return;
-        }
-    }
+    bool result = emitDataChanged(comic, NewStripRole);
+    if (result) emit newCountChanged();
 }
 
 void ComicsModel::emitErrorChanged(Comic *comic)
 {
-    for(int row = 0; row < m_list.size(); ++row) {
-        if (m_list.at(row) == comic) {
-            emitDataChanged(row, ErrorRole);
-            emit errorCountChanged();
-            return;
-        }
-    }
+    bool result = emitDataChanged(comic, ErrorRole);
+    if (result) emit errorCountChanged();
 }
 
 void ComicsModel::emitFetchingChanged(Comic *comic)
 {
-    for(int row = 0; row < m_list.size(); ++row) {
-        if (m_list.at(row) == comic) {
-            emitDataChanged(row, FetchingRole);
-            emit fetchedCountChanged();
-            return;
-        }
-    }
+    bool result = emitDataChanged(comic, FetchingRole);
+    if (result) emit fetchedCountChanged();
 }
 
 void ComicsModel::fetchAll()
@@ -190,8 +191,6 @@ void ComicsModel::fetchAll()
 void ComicsModel::setFavorite(int row, bool favorite)
 {
     m_list.at(row)->setFavorite(favorite);
-    emitDataChanged(row, FavoriteRole);
-    emit favoritesCountChanged();
 }
 
 void ComicsModel::read(int row)

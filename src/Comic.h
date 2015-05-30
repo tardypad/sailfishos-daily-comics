@@ -44,7 +44,7 @@ public:
     bool fetching() const { return m_fetching; }
     QDateTime fetchTime() const { return m_fetchTime; }
 
-    void setFavorite(const bool favorite) { m_favorite = favorite; }
+    void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
@@ -72,6 +72,7 @@ signals:
     void parsingError();
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
+    void favoriteChanged(Comic* comic);
     void newStripChanged(Comic* comic);
     void errorChanged(Comic* comic);
     void fetchingChanged(Comic* comic);
