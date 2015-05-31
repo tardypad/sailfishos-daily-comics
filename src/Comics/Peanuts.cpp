@@ -25,12 +25,12 @@ const QLocale::Country Peanuts::_country   = QLocale::UnitedStates;
 const QLocale::Language Peanuts::_language = QLocale::English;
 const QDate Peanuts::_startDate            = QDate::fromString("1950-10-02", Qt::ISODate);
 const QDate Peanuts::_endDate              = QDate::fromString("2000-02-13", Qt::ISODate);
-const QUrl Peanuts::_stripSourceUrl        = QUrl("http://www.peanuts.com/comics/");
+const QUrl Peanuts::_stripSourceUrl        = QUrl("http://www.gocomics.com/peanuts/");
 
 QUrl Peanuts::extractStripUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comic-strip/[^\"]*)\"");
+    QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
