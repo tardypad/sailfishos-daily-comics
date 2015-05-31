@@ -14,7 +14,8 @@
 
 #include "ComicDatabaseResource.h"
 
-const int Comic::_minFetchDelay = 1800;
+const int Comic::_minFetchDelay = 1800; // 30 min
+const int Comic::_timeout = 20000; // 20 sec
 
 Comic::Comic(QObject *parent) :
     QObject(parent),
@@ -28,6 +29,11 @@ Comic::Comic(QObject *parent) :
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
+
+    m_timeoutTimer = new QTimer(this);
+    m_timeoutTimer->setInterval(_timeout);
+    m_timeoutTimer->setSingleShot(true);
+    connect(m_timeoutTimer, SIGNAL(timeout()), this, SLOT(timeout()));
 }
 
 Comic::~Comic()
@@ -62,6 +68,7 @@ void Comic::fetchStripUrl(QUrl stripUrl)
     request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
     m_currentReply = m_networkManager->get(request);
 
+    m_timeoutTimer->start();
     emit fetchStarted();
     setFetching(true);
 
@@ -74,6 +81,7 @@ void Comic::abortFetching()
     if (m_currentReply != NULL && m_currentReply->isRunning()) {
         m_currentReply->disconnect(this);
         m_currentReply->abort();
+        setFetching(false);
     }
 }
 
@@ -86,6 +94,7 @@ void Comic::read()
 void Comic::onFetchFinished()
 {
     setFetching(false);
+    m_timeoutTimer->stop();
 
     if (m_currentReply->error() != QNetworkReply::NoError) {
         setError(true);
@@ -129,4 +138,11 @@ void Comic::parse()
     save();
 
     emit dataParsed();
+}
+
+void Comic::timeout()
+{
+    abortFetching();
+    setError(true);
+    emit networkError();
 }

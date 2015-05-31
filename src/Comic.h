@@ -13,6 +13,7 @@
 #include <QUrl>
 #include <QLocale>
 #include <QDateTime>
+#include <QTimer>
 
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -64,6 +65,7 @@ protected:
 private slots:
     void onFetchFinished();
     void parse();
+    void timeout();
 
 signals:
     void fetchStarted();
@@ -79,10 +81,14 @@ signals:
 
 protected:
     static const int _minFetchDelay;
+    static const int _timeout;
+
     ComicDatabaseResource* dbResource;
-    QUrl m_stripUrl;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
+    QTimer* m_timeoutTimer;
+
+    QUrl m_stripUrl;
     bool m_favorite;
     bool m_newStrip;
     bool m_error;

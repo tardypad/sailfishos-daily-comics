@@ -100,11 +100,6 @@ Page {
         id: infoPanelLoader
     }
 
-    onStatusChanged: {
-        if (status === PageStatus.Inactive)
-            comic.abortFetching()
-    }
-
     Component.onCompleted: {
         comic.setComic(comicsModel.comicAt(index))
         comic.fetch()
