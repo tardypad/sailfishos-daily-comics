@@ -7,9 +7,10 @@ Features
 --------
 
 - select your favorite comics among the list for quick access
-- retrieve automatically the new strips
-- display information about comics
-- quick view to all new strips
+- retrieve automatically the new strips locally
+- display basic information about comics
+- quick view all new strips in a row
+- glance at unread comics in cover
 - full landscape view support
 - multi language comics
 
