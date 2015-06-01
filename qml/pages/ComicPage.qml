@@ -32,7 +32,7 @@ Page {
         anchors.fill: parent
 
         Image {
-            source: !comic.error && !indicator.busy ? comic.stripUrl : ''
+            source: !comic.error && !indicator.busy ? comic.stripPath : ''
             fillMode: Image.PreserveAspectFit
             smooth: true
             clip: true
@@ -63,6 +63,7 @@ Page {
             defaultErrorText: "Can't display comic"
             networkErrorText: "Can't download comic"
             parsingErrorText: "Can't extract comic"
+            savingErrorText: "Can't save comic"
             mailErrorMail: constants.devMail
             mailErrorSubject: constants.mailErrorSubjectHeader
             mailErrorMessage: constants.mailBodyHeader + "There is a problem with comic \"" + comic.name + "\""

@@ -13,14 +13,15 @@
 #include <QtNetwork/QNetworkReply>
 
 #include "ComicDatabaseResource.h"
+#include "ComicFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 20000; // 20 sec
 
 Comic::Comic(QObject *parent) :
     QObject(parent),
-    m_stripUrl(QUrl()),
     m_currentReply(NULL),
+    m_stripUrl(QUrl()),
     m_favorite(false),
     m_newStrip(false),
     m_error(false),
@@ -29,6 +30,7 @@ Comic::Comic(QObject *parent) :
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
+    fileResource = ComicFileResource::instance();
 
     m_timeoutTimer = new QTimer(this);
     m_timeoutTimer->setInterval(_timeout);
@@ -52,7 +54,12 @@ void Comic::save()
     dbResource->save(this);
 }
 
-void Comic::fetchStripUrl(QUrl stripUrl)
+QString Comic::stripPath() const
+{
+     return fileResource->filePath(id());
+}
+
+void Comic::fetchStrip(QUrl stripUrl)
 {
     if (!error() &&
         !fetchTime().isNull() &&
@@ -78,10 +85,11 @@ void Comic::fetchStripUrl(QUrl stripUrl)
 
 void Comic::abortFetching()
 {
+    setFetching(false);
+
     if (m_currentReply != NULL && m_currentReply->isRunning()) {
         m_currentReply->disconnect(this);
-        m_currentReply->abort();
-        setFetching(false);
+        m_currentReply->abort();        
     }
 }
 
@@ -91,25 +99,38 @@ void Comic::read()
     save();
 }
 
+QUrl Comic::redirectedToUrl()
+{
+    QVariant redirectAttribute = m_currentReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+
+    if (redirectAttribute.isValid()) {
+        QUrl redirectUrl = redirectAttribute.toUrl();
+
+        if (redirectUrl.isRelative())
+            redirectUrl = m_currentReply->url().resolved(redirectUrl);
+
+        return redirectUrl;
+    }
+
+    return QUrl();
+}
+
+
 void Comic::onFetchFinished()
 {
-    setFetching(false);
     m_timeoutTimer->stop();
 
     if (m_currentReply->error() != QNetworkReply::NoError) {
+        setFetching(false);
         setError(true);
         emit networkError();
         return;
     }
 
-    QVariant redirectAttribute = m_currentReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+    QUrl redirectUrl = redirectedToUrl();
 
-    if (redirectAttribute.isValid()) {
-        QUrl redirectUrl = redirectAttribute.toUrl();
-        if (redirectUrl.isRelative()) {
-            redirectUrl = m_currentReply->url().resolved(redirectUrl);
-        }
-        fetchStripUrl(redirectUrl);
+    if (!redirectUrl.isEmpty()) {
+        fetchStrip(redirectUrl);
         return;
     }
 
@@ -122,22 +143,71 @@ void Comic::parse()
     QUrl extractedStripUrl = extractStripUrl(data);
 
     if (!extractedStripUrl.isValid()) {
+        setFetching(false);
         setError(true);
         emit parsingError();
         return;
     }
 
-    setError(false);
-
-    if (extractedStripUrl != stripUrl())
+    if (extractedStripUrl != stripUrl()) {
+        fetchStripImage(extractedStripUrl);
         setNewStrip(true);
+    } else {
+        setFetching(false);
+        emit fetchFinished();
+    }
 
     setStripUrl(extractedStripUrl);
     setFetchTime(QDateTime::currentDateTime());
 
     save();
+}
 
-    emit dataParsed();
+void Comic::fetchStripImage(QUrl stripImageUrl)
+{
+    delete m_currentReply;
+    m_currentReply = NULL;
+
+    QNetworkRequest request(stripImageUrl);
+    m_currentReply = m_networkManager->get(request);
+
+    m_timeoutTimer->start();
+
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchImageFinished()));
+    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
+}
+
+void Comic::onFetchImageFinished()
+{
+    m_timeoutTimer->stop();
+
+    if (m_currentReply->error() != QNetworkReply::NoError) {
+        setFetching(false);
+        setError(true);
+        emit networkError();
+        return;
+    }
+
+    QUrl redirectUrl = redirectedToUrl();
+
+    if (!redirectUrl.isEmpty()) {
+        fetchStripImage(redirectUrl);
+        return;
+    }
+
+    bool result = fileResource->save(id(), m_currentReply->readAll());
+
+    if (!result) {
+        setFetching(false);
+        setError(true);
+        emit savingError();
+        return;
+    }
+
+    setFetching(false);
+    setError(false);
+
+    emit fetchFinished();
 }
 
 void Comic::timeout()

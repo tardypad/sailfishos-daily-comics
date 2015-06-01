@@ -19,6 +19,7 @@ Item {
     property string defaultErrorText
     property string networkErrorText
     property string parsingErrorText
+    property string savingErrorText
 
     property string mailErrorMail
     property string mailErrorSubject
@@ -117,10 +118,11 @@ Item {
 
     Connections {
         id: connections
-        onDataParsed: state = "complete"
+        onFetchFinished: state = "complete"
         onFetchStarted: state = "fetching"
         onNetworkError: displayError("Network error", networkErrorText)
         onParsingError: displayError("Parsing error", parsingErrorText)
+        onSavingError: displayError("Saving error",savingErrorText)
         onDownloadProgress: _updateProgress(bytesReceived, bytesTotal)
     }
 

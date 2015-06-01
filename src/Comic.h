@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2015 Damien Tardy-Panis
  *
  * This file is subject to the terms and conditions defined in
@@ -18,6 +18,7 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class ComicDatabaseResource;
+class ComicFileResource;
 
 class Comic : public QObject
 {
@@ -55,23 +56,28 @@ public:
     void load();
     void save();
 
-    void fetchStripUrl(QUrl stripUrl = QUrl());
+    void fetchStrip(QUrl stripUrl = QUrl());
+    QString stripPath() const;
     void abortFetching();
     void read();
 
 protected:
     virtual QUrl stripSourceUrl() const = 0;
+    void parse();
+    void fetchStripImage(QUrl stripImageUrl);
+    QUrl redirectedToUrl();
 
 private slots:
     void onFetchFinished();
-    void parse();
+    void onFetchImageFinished();
     void timeout();
 
 signals:
     void fetchStarted();
-    void dataParsed();
+    void fetchFinished();
     void networkError();
     void parsingError();
+    void savingError();
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
     void favoriteChanged(Comic* comic);
@@ -84,6 +90,7 @@ protected:
     static const int _timeout;
 
     ComicDatabaseResource* dbResource;
+    ComicFileResource* fileResource;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;
