@@ -66,6 +66,7 @@ protected:
     void parse();
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
+    bool stripImageDownloaded();
 
 private slots:
     void onFetchFinished();

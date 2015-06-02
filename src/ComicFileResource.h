@@ -22,6 +22,7 @@ class ComicFileResource : public QObject
 public:
     static ComicFileResource* instance();
     QString filePath(QString id);
+    bool isDownloaded(QString id);
     bool save(QString id, QByteArray data);
 
 private:

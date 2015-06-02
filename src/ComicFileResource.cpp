@@ -40,6 +40,11 @@ QString ComicFileResource::filePath(QString id)
     return dirPath().append(QDir::separator()).append(id);
 }
 
+bool ComicFileResource::isDownloaded(QString id)
+{
+    return QFile::exists(filePath(id));
+}
+
 bool ComicFileResource::save(QString id, QByteArray data)
 {
     QFile* file = new QFile();

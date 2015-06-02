@@ -63,7 +63,8 @@ void Comic::fetchStrip(QUrl stripUrl)
 {
     if (!error() &&
         !fetchTime().isNull() &&
-        QDateTime::currentDateTime().secsTo(fetchTime()) > -_minFetchDelay)
+        QDateTime::currentDateTime().secsTo(fetchTime()) > -_minFetchDelay &&
+        stripImageDownloaded())
         return;
 
     abortFetching();
@@ -99,6 +100,11 @@ void Comic::read()
     save();
 }
 
+bool Comic::stripImageDownloaded()
+{
+    return fileResource->isDownloaded(id());
+}
+
 QUrl Comic::redirectedToUrl()
 {
     QVariant redirectAttribute = m_currentReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
@@ -114,7 +120,6 @@ QUrl Comic::redirectedToUrl()
 
     return QUrl();
 }
-
 
 void Comic::onFetchFinished()
 {
@@ -152,6 +157,8 @@ void Comic::parse()
     if (extractedStripUrl != stripUrl()) {
         fetchStripImage(extractedStripUrl);
         setNewStrip(true);
+    } else if (!stripImageDownloaded()) {
+        fetchStripImage(extractedStripUrl);
     } else {
         setFetching(false);
         emit fetchFinished();
