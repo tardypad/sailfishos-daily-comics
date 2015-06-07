@@ -64,9 +64,14 @@ Page {
             MenuItem {
                 text: "Report problems with comics"
                 onClicked: {
-                    var comicsNamesList = "\"" + favoriteComicsModel.errorComicNames().join("\", \"") + "\""
+                    var comicsNamesList = favoriteComicsModel.errorComicNames();
+                    var encodedComicsNamesList = [];
+                    for (var i = 0; i < comicsNamesList.length; i++) {
+                        encodedComicsNamesList.push(encodeURIComponent(comicsNamesList[i]))
+                    }
+                    var finalComicsList = "\"" + encodedComicsNamesList.join("\", \"") + "\""
                     ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
-                                              constants.mailBodyHeader + "There are problems with comics: " + comicsNamesList)
+                                              constants.mailBodyHeader + "There are problems with comics: " + finalComicsList)
                 }
                 visible: favoriteComicsModel.errorCount > 0
             }

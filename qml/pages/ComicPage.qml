@@ -66,7 +66,7 @@ Page {
             savingErrorText: "Can't save comic"
             mailErrorMail: constants.devMail
             mailErrorSubject: constants.mailErrorSubjectHeader
-            mailErrorMessage: constants.mailBodyHeader + "There is a problem with comic \"" + comic.name + "\""
+            mailErrorMessage: constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\""
         }
 
         PullDownMenu {
@@ -82,7 +82,7 @@ Page {
             MenuItem {
                 text: "Report a problem with the comic"
                 onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
-                                              constants.mailBodyHeader + "There is a problem with comic \"" + comic.name + "\"")
+                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
             }
         }
 
