@@ -21,6 +21,7 @@ const int Comic::_timeout = 20000; // 20 sec
 Comic::Comic(QObject *parent) :
     QObject(parent),
     m_currentReply(NULL),
+    m_extractedStripUrl(QUrl()),
     m_stripUrl(QUrl()),
     m_favorite(false),
     m_newStrip(false),
@@ -154,6 +155,8 @@ void Comic::parse()
         return;
     }
 
+    setExtractedStripUrl(extractedStripUrl);
+
     if (extractedStripUrl != stripUrl()) {
         fetchStripImage(extractedStripUrl);
         setNewStrip(true);
@@ -162,12 +165,10 @@ void Comic::parse()
     } else {
         setFetching(false);
         emit fetchFinished();
+        setStripUrl(extractedStripUrl);
+        setFetchTime(QDateTime::currentDateTime());
+        save();
     }
-
-    setStripUrl(extractedStripUrl);
-    setFetchTime(QDateTime::currentDateTime());
-
-    save();
 }
 
 void Comic::fetchStripImage(QUrl stripImageUrl)
@@ -213,8 +214,10 @@ void Comic::onFetchImageFinished()
 
     setFetching(false);
     setError(false);
-
     emit fetchFinished();
+    setStripUrl(extractedStripUrl());
+    setFetchTime(QDateTime::currentDateTime());
+    save();
 }
 
 void Comic::timeout()

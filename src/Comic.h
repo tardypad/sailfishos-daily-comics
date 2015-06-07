@@ -45,6 +45,7 @@ public:
     bool error() const { return m_error; }
     bool fetching() const { return m_fetching; }
     QDateTime fetchTime() const { return m_fetchTime; }
+    QUrl extractedStripUrl() const { return m_extractedStripUrl; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
@@ -52,6 +53,7 @@ public:
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
     void setFetchTime(const QDateTime fetchTime) { m_fetchTime = fetchTime; }
     void setStripUrl(const QUrl stripUrl) { m_stripUrl = stripUrl; }
+    void setExtractedStripUrl(const QUrl extractedStripUrl) { m_extractedStripUrl = extractedStripUrl; }
 
     void load();
     void save();
@@ -96,6 +98,7 @@ protected:
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;
 
+    QUrl m_extractedStripUrl;
     QUrl m_stripUrl;
     bool m_favorite;
     bool m_newStrip;
