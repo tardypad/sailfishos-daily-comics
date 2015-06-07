@@ -147,6 +147,7 @@ Page {
             window.cover.favoritesComicsModel = favoriteComicsModel
             favoriteComicsModel.loadAll()
             favoriteComicsModel.fetchAll()
+            favoriteComicsModel.startAutomaticFetch(3600000) // 1H
         }
     }
 
@@ -162,13 +163,6 @@ Page {
             favoriteComicsModel.loadAll()
             favoriteComicsModel.fetchAll()
         }
-    }
-
-    Timer {
-        running: true
-        repeat: true
-        interval: 3600000
-        onTriggered: favoriteComicsModel.fetchAll()
     }
 
     Connections {

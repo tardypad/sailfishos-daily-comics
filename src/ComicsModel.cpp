@@ -18,7 +18,8 @@
 
 ComicsModel::ComicsModel(QObject *parent) :
     QAbstractListModel(parent),
-    m_list(QList<Comic*>())
+    m_list(QList<Comic*>()),
+    m_automaticFetchTimer(NULL)
 {
     dbResource = ComicDatabaseResource::instance();
     factory    = ComicFactory::instance();
@@ -31,6 +32,7 @@ ComicsModel::ComicsModel(QObject *parent) :
 
 ComicsModel::~ComicsModel()
 {
+    delete m_automaticFetchTimer;
     clear();
 }
 
@@ -242,6 +244,13 @@ QStringList ComicsModel::errorComicNames()
     }
 
     return errorComicNames;
+}
+
+void ComicsModel::startAutomaticFetch(int interval)
+{
+    m_automaticFetchTimer = new QTimer(this);
+    m_automaticFetchTimer->start(interval);
+    connect(m_automaticFetchTimer, SIGNAL(timeout()), this, SLOT(fetchAll()));
 }
 
 int ComicsModel::count() const

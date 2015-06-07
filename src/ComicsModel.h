@@ -10,6 +10,8 @@
 
 #include <QAbstractListModel>
 
+#include <QTimer>
+
 class Comic;
 
 class ComicFactory;
@@ -57,6 +59,7 @@ public:
     Q_INVOKABLE void saveAll();
     Q_INVOKABLE Comic *comicAt(int row);
     Q_INVOKABLE QStringList errorComicNames();
+    Q_INVOKABLE void startAutomaticFetch(int interval);
 
     int count() const;
     int favoritesCount() const;
@@ -93,6 +96,7 @@ protected:
     ComicFactory* factory;
     ComicDatabaseResource* dbResource;
     Settings* settings;
+    QTimer* m_automaticFetchTimer;
 };
 
 #endif // COMICSMODEL_H

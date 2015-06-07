@@ -43,6 +43,7 @@ Comic::~Comic()
 {
     delete m_currentReply;
     delete m_networkManager;
+    delete m_timeoutTimer;
 }
 
 void Comic::load()
