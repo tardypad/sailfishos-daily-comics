@@ -31,7 +31,7 @@ Page {
 
         anchors.fill: parent
 
-        Image {
+        AnimatedImage {
             source: !comic.error && !indicator.busy ? comic.stripPath : ''
             fillMode: Image.PreserveAspectFit
             smooth: true

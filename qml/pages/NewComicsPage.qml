@@ -20,7 +20,7 @@ Page {
 
         model: comicsModelProxy
 
-        delegate: Image {
+        delegate: AnimatedImage {
             width: parent.width
             height: parent.height
             source: image
