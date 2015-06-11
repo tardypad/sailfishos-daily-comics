@@ -15,26 +15,20 @@ Page {
 
     allowedOrientations: Orientation.All
 
-    SilicaListView {
-        id: listView
-
-        anchors.fill: parent
-        snapMode: ListView.SnapOneItem
-        orientation: ListView.HorizontalFlick
+    SlideshowView {
+        id: slideshowView
 
         model: comicsModelProxy
 
         delegate: AnimatedImage {
-            width: listView.width
-            height: listView.height
-            opacity: Math.abs(listView.contentX - x) <= listView.width
-                     ? 1.0 -  (Math.abs(listView.contentX - x) / listView.width)
-                     : 0
+            width: parent.width
+            height: parent.height
             source: image
             fillMode: Image.PreserveAspectFit
             smooth: true
             clip: true
             asynchronous: true
+            opacity: Math.abs(x) <= slideshowView.width ? 1.0 -  (Math.abs(x) / slideshowView.width) : 0
 
             BusyIndicator {
                 running: parent.status === Image.Loading
@@ -43,17 +37,15 @@ Page {
             }
 
             onStatusChanged: {
-                if (status === Image.Ready && index === listView.currentIndex)
+                if (status === Image.Ready && index === slideshowView.currentIndex)
                     comicsModel.read(comicsModelProxy.sourceRow(index))
             }
         }
 
         onCurrentIndexChanged: {
-            if (currentItem && currentItem.status === Image.Ready)
+            if (currentItem.status === Image.Ready)
                 comicsModel.read(comicsModelProxy.sourceRow(currentIndex))
         }
-
-        onMovementEnded: currentIndex = indexAt(contentX + listView.width / 2, 100)
     }
 
     ComicsModelProxy {
