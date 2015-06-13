@@ -32,6 +32,7 @@
 #include "Comics/Lunarbaboon.h"
 #include "Comics/SafelyEndangered.h"
 #include "Comics/BerkeleyMews.h"
+#include "Comics/Buni.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -64,6 +65,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<Lunarbaboon>("lunarbaboon");
     registerComic<SafelyEndangered>("safelyendangered");
     registerComic<BerkeleyMews>("berkeleymews");
+    registerComic<Buni>("buni");
 }
 
 ComicFactory* ComicFactory::instance()
