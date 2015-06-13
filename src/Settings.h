@@ -17,6 +17,7 @@ class Settings : public QObject
     Q_OBJECT
 
     static const QString _settingsFavoritesInfoHintField;
+    static const QString _newSlideshowFlickHintField;
 
 public:
     static Settings* instance();
@@ -24,7 +25,10 @@ public:
     Q_INVOKABLE void emitFavoritesChanged();
 
     Q_INVOKABLE bool settingsFavoritesInfoHint();
+    Q_INVOKABLE bool newSlideshowFlickHint();
+
     Q_INVOKABLE void hideSettingsFavoritesInfoHint();
+    Q_INVOKABLE void hideNewSlideshowFlickHint();
 
 protected:
     QVariant value(const QString &key);

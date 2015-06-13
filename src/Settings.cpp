@@ -12,6 +12,7 @@
 Settings* Settings::m_instance = NULL;
 
 const QString Settings::_settingsFavoritesInfoHintField = QString("hints/settings_favorites_info");
+const QString Settings::_newSlideshowFlickHintField = QString("hints/new_slideshow_flick");
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
@@ -47,9 +48,23 @@ bool Settings::settingsFavoritesInfoHint()
     return value(_settingsFavoritesInfoHintField).toBool();
 }
 
+bool Settings::newSlideshowFlickHint()
+{
+    if (!m_settings->contains(_newSlideshowFlickHintField)) {
+        return true;
+    }
+
+    return value(_newSlideshowFlickHintField).toBool();
+}
+
 void Settings::hideSettingsFavoritesInfoHint()
 {
     setValue(_settingsFavoritesInfoHintField, false);
+}
+
+void Settings::hideNewSlideshowFlickHint()
+{
+    setValue(_newSlideshowFlickHintField, false);
 }
 
 QVariant Settings::value(const QString &key)
