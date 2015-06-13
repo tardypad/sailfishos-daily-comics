@@ -18,6 +18,7 @@ DockedPanel {
     property int index
     property ComicsModel comicsModel
     property bool isPortrait: (parent.isPortrait !== undefined) ? parent.isPortrait : true
+    property alias homepageMenu: homepagePushUpMenu.visible
 
     width: isPortrait ? parent.width : parent.height
     height: isPortrait
@@ -177,6 +178,8 @@ DockedPanel {
     }
 
     PushUpMenu {
+        id: homepagePushUpMenu
+
         MenuItem {
             text: "Go to homepage"
             onClicked: ExternalLinks.browse(comic.homepage)

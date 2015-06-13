@@ -74,6 +74,10 @@ Page {
                 text: "Show comic info"
                 onClicked: comicView._showComicInfo()
             }
+            MenuItem {
+                text: "Go to homepage"
+                onClicked: ExternalLinks.browse(comic.homepage)
+            }
         }
 
         PushUpMenu {
@@ -92,6 +96,7 @@ Page {
                 infoPanelLoader.item.parent = comicPage
                 infoPanelLoader.item.index = index
                 infoPanelLoader.item.comicsModel = comicsModel
+                infoPanelLoader.item.homepageMenu = false
             }
             infoPanelLoader.item.showComicInfo()
         }

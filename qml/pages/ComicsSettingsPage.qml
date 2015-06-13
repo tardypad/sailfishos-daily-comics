@@ -61,6 +61,7 @@ Page {
                 infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
                 infoPanelLoader.item.parent = comicPage
                 infoPanelLoader.item.comicsModel = settingsComicsModel
+                infoPanelLoader.item.homepageMenu = true
             }
             infoPanelLoader.item.index = comicsModelProxy.sourceRow(index)
             infoPanelLoader.item.showComicInfo()
