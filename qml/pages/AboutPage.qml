@@ -157,11 +157,29 @@ Page {
                        <br/>You can contact me for any remarks,
                        <br/>bugs, feature requests, ideas,...
                        <br/>
-                       <br/> Let me know as well which additional comics
-                       <br/> you would like to be in the list"
+                       <br/>Below are few resources to find new comics.
+                       <br/>Let me know as well which additional comics
+                       <br/>you would like to be included in the app."
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 font.pixelSize: Theme.fontSizeExtraSmall
                 horizontalAlignment: Text.AlignHCenter
+                textFormat: Text.StyledText
+                linkColor: Theme.highlightColor
+                onLinkActivated: ExternalLinks.browse(link)
+            }
+
+            Label {
+                id: resourcesLabel
+                width: implicitWidth
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "<br/><a href='http://gocomics.com/'>GoComics</a>
+                       <br/><a href='http://tapastic.com/'>Tapastic</a>
+                       <br/><a href='http://comicskingdom.com/'>Comics Kingdom</a>
+                       <br/><a href='http://www.webtoons.com/'>WebToons</a>
+                       <br/><a href='http://www.reddit.com/r/webcomics/'>Reddit webcomics</a>
+                       <br/>"
+                font.pixelSize: Theme.fontSizeExtraSmall
+                horizontalAlignment: Text.AlignLeft
                 textFormat: Text.StyledText
                 linkColor: Theme.highlightColor
                 onLinkActivated: ExternalLinks.browse(link)
