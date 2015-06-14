@@ -43,7 +43,8 @@ public:
         FavoriteRole,
         NewStripRole,
         ErrorRole,
-        FetchingRole
+        FetchingRole,
+        FetchingProgressRole
     };
 
 public:

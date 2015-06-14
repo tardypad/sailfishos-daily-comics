@@ -44,10 +44,11 @@ Item {
         }
 
         StatusRectangle {
-            color: Qt.darker(idColor, 1.1)
+            mainColor: idColor
             hasNew: newStrip
             hasError: error
             isFetching: fetching
+            fetchingProgressValue: fetchingProgress
 
             anchors {
                 right: parent.right
