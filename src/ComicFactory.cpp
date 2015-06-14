@@ -36,6 +36,7 @@
 #include "Comics/NamelessPcs.h"
 #include "Comics/Pigknit.h"
 #include "Comics/SadSacks.h"
+#include "Comics/FowlLanguageComics.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -72,6 +73,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<NamelessPcs>("namelesspcs");
     registerComic<Pigknit>("pigknit");
     registerComic<SadSacks>("sadsacks");
+    registerComic<FowlLanguageComics>("fowllanguagecomics");
 }
 
 ComicFactory* ComicFactory::instance()
