@@ -17,11 +17,13 @@ Rectangle {
     property bool hasError: false
     property bool isFetching: false
 
+    property color secondaryColor: Qt.darker(mainColor, 1.1)
+
     width: image.width + label.width
            + (label.visible ? 3 : 2) * Theme.paddingSmall
     height: image.height + 2*Theme.paddingSmall
 
-    color: Qt.darker(mainColor, 1.1)
+    color: secondaryColor
 
     state: "invisible"
 
@@ -52,8 +54,16 @@ Rectangle {
         height: Theme.iconSizeSmall
         width: Theme.iconSizeSmall
 
-        progressColor: Qt.darker(mainColor, 1.1)
+        progressColor: secondaryColor
         backgroundColor: mainColor
+
+        SequentialAnimation on backgroundColor {
+            id: blinkingAnimation
+            running: true
+            loops: Animation.Infinite
+            ColorAnimation { from: mainColor; to: secondaryColor; duration: 500 }
+            ColorAnimation { from: secondaryColor; to: mainColor;  duration: 500 }
+        }
     }
 
     Label {
@@ -71,30 +81,34 @@ Rectangle {
         State {
           name: "invisible"
           when: !isFetching && !hasNew && !hasError
-          PropertyChanges { target: statusRectangle; opacity: 0.0 }
+          PropertyChanges { target: statusRectangle;   opacity: 0.0 }
+          PropertyChanges { target: blinkingAnimation; running: false }
         },
         State {
             name: "new"
             when: !isFetching && hasNew && !hasError
-            PropertyChanges { target: statusRectangle; opacity: 1.0 }
-            PropertyChanges { target: image;           source: "image://theme/icon-s-update" }
-            PropertyChanges { target: progressCircle;  opacity: 0.0 }
-            PropertyChanges { target: label;           text: "New"; visible: true; }
+            PropertyChanges { target: statusRectangle;   opacity: 1.0 }
+            PropertyChanges { target: image;             source: "image://theme/icon-s-update" }
+            PropertyChanges { target: progressCircle;    opacity: 0.0 }
+            PropertyChanges { target: blinkingAnimation; running: false }
+            PropertyChanges { target: label;             text: "New"; visible: true; }
         },
         State {
             name: "error"
             when: !isFetching && hasError
-            PropertyChanges { target: statusRectangle; opacity: 1.0 }
-            PropertyChanges { target: image;           source: "image://theme/icon-system-warning" }
-            PropertyChanges { target: progressCircle;  opacity: 0.0 }
-            PropertyChanges { target: label;           text: "Error"; visible: true; }
+            PropertyChanges { target: statusRectangle;   opacity: 1.0 }
+            PropertyChanges { target: image;             source: "image://theme/icon-system-warning" }
+            PropertyChanges { target: progressCircle;    opacity: 0.0 }
+            PropertyChanges { target: blinkingAnimation; running: false }
+            PropertyChanges { target: label;             text: "Error"; visible: true; }
         },
         State {
             name: "fetching"
             when: isFetching
-            PropertyChanges { target: statusRectangle; opacity: 1.0 }
-            PropertyChanges { target: image;           opacity: 0.0 }
-            PropertyChanges { target: progressCircle;  opacity: 1.0 }
-            PropertyChanges { target: label;           visible: false }
+            PropertyChanges { target: statusRectangle;   opacity: 1.0 }
+            PropertyChanges { target: image;             opacity: 0.0 }
+            PropertyChanges { target: progressCircle;    opacity: 1.0 }
+            PropertyChanges { target: blinkingAnimation; running: true }
+            PropertyChanges { target: label;             visible: false }
         }]
 }
