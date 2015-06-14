@@ -34,6 +34,7 @@
 #include "Comics/BerkeleyMews.h"
 #include "Comics/Buni.h"
 #include "Comics/NamelessPcs.h"
+#include "Comics/Pigknit.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -68,6 +69,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<BerkeleyMews>("berkeleymews");
     registerComic<Buni>("buni");
     registerComic<NamelessPcs>("namelesspcs");
+    registerComic<Pigknit>("pigknit");
 }
 
 ComicFactory* ComicFactory::instance()
