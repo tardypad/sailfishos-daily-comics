@@ -125,6 +125,10 @@ void ComicsModel::loadAll()
 
     for (int i = 0; i < comicsList.size(); ++i) {
         comic = factory->create(comicsList.at(i), this);
+
+        if (comic == NULL)
+            return;
+
         comic->load();
 
         connect(comic, SIGNAL(favoriteChanged(Comic*)), this, SLOT(emitFavoriteChanged(Comic*)));

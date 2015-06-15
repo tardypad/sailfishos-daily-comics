@@ -22,7 +22,19 @@ FavoriteComicsModel::FavoriteComicsModel(QObject *parent) :
 
 QStringList FavoriteComicsModel::idLoadList()
 {
-    return dbResource->favoriteIds();
+    QStringList fullList = factory->fullList();
+    QStringList favoritesList = dbResource->favoriteIds();
+
+    QStringList loadList;
+    QString comicId;
+
+    for (int i = 0; i < favoritesList.size(); ++i) {
+        comicId = favoritesList.at(i);
+        if (fullList.contains(comicId))
+            loadList << comicId;
+    }
+
+    return loadList;
 }
 
 void FavoriteComicsModel::removeFavorite(int row)
