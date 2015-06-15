@@ -14,7 +14,7 @@ QtObject {
 
     property url repoGithub: "https://github.com/tardypad/daily-comics"
 
-    property string mailSubjectHeader: "[SailfishOS][Daily Comics] "
-    property string mailErrorSubjectHeader: "[SailfishOS][Daily Comics][Error] "
+    property string mailSubjectHeader: "[SailfishOS][Daily Comics " + Qt.application.version + "] "
+    property string mailErrorSubjectHeader: "[SailfishOS][Daily Comics " + Qt.application.version + "][Error] "
     property string mailBodyHeader: "Yo man, "
 }
