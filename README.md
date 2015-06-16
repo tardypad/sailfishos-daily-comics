@@ -24,6 +24,7 @@ Comics list
 -----------
 
 - Berkeley Mews
+- Buni
 - Calvin and Hobbes
 - CommitStrip
 - Cyanide & Happiness
@@ -33,12 +34,17 @@ Comics list
 - Fingerpori
 - Fok_it
 - FoxTrot
+- Fowl Language Comics
 - Garfield
 - Hagar the Horrible
 - Le Chat
 - Lunarbaboon
+- Nameless PCs
 - Peanuts
+- Pigknit
 - Piled Higher and Deeper (PHD Comics)
+- Pirate Mike
+- Sad Sacks
 - Pöyrööt
 - Safely Endangered
 - Shit happens!
