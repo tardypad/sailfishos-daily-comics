@@ -84,6 +84,7 @@ protected slots:
     void emitNewStripChanged(Comic* comic);
     void emitErrorChanged(Comic* comic);
     void emitFetchingChanged(Comic* comic);
+    void emitFetchingProgressChanged(Comic* comic);
 
 signals:
     void countChanged();

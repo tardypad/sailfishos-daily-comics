@@ -135,6 +135,7 @@ void ComicsModel::loadAll()
         connect(comic, SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
         connect(comic, SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
         connect(comic, SIGNAL(fetchingChanged(Comic*)), this, SLOT(emitFetchingChanged(Comic*)));
+        connect(comic, SIGNAL(fetchingProgressChanged(Comic*)), this, SLOT(emitFetchingProgressChanged(Comic*)));
 
         m_list.append(comic);
     }
@@ -195,6 +196,11 @@ void ComicsModel::emitFetchingChanged(Comic *comic)
 {
     bool result = emitDataChanged(comic, FetchingRole);
     if (result) emit fetchedCountChanged();
+}
+
+void ComicsModel::emitFetchingProgressChanged(Comic *comic)
+{
+    emitDataChanged(comic, FetchingProgressRole);
 }
 
 void ComicsModel::fetchAll()

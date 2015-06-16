@@ -28,7 +28,7 @@ Comic::Comic(QObject *parent) :
     m_error(false),
     m_fetching(false),
     m_fetchTime(QDateTime()),
-    m_fetchProgress(0)
+    m_fetchingProgress(0)
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
@@ -82,10 +82,11 @@ void Comic::fetchStrip(QUrl stripUrl)
     m_timeoutTimer->start();
     emit fetchStarted();
     setFetching(true);
+    setFetchingProgress(0);
 
     connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchFinished()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(setFetchingProgress(qint64,qint64)));
+    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
 }
 
 void Comic::abortFetching()
@@ -186,7 +187,7 @@ void Comic::fetchStripImage(QUrl stripImageUrl)
 
     connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchImageFinished()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(setFetchingProgress(qint64,qint64)));
+    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
 }
 
 void Comic::onFetchImageFinished()
@@ -231,7 +232,10 @@ void Comic::timeout()
     emit networkError();
 }
 
-void Comic::setFetchingProgress(qint64 bytesReceived, qint64 bytesTotal)
+void Comic::updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    m_fetchProgress = bytesReceived / bytesTotal;
+    if (bytesTotal != 0)
+        setFetchingProgress(bytesReceived / bytesTotal);
+    else
+        setFetchingProgress(0);
 }

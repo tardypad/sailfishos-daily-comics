@@ -46,12 +46,13 @@ public:
     bool fetching() const { return m_fetching; }
     QDateTime fetchTime() const { return m_fetchTime; }
     QUrl extractedStripUrl() const { return m_extractedStripUrl; }
-    int fetchingProgress() const { return m_fetchProgress; }
+    int fetchingProgress() const { return m_fetchingProgress; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
+    void setFetchingProgress(const bool fetchingProgress) { m_fetchingProgress = fetchingProgress; emit fetchingProgressChanged(this); }
     void setFetchTime(const QDateTime fetchTime) { m_fetchTime = fetchTime; }
     void setStripUrl(const QUrl stripUrl) { m_stripUrl = stripUrl; }
     void setExtractedStripUrl(const QUrl extractedStripUrl) { m_extractedStripUrl = extractedStripUrl; }
@@ -75,7 +76,7 @@ private slots:
     void onFetchFinished();
     void onFetchImageFinished();
     void timeout();
-    void setFetchingProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 signals:
     void fetchStarted();
@@ -89,6 +90,7 @@ signals:
     void newStripChanged(Comic* comic);
     void errorChanged(Comic* comic);
     void fetchingChanged(Comic* comic);
+    void fetchingProgressChanged(Comic* comic);
 
 protected:
     static const int _minFetchDelay;
@@ -107,7 +109,7 @@ protected:
     bool m_error;
     bool m_fetching;
     QDateTime m_fetchTime;
-    int m_fetchProgress;
+    int m_fetchingProgress;
 };
 
 #endif // COMIC_H
