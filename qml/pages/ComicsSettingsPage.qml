@@ -11,6 +11,7 @@ import Sailfish.Silica 1.0
 import harbour.dailycomics.Comics 1.0
 
 import "../delegates"
+import "../components"
 
 Page {
     id: comicPage
@@ -89,30 +90,7 @@ Page {
         id: infoPanelLoader
     }
 
-    InteractionHintLabel {
-        id: interactionHintLabel
-        anchors.bottom: parent.bottom
-        text: "Hold cover to display comic info"
-        Behavior on opacity { FadeAnimation { duration: 1000 } }
-        opacity: _settings.settingsFavoritesInfoHint() ? 1.0 : 0.0
-        visible: opacity != 0
-
-        MouseArea {
-            anchors.fill: parent
-            onPressed: closeHint()
-        }
-
-        Timer {
-            interval: 5000
-            running: true
-            onTriggered: closeHint()
-        }
-    }
-
-    function closeHint() {
-        _settings.hideSettingsFavoritesInfoHint()
-        interactionHintLabel.opacity = 0.0
-    }
+    SettingsInfoHint { }
 
     onStatusChanged: {
         if (status === PageStatus.Deactivating) {
