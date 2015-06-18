@@ -77,12 +77,17 @@ Rectangle {
         font.pixelSize: Theme.fontSizeExtraSmall
     }
 
+    Behavior on opacity {
+        NumberAnimation { duration: 1000 }
+    }
+
     states: [
         State {
           name: "invisible"
           when: !isFetching && !hasNew && !hasError
           PropertyChanges { target: statusRectangle;   opacity: 0.0 }
           PropertyChanges { target: blinkingAnimation; running: false }
+          PropertyChanges { target: label;             visible: false }
         },
         State {
             name: "new"
