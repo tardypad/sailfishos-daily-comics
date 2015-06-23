@@ -168,6 +168,7 @@ void Comic::parse()
         fetchStripImage(extractedStripUrl);
     } else {
         setFetching(false);
+        setError(false);
         emit fetchFinished();
         setStripUrl(extractedStripUrl);
         setFetchTime(QDateTime::currentDateTime());
