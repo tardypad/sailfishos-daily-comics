@@ -31,7 +31,7 @@ QUrl TubeyToons::extractStripUrl(QByteArray data)
 {
     QString html(data);
 
-    QRegularExpression reg("<img[^>]*src=\'(/img/comics/[^\']*)\'");
+    QRegularExpression reg("<img[^>]*src=\'(.*/images/comics/[^\']*)\'");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
@@ -40,5 +40,5 @@ QUrl TubeyToons::extractStripUrl(QByteArray data)
 
     QString src = match.captured(1);
 
-    return QUrl("http://tubeytoons.com/" + src);
+    return QUrl(src);
 }
