@@ -11,6 +11,7 @@ import Sailfish.Silica 1.0
 import harbour.dailycomics.Comics 1.0
 
 import "../utils"
+import "../components"
 
 import "../scripts/ExternalLinks.js" as ExternalLinks
 
@@ -64,9 +65,13 @@ Page {
             networkErrorText: "Can't download comic"
             parsingErrorText: "Can't extract comic"
             savingErrorText: "Can't save comic"
-            mailErrorMail: constants.devMail
-            mailErrorSubject: constants.mailErrorSubjectHeader
-            mailErrorMessage: constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\""
+        }
+
+        ErrorContactDevRectangle {
+            comicName: comic.name
+            flickable: comicView
+            active: indicator.error
+            z: 10
         }
 
         PullDownMenu {
