@@ -101,22 +101,16 @@ Item {
     states: [
         State {
             name: "init"
-            PropertyChanges { target: loadingIndicator; visible: false }
-            PropertyChanges { target: loadingIndicator; busy: false }
-            PropertyChanges { target: loadingIndicator; error: false }
+            PropertyChanges { target: loadingIndicator; visible: false; busy: false; error: false }
         },
         State {
             name: "fetching"
-            PropertyChanges { target: loadingIndicator; visible: true }
-            PropertyChanges { target: loadingIndicator; busy: true }
-            PropertyChanges { target: loadingIndicator; error: false }
+            PropertyChanges { target: loadingIndicator; visible: true; busy: true; error: false }
             StateChangeScript { script: removePlaceholder() }
         },
         State {
             name: "error"
-            PropertyChanges { target: loadingIndicator; visible: false }
-            PropertyChanges { target: loadingIndicator; busy: true }
-            PropertyChanges { target: loadingIndicator; error: true }
+            PropertyChanges { target: loadingIndicator; visible: false; busy: true; error: true }
             StateChangeScript {
                 script: {
                     placeholderLoader.sourceComponent = errorComponent
@@ -126,9 +120,7 @@ Item {
         },
         State {
             name: "complete"
-            PropertyChanges { target: loadingIndicator; visible: false }
-            PropertyChanges { target: loadingIndicator; busy: false }
-            PropertyChanges { target: loadingIndicator; error: false }
+            PropertyChanges { target: loadingIndicator; visible: false; busy: false; error: false }
             StateChangeScript { script: removePlaceholder() }
         }]
 }
