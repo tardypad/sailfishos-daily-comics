@@ -27,7 +27,7 @@ const QDate Smbc::_startDate            = QDate::fromString("2002-09-05", Qt::IS
 const QDate Smbc::_endDate              = QDate::currentDate();
 const QUrl Smbc::_stripSourceUrl        = QUrl("http://www.smbc-comics.com/");
 
-QUrl Smbc::extractStripUrl(QByteArray data)
+QUrl Smbc::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*)\" id=\"comic\"");

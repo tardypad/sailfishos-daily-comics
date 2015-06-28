@@ -27,7 +27,7 @@ const QDate PhdComics::_startDate            = QDate::fromString("1997-10-27", Q
 const QDate PhdComics::_endDate              = QDate::currentDate();
 const QUrl PhdComics::_stripSourceUrl        = QUrl("http://phdcomics.com/comics.php");
 
-QUrl PhdComics::extractStripUrl(QByteArray data)
+QUrl PhdComics::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img id=comic[^>]*src=([^ ]*)");

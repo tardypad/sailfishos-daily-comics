@@ -27,7 +27,7 @@ const QDate ShitHappens::_startDate            = QDate();
 const QDate ShitHappens::_endDate              = QDate::currentDate();
 const QUrl ShitHappens::_stripSourceUrl        = QUrl("http://ruthe.de/cartoon/");
 
-QUrl ShitHappens::extractStripUrl(QByteArray data)
+QUrl ShitHappens::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/cartoons/[^\"]*)\"");

@@ -27,7 +27,7 @@ const QDate FoxTrot::_startDate            = QDate::fromString("1988-04-10", Qt:
 const QDate FoxTrot::_endDate              = QDate::currentDate();
 const QUrl FoxTrot::_stripSourceUrl        = QUrl("http://www.gocomics.com/foxtrot");
 
-QUrl FoxTrot::extractStripUrl(QByteArray data)
+QUrl FoxTrot::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");

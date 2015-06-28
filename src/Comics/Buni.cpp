@@ -27,7 +27,7 @@ const QDate Buni::_startDate            = QDate::fromString("2010-01-01", Qt::IS
 const QDate Buni::_endDate              = QDate::currentDate();
 const QUrl Buni::_stripSourceUrl        = QUrl("http://www.bunicomic.com/");
 
-QUrl Buni::extractStripUrl(QByteArray data)
+QUrl Buni::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<div id=\"comic\">\n<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

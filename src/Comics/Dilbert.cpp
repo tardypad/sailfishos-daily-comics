@@ -27,7 +27,7 @@ const QDate Dilbert::_startDate            = QDate::fromString("1989-04-16", Qt:
 const QDate Dilbert::_endDate              = QDate::currentDate();
 const QUrl Dilbert::_stripSourceUrl        = QUrl("http://dilbert.com/");
 
-QUrl Dilbert::extractStripUrl(QByteArray data)
+QUrl Dilbert::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
 

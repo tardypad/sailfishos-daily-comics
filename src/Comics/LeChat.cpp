@@ -27,7 +27,7 @@ const QDate LeChat::_startDate            = QDate::fromString("1983-03-22", Qt::
 const QDate LeChat::_endDate              = QDate::currentDate();
 const QUrl LeChat::_stripSourceUrl        = QUrl("http://geluck.com/dessin.html");
 
-QUrl LeChat::extractStripUrl(QByteArray data)
+QUrl LeChat::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/strip/[^\"]*)\"");

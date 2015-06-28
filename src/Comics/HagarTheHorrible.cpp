@@ -27,7 +27,7 @@ const QDate HagarTheHorrible::_startDate            = QDate::fromString("1973-02
 const QDate HagarTheHorrible::_endDate              = QDate::currentDate();
 const QUrl HagarTheHorrible::_stripSourceUrl        = QUrl("http://hagarthehorrible.com/");
 
-QUrl HagarTheHorrible::extractStripUrl(QByteArray data)
+QUrl HagarTheHorrible::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*content\\.php[^\"]*)\"");

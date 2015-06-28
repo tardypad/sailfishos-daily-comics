@@ -27,7 +27,7 @@ const QDate CommitStrip::_startDate            = QDate::fromString("2012-02", "y
 const QDate CommitStrip::_endDate              = QDate::currentDate();
 const QUrl CommitStrip::_stripSourceUrl        = QUrl("http://www.commitstrip.com/en/");
 
-QUrl CommitStrip::extractStripUrl(QByteArray data)
+QUrl CommitStrip::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
 

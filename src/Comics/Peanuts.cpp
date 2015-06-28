@@ -27,7 +27,7 @@ const QDate Peanuts::_startDate            = QDate::fromString("1950-10-02", Qt:
 const QDate Peanuts::_endDate              = QDate::fromString("2000-02-13", Qt::ISODate);
 const QUrl Peanuts::_stripSourceUrl        = QUrl("http://www.gocomics.com/peanuts/");
 
-QUrl Peanuts::extractStripUrl(QByteArray data)
+QUrl Peanuts::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");

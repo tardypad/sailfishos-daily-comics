@@ -27,7 +27,7 @@ const QDate TheHatAndFat::_startDate            = QDate::fromString("2013-02", "
 const QDate TheHatAndFat::_endDate              = QDate::currentDate();
 const QUrl TheHatAndFat::_stripSourceUrl        = QUrl("https://thehatandfat.wordpress.com/");
 
-QUrl TheHatAndFat::extractStripUrl(QByteArray data)
+QUrl TheHatAndFat::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(https://thehatandfat.files.wordpress.com/[^\"]*)\"");

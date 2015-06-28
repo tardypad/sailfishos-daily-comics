@@ -27,7 +27,7 @@ const QDate DieselSweeties::_startDate            = QDate::fromString("2000-04",
 const QDate DieselSweeties::_endDate              = QDate::currentDate();
 const QUrl DieselSweeties::_stripSourceUrl        = QUrl("http://dieselsweeties.com/");
 
-QUrl DieselSweeties::extractStripUrl(QByteArray data)
+QUrl DieselSweeties::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/hstrips/[^\"]*)\"");

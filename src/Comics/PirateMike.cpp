@@ -27,7 +27,7 @@ const QDate PirateMike::_startDate            = QDate::fromString("2012-04-04", 
 const QDate PirateMike::_endDate              = QDate::currentDate();
 const QUrl PirateMike::_stripSourceUrl        = QUrl("http://piratemikecomics.com/");
 
-QUrl PirateMike::extractStripUrl(QByteArray data)
+QUrl PirateMike::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

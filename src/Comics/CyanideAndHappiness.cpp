@@ -28,7 +28,7 @@ const QDate CyanideAndHappiness::_startDate            = QDate::fromString("2004
 const QDate CyanideAndHappiness::_endDate              = QDate::currentDate();
 const QUrl CyanideAndHappiness::_stripSourceUrl        = QUrl("http://explosm.net/");
 
-QUrl CyanideAndHappiness::extractStripUrl(QByteArray data)
+QUrl CyanideAndHappiness::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");

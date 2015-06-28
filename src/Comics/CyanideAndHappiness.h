@@ -31,7 +31,7 @@ public:
     virtual inline QDate startDate() const { return _startDate; }
     virtual inline QDate endDate() const { return _endDate; }
 
-    virtual QUrl extractStripUrl(QByteArray data);
+    virtual QUrl extractStripImageUrl(QByteArray data);
 
 protected:
     virtual inline QUrl stripSourceUrl() const { return _stripSourceUrl; }

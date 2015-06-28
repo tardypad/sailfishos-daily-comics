@@ -97,7 +97,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     case EndDateRole:
         return m_list.at(index.row())->endDate();
     case ImageRole:
-        return m_list.at(index.row())->stripPath();
+        return m_list.at(index.row())->stripImagePath();
     case FavoriteRole:
         return m_list.at(index.row())->favorite();
     case NewStripRole:

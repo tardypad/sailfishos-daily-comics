@@ -21,7 +21,7 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(startDateChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(endDateChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(stripPathChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(stripImagePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(errorChanged()));
 }
 
@@ -65,9 +65,9 @@ QDate ComicProxy::endDate() const
     return m_comic ? m_comic->endDate() : QDate();
 }
 
-QUrl ComicProxy::stripPath()
+QUrl ComicProxy::stripImagePath()
 {
-    return m_comic ? m_comic->stripPath() : QUrl();
+    return m_comic ? m_comic->stripImagePath() : QUrl();
 }
 
 bool ComicProxy::error()
@@ -85,12 +85,12 @@ void ComicProxy::setComic(Comic *comic)
     emit idChanged();
 
     connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
-    connect(m_comic, SIGNAL(fetchFinished()), this, SIGNAL(fetchFinished()));
+    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(fetchSucceeded()));
     connect(m_comic, SIGNAL(networkError()), this, SIGNAL(networkError()));
     connect(m_comic, SIGNAL(parsingError()), this, SIGNAL(parsingError()));
     connect(m_comic, SIGNAL(savingError()), this, SIGNAL(savingError()));
     connect(m_comic, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_comic, SIGNAL(fetchFinished()), this, SIGNAL(stripPathChanged()));
+    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImagePathChanged()));
     connect(m_comic, SIGNAL(errorChanged(Comic*)), this, SIGNAL(errorChanged()));
 }
 

@@ -27,7 +27,7 @@ const QDate TheAwkwardYeti::_startDate            = QDate::fromString("2012-09-1
 const QDate TheAwkwardYeti::_endDate              = QDate::currentDate();
 const QUrl TheAwkwardYeti::_stripSourceUrl        = QUrl("http://theawkwardyeti.com/");
 
-QUrl TheAwkwardYeti::extractStripUrl(QByteArray data)
+QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

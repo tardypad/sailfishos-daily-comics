@@ -61,7 +61,7 @@ bool ComicDatabaseResource::load(Comic *comic)
     bool favorite  = query.value(3).toBool();
 
     comic->setFetchTime(time);
-    comic->setStripUrl(url);
+    comic->setStripImageUrl(url);
     comic->setNewStrip(!read);
     comic->setFavorite(favorite);
 
@@ -75,7 +75,7 @@ bool ComicDatabaseResource::save(Comic *comic)
                   "VALUES (:id, :time, :url, :read, :favorite)");
 
     query.bindValue(":time",     comic->fetchTime());
-    query.bindValue(":url",      comic->stripUrl());
+    query.bindValue(":url",      comic->stripImageUrl());
     query.bindValue(":read",     !comic->newStrip());
     query.bindValue(":id",       comic->id());
     query.bindValue(":favorite", comic->favorite());

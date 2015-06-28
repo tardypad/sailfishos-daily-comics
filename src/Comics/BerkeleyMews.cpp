@@ -28,7 +28,7 @@ const QDate BerkeleyMews::_startDate            = QDate::fromString("2009-12-27"
 const QDate BerkeleyMews::_endDate              = QDate::currentDate();
 const QUrl BerkeleyMews::_stripSourceUrl        = QUrl("http://www.berkeleymews.com/");
 
-QUrl BerkeleyMews::extractStripUrl(QByteArray data)
+QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");

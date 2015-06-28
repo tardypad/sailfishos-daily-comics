@@ -27,7 +27,7 @@ const QDate SafelyEndangered::_startDate            = QDate::fromString("2012-11
 const QDate SafelyEndangered::_endDate              = QDate::currentDate();
 const QUrl SafelyEndangered::_stripSourceUrl        = QUrl("http://www.safelyendangered.com/");
 
-QUrl SafelyEndangered::extractStripUrl(QByteArray data)
+QUrl SafelyEndangered::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

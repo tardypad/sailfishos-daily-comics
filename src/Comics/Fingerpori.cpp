@@ -27,7 +27,7 @@ const QDate Fingerpori::_startDate            = QDate::fromString("2007-02", "yy
 const QDate Fingerpori::_endDate              = QDate::currentDate();
 const QUrl Fingerpori::_stripSourceUrl        = QUrl("http://www.hs.fi/m/fingerpori/");
 
-QUrl Fingerpori::extractStripUrl(QByteArray data)
+QUrl Fingerpori::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");

@@ -27,7 +27,7 @@ const QDate Lunarbaboon::_startDate            = QDate::fromString("2012-07-09",
 const QDate Lunarbaboon::_endDate              = QDate::currentDate();
 const QUrl Lunarbaboon::_stripSourceUrl        = QUrl("http://www.lunarbaboon.com/");
 
-QUrl Lunarbaboon::extractStripUrl(QByteArray data)
+QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(/storage/[^\"]*)\"");

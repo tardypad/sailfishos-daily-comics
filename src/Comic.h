@@ -37,15 +37,15 @@ public:
     virtual QLocale::Language language() const = 0;
     virtual QDate startDate() const = 0;
     virtual QDate endDate() const = 0;
-    virtual QUrl extractStripUrl(QByteArray data) = 0;
+    virtual QUrl extractStripImageUrl(QByteArray data) = 0;
 
-    QUrl stripUrl() const { return m_stripUrl; }
+    QUrl stripImageUrl() const { return m_stripImageUrl; }
     bool favorite() const { return m_favorite; }
     bool newStrip() const { return m_newStrip; }
     bool error() const { return m_error; }
     bool fetching() const { return m_fetching; }
     QDateTime fetchTime() const { return m_fetchTime; }
-    QUrl extractedStripUrl() const { return m_extractedStripUrl; }
+    QUrl extractedStripImageUrl() const { return m_extractedStripImageUrl; }
     int fetchingProgress() const { return m_fetchingProgress; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
@@ -54,33 +54,33 @@ public:
     void setFetching(const bool fetching) { m_fetching = fetching; emit fetchingChanged(this); }
     void setFetchingProgress(const bool fetchingProgress) { m_fetchingProgress = fetchingProgress; emit fetchingProgressChanged(this); }
     void setFetchTime(const QDateTime fetchTime) { m_fetchTime = fetchTime; }
-    void setStripUrl(const QUrl stripUrl) { m_stripUrl = stripUrl; }
-    void setExtractedStripUrl(const QUrl extractedStripUrl) { m_extractedStripUrl = extractedStripUrl; }
+    void setStripImageUrl(const QUrl stripImageUrl) { m_stripImageUrl = stripImageUrl; }
+    void setExtractedStripImageUrl(const QUrl extractedStripImageUrl) { m_extractedStripImageUrl = extractedStripImageUrl; }
 
     void load();
     void save();
 
-    void fetchStrip(QUrl stripUrl = QUrl());
-    QString stripPath() const;
+    void fetchStrip();
+    QString stripImagePath() const;
     void abortFetching();
     void read();
 
 protected:
     virtual QUrl stripSourceUrl() const = 0;
-    void parse();
+    void fetchStripSource(QUrl stripSrcUrl = QUrl());
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
     bool stripImageDownloaded();
 
 private slots:
-    void onFetchFinished();
-    void onFetchImageFinished();
+    void onFetchStripSourceFinished();
+    void onFetchStripImageFinished();
     void timeout();
     void updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 signals:
     void fetchStarted();
-    void fetchFinished();
+    void fetchSucceeded();
     void networkError();
     void parsingError();
     void savingError();
@@ -102,8 +102,8 @@ protected:
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;
 
-    QUrl m_extractedStripUrl;
-    QUrl m_stripUrl;
+    QUrl m_extractedStripImageUrl;
+    QUrl m_stripImageUrl;
     bool m_favorite;
     bool m_newStrip;
     bool m_error;

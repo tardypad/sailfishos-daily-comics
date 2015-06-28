@@ -27,7 +27,7 @@ const QDate Garfield::_startDate            = QDate::fromString("1978-06-19", Qt
 const QDate Garfield::_endDate              = QDate::currentDate();
 const QUrl Garfield::_stripSourceUrl        = QUrl("http://garfield.com/");
 
-QUrl Garfield::extractStripUrl(QByteArray data)
+QUrl Garfield::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/strips/[^\"]*)\"");

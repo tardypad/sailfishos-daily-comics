@@ -21,8 +21,8 @@ const int Comic::_timeout = 20000; // 20 sec
 Comic::Comic(QObject *parent) :
     QObject(parent),
     m_currentReply(NULL),
-    m_extractedStripUrl(QUrl()),
-    m_stripUrl(QUrl()),
+    m_extractedStripImageUrl(QUrl()),
+    m_stripImageUrl(QUrl()),
     m_favorite(false),
     m_newStrip(false),
     m_error(false),
@@ -57,12 +57,12 @@ void Comic::save()
     dbResource->save(this);
 }
 
-QString Comic::stripPath() const
+QString Comic::stripImagePath() const
 {
-     return fileResource->filePath(id());
+     return fileResource->path(id());
 }
 
-void Comic::fetchStrip(QUrl stripUrl)
+void Comic::fetchStrip()
 {
     if (!error() &&
         !fetchTime().isNull() &&
@@ -71,10 +71,15 @@ void Comic::fetchStrip(QUrl stripUrl)
         return;
 
     abortFetching();
+    fetchStripSource();
+}
+
+void Comic::fetchStripSource(QUrl stripSrcUrl)
+{
     delete m_currentReply;
     m_currentReply = NULL;
 
-    QUrl requestUrl = !stripUrl.isEmpty() ? stripUrl : stripSourceUrl();
+    QUrl requestUrl = !stripSrcUrl.isEmpty() ? stripSrcUrl : stripSourceUrl();
     QNetworkRequest request(requestUrl);
     request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
     m_currentReply = m_networkManager->get(request);
@@ -84,7 +89,7 @@ void Comic::fetchStrip(QUrl stripUrl)
     setFetching(true);
     setFetchingProgress(0);
 
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchFinished()));
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchStripSourceFinished()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
 }
@@ -126,7 +131,7 @@ QUrl Comic::redirectedToUrl()
     return QUrl();
 }
 
-void Comic::onFetchFinished()
+void Comic::onFetchStripSourceFinished()
 {
     m_timeoutTimer->stop();
 
@@ -140,37 +145,32 @@ void Comic::onFetchFinished()
     QUrl redirectUrl = redirectedToUrl();
 
     if (!redirectUrl.isEmpty()) {
-        fetchStrip(redirectUrl);
+        fetchStripSource(redirectUrl);
         return;
     }
 
-    parse();
-}
-
-void Comic::parse()
-{
     QByteArray data = m_currentReply->readAll();
-    QUrl extractedStripUrl = extractStripUrl(data);
+    QUrl extractedStripImageUrl = extractStripImageUrl(data);
 
-    if (!extractedStripUrl.isValid()) {
+    if (!extractedStripImageUrl.isValid()) {
         setFetching(false);
         setError(true);
         emit parsingError();
         return;
     }
 
-    setExtractedStripUrl(extractedStripUrl);
+    setExtractedStripImageUrl(extractedStripImageUrl);
 
-    if (extractedStripUrl != stripUrl()) {
-        fetchStripImage(extractedStripUrl);
+    if (extractedStripImageUrl != stripImageUrl()) {
+        fetchStripImage(extractedStripImageUrl);
         setNewStrip(true);
     } else if (!stripImageDownloaded()) {
-        fetchStripImage(extractedStripUrl);
+        fetchStripImage(extractedStripImageUrl);
     } else {
         setFetching(false);
         setError(false);
-        emit fetchFinished();
-        setStripUrl(extractedStripUrl);
+        emit fetchSucceeded();
+        setStripImageUrl(extractedStripImageUrl);
         setFetchTime(QDateTime::currentDateTime());
         save();
     }
@@ -186,12 +186,12 @@ void Comic::fetchStripImage(QUrl stripImageUrl)
 
     m_timeoutTimer->start();
 
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchImageFinished()));
+    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchStripImageFinished()));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
     connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
 }
 
-void Comic::onFetchImageFinished()
+void Comic::onFetchStripImageFinished()
 {
     m_timeoutTimer->stop();
 
@@ -209,7 +209,8 @@ void Comic::onFetchImageFinished()
         return;
     }
 
-    bool result = fileResource->save(id(), m_currentReply->readAll());
+    QByteArray data = m_currentReply->readAll();
+    bool result = fileResource->save(id(), data);
 
     if (!result) {
         setFetching(false);
@@ -220,8 +221,8 @@ void Comic::onFetchImageFinished()
 
     setFetching(false);
     setError(false);
-    emit fetchFinished();
-    setStripUrl(extractedStripUrl());
+    emit fetchSucceeded();
+    setStripImageUrl(extractedStripImageUrl());
     setFetchTime(QDateTime::currentDateTime());
     save();
 }

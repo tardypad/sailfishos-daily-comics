@@ -27,7 +27,7 @@ const QDate Poyroot::_startDate            = QDate();
 const QDate Poyroot::_endDate              = QDate::currentDate();
 const QUrl Poyroot::_stripSourceUrl        = QUrl("http://www.poyroot.fi/sarjakuvat/");
 
-QUrl Poyroot::extractStripUrl(QByteArray data)
+QUrl Poyroot::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");

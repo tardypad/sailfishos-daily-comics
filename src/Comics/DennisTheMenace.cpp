@@ -27,7 +27,7 @@ const QDate DennisTheMenace::_startDate            = QDate::fromString("1951-03-
 const QDate DennisTheMenace::_endDate              = QDate::currentDate();
 const QUrl DennisTheMenace::_stripSourceUrl        = QUrl("http://dennisthemenace.com/");
 
-QUrl DennisTheMenace::extractStripUrl(QByteArray data)
+QUrl DennisTheMenace::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<meta property=\"og:image\" content=\"([^\"]*)\"");

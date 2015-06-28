@@ -27,7 +27,7 @@ const QDate Pigknit::_startDate            = QDate::fromString("2014-10-28", Qt:
 const QDate Pigknit::_endDate              = QDate::currentDate();
 const QUrl Pigknit::_stripSourceUrl        = QUrl("https://pigknit.wordpress.com/");
 
-QUrl Pigknit::extractStripUrl(QByteArray data)
+QUrl Pigknit::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*pigknit.files.wordpress.com[^\"]*)\"");

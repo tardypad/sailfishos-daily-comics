@@ -28,7 +28,7 @@ const QDate Xkcd::_startDate            = QDate::fromString("2005-09", "yyyy-MM"
 const QDate Xkcd::_endDate              = QDate::currentDate();
 const QUrl Xkcd::_stripSourceUrl        = QUrl("http://xkcd.com/info.0.json");
 
-QUrl Xkcd::extractStripUrl(QByteArray data)
+QUrl Xkcd::extractStripImageUrl(QByteArray data)
 {
     QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
     QString src = jsonDoc.object().value("img").toString();

@@ -27,7 +27,7 @@ const QDate FowlLanguageComics::_startDate            = QDate::fromString("2013-
 const QDate FowlLanguageComics::_endDate              = QDate::currentDate();
 const QUrl FowlLanguageComics::_stripSourceUrl        = QUrl("http://www.fowllanguagecomics.com/");
 
-QUrl FowlLanguageComics::extractStripUrl(QByteArray data)
+QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

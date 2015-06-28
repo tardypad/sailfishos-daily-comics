@@ -27,7 +27,7 @@ const QDate ViiviJaWagner::_startDate            = QDate::fromString("1997-10-06
 const QDate ViiviJaWagner::_endDate              = QDate::currentDate();
 const QUrl ViiviJaWagner::_stripSourceUrl        = QUrl("http://www.hs.fi/m/viivijawagner/");
 
-QUrl ViiviJaWagner::extractStripUrl(QByteArray data)
+QUrl ViiviJaWagner::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");

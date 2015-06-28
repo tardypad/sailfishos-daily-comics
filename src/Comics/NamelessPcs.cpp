@@ -27,7 +27,7 @@ const QDate NamelessPcs::_startDate            = QDate::fromString("2010-09-26",
 const QDate NamelessPcs::_endDate              = QDate::currentDate();
 const QUrl NamelessPcs::_stripSourceUrl        = QUrl("http://namelesspcs.com/");
 
-QUrl NamelessPcs::extractStripUrl(QByteArray data)
+QUrl NamelessPcs::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");

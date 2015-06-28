@@ -27,7 +27,7 @@ const QDate CalvinAndHobbes::_startDate            = QDate::fromString("1985-11-
 const QDate CalvinAndHobbes::_endDate              = QDate::fromString("1995-12-31", Qt::ISODate);
 const QUrl CalvinAndHobbes::_stripSourceUrl        = QUrl("http://www.gocomics.com/calvinandhobbes/");
 
-QUrl CalvinAndHobbes::extractStripUrl(QByteArray data)
+QUrl CalvinAndHobbes::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");

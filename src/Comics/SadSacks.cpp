@@ -27,7 +27,7 @@ const QDate SadSacks::_startDate            = QDate::fromString("2015-01-05", Qt
 const QDate SadSacks::_endDate              = QDate::currentDate();
 const QUrl SadSacks::_stripSourceUrl        = QUrl("http://www.sadsacks.ca/");
 
-QUrl SadSacks::extractStripUrl(QByteArray data)
+QUrl SadSacks::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(images/comic/[^\"]*)\"");

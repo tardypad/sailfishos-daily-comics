@@ -27,7 +27,7 @@ const QDate TubeyToons::_startDate            = QDate::fromString("2013-01-01", 
 const QDate TubeyToons::_endDate              = QDate::currentDate();
 const QUrl TubeyToons::_stripSourceUrl        = QUrl("http://tubeytoons.com/");
 
-QUrl TubeyToons::extractStripUrl(QByteArray data)
+QUrl TubeyToons::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
 

@@ -35,20 +35,20 @@ ComicFileResource* ComicFileResource::instance()
     return m_instance;
 }
 
-QString ComicFileResource::filePath(QString id)
+QString ComicFileResource::path(QString id)
 {
     return dirPath().append(QDir::separator()).append(id);
 }
 
 bool ComicFileResource::isDownloaded(QString id)
 {
-    return QFile::exists(filePath(id));
+    return QFile::exists(path(id));
 }
 
 bool ComicFileResource::save(QString id, QByteArray data)
 {
     QFile* file = new QFile();
-    file->setFileName(filePath(id));
+    file->setFileName(path(id));
 
     bool openResult = file->open(QIODevice::WriteOnly);
 

@@ -27,7 +27,7 @@ const QDate FokIt::_startDate            = QDate::fromString("2009", "yyyy");
 const QDate FokIt::_endDate              = QDate::currentDate();
 const QUrl FokIt::_stripSourceUrl        = QUrl("http://nyt.fi/aihe/fokit/");
 
-QUrl FokIt::extractStripUrl(QByteArray data)
+QUrl FokIt::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
     QRegularExpression reg("<img[^>]*src=\"(.*/webkuva/sarjis[^\"]*)\"");
