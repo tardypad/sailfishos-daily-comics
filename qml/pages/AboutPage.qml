@@ -179,6 +179,7 @@ Page {
                        <br/><a href='http://www.reddit.com/r/webcomics/'>Reddit webcomics</a>
                        <br/>"
                 font.pixelSize: Theme.fontSizeExtraSmall
+                lineHeight: 1.5
                 horizontalAlignment: Text.AlignLeft
                 textFormat: Text.StyledText
                 linkColor: Theme.highlightColor
