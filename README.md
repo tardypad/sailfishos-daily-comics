@@ -54,6 +54,7 @@ Comics list
 - Tubey Toons
 - Viivi ja Wagner
 - xkcd
+- Yodablog
 
 Licenses
 --------

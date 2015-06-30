@@ -38,6 +38,7 @@
 #include "Comics/SadSacks.h"
 #include "Comics/FowlLanguageComics.h"
 #include "Comics/PirateMike.h"
+#include "Comics/Yodablog.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -76,6 +77,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<SadSacks>("sadsacks");
     registerComic<FowlLanguageComics>("fowllanguagecomics");
     registerComic<PirateMike>("piratemike");
+    registerComic<Yodablog>("yodablog");
 }
 
 ComicFactory* ComicFactory::instance()
