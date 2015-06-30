@@ -13,8 +13,8 @@ Features
 - glance at unread comics in cover
 - full landscape view support
 - multi language comics
+- animate gif comics
 
-If you have some additional comics you would like to be in the list, please contact me
 
 See the issues tab for current issues and possibly upcoming features
 
@@ -58,6 +58,19 @@ Comics list
 - What a wonderful world!
 - xkcd
 - Yodablog
+
+If you have some additional comics you would like to be in the list, please contact me
+
+Resources
+---------
+
+Here below are few good online resources to find new comics
+
+- [GoComics](http://gocomics.com/)
+- [Tapastic](http://tapastic.com/)
+- [Comics Kingdom](http://comicskingdom.com/)
+- [WebToons](http://www.webtoons.com/)
+- [Reddit webcomics](http://www.reddit.com/r/webcomics/)
 
 Licenses
 --------
