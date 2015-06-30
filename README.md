@@ -53,6 +53,7 @@ Comics list
 - The Hat and Fat
 - Tubey Toons
 - Viivi ja Wagner
+- What a wonderful world!
 - xkcd
 - Yodablog
 
