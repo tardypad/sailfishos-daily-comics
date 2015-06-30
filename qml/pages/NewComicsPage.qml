@@ -22,25 +22,38 @@ Page {
 
         model: comicsModelProxy
 
-        delegate: AnimatedImage {
+        delegate: SilicaFlickable {
+            property alias status: comicImage.status
+
             width: parent.width
             height: parent.height
-            source: image
-            fillMode: Image.PreserveAspectFit
-            smooth: true
-            clip: true
-            asynchronous: true
+            contentWidth: width
+            contentHeight: Math.max(comicImage.height, parent.height)
+
             opacity: Math.abs(x) <= slideshowView.width ? 1.0 -  (Math.abs(x) / slideshowView.width) : 0
 
-            BusyIndicator {
-                running: parent.status === Image.Loading
-                size: BusyIndicatorSize.Large
-                anchors.centerIn: parent
-            }
+            AnimatedImage {
+                id: comicImage
+                source: image
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                clip: true
+                asynchronous: true
 
-            onStatusChanged: {
-                if (status === Image.Ready && index === slideshowView.currentIndex)
-                    comicsModel.read(comicsModelProxy.sourceRow(index))
+                anchors.centerIn: parent
+                width: parent.width
+                height: (implicitHeight / implicitWidth ) * width
+
+                BusyIndicator {
+                    running: parent.status === Image.Loading
+                    size: BusyIndicatorSize.Large
+                    anchors.centerIn: parent
+                }
+
+                onStatusChanged: {
+                    if (status === Image.Ready && index === slideshowView.currentIndex)
+                        comicsModel.read(comicsModelProxy.sourceRow(index))
+                }
             }
         }
 

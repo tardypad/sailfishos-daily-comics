@@ -31,14 +31,20 @@ Page {
         id: comicView
 
         anchors.fill: parent
+        contentWidth: width
+        contentHeight: Math.max(comicImage.height + 2*Theme.paddingLarge, parent.height)
 
         AnimatedImage {
+            id: comicImage
             source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
             fillMode: Image.PreserveAspectFit
             smooth: true
             clip: true
             asynchronous: true
-            anchors.fill: parent
+
+            anchors.centerIn: parent
+            width: parent.width - 2*Theme.paddingLarge
+            height: (implicitHeight / implicitWidth ) * width
 
             BusyIndicator {
                 running: parent.status === Image.Loading
