@@ -45,6 +45,7 @@ Comics list
 - Pigknit
 - Piled Higher and Deeper (PHD Comics)
 - Pirate Mike
+- Rabbitual Offender
 - Sad Sacks
 - Pöyrööt
 - Safely Endangered
