@@ -39,6 +39,7 @@ Comics list
 - Hagar the Horrible
 - Le Chat
 - Lunarbaboon
+- Lupo Alberto
 - Nameless PCs
 - Peanuts
 - Pigknit
