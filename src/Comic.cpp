@@ -161,10 +161,7 @@ void Comic::onFetchStripSourceFinished()
 
     setExtractedStripImageUrl(extractedStripImageUrl);
 
-    if (extractedStripImageUrl != stripImageUrl()) {
-        fetchStripImage(extractedStripImageUrl);
-        setNewStrip(true);
-    } else if (!stripImageDownloaded()) {
+    if (extractedStripImageUrl != stripImageUrl() || !stripImageDownloaded()) {
         fetchStripImage(extractedStripImageUrl);
     } else {
         setFetching(false);
@@ -217,6 +214,10 @@ void Comic::onFetchStripImageFinished()
         setError(true);
         emit savingError();
         return;
+    }
+
+    if (extractedStripImageUrl() != stripImageUrl()) {
+        setNewStrip(true);
     }
 
     setFetching(false);
