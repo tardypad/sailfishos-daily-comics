@@ -179,6 +179,7 @@ void Comic::fetchStripImage(QUrl stripImageUrl)
     m_currentReply = NULL;
 
     QNetworkRequest request(stripImageUrl);
+    request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
     m_currentReply = m_networkManager->get(request);
 
     m_timeoutTimer->start();
