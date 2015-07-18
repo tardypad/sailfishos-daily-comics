@@ -25,7 +25,7 @@ const QLocale::Country FowlLanguageComics::_country   = QLocale::UnitedStates;
 const QLocale::Language FowlLanguageComics::_language = QLocale::English;
 const QDate FowlLanguageComics::_startDate            = QDate::fromString("2013-07-22", Qt::ISODate);
 const QDate FowlLanguageComics::_endDate              = QDate::currentDate();
-const QUrl FowlLanguageComics::_stripSourceUrl        = QUrl("http://www.fowllanguagecomics.com/");
+const QUrl FowlLanguageComics::_stripSourceUrl        = QUrl("http://www.fowllanguagecomics.com/?bypass-regular-homepage-cache-problem");
 
 QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)
 {
