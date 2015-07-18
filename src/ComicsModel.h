@@ -40,6 +40,7 @@ public:
         StartDateRole,
         EndDateRole,
         ImageRole,
+        ImageUrlRole,
         FavoriteRole,
         NewStripRole,
         ErrorRole,

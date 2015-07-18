@@ -32,23 +32,14 @@ Page {
 
             opacity: Math.abs(x) <= slideshowView.width ? 1.0 -  (Math.abs(x) / slideshowView.width) : 0
 
-            AnimatedImage {
+            ComicImage {
                 id: comicImage
+                url: imageUrl
                 source: image
-                fillMode: Image.PreserveAspectFit
-                smooth: true
-                clip: true
-                asynchronous: true
 
                 anchors.centerIn: parent
                 width: parent.width
                 height: (implicitHeight / implicitWidth ) * width
-
-                BusyIndicator {
-                    running: parent.status === Image.Loading
-                    size: BusyIndicatorSize.Large
-                    anchors.centerIn: parent
-                }
 
                 onStatusChanged: {
                     if (status === Image.Ready && index === slideshowView.currentIndex)
