@@ -33,6 +33,13 @@ Loader {
                 anchors.centerIn: parent
             }
 
+            Rectangle {
+                anchors.fill: parent
+                color: "white"
+                visible: status == Image.Ready
+                z: -10
+            }
+
             onStatusChanged: loader.status = status
         }
     }
@@ -53,6 +60,13 @@ Loader {
                 running: parent.status === Image.Loading
                 size: BusyIndicatorSize.Large
                 anchors.centerIn: parent
+            }
+
+            Rectangle {
+                anchors.fill: parent
+                color: "white"
+                visible: status == Image.Ready
+                z: -10
             }
 
             onStatusChanged: loader.status = status
