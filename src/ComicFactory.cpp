@@ -45,6 +45,7 @@
 #include "Comics/FredBasset.h"
 #include "Comics/Sigmund.h"
 #include "Comics/MacadamValley.h"
+#include "Comics/LoadingArtist.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -90,6 +91,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<FredBasset>("fredbasset");
     registerComic<Sigmund>("sigmund");
     registerComic<MacadamValley>("macadamvalley");
+    registerComic<LoadingArtist>("loadingartist");
 }
 
 ComicFactory* ComicFactory::instance()
