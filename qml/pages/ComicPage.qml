@@ -40,7 +40,7 @@ Page {
             source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
 
             anchors.centerIn: parent
-            width: parent.width - 2*Theme.paddingLarge
+            width: parent.width
             height: (implicitHeight / implicitWidth ) * width
 
             onStatusChanged: {
