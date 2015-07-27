@@ -26,20 +26,26 @@ Comics list
 - Berkeley Mews
 - Buni
 - Calvin and Hobbes
+- Cheer Up, Emo Kid
 - CommitStrip
 - Cyanide & Happiness
 - Dennis the Menace
 - Diesel Sweeties
 - Dilbert
+- Dinosaur Comics
+- Extra Ordinary
 - Fingerpori
 - Fok_it
 - FoxTrot
 - Fowl Language Comics
+- Fred Basset
 - Garfield
 - Hagar the Horrible
 - Le Chat
+- Loading Artist
 - Lunarbaboon
 - Lupo Alberto
+- Macadam Valley
 - Nameless PCs
 - Peanuts
 - Pigknit
@@ -47,6 +53,7 @@ Comics list
 - Pirate Mike
 - Rabbitual Offender
 - Sad Sacks
+- Sigmund
 - Pöyrööt
 - Safely Endangered
 - Shit happens!
