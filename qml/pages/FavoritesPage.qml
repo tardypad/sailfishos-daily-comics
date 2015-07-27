@@ -84,6 +84,8 @@ Page {
         }
 
         PushUpMenu {
+            spacing: Theme.paddingLarge
+
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
