@@ -172,12 +172,11 @@ Page {
                 id: resourcesLabel
                 width: implicitWidth
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "<br/><a href='http://gocomics.com/'>GoComics</a>
+                text: "<a href='http://gocomics.com/'>GoComics</a>
                        <br/><a href='http://tapastic.com/'>Tapastic</a>
                        <br/><a href='http://comicskingdom.com/'>Comics Kingdom</a>
                        <br/><a href='http://www.webtoons.com/'>WebToons</a>
-                       <br/><a href='http://www.reddit.com/r/webcomics/'>Reddit webcomics</a>
-                       <br/>"
+                       <br/><a href='http://www.reddit.com/r/webcomics/'>Reddit webcomics</a>"
                 font.pixelSize: Theme.fontSizeExtraSmall
                 lineHeight: 1.5
                 horizontalAlignment: Text.AlignLeft
