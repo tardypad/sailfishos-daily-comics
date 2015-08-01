@@ -37,6 +37,7 @@ Comics list
 - Fingerpori
 - Fok_it
 - FoxTrot
+- Fokke en Sukke
 - Fowl Language Comics
 - Fred Basset
 - Garfield
