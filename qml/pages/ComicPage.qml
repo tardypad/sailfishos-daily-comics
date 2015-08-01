@@ -36,7 +36,7 @@ Page {
 
         ComicImage {
             id: comicImage
-            url: comic.stripImageUrl
+            animated: comic.animated
             source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
 
             anchors.centerIn: parent

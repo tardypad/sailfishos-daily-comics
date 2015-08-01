@@ -11,6 +11,7 @@
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
+#include <QImageReader>
 
 #include "ComicDatabaseResource.h"
 #include "ComicFileResource.h"
@@ -28,7 +29,9 @@ Comic::Comic(QObject *parent) :
     m_error(false),
     m_fetching(false),
     m_fetchTime(QDateTime()),
-    m_fetchingProgress(0)
+    m_fetchingProgress(0),
+    m_animated(false),
+    m_isAnimatedDefined(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
@@ -60,6 +63,18 @@ void Comic::save()
 QString Comic::stripImagePath() const
 {
      return fileResource->path(id());
+}
+
+bool Comic::animated()
+{
+    if (!isAnimatedDefined()) {
+        QImageReader imageReader(stripImagePath());
+        QByteArray format = imageReader.format();
+        m_animated = (!format.isEmpty() && format == "gif");
+        setIsAnimatedDefined(true);
+    }
+
+    return m_animated;
 }
 
 void Comic::fetchStrip()
@@ -223,6 +238,7 @@ void Comic::onFetchStripImageFinished()
 
     setFetching(false);
     setError(false);
+    setIsAnimatedDefined(false);
     emit fetchSucceeded();
     setStripImageUrl(extractedStripImageUrl());
     setFetchTime(QDateTime::currentDateTime());

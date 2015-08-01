@@ -30,6 +30,7 @@ class ComicProxy : public QObject
     Q_PROPERTY(QUrl stripImagePath READ stripImagePath NOTIFY stripImagePathChanged)
     Q_PROPERTY(QUrl stripImageUrl READ stripImageUrl NOTIFY stripImageUrlChanged)
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
+    Q_PROPERTY(bool animated READ animated NOTIFY animatedChanged)
 
 public:
     explicit ComicProxy(QObject *parent = 0);
@@ -45,6 +46,7 @@ public:
     QUrl stripImagePath() const;
     QUrl stripImageUrl() const;
     bool error() const;
+    bool animated() const;
 
     Q_INVOKABLE void setComic(Comic* comic);
 
@@ -65,6 +67,7 @@ signals:
     void stripImagePathChanged();
     void stripImageUrlChanged();
     void errorChanged();
+    void animatedChanged();
 
     void fetchStarted();
     void fetchSucceeded();

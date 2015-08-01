@@ -44,6 +44,7 @@ public:
         FavoriteRole,
         NewStripRole,
         ErrorRole,
+        AnimatedRole,
         FetchingRole,
         FetchingProgressRole
     };

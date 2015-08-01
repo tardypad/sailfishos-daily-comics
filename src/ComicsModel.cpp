@@ -61,6 +61,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[FavoriteRole] = "favorite";
     roleNames[NewStripRole] = "newStrip";
     roleNames[ErrorRole] = "error";
+    roleNames[AnimatedRole] = "imageAnimated";
     roleNames[FetchingRole] = "fetching";
     roleNames[FetchingProgressRole] = "fetchingProgress";
 
@@ -107,6 +108,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->newStrip();
     case ErrorRole:
         return m_list.at(index.row())->error();
+    case AnimatedRole:
+        return m_list.at(index.row())->animated();
     case FetchingRole:
         return m_list.at(index.row())->fetching();
     case FetchingProgressRole:

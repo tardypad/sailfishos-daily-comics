@@ -47,6 +47,7 @@ public:
     QDateTime fetchTime() const { return m_fetchTime; }
     QUrl extractedStripImageUrl() const { return m_extractedStripImageUrl; }
     int fetchingProgress() const { return m_fetchingProgress; }
+    bool isAnimatedDefined() const { return m_isAnimatedDefined; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
@@ -56,12 +57,14 @@ public:
     void setFetchTime(const QDateTime fetchTime) { m_fetchTime = fetchTime; }
     void setStripImageUrl(const QUrl stripImageUrl) { m_stripImageUrl = stripImageUrl; }
     void setExtractedStripImageUrl(const QUrl extractedStripImageUrl) { m_extractedStripImageUrl = extractedStripImageUrl; }
+    void setIsAnimatedDefined(const bool isAnimatedDefined) { m_isAnimatedDefined = isAnimatedDefined; }
 
     void load();
     void save();
 
     void fetchStrip();
     QString stripImagePath() const;
+    bool animated();
     void abortFetching();
     void read();
 
@@ -110,6 +113,8 @@ protected:
     bool m_fetching;
     QDateTime m_fetchTime;
     int m_fetchingProgress;
+    bool m_animated;
+    bool m_isAnimatedDefined;
 };
 
 #endif // COMIC_H

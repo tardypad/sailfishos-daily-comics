@@ -34,7 +34,7 @@ Page {
 
             ComicImage {
                 id: comicImage
-                url: imageUrl
+                animated: imageAnimated
                 source: image
 
                 anchors.centerIn: parent

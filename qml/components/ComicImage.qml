@@ -11,12 +11,11 @@ import Sailfish.Silica 1.0
 Loader {
     id: loader
 
-    property string url
+    property bool animated: false
     property string source
     property int status
 
-    // not the best to determine the image type based on the filename extension...
-    sourceComponent: url.match(/.*\.gif$/i) != null ? animatedImage : fixedImage
+    sourceComponent: animated ? animatedImage : fixedImage
 
     Component {
         id: animatedImage
