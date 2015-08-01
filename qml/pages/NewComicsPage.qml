@@ -32,6 +32,13 @@ Page {
 
             opacity: Math.abs(x) <= slideshowView.width ? 1.0 -  (Math.abs(x) / slideshowView.width) : 0
 
+            BusyIndicator {
+                running: comicImage.status === Image.Loading
+                size: BusyIndicatorSize.Large
+                x: (slideshowView.width - width) / 2
+                y: (slideshowView.height - height) / 2
+            }
+
             ComicImage {
                 id: comicImage
                 animated: imageAnimated

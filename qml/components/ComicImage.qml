@@ -26,12 +26,6 @@ Loader {
             clip: true
             asynchronous: true
 
-            BusyIndicator {
-                running: parent.status === Image.Loading
-                size: BusyIndicatorSize.Large
-                anchors.centerIn: parent
-            }
-
             Rectangle {
                 anchors.fill: parent
                 color: "white"
@@ -54,12 +48,6 @@ Loader {
 
             sourceSize.width: width
             sourceSize.height: height
-
-            BusyIndicator {
-                running: parent.status === Image.Loading
-                size: BusyIndicatorSize.Large
-                anchors.centerIn: parent
-            }
 
             Rectangle {
                 anchors.fill: parent

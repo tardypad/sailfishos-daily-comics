@@ -34,6 +34,13 @@ Page {
         contentWidth: width
         contentHeight: Math.max(comicImage.height + 2*Theme.paddingLarge, parent.height)
 
+        BusyIndicator {
+            running: comicImage.status === Image.Loading
+            size: BusyIndicatorSize.Large
+            x: (comicPage.width - width) / 2
+            y: (comicPage.height - height) / 2
+        }
+
         ComicImage {
             id: comicImage
             animated: comic.animated
