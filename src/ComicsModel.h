@@ -31,6 +31,7 @@ class ComicsModel : public QAbstractListModel
 public:
     enum Roles {
         IdRole = Qt::UserRole + 1,
+        RandomRole,
         NameRole,
         ColorRole,
         AuthorsRole,

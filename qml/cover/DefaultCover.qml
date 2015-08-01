@@ -21,7 +21,7 @@ CoverBackground {
         id: comicsModelProxy
         comicsModel: favoritesComicsModel
         filterRole: newComics ? ComicsModel.NewStripRole : 0
-        sortRole: ComicsModel.NameRole
+        sortRole: ComicsModel.RandomRole
     }
 
     Connections {

@@ -21,6 +21,7 @@ const int Comic::_timeout = 20000; // 20 sec
 
 Comic::Comic(QObject *parent) :
     QObject(parent),
+    m_random(rand()),
     m_currentReply(NULL),
     m_extractedStripImageUrl(QUrl()),
     m_stripImageUrl(QUrl()),

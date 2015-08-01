@@ -48,6 +48,7 @@ public:
     QUrl extractedStripImageUrl() const { return m_extractedStripImageUrl; }
     int fetchingProgress() const { return m_fetchingProgress; }
     bool isAnimatedDefined() const { return m_isAnimatedDefined; }
+    int random() const { return m_random; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
@@ -105,6 +106,7 @@ protected:
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;
 
+    int m_random;
     QUrl m_extractedStripImageUrl;
     QUrl m_stripImageUrl;
     bool m_favorite;
