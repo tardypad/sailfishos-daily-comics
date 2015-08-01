@@ -57,6 +57,8 @@ Page {
         }
 
         PullDownMenu {
+            busy: favoriteComicsModel.newCount > 0 && !progressInfoBar.open
+
             MenuItem {
                 text: "Settings"
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
@@ -134,6 +136,7 @@ Page {
     }
 
     ProgressInfoBar {
+        id: progressInfoBar
         label: "Fetching comic strips"
         open: favoriteComicsModel.fetchedCount < favoriteComicsModel.count
         minimumValue: 0
