@@ -57,6 +57,10 @@ Page {
             }
         }
 
+        footer: RequestContactDevRectangle {
+            flickable: gridView
+        }
+
         function _showComicInfo(index) {
             if (infoPanelLoader.status === Loader.Null) {
                 infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
