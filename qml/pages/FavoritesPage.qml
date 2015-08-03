@@ -139,6 +139,8 @@ Page {
         id: progressInfoBar
         label: "Fetching comic strips"
         open: favoriteComicsModel.fetchedCount < favoriteComicsModel.count
+        newCount: favoriteComicsModel.newCount
+        errorCount: favoriteComicsModel.errorCount
         minimumValue: 0
         maximumValue: favoriteComicsModel.count
         value: favoriteComicsModel.fetchedCount
