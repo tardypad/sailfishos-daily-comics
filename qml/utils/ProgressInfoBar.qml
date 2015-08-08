@@ -35,16 +35,22 @@ Rectangle {
 
     Column {
         id: statusColumn
-        width: 140
         anchors {
             left: progressBar.right
             verticalCenter: parent.verticalCenter
         }
         spacing: Theme.paddingSmall
+        visible: newCount > 0 || errorCount > 0
+        width: visible ? 140 : 0
+
+        Behavior on width {
+            NumberAnimation {}
+        }
 
         Item {
             height: newImage.height
             width: newImage.width + newLabel.width + Theme.paddingSmall
+            visible: newCount > 0
 
             Image {
                 id: newImage
@@ -70,6 +76,7 @@ Rectangle {
         Item {
             height: errorImage.height
             width: errorImage.width + errorLabel.width + Theme.paddingSmall
+            visible: errorCount > 0
 
             Image {
                 id: errorImage
