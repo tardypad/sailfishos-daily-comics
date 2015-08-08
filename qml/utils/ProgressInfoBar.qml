@@ -87,7 +87,7 @@ Rectangle {
                     left: errorImage.right
                     leftMargin: Theme.paddingSmall
                 }
-                text: errorCount > 1 ? errorCount + " Errors" : "1 Error"
+                text: errorCount + (errorCount > 1 ?  + " Errors" : " Error")
                 font.pixelSize: Theme.fontSizeExtraSmall
             }
         }
