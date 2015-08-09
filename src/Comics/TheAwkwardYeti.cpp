@@ -14,18 +14,17 @@
 TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("theawkwardyeti");
+    m_info.name           = QString("The Awkward Yeti");
+    m_info.color          = QColor(255, 200, 47);
+    m_info.authors        = QStringList("Nick Seluk");
+    m_info.homepage       = QUrl("http://theawkwardyeti.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2012-09-12", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://theawkwardyeti.com/");
 }
-
-const QString TheAwkwardYeti::_id                 = QString("theawkwardyeti");
-const QString TheAwkwardYeti::_name               = QString("The Awkward Yeti");
-const QColor TheAwkwardYeti::_color               = QColor(255, 200, 47);
-const QStringList TheAwkwardYeti::_authors        = QStringList("Nick Seluk");
-const QUrl TheAwkwardYeti::_homepage              = QUrl("http://theawkwardyeti.com/");
-const QLocale::Country TheAwkwardYeti::_country   = QLocale::UnitedStates;
-const QLocale::Language TheAwkwardYeti::_language = QLocale::English;
-const QDate TheAwkwardYeti::_startDate            = QDate::fromString("2012-09-12", Qt::ISODate);
-const QDate TheAwkwardYeti::_endDate              = QDate::currentDate();
-const QUrl TheAwkwardYeti::_stripSourceUrl        = QUrl("http://theawkwardyeti.com/");
 
 QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)
 {

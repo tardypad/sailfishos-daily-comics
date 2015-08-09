@@ -14,18 +14,17 @@
 Yodablog::Yodablog(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("yodablog");
+    m_info.name           = QString("Yodablog");
+    m_info.color          = QColor(154, 183, 93);
+    m_info.authors        = QStringList("Thierry Vivien");
+    m_info.homepage       = QUrl("http://www.yodablog.net/");
+    m_info.country        = QLocale::France;
+    m_info.language       = QLocale::French;
+    m_info.startDate      = QDate::fromString("2009-01-01", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.yodablog.net/?feed=rss2");
 }
-
-const QString Yodablog::_id                 = QString("yodablog");
-const QString Yodablog::_name               = QString("Yodablog");
-const QColor Yodablog::_color               = QColor(154, 183, 93);
-const QStringList Yodablog::_authors        = QStringList("Thierry Vivien");
-const QUrl Yodablog::_homepage              = QUrl("http://www.yodablog.net/");
-const QLocale::Country Yodablog::_country   = QLocale::France;
-const QLocale::Language Yodablog::_language = QLocale::French;
-const QDate Yodablog::_startDate            = QDate::fromString("2009-01-01", Qt::ISODate);
-const QDate Yodablog::_endDate              = QDate::currentDate();
-const QUrl Yodablog::_stripSourceUrl        = QUrl("http://www.yodablog.net/?feed=rss2");
 
 QUrl Yodablog::extractStripImageUrl(QByteArray data)
 {

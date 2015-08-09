@@ -14,18 +14,17 @@
 SafelyEndangered::SafelyEndangered(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("safelyendangered");
+    m_info.name           = QString("Safely Endangered");
+    m_info.color          = QColor(71, 91, 130);
+    m_info.authors        = QStringList("Chris McCoy");
+    m_info.homepage       = QUrl("http://www.safelyendangered.com/");
+    m_info.country        = QLocale::UnitedKingdom;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2012-11-11", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.safelyendangered.com/");
 }
-
-const QString SafelyEndangered::_id                 = QString("safelyendangered");
-const QString SafelyEndangered::_name               = QString("Safely Endangered");
-const QColor SafelyEndangered::_color               = QColor(71, 91, 130);
-const QStringList SafelyEndangered::_authors        = QStringList("Chris McCoy");
-const QUrl SafelyEndangered::_homepage              = QUrl("http://www.safelyendangered.com/");
-const QLocale::Country SafelyEndangered::_country   = QLocale::UnitedKingdom;
-const QLocale::Language SafelyEndangered::_language = QLocale::English;
-const QDate SafelyEndangered::_startDate            = QDate::fromString("2012-11-11", Qt::ISODate);
-const QDate SafelyEndangered::_endDate              = QDate::currentDate();
-const QUrl SafelyEndangered::_stripSourceUrl        = QUrl("http://www.safelyendangered.com/");
 
 QUrl SafelyEndangered::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("calvinandhobbes");
+    m_info.name           = QString("Calvin and Hobbes");
+    m_info.color          = QColor(255, 141, 117);
+    m_info.authors        = QStringList("Bill Watterson");
+    m_info.homepage       = QUrl("http://www.calvinandhobbes.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1985-11-18", Qt::ISODate);
+    m_info.endDate        = QDate::fromString("1995-12-31", Qt::ISODate);
+    m_info.stripSourceUrl = QUrl("http://www.gocomics.com/calvinandhobbes/");
 }
-
-const QString CalvinAndHobbes::_id                 = QString("calvinandhobbes");
-const QString CalvinAndHobbes::_name               = QString("Calvin and Hobbes");
-const QColor CalvinAndHobbes::_color               = QColor(255, 141, 117);
-const QStringList CalvinAndHobbes::_authors        = QStringList("Bill Watterson");
-const QUrl CalvinAndHobbes::_homepage              = QUrl("http://www.calvinandhobbes.com/");
-const QLocale::Country CalvinAndHobbes::_country   = QLocale::UnitedStates;
-const QLocale::Language CalvinAndHobbes::_language = QLocale::English;
-const QDate CalvinAndHobbes::_startDate            = QDate::fromString("1985-11-18", Qt::ISODate);
-const QDate CalvinAndHobbes::_endDate              = QDate::fromString("1995-12-31", Qt::ISODate);
-const QUrl CalvinAndHobbes::_stripSourceUrl        = QUrl("http://www.gocomics.com/calvinandhobbes/");
 
 QUrl CalvinAndHobbes::extractStripImageUrl(QByteArray data)
 {

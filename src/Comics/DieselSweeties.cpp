@@ -14,18 +14,17 @@
 DieselSweeties::DieselSweeties(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("dieselsweeties");
+    m_info.name           = QString("Diesel Sweeties");
+    m_info.color          = QColor(116, 141, 66);
+    m_info.authors        = QStringList("Richard Stevens III");
+    m_info.homepage       = QUrl("http://dieselsweeties.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2000-04", "yyyy-MM");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://dieselsweeties.com/");
 }
-
-const QString DieselSweeties::_id                 = QString("dieselsweeties");
-const QString DieselSweeties::_name               = QString("Diesel Sweeties");
-const QColor DieselSweeties::_color               = QColor(116, 141, 66);
-const QStringList DieselSweeties::_authors        = QStringList("Richard Stevens III");
-const QUrl DieselSweeties::_homepage              = QUrl("http://dieselsweeties.com/");
-const QLocale::Country DieselSweeties::_country   = QLocale::UnitedStates;
-const QLocale::Language DieselSweeties::_language = QLocale::English;
-const QDate DieselSweeties::_startDate            = QDate::fromString("2000-04", "yyyy-MM");
-const QDate DieselSweeties::_endDate              = QDate::currentDate();
-const QUrl DieselSweeties::_stripSourceUrl        = QUrl("http://dieselsweeties.com/");
 
 QUrl DieselSweeties::extractStripImageUrl(QByteArray data)
 {

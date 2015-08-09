@@ -14,18 +14,17 @@
 NamelessPcs::NamelessPcs(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("namelesspcs");
+    m_info.name           = QString("Nameless PCs");
+    m_info.color          = QColor(116, 209, 240);
+    m_info.authors        = QStringList("Wesley Hall");
+    m_info.homepage       = QUrl("http://namelesspcs.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2010-09-26", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://namelesspcs.com/");
 }
-
-const QString NamelessPcs::_id                 = QString("namelesspcs");
-const QString NamelessPcs::_name               = QString("Nameless PCs");
-const QColor NamelessPcs::_color               = QColor(116, 209, 240);
-const QStringList NamelessPcs::_authors        = QStringList("Wesley Hall");
-const QUrl NamelessPcs::_homepage              = QUrl("http://namelesspcs.com/");
-const QLocale::Country NamelessPcs::_country   = QLocale::UnitedStates;
-const QLocale::Language NamelessPcs::_language = QLocale::English;
-const QDate NamelessPcs::_startDate            = QDate::fromString("2010-09-26", Qt::ISODate);
-const QDate NamelessPcs::_endDate              = QDate::currentDate();
-const QUrl NamelessPcs::_stripSourceUrl        = QUrl("http://namelesspcs.com/");
 
 QUrl NamelessPcs::extractStripImageUrl(QByteArray data)
 {

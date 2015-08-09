@@ -15,18 +15,16 @@
 BerkeleyMews::BerkeleyMews(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("berkeleymews");
+    m_info.name           = QString("Berkeley Mews");
+    m_info.color          = QColor(237, 233, 195);
+    m_info.authors        = QStringList("Ben Zaehringer");
+    m_info.homepage       = QUrl("http://www.berkeleymews.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2009-12-27", Qt::ISODate);
+    m_info.stripSourceUrl = QUrl("http://www.berkeleymews.com/");
 }
-
-const QString BerkeleyMews::_id                 = QString("berkeleymews");
-const QString BerkeleyMews::_name               = QString("Berkeley Mews");
-const QColor BerkeleyMews::_color               = QColor(237, 233, 195);
-const QStringList BerkeleyMews::_authors        = QStringList("Ben Zaehringer");
-const QUrl BerkeleyMews::_homepage              = QUrl("http://www.berkeleymews.com/");
-const QLocale::Country BerkeleyMews::_country   = QLocale::UnitedStates;
-const QLocale::Language BerkeleyMews::_language = QLocale::English;
-const QDate BerkeleyMews::_startDate            = QDate::fromString("2009-12-27", Qt::ISODate);
-const QDate BerkeleyMews::_endDate              = QDate::currentDate();
-const QUrl BerkeleyMews::_stripSourceUrl        = QUrl("http://www.berkeleymews.com/");
 
 QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)
 {

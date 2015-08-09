@@ -14,19 +14,18 @@
 CyanideAndHappiness::CyanideAndHappiness(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("cyanideandhappiness");
+    m_info.name           = QString("Cyanide & Happiness");
+    m_info.color          = QColor(93, 76, 154);
+    m_info.authors        = QStringList() << "Matt Melvin" << "Rob DenBleyker"
+                                          << "Kris Wilson" << "Dave McElfatrick";
+    m_info.homepage       = QUrl("http://explosm.net/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2004-12-09", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://explosm.net/");
 }
-
-const QString CyanideAndHappiness::_id                 = QString("cyanideandhappiness");
-const QString CyanideAndHappiness::_name               = QString("Cyanide & Happiness");
-const QColor CyanideAndHappiness::_color               = QColor(93, 76, 154);
-const QStringList CyanideAndHappiness::_authors        = QStringList() << "Matt Melvin" << "Rob DenBleyker"
-                                                                       << "Kris Wilson" << "Dave McElfatrick";
-const QUrl CyanideAndHappiness::_homepage              = QUrl("http://explosm.net/");
-const QLocale::Country CyanideAndHappiness::_country   = QLocale::UnitedStates;
-const QLocale::Language CyanideAndHappiness::_language = QLocale::English;
-const QDate CyanideAndHappiness::_startDate            = QDate::fromString("2004-12-09", Qt::ISODate);
-const QDate CyanideAndHappiness::_endDate              = QDate::currentDate();
-const QUrl CyanideAndHappiness::_stripSourceUrl        = QUrl("http://explosm.net/");
 
 QUrl CyanideAndHappiness::extractStripImageUrl(QByteArray data)
 {

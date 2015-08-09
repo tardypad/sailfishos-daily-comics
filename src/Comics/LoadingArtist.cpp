@@ -14,18 +14,17 @@
 LoadingArtist::LoadingArtist(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("loadingartist");
+    m_info.name           = QString("Loading Artist");
+    m_info.color          = QColor(253, 104, 1);
+    m_info.authors        = QStringList("Gregor Czaykowski");
+    m_info.homepage       = QUrl("http://www.loadingartist.com/");
+    m_info.country        = QLocale::NewZealand;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2011-01-04", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.loadingartist.com/latest");
 }
-
-const QString LoadingArtist::_id                 = QString("loadingartist");
-const QString LoadingArtist::_name               = QString("Loading Artist");
-const QColor LoadingArtist::_color               = QColor(253, 104, 1);
-const QStringList LoadingArtist::_authors        = QStringList("Gregor Czaykowski");
-const QUrl LoadingArtist::_homepage              = QUrl("http://www.loadingartist.com/");
-const QLocale::Country LoadingArtist::_country   = QLocale::NewZealand;
-const QLocale::Language LoadingArtist::_language = QLocale::English;
-const QDate LoadingArtist::_startDate            = QDate::fromString("2011-01-04", Qt::ISODate);
-const QDate LoadingArtist::_endDate              = QDate::currentDate();
-const QUrl LoadingArtist::_stripSourceUrl        = QUrl("http://www.loadingartist.com/latest");
 
 QUrl LoadingArtist::extractStripImageUrl(QByteArray data)
 {

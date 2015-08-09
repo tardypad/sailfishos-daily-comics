@@ -14,18 +14,17 @@
 Fingerpori::Fingerpori(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("fingerpori");
+    m_info.name           = QString("Fingerpori");
+    m_info.color          = QColor(148, 8, 11);
+    m_info.authors        = QStringList("Pertti Jarla");
+    m_info.homepage       = QUrl("http://fingerpori.org");
+    m_info.country        = QLocale::Finland;
+    m_info.language       = QLocale::Finnish;
+    m_info.startDate      = QDate::fromString("2007-02", "yyyy-MM");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/fingerpori/");
 }
-
-const QString Fingerpori::_id                 = QString("fingerpori");
-const QString Fingerpori::_name               = QString("Fingerpori");
-const QColor Fingerpori::_color               = QColor(148, 8, 11);
-const QStringList Fingerpori::_authors        = QStringList("Pertti Jarla");
-const QUrl Fingerpori::_homepage              = QUrl("http://fingerpori.org");
-const QLocale::Country Fingerpori::_country   = QLocale::Finland;
-const QLocale::Language Fingerpori::_language = QLocale::Finnish;
-const QDate Fingerpori::_startDate            = QDate::fromString("2007-02", "yyyy-MM");
-const QDate Fingerpori::_endDate              = QDate::currentDate();
-const QUrl Fingerpori::_stripSourceUrl        = QUrl("http://www.hs.fi/m/fingerpori/");
 
 QUrl Fingerpori::extractStripImageUrl(QByteArray data)
 {

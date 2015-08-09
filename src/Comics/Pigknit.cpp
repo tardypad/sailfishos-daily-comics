@@ -14,18 +14,17 @@
 Pigknit::Pigknit(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("pigknit");
+    m_info.name           = QString("Pigknit");
+    m_info.color          = QColor(190, 175, 208);
+    m_info.authors        = QStringList("Jessie Miller");
+    m_info.homepage       = QUrl("https://pigknit.wordpress.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2014-10-28", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("https://pigknit.wordpress.com/");
 }
-
-const QString Pigknit::_id                 = QString("pigknit");
-const QString Pigknit::_name               = QString("Pigknit");
-const QColor Pigknit::_color               = QColor(190, 175, 208);
-const QStringList Pigknit::_authors        = QStringList("Jessie Miller");
-const QUrl Pigknit::_homepage              = QUrl("https://pigknit.wordpress.com/");
-const QLocale::Country Pigknit::_country   = QLocale::UnitedStates;
-const QLocale::Language Pigknit::_language = QLocale::English;
-const QDate Pigknit::_startDate            = QDate::fromString("2014-10-28", Qt::ISODate);
-const QDate Pigknit::_endDate              = QDate::currentDate();
-const QUrl Pigknit::_stripSourceUrl        = QUrl("https://pigknit.wordpress.com/");
 
 QUrl Pigknit::extractStripImageUrl(QByteArray data)
 {

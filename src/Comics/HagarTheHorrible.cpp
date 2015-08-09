@@ -14,18 +14,17 @@
 HagarTheHorrible::HagarTheHorrible(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("hagarthehorrible");
+    m_info.name           = QString("Hägar the Horrible");
+    m_info.color          = QColor(216, 164, 55);
+    m_info.authors        = QStringList() << "Dik Browne" << "Chris Browne";
+    m_info.homepage       = QUrl("http://hagarthehorrible.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1973-02-04", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://hagarthehorrible.com/");
 }
-
-const QString HagarTheHorrible::_id                 = QString("hagarthehorrible");
-const QString HagarTheHorrible::_name               = QString("Hägar the Horrible");
-const QColor HagarTheHorrible::_color               = QColor(216, 164, 55);
-const QStringList HagarTheHorrible::_authors        = QStringList() << "Dik Browne" << "Chris Browne";
-const QUrl HagarTheHorrible::_homepage              = QUrl("http://hagarthehorrible.com/");
-const QLocale::Country HagarTheHorrible::_country   = QLocale::UnitedStates;
-const QLocale::Language HagarTheHorrible::_language = QLocale::English;
-const QDate HagarTheHorrible::_startDate            = QDate::fromString("1973-02-04", Qt::ISODate);
-const QDate HagarTheHorrible::_endDate              = QDate::currentDate();
-const QUrl HagarTheHorrible::_stripSourceUrl        = QUrl("http://hagarthehorrible.com/");
 
 QUrl HagarTheHorrible::extractStripImageUrl(QByteArray data)
 {

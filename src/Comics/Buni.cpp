@@ -14,18 +14,17 @@
 Buni::Buni(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("buni");
+    m_info.name           = QString("Buni");
+    m_info.color          = QColor(87, 110, 152);
+    m_info.authors        = QStringList("Ryan Pagelow");
+    m_info.homepage       = QUrl("http://www.bunicomic.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2010-01-01", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.bunicomic.com/");
 }
-
-const QString Buni::_id                 = QString("buni");
-const QString Buni::_name               = QString("Buni");
-const QColor Buni::_color               = QColor(87, 110, 152);
-const QStringList Buni::_authors        = QStringList("Ryan Pagelow");
-const QUrl Buni::_homepage              = QUrl("http://www.bunicomic.com/");
-const QLocale::Country Buni::_country   = QLocale::UnitedStates;
-const QLocale::Language Buni::_language = QLocale::English;
-const QDate Buni::_startDate            = QDate::fromString("2010-01-01", Qt::ISODate);
-const QDate Buni::_endDate              = QDate::currentDate();
-const QUrl Buni::_stripSourceUrl        = QUrl("http://www.bunicomic.com/");
 
 QUrl Buni::extractStripImageUrl(QByteArray data)
 {

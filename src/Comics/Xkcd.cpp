@@ -15,18 +15,17 @@
 Xkcd::Xkcd(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("xkcd");
+    m_info.name           = QString("xkcd");
+    m_info.color          = QColor(150, 168, 200);
+    m_info.authors        = QStringList("Randall Munroe");
+    m_info.homepage       = QUrl("http://xkcd.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2005-09", "yyyy-MM");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://xkcd.com/info.0.json");
 }
-
-const QString Xkcd::_id                 = QString("xkcd");
-const QString Xkcd::_name               = QString("xkcd");
-const QColor Xkcd::_color               = QColor(150, 168, 200);
-const QStringList Xkcd::_authors        = QStringList("Randall Munroe");
-const QUrl Xkcd::_homepage              = QUrl("http://xkcd.com/");
-const QLocale::Country Xkcd::_country   = QLocale::UnitedStates;
-const QLocale::Language Xkcd::_language = QLocale::English;
-const QDate Xkcd::_startDate            = QDate::fromString("2005-09", "yyyy-MM");
-const QDate Xkcd::_endDate              = QDate::currentDate();
-const QUrl Xkcd::_stripSourceUrl        = QUrl("http://xkcd.com/info.0.json");
 
 QUrl Xkcd::extractStripImageUrl(QByteArray data)
 {

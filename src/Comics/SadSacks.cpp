@@ -14,18 +14,17 @@
 SadSacks::SadSacks(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("sadsacks");
+    m_info.name           = QString("Sad Sacks");
+    m_info.color          = QColor(188, 160, 139);
+    m_info.authors        = QStringList() << "James \"Wiz\" Wallace" << "Johnny \"Wasabi\" Larocque";
+    m_info.homepage       = QUrl("http://www.sadsacks.ca/");
+    m_info.country        = QLocale::Canada;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2015-01-05", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.sadsacks.ca/");
 }
-
-const QString SadSacks::_id                 = QString("sadsacks");
-const QString SadSacks::_name               = QString("Sad Sacks");
-const QColor SadSacks::_color               = QColor(188, 160, 139);
-const QStringList SadSacks::_authors        = QStringList() << "James \"Wiz\" Wallace" << "Johnny \"Wasabi\" Larocque";
-const QUrl SadSacks::_homepage              = QUrl("http://www.sadsacks.ca/");
-const QLocale::Country SadSacks::_country   = QLocale::Canada;
-const QLocale::Language SadSacks::_language = QLocale::English;
-const QDate SadSacks::_startDate            = QDate::fromString("2015-01-05", Qt::ISODate);
-const QDate SadSacks::_endDate              = QDate::currentDate();
-const QUrl SadSacks::_stripSourceUrl        = QUrl("http://www.sadsacks.ca/");
 
 QUrl SadSacks::extractStripImageUrl(QByteArray data)
 {

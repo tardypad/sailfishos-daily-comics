@@ -14,18 +14,17 @@
 FoxTrot::FoxTrot(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("foxtrot");
+    m_info.name           = QString("FoxTrot");
+    m_info.color          = QColor(222, 196, 169);
+    m_info.authors        = QStringList("Bill Amend");
+    m_info.homepage       = QUrl("http://www.foxtrot.com");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1988-04-10", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.gocomics.com/foxtrot");
 }
-
-const QString FoxTrot::_id                 = QString("foxtrot");
-const QString FoxTrot::_name               = QString("FoxTrot");
-const QColor FoxTrot::_color               = QColor(222, 196, 169);
-const QStringList FoxTrot::_authors        = QStringList("Bill Amend");
-const QUrl FoxTrot::_homepage              = QUrl("http://www.foxtrot.com");
-const QLocale::Country FoxTrot::_country   = QLocale::UnitedStates;
-const QLocale::Language FoxTrot::_language = QLocale::English;
-const QDate FoxTrot::_startDate            = QDate::fromString("1988-04-10", Qt::ISODate);
-const QDate FoxTrot::_endDate              = QDate::currentDate();
-const QUrl FoxTrot::_stripSourceUrl        = QUrl("http://www.gocomics.com/foxtrot");
 
 QUrl FoxTrot::extractStripImageUrl(QByteArray data)
 {

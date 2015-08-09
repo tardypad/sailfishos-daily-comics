@@ -14,18 +14,16 @@
 Poyroot::Poyroot(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("poyroot");
+    m_info.name           = QString("Pöyrööt");
+    m_info.color          = QColor(160, 207, 79);
+    m_info.authors        = QStringList() << "Arttu Seppälä" << "Liisa Seppälä" << "Tiia Pelkola";
+    m_info.homepage       = QUrl("http://www.poyroot.fi");
+    m_info.country        = QLocale::Finland;
+    m_info.language       = QLocale::Finnish;
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.poyroot.fi/sarjakuvat/");
 }
-
-const QString Poyroot::_id                 = QString("poyroot");
-const QString Poyroot::_name               = QString("Pöyrööt");
-const QColor Poyroot::_color               = QColor(160, 207, 79);
-const QStringList Poyroot::_authors        = QStringList() << "Arttu Seppälä" << "Liisa Seppälä" << "Tiia Pelkola";
-const QUrl Poyroot::_homepage              = QUrl("http://www.poyroot.fi");
-const QLocale::Country Poyroot::_country   = QLocale::Finland;
-const QLocale::Language Poyroot::_language = QLocale::Finnish;
-const QDate Poyroot::_startDate            = QDate();
-const QDate Poyroot::_endDate              = QDate::currentDate();
-const QUrl Poyroot::_stripSourceUrl        = QUrl("http://www.poyroot.fi/sarjakuvat/");
 
 QUrl Poyroot::extractStripImageUrl(QByteArray data)
 {

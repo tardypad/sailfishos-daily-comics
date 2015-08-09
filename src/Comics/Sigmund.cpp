@@ -14,18 +14,17 @@
 Sigmund::Sigmund(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("sigmund");
+    m_info.name           = QString("Sigmund");
+    m_info.color          = QColor(255, 255, 169);
+    m_info.authors        = QStringList("Peter de Wit");
+    m_info.homepage       = QUrl("http://www.sigmund.nl/");
+    m_info.country        = QLocale::Netherlands;
+    m_info.language       = QLocale::Dutch;
+    m_info.startDate      = QDate::fromString("1992", "yyyy");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.sigmund.nl/?p=home");
 }
-
-const QString Sigmund::_id                 = QString("sigmund");
-const QString Sigmund::_name               = QString("Sigmund");
-const QColor Sigmund::_color               = QColor(255, 255, 169);
-const QStringList Sigmund::_authors        = QStringList("Peter de Wit");
-const QUrl Sigmund::_homepage              = QUrl("http://www.sigmund.nl/");
-const QLocale::Country Sigmund::_country   = QLocale::Netherlands;
-const QLocale::Language Sigmund::_language = QLocale::Dutch;
-const QDate Sigmund::_startDate            = QDate::fromString("1992", "yyyy");
-const QDate Sigmund::_endDate              = QDate::currentDate();
-const QUrl Sigmund::_stripSourceUrl        = QUrl("http://www.sigmund.nl/?p=home");
 
 QUrl Sigmund::extractStripImageUrl(QByteArray data)
 {

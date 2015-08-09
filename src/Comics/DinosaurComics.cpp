@@ -14,18 +14,17 @@
 DinosaurComics::DinosaurComics(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("dinosaurcomics");
+    m_info.name           = QString("Dinosaur Comics");
+    m_info.color          = QColor(120, 106, 255);
+    m_info.authors        = QStringList("Ryan North");
+    m_info.homepage       = QUrl("http://www.qwantz.com/");
+    m_info.country        = QLocale::Canada;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2003-02-01", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.qwantz.com/index.php");
 }
-
-const QString DinosaurComics::_id                 = QString("dinosaurcomics");
-const QString DinosaurComics::_name               = QString("Dinosaur Comics");
-const QColor DinosaurComics::_color               = QColor(120, 106, 255);
-const QStringList DinosaurComics::_authors        = QStringList("Ryan North");
-const QUrl DinosaurComics::_homepage              = QUrl("http://www.qwantz.com/");
-const QLocale::Country DinosaurComics::_country   = QLocale::Canada;
-const QLocale::Language DinosaurComics::_language = QLocale::English;
-const QDate DinosaurComics::_startDate            = QDate::fromString("2003-02-01", Qt::ISODate);
-const QDate DinosaurComics::_endDate              = QDate::currentDate();
-const QUrl DinosaurComics::_stripSourceUrl        = QUrl("http://www.qwantz.com/index.php");
 
 QUrl DinosaurComics::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 ViiviJaWagner::ViiviJaWagner(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("viivijawagner");
+    m_info.name           = QString("Viivi ja Wagner");
+    m_info.color          = QColor(222, 42, 131);
+    m_info.authors        = QStringList("Jussi \"Juba\" Tuomola");
+    m_info.homepage       = QUrl("http://www.viivijawagner.net/");
+    m_info.country        = QLocale::Finland;
+    m_info.language       = QLocale::Finnish;
+    m_info.startDate      = QDate::fromString("1997-10-06", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/viivijawagner/");
 }
-
-const QString ViiviJaWagner::_id                 = QString("viivijawagner");
-const QString ViiviJaWagner::_name               = QString("Viivi ja Wagner");
-const QColor ViiviJaWagner::_color               = QColor(222, 42, 131);
-const QStringList ViiviJaWagner::_authors        = QStringList("Jussi \"Juba\" Tuomola");
-const QUrl ViiviJaWagner::_homepage              = QUrl("http://www.viivijawagner.net/");
-const QLocale::Country ViiviJaWagner::_country   = QLocale::Finland;
-const QLocale::Language ViiviJaWagner::_language = QLocale::Finnish;
-const QDate ViiviJaWagner::_startDate            = QDate::fromString("1997-10-06", Qt::ISODate);
-const QDate ViiviJaWagner::_endDate              = QDate::currentDate();
-const QUrl ViiviJaWagner::_stripSourceUrl        = QUrl("http://www.hs.fi/m/viivijawagner/");
 
 QUrl ViiviJaWagner::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 FowlLanguageComics::FowlLanguageComics(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("fowllanguagecomics");
+    m_info.name           = QString("Fowl Language Comics");
+    m_info.color          = QColor(154, 208, 244);
+    m_info.authors        = QStringList("Brian Gordon");
+    m_info.homepage       = QUrl("http://www.fowllanguagecomics.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2013-07-22", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.fowllanguagecomics.com/?bypass-regular-homepage-cache-problem");
 }
-
-const QString FowlLanguageComics::_id                 = QString("fowllanguagecomics");
-const QString FowlLanguageComics::_name               = QString("Fowl Language Comics");
-const QColor FowlLanguageComics::_color               = QColor(154, 208, 244);
-const QStringList FowlLanguageComics::_authors        = QStringList("Brian Gordon");
-const QUrl FowlLanguageComics::_homepage              = QUrl("http://www.fowllanguagecomics.com/");
-const QLocale::Country FowlLanguageComics::_country   = QLocale::UnitedStates;
-const QLocale::Language FowlLanguageComics::_language = QLocale::English;
-const QDate FowlLanguageComics::_startDate            = QDate::fromString("2013-07-22", Qt::ISODate);
-const QDate FowlLanguageComics::_endDate              = QDate::currentDate();
-const QUrl FowlLanguageComics::_stripSourceUrl        = QUrl("http://www.fowllanguagecomics.com/?bypass-regular-homepage-cache-problem");
 
 QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)
 {

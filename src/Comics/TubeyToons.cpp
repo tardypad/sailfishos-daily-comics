@@ -14,18 +14,17 @@
 TubeyToons::TubeyToons(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("tubeytoons");
+    m_info.name           = QString("Tubey Toons");
+    m_info.color          = QColor(254, 180, 64);
+    m_info.authors        = QStringList() << "Tubey" << "Wamn";
+    m_info.homepage       = QUrl("http://tubeytoons.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2013-01-01", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://tubeytoons.com/");
 }
-
-const QString TubeyToons::_id                 = QString("tubeytoons");
-const QString TubeyToons::_name               = QString("Tubey Toons");
-const QColor TubeyToons::_color               = QColor(254, 180, 64);
-const QStringList TubeyToons::_authors        = QStringList() << "Tubey" << "Wamn";
-const QUrl TubeyToons::_homepage              = QUrl("http://tubeytoons.com/");
-const QLocale::Country TubeyToons::_country   = QLocale::UnitedStates;
-const QLocale::Language TubeyToons::_language = QLocale::English;
-const QDate TubeyToons::_startDate            = QDate::fromString("2013-01-01", Qt::ISODate);
-const QDate TubeyToons::_endDate              = QDate::currentDate();
-const QUrl TubeyToons::_stripSourceUrl        = QUrl("http://tubeytoons.com/");
 
 QUrl TubeyToons::extractStripImageUrl(QByteArray data)
 {

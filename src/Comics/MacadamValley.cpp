@@ -14,18 +14,17 @@
 MacadamValley::MacadamValley(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("macadamvalley");
+    m_info.name           = QString("Macadam Valley");
+    m_info.color          = QColor(174, 166, 117);
+    m_info.authors        = QStringList("Ben Dessy");
+    m_info.homepage       = QUrl("http://macadamvalley.com/");
+    m_info.country        = QLocale::France;
+    m_info.language       = QLocale::French;
+    m_info.startDate      = QDate::fromString("2012-01-23", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://macadamvalley.com/feed/");
 }
-
-const QString MacadamValley::_id                 = QString("macadamvalley");
-const QString MacadamValley::_name               = QString("Macadam Valley");
-const QColor MacadamValley::_color               = QColor(174, 166, 117);
-const QStringList MacadamValley::_authors        = QStringList("Ben Dessy");
-const QUrl MacadamValley::_homepage              = QUrl("http://macadamvalley.com/");
-const QLocale::Country MacadamValley::_country   = QLocale::France;
-const QLocale::Language MacadamValley::_language = QLocale::French;
-const QDate MacadamValley::_startDate            = QDate::fromString("2012-01-23", Qt::ISODate);
-const QDate MacadamValley::_endDate              = QDate::currentDate();
-const QUrl MacadamValley::_stripSourceUrl        = QUrl("http://macadamvalley.com/feed/");
 
 QUrl MacadamValley::extractStripImageUrl(QByteArray data)
 {

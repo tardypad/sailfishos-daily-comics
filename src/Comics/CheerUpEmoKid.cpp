@@ -14,18 +14,17 @@
 CheerUpEmoKid::CheerUpEmoKid(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("cheerupemokid");
+    m_info.name           = QString("Cheer Up, Emo Kid");
+    m_info.color          = QColor(51, 51, 51);
+    m_info.authors        = QStringList("Enzo");
+    m_info.homepage       = QUrl("http://www.cheerupemokid.com/");
+    m_info.country        = QLocale::Canada;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2008-10-10", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.cheerupemokid.com/");
 }
-
-const QString CheerUpEmoKid::_id                 = QString("cheerupemokid");
-const QString CheerUpEmoKid::_name               = QString("Cheer Up, Emo Kid");
-const QColor CheerUpEmoKid::_color               = QColor(51, 51, 51);
-const QStringList CheerUpEmoKid::_authors        = QStringList("Enzo");
-const QUrl CheerUpEmoKid::_homepage              = QUrl("http://www.cheerupemokid.com/");
-const QLocale::Country CheerUpEmoKid::_country   = QLocale::Canada;
-const QLocale::Language CheerUpEmoKid::_language = QLocale::English;
-const QDate CheerUpEmoKid::_startDate            = QDate::fromString("2008-10-10", Qt::ISODate);
-const QDate CheerUpEmoKid::_endDate              = QDate::currentDate();
-const QUrl CheerUpEmoKid::_stripSourceUrl        = QUrl("http://www.cheerupemokid.com/");
 
 QUrl CheerUpEmoKid::extractStripImageUrl(QByteArray data)
 {

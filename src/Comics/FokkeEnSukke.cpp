@@ -14,18 +14,17 @@
 FokkeEnSukke::FokkeEnSukke(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("fokkeensukke");
+    m_info.name           = QString("Fokke en Sukke");
+    m_info.color          = QColor(214, 26, 33);
+    m_info.authors        = QStringList() << "Jean-Marc van Tol" << "John Reid" << "Bastiaan Geleijnse";
+    m_info.homepage       = QUrl("http://foksuk.nl/");
+    m_info.country        = QLocale::Netherlands;
+    m_info.language       = QLocale::Dutch;
+    m_info.startDate      = QDate::fromString("1994", "yyyy");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://foksuk.nl/");
 }
-
-const QString FokkeEnSukke::_id                 = QString("fokkeensukke");
-const QString FokkeEnSukke::_name               = QString("Fokke en Sukke");
-const QColor FokkeEnSukke::_color               = QColor(214, 26, 33);
-const QStringList FokkeEnSukke::_authors        = QStringList() << "Jean-Marc van Tol" << "John Reid" << "Bastiaan Geleijnse";
-const QUrl FokkeEnSukke::_homepage              = QUrl("http://foksuk.nl/");
-const QLocale::Country FokkeEnSukke::_country   = QLocale::Netherlands;
-const QLocale::Language FokkeEnSukke::_language = QLocale::Dutch;
-const QDate FokkeEnSukke::_startDate            = QDate::fromString("1994", "yyyy");
-const QDate FokkeEnSukke::_endDate              = QDate::currentDate();
-const QUrl FokkeEnSukke::_stripSourceUrl        = QUrl("http://foksuk.nl/");
 
 QUrl FokkeEnSukke::extractStripImageUrl(QByteArray data)
 {

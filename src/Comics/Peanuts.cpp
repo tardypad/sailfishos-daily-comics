@@ -14,18 +14,17 @@
 Peanuts::Peanuts(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("peanuts");
+    m_info.name           = QString("Peanuts");
+    m_info.color          = QColor(133, 248, 255);
+    m_info.authors        = QStringList("Charles Monroe Schulz");
+    m_info.homepage       = QUrl("http://www.peanuts.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1950-10-02", Qt::ISODate);
+    m_info.endDate        = QDate::fromString("2000-02-13", Qt::ISODate);
+    m_info.stripSourceUrl = QUrl("http://www.gocomics.com/peanuts/");
 }
-
-const QString Peanuts::_id                 = QString("peanuts");
-const QString Peanuts::_name               = QString("Peanuts");
-const QColor Peanuts::_color               = QColor(133, 248, 255);
-const QStringList Peanuts::_authors        = QStringList("Charles Monroe Schulz");
-const QUrl Peanuts::_homepage              = QUrl("http://www.peanuts.com/");
-const QLocale::Country Peanuts::_country   = QLocale::UnitedStates;
-const QLocale::Language Peanuts::_language = QLocale::English;
-const QDate Peanuts::_startDate            = QDate::fromString("1950-10-02", Qt::ISODate);
-const QDate Peanuts::_endDate              = QDate::fromString("2000-02-13", Qt::ISODate);
-const QUrl Peanuts::_stripSourceUrl        = QUrl("http://www.gocomics.com/peanuts/");
 
 QUrl Peanuts::extractStripImageUrl(QByteArray data)
 {

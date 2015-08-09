@@ -14,18 +14,17 @@
 Lunarbaboon::Lunarbaboon(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("lunarbaboon");
+    m_info.name           = QString("Lunarbaboon");
+    m_info.color          = QColor(197, 211, 221);
+    m_info.authors        = QStringList("Chris Grady");
+    m_info.homepage       = QUrl("http://www.lunarbaboon.com/");
+    m_info.country        = QLocale::Canada;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2012-07-09", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.lunarbaboon.com/");
 }
-
-const QString Lunarbaboon::_id                 = QString("lunarbaboon");
-const QString Lunarbaboon::_name               = QString("Lunarbaboon");
-const QColor Lunarbaboon::_color               = QColor(197, 211, 221);
-const QStringList Lunarbaboon::_authors        = QStringList("Chris Grady");
-const QUrl Lunarbaboon::_homepage              = QUrl("http://www.lunarbaboon.com/");
-const QLocale::Country Lunarbaboon::_country   = QLocale::Canada;
-const QLocale::Language Lunarbaboon::_language = QLocale::English;
-const QDate Lunarbaboon::_startDate            = QDate::fromString("2012-07-09", Qt::ISODate);
-const QDate Lunarbaboon::_endDate              = QDate::currentDate();
-const QUrl Lunarbaboon::_stripSourceUrl        = QUrl("http://www.lunarbaboon.com/");
 
 QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)
 {

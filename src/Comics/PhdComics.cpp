@@ -14,18 +14,17 @@
 PhdComics::PhdComics(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("phdcomics");
+    m_info.name           = QString("Piled Higher and Deeper");
+    m_info.color          = QColor(82, 105, 125);
+    m_info.authors        = QStringList("Jorge Cham");
+    m_info.homepage       = QUrl("http://phdcomics.com/");
+    m_info.country        = QLocale::Panama;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1997-10-27", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://phdcomics.com/comics.php");
 }
-
-const QString PhdComics::_id                 = QString("phdcomics");
-const QString PhdComics::_name               = QString("Piled Higher and Deeper");
-const QColor PhdComics::_color               = QColor(82, 105, 125);
-const QStringList PhdComics::_authors        = QStringList("Jorge Cham");
-const QUrl PhdComics::_homepage              = QUrl("http://phdcomics.com/");
-const QLocale::Country PhdComics::_country   = QLocale::Panama;
-const QLocale::Language PhdComics::_language = QLocale::English;
-const QDate PhdComics::_startDate            = QDate::fromString("1997-10-27", Qt::ISODate);
-const QDate PhdComics::_endDate              = QDate::currentDate();
-const QUrl PhdComics::_stripSourceUrl        = QUrl("http://phdcomics.com/comics.php");
 
 QUrl PhdComics::extractStripImageUrl(QByteArray data)
 {

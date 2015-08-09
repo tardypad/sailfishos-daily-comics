@@ -14,18 +14,17 @@
 Dilbert::Dilbert(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("dilbert");
+    m_info.name           = QString("Dilbert");
+    m_info.color          = QColor(69, 142, 197);
+    m_info.authors        = QStringList("Scott Adams");
+    m_info.homepage       = QUrl("http://dilbert.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1989-04-16", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://dilbert.com/");
 }
-
-const QString Dilbert::_id                 = QString("dilbert");
-const QString Dilbert::_name               = QString("Dilbert");
-const QColor Dilbert::_color               = QColor(69, 142, 197);
-const QStringList Dilbert::_authors        = QStringList("Scott Adams");
-const QUrl Dilbert::_homepage              = QUrl("http://dilbert.com/");
-const QLocale::Country Dilbert::_country   = QLocale::UnitedStates;
-const QLocale::Language Dilbert::_language = QLocale::English;
-const QDate Dilbert::_startDate            = QDate::fromString("1989-04-16", Qt::ISODate);
-const QDate Dilbert::_endDate              = QDate::currentDate();
-const QUrl Dilbert::_stripSourceUrl        = QUrl("http://dilbert.com/");
 
 QUrl Dilbert::extractStripImageUrl(QByteArray data)
 {

@@ -11,6 +11,7 @@
 #include <QObject>
 
 #include <QUrl>
+#include <QColor>
 #include <QLocale>
 #include <QDateTime>
 #include <QTimer>
@@ -28,15 +29,43 @@ public:
     explicit Comic(QObject *parent = 0);
     ~Comic();
 
-    virtual QString id() const = 0;
-    virtual QString name() const = 0;
-    virtual QColor color() const = 0;
-    virtual QStringList authors() const = 0;
-    virtual QUrl homepage() const = 0;
-    virtual QLocale::Country country() const = 0;
-    virtual QLocale::Language language() const = 0;
-    virtual QDate startDate() const = 0;
-    virtual QDate endDate() const = 0;
+    struct ComicInfo {
+        QString id;
+        QString name;
+        QColor color;
+        QStringList authors;
+        QUrl homepage;
+        QLocale::Country country;
+        QLocale::Language language;
+        QDate startDate;
+        QDate endDate;
+        QUrl stripSourceUrl;
+
+        ComicInfo() {
+            id = QString();
+            name = QString();
+            color = QColor();
+            authors = QStringList();
+            homepage = QString();
+            country = QLocale::AnyCountry;
+            language = QLocale::AnyLanguage;
+            startDate = QDate();
+            endDate = QDate();
+            stripSourceUrl = QUrl();
+        }
+    };
+
+    QString id() const { return m_info.id; }
+    QString name() const { return m_info.name; }
+    QColor color() const { return m_info.color; }
+    QStringList authors() const { return m_info.authors; }
+    QUrl homepage() const { return m_info.homepage; }
+    QLocale::Country country() const { return m_info.country; }
+    QLocale::Language language() const { return m_info.language; }
+    QDate startDate() const { return m_info.startDate; }
+    QDate endDate() const { return m_info.endDate; }
+    QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
+
     virtual QUrl extractStripImageUrl(QByteArray data) = 0;
 
     QUrl stripImageUrl() const { return m_stripImageUrl; }
@@ -70,7 +99,6 @@ public:
     void read();
 
 protected:
-    virtual QUrl stripSourceUrl() const = 0;
     void fetchStripSource(QUrl stripSrcUrl = QUrl());
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
@@ -99,6 +127,8 @@ signals:
 protected:
     static const int _minFetchDelay;
     static const int _timeout;
+
+    ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;
     ComicFileResource* fileResource;

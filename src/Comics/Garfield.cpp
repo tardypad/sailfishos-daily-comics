@@ -14,18 +14,17 @@
 Garfield::Garfield(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("garfield");
+    m_info.name           = QString("Garfield");
+    m_info.color          = QColor(236, 197, 57);
+    m_info.authors        = QStringList("Jim Davis");
+    m_info.homepage       = QUrl("http://garfield.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1978-06-19", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://garfield.com/");
 }
-
-const QString Garfield::_id                 = QString("garfield");
-const QString Garfield::_name               = QString("Garfield");
-const QColor Garfield::_color               = QColor(236, 197, 57);
-const QStringList Garfield::_authors        = QStringList("Jim Davis");
-const QUrl Garfield::_homepage              = QUrl("http://garfield.com/");
-const QLocale::Country Garfield::_country   = QLocale::UnitedStates;
-const QLocale::Language Garfield::_language = QLocale::English;
-const QDate Garfield::_startDate            = QDate::fromString("1978-06-19", Qt::ISODate);
-const QDate Garfield::_endDate              = QDate::currentDate();
-const QUrl Garfield::_stripSourceUrl        = QUrl("http://garfield.com/");
 
 QUrl Garfield::extractStripImageUrl(QByteArray data)
 {

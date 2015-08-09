@@ -14,18 +14,17 @@
 DennisTheMenace::DennisTheMenace(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("dennisthemenace");
+    m_info.name           = QString("Dennis The Menace");
+    m_info.color          = QColor(246, 255, 84);
+    m_info.authors        = QStringList() << "Hank Ketcham" << "Marcus Hamilton" << "Ron Ferdinand";
+    m_info.homepage       = QUrl("http://dennisthemenace.com/");
+    m_info.country        = QLocale::UnitedStates;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1951-03-12", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://dennisthemenace.com/");
 }
-
-const QString DennisTheMenace::_id                 = QString("dennisthemenace");
-const QString DennisTheMenace::_name               = QString("Dennis The Menace");
-const QColor DennisTheMenace::_color               = QColor(246, 255, 84);
-const QStringList DennisTheMenace::_authors        = QStringList() << "Hank Ketcham" << "Marcus Hamilton" << "Ron Ferdinand";
-const QUrl DennisTheMenace::_homepage              = QUrl("http://dennisthemenace.com/");
-const QLocale::Country DennisTheMenace::_country   = QLocale::UnitedStates;
-const QLocale::Language DennisTheMenace::_language = QLocale::English;
-const QDate DennisTheMenace::_startDate            = QDate::fromString("1951-03-12", Qt::ISODate);
-const QDate DennisTheMenace::_endDate              = QDate::currentDate();
-const QUrl DennisTheMenace::_stripSourceUrl        = QUrl("http://dennisthemenace.com/");
 
 QUrl DennisTheMenace::extractStripImageUrl(QByteArray data)
 {

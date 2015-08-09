@@ -14,18 +14,16 @@
 ShitHappens::ShitHappens(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("shithappens");
+    m_info.name           = QString("Shit happens!");
+    m_info.color          = QColor(147, 209, 246);
+    m_info.authors        = QStringList("Ralph Ruthe");
+    m_info.homepage       = QUrl("http://ruthe.de/");
+    m_info.country        = QLocale::Germany;
+    m_info.language       = QLocale::German;
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://ruthe.de/cartoon/");
 }
-
-const QString ShitHappens::_id                 = QString("shithappens");
-const QString ShitHappens::_name               = QString("Shit happens!");
-const QColor ShitHappens::_color               = QColor(147, 209, 246);
-const QStringList ShitHappens::_authors        = QStringList("Ralph Ruthe");
-const QUrl ShitHappens::_homepage              = QUrl("http://ruthe.de/");
-const QLocale::Country ShitHappens::_country   = QLocale::Germany;
-const QLocale::Language ShitHappens::_language = QLocale::German;
-const QDate ShitHappens::_startDate            = QDate();
-const QDate ShitHappens::_endDate              = QDate::currentDate();
-const QUrl ShitHappens::_stripSourceUrl        = QUrl("http://ruthe.de/cartoon/");
 
 QUrl ShitHappens::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 FredBasset::FredBasset(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("fredbasset");
+    m_info.name           = QString("Fred Basset");
+    m_info.color          = QColor(205, 178, 61);
+    m_info.authors        = QStringList() << "Alex Graham" << "Michael Martin";
+    m_info.homepage       = QUrl("http://www.gocomics.com/fredbasset/");
+    m_info.country        = QLocale::UnitedKingdom;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("1963-07-08", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.gocomics.com/fredbasset/");
 }
-
-const QString FredBasset::_id                 = QString("fredbasset");
-const QString FredBasset::_name               = QString("Fred Basset");
-const QColor FredBasset::_color               = QColor(205, 178, 61);
-const QStringList FredBasset::_authors        = QStringList() << "Alex Graham" << "Michael Martin";
-const QUrl FredBasset::_homepage              = QUrl("http://www.gocomics.com/fredbasset/");
-const QLocale::Country FredBasset::_country   = QLocale::UnitedKingdom;
-const QLocale::Language FredBasset::_language = QLocale::English;
-const QDate FredBasset::_startDate            = QDate::fromString("1963-07-08", Qt::ISODate);
-const QDate FredBasset::_endDate              = QDate::currentDate();
-const QUrl FredBasset::_stripSourceUrl        = QUrl("http://www.gocomics.com/fredbasset/");
 
 QUrl FredBasset::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 LeChat::LeChat(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("lechat");
+    m_info.name           = QString("Le Chat");
+    m_info.color          = QColor(38, 203, 171);
+    m_info.authors        = QStringList("Philippe Geluck");
+    m_info.homepage       = QUrl("http://geluck.com/");
+    m_info.country        = QLocale::Belgium;
+    m_info.language       = QLocale::French;
+    m_info.startDate      = QDate::fromString("1983-03-22", Qt::ISODate);
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://geluck.com/dessin.html");
 }
-
-const QString LeChat::_id                 = QString("lechat");
-const QString LeChat::_name               = QString("Le Chat");
-const QColor LeChat::_color               = QColor(38, 203, 171);
-const QStringList LeChat::_authors        = QStringList("Philippe Geluck");
-const QUrl LeChat::_homepage              = QUrl("http://geluck.com/");
-const QLocale::Country LeChat::_country   = QLocale::Belgium;
-const QLocale::Language LeChat::_language = QLocale::French;
-const QDate LeChat::_startDate            = QDate::fromString("1983-03-22", Qt::ISODate);
-const QDate LeChat::_endDate              = QDate::currentDate();
-const QUrl LeChat::_stripSourceUrl        = QUrl("http://geluck.com/dessin.html");
 
 QUrl LeChat::extractStripImageUrl(QByteArray data)
 {

@@ -14,18 +14,17 @@
 CommitStrip::CommitStrip(QObject *parent) :
     Comic(parent)
 {
+    m_info.id             = QString("commitstrip");
+    m_info.name           = QString("CommitStrip");
+    m_info.color          = QColor(43, 63, 107);
+    m_info.authors        = QStringList() << "Etienne Issartial" << "Thomas Gx";
+    m_info.homepage       = QUrl("http://www.commitstrip.com/");
+    m_info.country        = QLocale::France;
+    m_info.language       = QLocale::English;
+    m_info.startDate      = QDate::fromString("2012-02", "yyyy-MM");
+    m_info.endDate        = QDate::currentDate();
+    m_info.stripSourceUrl = QUrl("http://www.commitstrip.com/en/");
 }
-
-const QString CommitStrip::_id                 = QString("commitstrip");
-const QString CommitStrip::_name               = QString("CommitStrip");
-const QColor CommitStrip::_color               = QColor(43, 63, 107);
-const QStringList CommitStrip::_authors        = QStringList() << "Etienne Issartial" << "Thomas Gx";
-const QUrl CommitStrip::_homepage              = QUrl("http://www.commitstrip.com/");
-const QLocale::Country CommitStrip::_country   = QLocale::France;
-const QLocale::Language CommitStrip::_language = QLocale::English;
-const QDate CommitStrip::_startDate            = QDate::fromString("2012-02", "yyyy-MM");
-const QDate CommitStrip::_endDate              = QDate::currentDate();
-const QUrl CommitStrip::_stripSourceUrl        = QUrl("http://www.commitstrip.com/en/");
 
 QUrl CommitStrip::extractStripImageUrl(QByteArray data)
 {
