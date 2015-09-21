@@ -23,13 +23,13 @@ PirateMike::PirateMike(QObject *parent) :
     m_info.language       = QLocale::English;
     m_info.startDate      = QDate::fromString("2012-04-04", Qt::ISODate);
     m_info.endDate        = QDate::currentDate();
-    m_info.stripSourceUrl = QUrl("http://piratemikecomics.com/");
+    m_info.stripSourceUrl = QUrl("http://piratemikecomics.com/feed/");
 }
 
 QUrl PirateMike::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
+    QRegularExpression reg("<media:content url=\"([^\"]*piratemikecomics.files.wordpress.com/[^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
