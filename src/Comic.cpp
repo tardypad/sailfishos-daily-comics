@@ -17,7 +17,7 @@
 #include "ComicFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
-const int Comic::_timeout = 20000; // 20 sec
+const int Comic::_timeout = 30000; // 30 sec
 
 Comic::Comic(QObject *parent) :
     QObject(parent),
