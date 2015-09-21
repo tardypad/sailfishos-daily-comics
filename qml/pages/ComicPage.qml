@@ -80,22 +80,18 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                visible: !indicator.busy
+                text: "Report a problem with the comic"
+                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
+            }
+            MenuItem {
                 text: "Show comic info"
                 onClicked: comicView._showComicInfo()
             }
             MenuItem {
                 text: "Go to homepage"
                 onClicked: ExternalLinks.browse(comic.homepage)
-            }
-        }
-
-        PushUpMenu {
-            visible: !indicator.busy
-
-            MenuItem {
-                text: "Report a problem with the comic"
-                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
-                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
             }
         }
 
