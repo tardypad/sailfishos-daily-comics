@@ -50,6 +50,7 @@
 #include "Comics/ExtraOrdinary.h"
 #include "Comics/DinosaurComics.h"
 #include "Comics/FokkeEnSukke.h"
+#include "Comics/PBFComics.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -100,6 +101,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<ExtraOrdinary>("extraordinary");
     registerComic<DinosaurComics>("dinosaurcomics");
     registerComic<FokkeEnSukke>("fokkeensukke");
+    registerComic<PBFComics>("pbfcomics");
 }
 
 ComicFactory* ComicFactory::instance()

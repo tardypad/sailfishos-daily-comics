@@ -61,6 +61,7 @@ Comics list
 - Saturday Morning Breakfast Cereal (SMBC Comics)
 - The Awkward Yeti
 - The Hat and Fat
+- The Perry Bible Fellowship (PBF Comics)
 - Tubey Toons
 - Viivi ja Wagner
 - What a wonderful world!
