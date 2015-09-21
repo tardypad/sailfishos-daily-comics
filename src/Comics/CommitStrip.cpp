@@ -23,7 +23,7 @@ CommitStrip::CommitStrip(QObject *parent) :
     m_info.language       = QLocale::English;
     m_info.startDate      = QDate::fromString("2012-02", "yyyy-MM");
     m_info.endDate        = QDate::currentDate();
-    m_info.stripSourceUrl = QUrl("http://www.commitstrip.com/en/");
+    m_info.stripSourceUrl = QUrl("http://www.commitstrip.com/en/feed/");
 }
 
 QUrl CommitStrip::extractStripImageUrl(QByteArray data)
