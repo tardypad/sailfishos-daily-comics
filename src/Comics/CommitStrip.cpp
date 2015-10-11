@@ -16,7 +16,7 @@ CommitStrip::CommitStrip(QObject *parent) :
 {
     m_info.id             = QString("commitstrip");
     m_info.name           = QString("CommitStrip");
-    m_info.color          = QColor(43, 63, 107);
+    m_info.color          = QColor(42, 63, 106);
     m_info.authors        = QStringList() << "Etienne Issartial" << "Thomas Gx";
     m_info.homepage       = QUrl("http://www.commitstrip.com/");
     m_info.country        = QLocale::France;
