@@ -16,7 +16,7 @@ FokkeEnSukke::FokkeEnSukke(QObject *parent) :
 {
     m_info.id             = QString("fokkeensukke");
     m_info.name           = QString("Fokke en Sukke");
-    m_info.color          = QColor(214, 26, 33);
+    m_info.color          = QColor(213, 26, 33);
     m_info.authors        = QStringList() << "Jean-Marc van Tol" << "John Reid" << "Bastiaan Geleijnse";
     m_info.homepage       = QUrl("http://foksuk.nl/");
     m_info.country        = QLocale::Netherlands;
