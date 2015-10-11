@@ -16,7 +16,7 @@ HagarTheHorrible::HagarTheHorrible(QObject *parent) :
 {
     m_info.id             = QString("hagarthehorrible");
     m_info.name           = QString("Hägar the Horrible");
-    m_info.color          = QColor(216, 164, 55);
+    m_info.color          = QColor(192, 143, 48);
     m_info.authors        = QStringList() << "Dik Browne" << "Chris Browne";
     m_info.homepage       = QUrl("http://hagarthehorrible.com/");
     m_info.country        = QLocale::UnitedStates;
