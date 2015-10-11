@@ -16,7 +16,7 @@ SafelyEndangered::SafelyEndangered(QObject *parent) :
 {
     m_info.id             = QString("safelyendangered");
     m_info.name           = QString("Safely Endangered");
-    m_info.color          = QColor(71, 91, 130);
+    m_info.color          = QColor(71, 89, 127);
     m_info.authors        = QStringList("Chris McCoy");
     m_info.homepage       = QUrl("http://www.safelyendangered.com/");
     m_info.country        = QLocale::UnitedKingdom;
