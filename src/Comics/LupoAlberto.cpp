@@ -16,7 +16,7 @@ LupoAlberto::LupoAlberto(QObject *parent) :
 {
     m_info.id             = QString("lupoalberto");
     m_info.name           = QString("Lupo Alberto");
-    m_info.color          = QColor(119, 188, 243);
+    m_info.color          = QColor(151, 205, 241);
     m_info.authors        = QStringList("Guido Silvestri");
     m_info.homepage       = QUrl("http://lupoalberto.it/");
     m_info.country        = QLocale::Italy;
