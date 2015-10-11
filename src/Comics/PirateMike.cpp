@@ -16,7 +16,7 @@ PirateMike::PirateMike(QObject *parent) :
 {
     m_info.id             = QString("piratemike");
     m_info.name           = QString("Pirate Mike");
-    m_info.color          = QColor(255, 71, 33);
+    m_info.color          = QColor(0, 184, 238);
     m_info.authors        = QStringList("Brad Perri");
     m_info.homepage       = QUrl("http://piratemikecomics.com/");
     m_info.country        = QLocale::UnitedStates;
