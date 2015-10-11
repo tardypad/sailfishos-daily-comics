@@ -16,7 +16,7 @@ Dilbert::Dilbert(QObject *parent) :
 {
     m_info.id             = QString("dilbert");
     m_info.name           = QString("Dilbert");
-    m_info.color          = QColor(69, 142, 197);
+    m_info.color          = QColor(239, 58, 67);
     m_info.authors        = QStringList("Scott Adams");
     m_info.homepage       = QUrl("http://dilbert.com/");
     m_info.country        = QLocale::UnitedStates;
