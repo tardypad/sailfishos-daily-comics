@@ -16,7 +16,7 @@ Lunarbaboon::Lunarbaboon(QObject *parent) :
 {
     m_info.id             = QString("lunarbaboon");
     m_info.name           = QString("Lunarbaboon");
-    m_info.color          = QColor(197, 211, 221);
+    m_info.color          = QColor(205, 207, 206);
     m_info.authors        = QStringList("Chris Grady");
     m_info.homepage       = QUrl("http://www.lunarbaboon.com/");
     m_info.country        = QLocale::Canada;
