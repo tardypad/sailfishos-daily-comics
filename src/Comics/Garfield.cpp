@@ -16,7 +16,7 @@ Garfield::Garfield(QObject *parent) :
 {
     m_info.id             = QString("garfield");
     m_info.name           = QString("Garfield");
-    m_info.color          = QColor(236, 197, 57);
+    m_info.color          = QColor(242, 186, 31);
     m_info.authors        = QStringList("Jim Davis");
     m_info.homepage       = QUrl("http://garfield.com/");
     m_info.country        = QLocale::UnitedStates;
