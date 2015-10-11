@@ -16,7 +16,7 @@ FokIt::FokIt(QObject *parent) :
 {
     m_info.id             = QString("fokit");
     m_info.name           = QString("Fok_it");
-    m_info.color          = QColor(255, 138, 145);
+    m_info.color          = QColor(255, 135, 119);
     m_info.authors        = QStringList("Joonas Rinta-Kanto");
     m_info.homepage       = QUrl("https://fokit.wordpress.com/");
     m_info.country        = QLocale::Finland;
