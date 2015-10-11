@@ -17,7 +17,7 @@ Xkcd::Xkcd(QObject *parent) :
 {
     m_info.id             = QString("xkcd");
     m_info.name           = QString("xkcd");
-    m_info.color          = QColor(150, 168, 200);
+    m_info.color          = QColor(149, 168, 200);
     m_info.authors        = QStringList("Randall Munroe");
     m_info.homepage       = QUrl("http://xkcd.com/");
     m_info.country        = QLocale::UnitedStates;
