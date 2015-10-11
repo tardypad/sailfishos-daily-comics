@@ -16,7 +16,7 @@ SadSacks::SadSacks(QObject *parent) :
 {
     m_info.id             = QString("sadsacks");
     m_info.name           = QString("Sad Sacks");
-    m_info.color          = QColor(188, 160, 139);
+    m_info.color          = QColor(167, 139, 118);
     m_info.authors        = QStringList() << "James \"Wiz\" Wallace" << "Johnny \"Wasabi\" Larocque";
     m_info.homepage       = QUrl("http://www.sadsacks.ca/");
     m_info.country        = QLocale::Canada;
