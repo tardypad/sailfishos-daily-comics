@@ -16,7 +16,7 @@ FredBasset::FredBasset(QObject *parent) :
 {
     m_info.id             = QString("fredbasset");
     m_info.name           = QString("Fred Basset");
-    m_info.color          = QColor(205, 178, 61);
+    m_info.color          = QColor(203, 176, 61);
     m_info.authors        = QStringList() << "Alex Graham" << "Michael Martin";
     m_info.homepage       = QUrl("http://www.gocomics.com/fredbasset/");
     m_info.country        = QLocale::UnitedKingdom;
