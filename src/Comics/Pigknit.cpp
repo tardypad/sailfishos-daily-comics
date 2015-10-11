@@ -16,7 +16,7 @@ Pigknit::Pigknit(QObject *parent) :
 {
     m_info.id             = QString("pigknit");
     m_info.name           = QString("Pigknit");
-    m_info.color          = QColor(190, 175, 208);
+    m_info.color          = QColor(199, 226, 221);
     m_info.authors        = QStringList("Jessie Miller");
     m_info.homepage       = QUrl("https://pigknit.wordpress.com/");
     m_info.country        = QLocale::UnitedStates;
