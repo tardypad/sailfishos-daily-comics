@@ -16,7 +16,7 @@ TheHatAndFat::TheHatAndFat(QObject *parent) :
 {
     m_info.id             = QString("thehatandfat");
     m_info.name           = QString("The Hat and Fat");
-    m_info.color          = QColor(102, 102, 102);
+    m_info.color          = QColor(51, 51, 51);
     m_info.authors        = QStringList() << "Eric Crowe" << "Dusty Perdue";
     m_info.homepage       = QUrl("https://thehatandfat.wordpress.com/");
     m_info.country        = QLocale::UnitedStates;
