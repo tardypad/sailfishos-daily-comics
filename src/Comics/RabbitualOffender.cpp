@@ -16,7 +16,7 @@ RabbitualOffender::RabbitualOffender(QObject *parent) :
 {
     m_info.id             = QString("rabbitualoffender");
     m_info.name           = QString("Rabbitual Offender");
-    m_info.color          = QColor(193, 204, 232);
+    m_info.color          = QColor(193, 189, 224);
     m_info.authors        = QStringList() << "Edward Gee" << "Wade Crodhil";
     m_info.homepage       = QUrl("http://rabbitualoffender.tumblr.com/");
     m_info.country        = QLocale::UnitedStates;
