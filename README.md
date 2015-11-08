@@ -31,6 +31,7 @@ Comics list
 - Cheer Up, Emo Kid
 - CommitStrip
 - Cyanide & Happiness
+- Darths and Droids
 - Dennis the Menace
 - Diesel Sweeties
 - Dilbert

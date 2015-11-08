@@ -53,6 +53,7 @@
 #include "Comics/PBFComics.h"
 #include "Comics/Ahistaa.h"
 #include "Comics/BloomCounty2015.h"
+#include "Comics/DarthsAndDroids.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -106,6 +107,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<PBFComics>("pbfcomics");
     registerComic<Ahistaa>("ahistaa");
     registerComic<BloomCounty2015>("bloomcounty2015");
+    registerComic<DarthsAndDroids>("darthsanddroids");
 }
 
 ComicFactory* ComicFactory::instance()
