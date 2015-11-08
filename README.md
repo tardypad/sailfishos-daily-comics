@@ -75,6 +75,7 @@ Comics list
 - The Boondocks
 - The Hat and Fat
 - The Perry Bible Fellowship (PBF Comics)
+- The Very Near Future
 - Tubey Toons
 - Viivi ja Wagner
 - What a wonderful world!
