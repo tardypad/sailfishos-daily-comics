@@ -76,6 +76,7 @@ Comics list
 - The Hat and Fat
 - The Perry Bible Fellowship (PBF Comics)
 - The Very Near Future
+- Things in Squares
 - Tubey Toons
 - Viivi ja Wagner
 - What a wonderful world!
