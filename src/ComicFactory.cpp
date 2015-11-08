@@ -58,6 +58,7 @@
 #include "Comics/Erzaehlmirnix.h"
 #include "Comics/FMinus.h"
 #include "Comics/IsLieb.h"
+#include "Comics/Nichtlustig.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -116,6 +117,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<Erzaehlmirnix>("erzaehlmirnix");
     registerComic<FMinus>("fminus");
     registerComic<IsLieb>("islieb");
+    registerComic<Nichtlustig>("nichtlustig");
 }
 
 ComicFactory* ComicFactory::instance()

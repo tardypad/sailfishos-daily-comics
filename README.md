@@ -55,6 +55,7 @@ Comics list
 - Lupo Alberto
 - Macadam Valley
 - Nameless PCs
+- Nichtlustig
 - Peanuts
 - Pigknit
 - Piled Higher and Deeper (PHD Comics)
