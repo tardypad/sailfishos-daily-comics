@@ -39,6 +39,7 @@ Comics list
 - Dirkjan
 - Erzaehlmirnix
 - Extra Ordinary
+- F Minus
 - Fingerpori
 - Fok_it
 - FoxTrot
