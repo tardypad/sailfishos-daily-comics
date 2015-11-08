@@ -61,16 +61,16 @@ Comics list
 - Piled Higher and Deeper (PHD Comics)
 - Pirate Mike
 - Poorly Drawn Lines
+- Pöyrööt
 - Rabbitual Offender
 - Sad Sacks
-- Sarah's Scribbles
-- Savage Chickens
-- Sigmund
-- Pöyrööt
 - Safely Endangered
-- Shit happens!
-- Sinfest
+- Sarah's Scribbles
 - Saturday Morning Breakfast Cereal (SMBC Comics)
+- Savage Chickens
+- Shit happens!
+- Sigmund
+- Sinfest
 - The Awkward Yeti
 - The Boondocks
 - The Hat and Fat
