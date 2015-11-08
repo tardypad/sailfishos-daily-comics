@@ -72,6 +72,7 @@ Comics list
 - Sinfest
 - Saturday Morning Breakfast Cereal (SMBC Comics)
 - The Awkward Yeti
+- The Boondocks
 - The Hat and Fat
 - The Perry Bible Fellowship (PBF Comics)
 - Tubey Toons
