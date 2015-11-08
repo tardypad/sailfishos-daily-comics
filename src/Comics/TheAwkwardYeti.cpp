@@ -29,7 +29,7 @@ TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
 QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)
 {
     QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
+    QRegularExpression reg("<div id=\"comic\">\\s*<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
     QRegularExpressionMatch match = reg.match(html);
 
     if (!match.hasMatch()) {
