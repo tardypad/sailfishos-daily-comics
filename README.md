@@ -64,6 +64,7 @@ Comics list
 - Rabbitual Offender
 - Sad Sacks
 - Sarah's Scribbles
+- Savage Chickens
 - Sigmund
 - Pöyrööt
 - Safely Endangered
