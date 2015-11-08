@@ -161,7 +161,7 @@ Page {
     ComicsModelProxy {
         id: comicsModelProxy
         comicsModel: favoriteComicsModel
-        sortRole: ComicsModel.NameRole
+        sortRole: ComicsModel.SortNameRole
     }
 
     Connections {

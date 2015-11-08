@@ -87,7 +87,7 @@ Page {
     ComicsModelProxy {
         id: comicsModelProxy
         comicsModel: settingsComicsModel
-        sortRole: ComicsModel.NameRole
+        sortRole: ComicsModel.SortNameRole
     }
 
     Loader {

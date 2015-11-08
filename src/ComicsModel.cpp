@@ -50,6 +50,7 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[IdRole] = "id";
     roleNames[RandomRole] = "random";
     roleNames[NameRole] = "name";
+    roleNames[SortNameRole] = "sortName";
     roleNames[ColorRole] = "idColor";
     roleNames[AuthorsRole] = "authors";
     roleNames[HomepageRole] = "homepage";
@@ -87,6 +88,8 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->random();
     case NameRole:
         return m_list.at(index.row())->name();
+    case SortNameRole:
+        return m_list.at(index.row())->name().toLower();
     case ColorRole:
         return m_list.at(index.row())->color();
     case AuthorsRole:

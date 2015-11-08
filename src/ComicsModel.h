@@ -33,6 +33,7 @@ public:
         IdRole = Qt::UserRole + 1,
         RandomRole,
         NameRole,
+        SortNameRole,
         ColorRole,
         AuthorsRole,
         HomepageRole,
