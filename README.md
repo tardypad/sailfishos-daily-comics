@@ -36,6 +36,7 @@ Comics list
 - Diesel Sweeties
 - Dilbert
 - Dinosaur Comics
+- Dirkjan
 - Extra Ordinary
 - Fingerpori
 - Fok_it
