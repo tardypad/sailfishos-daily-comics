@@ -37,6 +37,7 @@ Comics list
 - Dilbert
 - Dinosaur Comics
 - Dirkjan
+- Erzaehlmirnix
 - Extra Ordinary
 - Fingerpori
 - Fok_it
