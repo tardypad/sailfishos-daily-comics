@@ -23,6 +23,7 @@ See the screenshots folder for an overview of the application
 Comics list
 -----------
 
+- Ahistaa
 - Berkeley Mews
 - Buni
 - Calvin and Hobbes
