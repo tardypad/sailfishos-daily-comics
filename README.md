@@ -25,6 +25,7 @@ Comics list
 
 - Ahistaa
 - Berkeley Mews
+- Bloom County 2015
 - Buni
 - Calvin and Hobbes
 - Cheer Up, Emo Kid
