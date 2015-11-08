@@ -60,6 +60,7 @@ Comics list
 - Pigknit
 - Piled Higher and Deeper (PHD Comics)
 - Pirate Mike
+- Poorly Drawn Lines
 - Rabbitual Offender
 - Sad Sacks
 - Sigmund

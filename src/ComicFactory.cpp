@@ -59,6 +59,7 @@
 #include "Comics/FMinus.h"
 #include "Comics/IsLieb.h"
 #include "Comics/Nichtlustig.h"
+#include "Comics/PoorlyDrawnLines.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -118,6 +119,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<FMinus>("fminus");
     registerComic<IsLieb>("islieb");
     registerComic<Nichtlustig>("nichtlustig");
+    registerComic<PoorlyDrawnLines>("poorlydrawnlines");
 }
 
 ComicFactory* ComicFactory::instance()
