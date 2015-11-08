@@ -66,6 +66,7 @@
 #include "Comics/TheBoondocks.h"
 #include "Comics/TheVeryNearFuture.h"
 #include "Comics/ThingsInSquares.h"
+#include "Comics/WizardOfId.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -132,6 +133,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<TheBoondocks>("theboondocks");
     registerComic<TheVeryNearFuture>("theverynearfuture");
     registerComic<ThingsInSquares>("thingsinsquares");
+    registerComic<WizardOfId>("wizardofid");
 }
 
 ComicFactory* ComicFactory::instance()

@@ -80,6 +80,7 @@ Comics list
 - Tubey Toons
 - Viivi ja Wagner
 - What a wonderful world!
+- Wizard of Id
 - xkcd
 - Yodablog
 
