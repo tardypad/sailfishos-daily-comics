@@ -48,6 +48,7 @@ Comics list
 - Fred Basset
 - Garfield
 - Hagar the Horrible
+- Is lieb?
 - Le Chat
 - Loading Artist
 - Lunarbaboon
