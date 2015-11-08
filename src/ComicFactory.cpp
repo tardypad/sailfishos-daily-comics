@@ -60,6 +60,7 @@
 #include "Comics/IsLieb.h"
 #include "Comics/Nichtlustig.h"
 #include "Comics/PoorlyDrawnLines.h"
+#include "Comics/SarahsScribbles.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -120,6 +121,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<IsLieb>("islieb");
     registerComic<Nichtlustig>("nichtlustig");
     registerComic<PoorlyDrawnLines>("poorlydrawnlines");
+    registerComic<SarahsScribbles>("sarahsscribbles");
 }
 
 ComicFactory* ComicFactory::instance()

@@ -63,6 +63,7 @@ Comics list
 - Poorly Drawn Lines
 - Rabbitual Offender
 - Sad Sacks
+- Sarah's Scribbles
 - Sigmund
 - Pöyrööt
 - Safely Endangered
