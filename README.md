@@ -69,6 +69,7 @@ Comics list
 - Pöyrööt
 - Safely Endangered
 - Shit happens!
+- Sinfest
 - Saturday Morning Breakfast Cereal (SMBC Comics)
 - The Awkward Yeti
 - The Hat and Fat
