@@ -38,5 +38,5 @@ QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)
 
     QString src = match.captured(1);
 
-    return QUrl("http://www.lunarbaboon.com/" + src);
+    return QUrl("http://www.lunarbaboon.com" + src);
 }
