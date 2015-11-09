@@ -3,6 +3,9 @@ Daily Comics
 
 Daily Comic strips reader for [SailfishOS](https://sailfishos.org/) and your [Jolla](http://jolla.com/)
 
+Designed for phones only, no tablet support :(
+
+
 Features
 --------
 
@@ -12,79 +15,21 @@ Features
 - quick view all new strips in a row
 - glance at unread comics in cover
 - full landscape view support
-- multi language comics
+- comics from multiple languages
 - animate gif comics
 
 
-See the issues tab for current issues and possibly upcoming features
+Info
+----
 
-See the screenshots folder for an overview of the application
-
-Comics list
------------
-
-- Ahistaa
-- Berkeley Mews
-- Bloom County 2015
-- Buni
-- Calvin and Hobbes
-- Cheer Up, Emo Kid
-- CommitStrip
-- Cyanide & Happiness
-- Darths and Droids
-- Dennis the Menace
-- Diesel Sweeties
-- Dilbert
-- Dinosaur Comics
-- Dirkjan
-- Erzaehlmirnix
-- Extra Ordinary
-- F Minus
-- Fingerpori
-- Fok_it
-- FoxTrot
-- Fokke en Sukke
-- Fowl Language Comics
-- Fred Basset
-- Garfield
-- Hagar the Horrible
-- Is lieb?
-- Le Chat
-- Loading Artist
-- Lunarbaboon
-- Lupo Alberto
-- Macadam Valley
-- Nameless PCs
-- Nichtlustig
-- Peanuts
-- Pigknit
-- Piled Higher and Deeper (PHD Comics)
-- Pirate Mike
-- Poorly Drawn Lines
-- Pöyrööt
-- Rabbitual Offender
-- Sad Sacks
-- Safely Endangered
-- Sarah's Scribbles
-- Saturday Morning Breakfast Cereal (SMBC Comics)
-- Savage Chickens
-- Shit happens!
-- Sigmund
-- Sinfest
-- The Awkward Yeti
-- The Boondocks
-- The Hat and Fat
-- The Perry Bible Fellowship (PBF Comics)
-- The Very Near Future
-- Things in Squares
-- Tubey Toons
-- Viivi ja Wagner
-- What a wonderful world!
-- Wizard of Id
-- xkcd
-- Yodablog
+The [comics list](info/comics_list.md) contains all supported comics
 
 If you have some additional comics you would like to be in the list, please contact me
+
+See the [screenshots](info/screenshots/) folder for an overview of the application
+
+Check the [issues](https://github.com/tardypad/daily-comics/issues) tab for current issues and possibly upcoming features
+
 
 Resources
 ---------
@@ -97,10 +42,11 @@ Here below are few good online resources to find new comics
 - [WebToons](http://www.webtoons.com/)
 - [Reddit webcomics](http://www.reddit.com/r/webcomics/)
 
+
 Licenses
 --------
 
-Source code is released under the MIT license (See the LICENSE file)
+Source code is released under the MIT license (See the [LICENSE](LICENSE) file)
 
 Application specific graphics are released under Creative Commons CC BY
 

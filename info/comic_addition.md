@@ -71,6 +71,6 @@ Comic example strip
 Extras
 ------
 
-- list the comic in the README file
+- list the comic in the info/comics_list.md file
 - list resources urls used for the cover/example in the git commit
-- keep higher resolution cover in a separate folder
+- keep higher resolution cover in images/resources/comics covers
