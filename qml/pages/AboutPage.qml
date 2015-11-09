@@ -139,7 +139,7 @@ Page {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
-                            source: "image://theme/icon-lock-email"
+                            source: "image://theme/icon-m-mail"
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }

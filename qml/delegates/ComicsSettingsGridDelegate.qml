@@ -27,7 +27,7 @@ BackgroundItem {
         opacity: active ? 0.7 : 0.0
 
         Image {
-            source: "image://theme/icon-l-favorite"
+            source: "image://theme/icon-m-favorite-selected"
             height: Theme.iconSizeSmall
             width: Theme.iconSizeSmall
             anchors {

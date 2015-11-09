@@ -80,7 +80,7 @@ Rectangle {
 
             Image {
                 id: errorImage
-                source: "image://theme/icon-system-warning"
+                source: "image://theme/icon-s-high-importance"
                 height: Theme.iconSizeSmall
                 width: Theme.iconSizeSmall
                 fillMode: Image.PreserveAspectFit

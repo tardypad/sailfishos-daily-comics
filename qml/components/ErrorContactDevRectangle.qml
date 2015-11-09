@@ -46,7 +46,7 @@ Loader {
                     verticalCenter: parent.verticalCenter
                 }
                 icon {
-                    source: "image://theme/icon-lock-email"
+                    source: "image://theme/icon-m-mail"
                     height: Theme.iconSizeMedium
                     fillMode: Image.PreserveAspectFit
                 }

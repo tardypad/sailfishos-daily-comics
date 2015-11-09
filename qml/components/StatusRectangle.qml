@@ -102,7 +102,7 @@ Rectangle {
             name: "error"
             when: !isFetching && hasError
             PropertyChanges { target: statusRectangle;   opacity: 1.0 }
-            PropertyChanges { target: image;             source: "image://theme/icon-system-warning" }
+            PropertyChanges { target: image;             source: "image://theme/icon-s-high-importance" }
             PropertyChanges { target: progressCircle;    opacity: 0.0 }
             PropertyChanges { target: blinkingAnimation; running: false }
             PropertyChanges { target: label;             text: "Error"; visible: true; }
