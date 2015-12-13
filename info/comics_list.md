@@ -48,6 +48,7 @@
 - Shit happens!
 - Sigmund
 - Sinfest
+- Swamp
 - The Awkward Yeti
 - The Boondocks
 - The Hat and Fat
