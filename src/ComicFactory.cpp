@@ -68,6 +68,7 @@
 #include "Comics/ThingsInSquares.h"
 #include "Comics/WizardOfId.h"
 #include "Comics/BashIm.h"
+#include "Comics/IntrovertDoodles.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -136,6 +137,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<ThingsInSquares>("thingsinsquares");
     registerComic<WizardOfId>("wizardofid");
     registerComic<BashIm>("bashim");
+    registerComic<IntrovertDoodles>("introvertdoodles");
 }
 
 ComicFactory* ComicFactory::instance()

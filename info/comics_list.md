@@ -24,6 +24,7 @@
 - Fred Basset
 - Garfield
 - Hagar the Horrible
+- Introvert Doodles
 - Is lieb?
 - Le Chat
 - Loading Artist
