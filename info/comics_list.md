@@ -55,6 +55,7 @@
 - The Hat and Fat
 - The Perry Bible Fellowship (PBF Comics)
 - The Very Near Future
+- The Whiteboard
 - Things in Squares
 - Tubey Toons
 - Viivi ja Wagner

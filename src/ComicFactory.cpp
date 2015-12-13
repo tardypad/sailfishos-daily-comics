@@ -71,6 +71,7 @@
 #include "Comics/IntrovertDoodles.h"
 #include "Comics/Swamp.h"
 #include "Comics/TheGamerCat.h"
+#include "Comics/TheWhiteboard.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -142,6 +143,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<IntrovertDoodles>("introvertdoodles");
     registerComic<Swamp>("swamp");
     registerComic<TheGamerCat>("thegamercat");
+    registerComic<TheWhiteboard>("thewhiteboard");
 }
 
 ComicFactory* ComicFactory::instance()
