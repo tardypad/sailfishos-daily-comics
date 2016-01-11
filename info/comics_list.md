@@ -15,6 +15,7 @@
 - Dilbert
 - Dinosaur Comics
 - Dirkjan
+- Einbilder
 - Erzaehlmirnix
 - Extra Ordinary
 - F Minus
