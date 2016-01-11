@@ -76,6 +76,7 @@
 #include "Comics/BeetleBailey.h"
 #include "Comics/DrMcNinja.h"
 #include "Comics/Einbilder.h"
+#include "Comics/LizClimo.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -152,6 +153,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<BeetleBailey>("beetlebailey");
     registerComic<DrMcNinja>("drmcninja");
     registerComic<Einbilder>("einbilder");
+    registerComic<LizClimo>("lizclimo");
 }
 
 ComicFactory* ComicFactory::instance()
