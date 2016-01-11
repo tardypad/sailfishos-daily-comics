@@ -1,6 +1,7 @@
 - Ahistaa
 - Andy Capp
 - bash.im
+- Beetle Bailey
 - Berkeley Mews
 - Bloom County 2015
 - Buni
