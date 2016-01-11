@@ -78,6 +78,7 @@
 #include "Comics/Einbilder.h"
 #include "Comics/LizClimo.h"
 #include "Comics/NedroidPictureDiary.h"
+#include "Comics/OctopusPie.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -156,6 +157,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<Einbilder>("einbilder");
     registerComic<LizClimo>("lizclimo");
     registerComic<NedroidPictureDiary>("nedroidpicturediary");
+    registerComic<OctopusPie>("octopuspie");
 }
 
 ComicFactory* ComicFactory::instance()
