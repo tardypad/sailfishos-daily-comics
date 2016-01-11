@@ -51,6 +51,7 @@
 - Sigmund
 - Sinfest
 - Swamp
+- The Adventures of Dr. McNinja
 - The Awkward Yeti
 - The Boondocks
 - The GaMERCaT
