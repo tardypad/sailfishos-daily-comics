@@ -22,6 +22,8 @@ Features
 Info
 ----
 
+![Comics covers](/info/comics_covers.jpg?raw=true "Comics covers")
+
 The [comics list](info/comics_list.md) contains all supported comics
 
 If you have some additional comics you would like to be in the list, please contact me
