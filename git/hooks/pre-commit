@@ -1,0 +1,12 @@
+#!/bin/sh
+
+duplicates=$(grep color src/Comics/*.cpp | sed "s/.*(\(.*\)).*/\1/" | tr -d ' ' | sort | uniq -d)
+
+if [ -n "$duplicates"  ]
+then
+  echo "There are multiple comics with same color:"
+  echo "$duplicates"
+  exit 1
+fi
+
+exit 0
