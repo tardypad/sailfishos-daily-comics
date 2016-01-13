@@ -79,6 +79,17 @@ bool Comic::animated()
     return m_animated;
 }
 
+QString Comic::sortName() const
+{
+    QString lowerName = name().toLower();
+
+    if (lowerName.startsWith("the ")) {
+        return lowerName.remove(0, 4);
+    }
+
+    return lowerName;
+}
+
 void Comic::fetchStrip()
 {
     if (!error() &&

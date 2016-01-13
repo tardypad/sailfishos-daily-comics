@@ -95,6 +95,7 @@ public:
     void fetchStrip();
     QString stripImagePath() const;
     bool animated();
+    QString sortName() const;
     void abortFetching();
     void read();
 

@@ -89,7 +89,7 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
     case NameRole:
         return m_list.at(index.row())->name();
     case SortNameRole:
-        return m_list.at(index.row())->name().toLower();
+        return m_list.at(index.row())->sortName();
     case ColorRole:
         return m_list.at(index.row())->color();
     case AuthorsRole:
