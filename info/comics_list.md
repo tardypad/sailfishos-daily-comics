@@ -1,9 +1,12 @@
+- The Adventures of Dr. McNinja
 - Ahistaa
 - Andy Capp
+- The Awkward Yeti
 - bash.im
 - Beetle Bailey
 - Berkeley Mews
 - Bloom County 2015
+- The Boondocks
 - Buni
 - Calvin and Hobbes
 - Cheer Up, Emo Kid
@@ -25,8 +28,10 @@
 - Fokke en Sukke
 - Fowl Language Comics
 - Fred Basset
+- The GaMERCaT
 - Garfield
 - Hagar the Horrible
+- The Hat and Fat
 - Introvert Doodles
 - Is lieb?
 - Le Chat
@@ -40,6 +45,7 @@
 - Nichtlustig
 - Octopus Pie
 - Peanuts
+- The Perry Bible Fellowship (PBF Comics)
 - Pigknit
 - Piled Higher and Deeper (PHD Comics)
 - Pirate Mike
@@ -56,18 +62,12 @@
 - Sigmund
 - Sinfest
 - Swamp
-- The Adventures of Dr. McNinja
-- The Awkward Yeti
-- The Boondocks
-- The GaMERCaT
-- The Hat and Fat
-- The Perry Bible Fellowship (PBF Comics)
-- The Very Near Future
-- The Whiteboard
 - Things in Squares
 - Tubey Toons
+- The Very Near Future
 - Viivi ja Wagner
 - What a wonderful world!
+- The Whiteboard
 - Wizard of Id
 - xkcd
 - Yodablog
