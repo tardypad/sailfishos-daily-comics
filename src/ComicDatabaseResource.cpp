@@ -95,6 +95,35 @@ QStringList ComicDatabaseResource::favoriteIds()
     return favoriteIds;
 }
 
+bool ComicDatabaseResource::saveFavorites(QStringList favoriteIds)
+{
+    QSqlQuery query(db);
+    bool result;
+
+    if (!db.transaction())
+        return false;
+
+    result = query.exec("UPDATE " + _comicsTableName + " SET favorite = 0");
+
+    if (!result) {
+        db.rollback();
+        return false;
+    }
+
+    if (!favoriteIds.isEmpty())
+    {
+        result = query.exec("UPDATE " + _comicsTableName + " SET favorite = 1 \n"
+                            "WHERE id IN (\"" + favoriteIds.join("\",\"") + "\")");
+
+        if (!result) {
+            db.rollback();
+            return false;
+        }
+    }
+
+    return db.commit();
+}
+
 QString ComicDatabaseResource::dbDirPath()
 {
     if (m_dbDirPath.isEmpty()) {

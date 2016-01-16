@@ -246,9 +246,14 @@ void ComicsModel::unfavoriteAll()
 
 void ComicsModel::saveAll()
 {
+    QStringList favoriteIds;
+
     for(int row = 0; row < m_list.size(); ++row) {
-        m_list.at(row)->save();
+        if (m_list.at(row)->favorite())
+            favoriteIds.append(m_list.at(row)->id());
     }
+
+    dbResource->saveFavorites(favoriteIds);
 }
 
 Comic *ComicsModel::comicAt(int row)

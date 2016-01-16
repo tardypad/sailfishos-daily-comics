@@ -26,6 +26,7 @@ public:
     bool load(Comic* comic);
     bool save(Comic* comic);
     QStringList favoriteIds();
+    bool saveFavorites(QStringList favoriteIds);
 
 private:
     explicit ComicDatabaseResource(QObject *parent = 0);
