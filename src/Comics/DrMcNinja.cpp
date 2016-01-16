@@ -16,7 +16,7 @@ DrMcNinja::DrMcNinja(QObject *parent) :
 {
     m_info.id             = QString("drmcninja");
     m_info.name           = QString("The Adventures of Dr. McNinja");
-    m_info.color          = QColor(176, 176, 176);
+    m_info.color          = QColor(125, 125, 125);
     m_info.authors        = QStringList("Christopher Hastings");
     m_info.homepage       = QUrl("http://drmcninja.com/");
     m_info.country        = QLocale::UnitedStates;
