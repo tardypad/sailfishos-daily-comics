@@ -8,8 +8,6 @@
 #include "CyanideAndHappiness.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 CyanideAndHappiness::CyanideAndHappiness(QObject *parent) :
     Comic(parent)
@@ -29,15 +27,5 @@ CyanideAndHappiness::CyanideAndHappiness(QObject *parent) :
 
 QUrl CyanideAndHappiness::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http:" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
 }

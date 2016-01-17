@@ -8,8 +8,6 @@
 #include "Buni.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Buni::Buni(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Buni::Buni(QObject *parent) :
 
 QUrl Buni::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<div id=\"comic\">\n<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<div id=\"comic\">\n<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
 }

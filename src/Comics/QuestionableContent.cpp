@@ -8,8 +8,6 @@
 #include "QuestionableContent.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 QuestionableContent::QuestionableContent(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ QuestionableContent::QuestionableContent(QObject *parent) :
 
 QUrl QuestionableContent::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
 }

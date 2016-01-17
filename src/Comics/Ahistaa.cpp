@@ -8,8 +8,6 @@
 #include "Ahistaa.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Ahistaa::Ahistaa(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Ahistaa::Ahistaa(QObject *parent) :
 
 QUrl Ahistaa::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\"");
 }

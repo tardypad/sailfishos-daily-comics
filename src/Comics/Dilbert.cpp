@@ -8,8 +8,6 @@
 #include "Dilbert.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Dilbert::Dilbert(QObject *parent) :
     Comic(parent)
@@ -28,16 +26,5 @@ Dilbert::Dilbert(QObject *parent) :
 
 QUrl Dilbert::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-
-    QRegularExpression reg("<img[^>]*img-comic.*src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*img-comic.*src=\"([^\"]*)\"");
 }

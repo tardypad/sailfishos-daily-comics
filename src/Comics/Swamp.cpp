@@ -8,8 +8,6 @@
 #include "Swamp.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Swamp::Swamp(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Swamp::Swamp(QObject *parent) :
 
 QUrl Swamp::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src='(strips/[^']*)'");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("https://www.swamp.com.au/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src='(strips/[^']*)'");
 }

@@ -8,8 +8,6 @@
 #include "Nichtlustig.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Nichtlustig::Nichtlustig(QObject *parent) :
     Comic(parent)
@@ -27,15 +25,5 @@ Nichtlustig::Nichtlustig(QObject *parent) :
 
 QUrl Nichtlustig::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<link rel=\"image_src\" href=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<link rel=\"image_src\" href=\"([^\"]*)\"");
 }

@@ -8,8 +8,6 @@
 #include "TheAwkwardYeti.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
 
 QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<div id=\"comic\">\\s*<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<div id=\"comic\">\\s*<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
 }

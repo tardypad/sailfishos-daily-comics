@@ -8,8 +8,6 @@
 #include "NedroidPictureDiary.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 NedroidPictureDiary::NedroidPictureDiary(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ NedroidPictureDiary::NedroidPictureDiary(QObject *parent) :
 
 QUrl NedroidPictureDiary::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comic/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comic/[^\"]*)\"");
 }

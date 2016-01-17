@@ -8,8 +8,6 @@
 #include "Smbc.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Smbc::Smbc(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Smbc::Smbc(QObject *parent) :
 
 QUrl Smbc::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*)\" id=\"comic\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.smbc-comics.com/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\" id=\"comic\"");
 }

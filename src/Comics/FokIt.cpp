@@ -8,8 +8,6 @@
 #include "FokIt.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 FokIt::FokIt(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ FokIt::FokIt(QObject *parent) :
 
 QUrl FokIt::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/webkuva/sarjis[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/sarjis[^\"]*)\"");
 }

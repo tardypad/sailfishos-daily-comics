@@ -8,8 +8,6 @@
 #include "TheHatAndFat.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheHatAndFat::TheHatAndFat(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ TheHatAndFat::TheHatAndFat(QObject *parent) :
 
 QUrl TheHatAndFat::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(https://thehatandfat.files.wordpress.com/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(https://thehatandfat.files.wordpress.com/[^\"]*)\"");
 }

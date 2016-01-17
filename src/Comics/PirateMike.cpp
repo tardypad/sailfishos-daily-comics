@@ -8,8 +8,6 @@
 #include "PirateMike.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 PirateMike::PirateMike(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ PirateMike::PirateMike(QObject *parent) :
 
 QUrl PirateMike::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<media:content url=\"([^\"]*piratemikecomics.files.wordpress.com/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<media:content url=\"([^\"]*piratemikecomics.files.wordpress.com/[^\"]*)\"");
 }

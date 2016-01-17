@@ -8,8 +8,6 @@
 #include "DrMcNinja.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 DrMcNinja::DrMcNinja(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ DrMcNinja::DrMcNinja(QObject *parent) :
 
 QUrl DrMcNinja::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
 }

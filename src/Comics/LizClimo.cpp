@@ -8,8 +8,6 @@
 #include "LizClimo.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 LizClimo::LizClimo(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ LizClimo::LizClimo(QObject *parent) :
 
 QUrl LizClimo::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
 }

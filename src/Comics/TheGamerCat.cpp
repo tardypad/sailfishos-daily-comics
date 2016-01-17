@@ -8,8 +8,6 @@
 #include "TheGamerCat.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheGamerCat::TheGamerCat(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ TheGamerCat::TheGamerCat(QObject *parent) :
 
 QUrl TheGamerCat::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
 }

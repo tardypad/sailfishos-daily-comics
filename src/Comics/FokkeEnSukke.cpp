@@ -8,8 +8,6 @@
 #include "FokkeEnSukke.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 FokkeEnSukke::FokkeEnSukke(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ FokkeEnSukke::FokkeEnSukke(QObject *parent) :
 
 QUrl FokkeEnSukke::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(content/formfield_files/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://foksuk.nl/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(content/formfield_files/[^\"]*)\"");
 }

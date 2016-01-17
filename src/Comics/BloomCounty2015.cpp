@@ -8,8 +8,6 @@
 #include "BloomCounty2015.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 BloomCounty2015::BloomCounty2015(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ BloomCounty2015::BloomCounty2015(QObject *parent) :
 
 QUrl BloomCounty2015::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
 }

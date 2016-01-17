@@ -8,8 +8,6 @@
 #include "LupoAlberto.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 LupoAlberto::LupoAlberto(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ LupoAlberto::LupoAlberto(QObject *parent) :
 
 QUrl LupoAlberto::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("href=\"([^\"]*/tavola-settimana/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://lupoalberto.agenzia2d.it/" + src);
+    return regexExtractStripImageUrl(data, "href=\"([^\"]*/tavola-settimana/[^\"]*)\"");
 }

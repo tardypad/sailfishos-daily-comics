@@ -8,9 +8,6 @@
 #include "Erzaehlmirnix.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
-#include <QRegularExpressionMatchIterator>
 
 Erzaehlmirnix::Erzaehlmirnix(QObject *parent) :
     Comic(parent)
@@ -28,21 +25,5 @@ Erzaehlmirnix::Erzaehlmirnix(QObject *parent) :
 
 QUrl Erzaehlmirnix::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*erzaehlmirnix.files.wordpress.com[^\"]*)\"");
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    matchIterator.next();
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    QRegularExpressionMatch match = matchIterator.next();
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*erzaehlmirnix.files.wordpress.com[^\"]*)\"", 2);
 }

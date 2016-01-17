@@ -8,8 +8,6 @@
 #include "NamelessPcs.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 NamelessPcs::NamelessPcs(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ NamelessPcs::NamelessPcs(QObject *parent) :
 
 QUrl NamelessPcs::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
 }

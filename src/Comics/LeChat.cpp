@@ -8,8 +8,6 @@
 #include "LeChat.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 LeChat::LeChat(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ LeChat::LeChat(QObject *parent) :
 
 QUrl LeChat::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/strip/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://geluck.com/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strip/[^\"]*)\"");
 }

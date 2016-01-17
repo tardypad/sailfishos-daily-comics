@@ -8,8 +8,6 @@
 #include "TubeyToons.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TubeyToons::TubeyToons(QObject *parent) :
     Comic(parent)
@@ -28,16 +26,5 @@ TubeyToons::TubeyToons(QObject *parent) :
 
 QUrl TubeyToons::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-
-    QRegularExpression reg("<img[^>]*src=\'(.*/images/comics/[^\']*)\'");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\'(.*/images/comics/[^\']*)\'");
 }

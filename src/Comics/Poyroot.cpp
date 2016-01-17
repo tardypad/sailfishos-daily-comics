@@ -8,8 +8,6 @@
 #include "Poyroot.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Poyroot::Poyroot(QObject *parent) :
     Comic(parent)
@@ -27,15 +25,5 @@ Poyroot::Poyroot(QObject *parent) :
 
 QUrl Poyroot::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");
 }

@@ -8,8 +8,6 @@
 #include "OctopusPie.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 OctopusPie::OctopusPie(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ OctopusPie::OctopusPie(QObject *parent) :
 
 QUrl OctopusPie::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/strippy/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strippy/[^\"]*)\"");
 }

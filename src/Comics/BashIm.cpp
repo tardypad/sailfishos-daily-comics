@@ -8,8 +8,6 @@
 #include "BashIm.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 BashIm::BashIm(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ BashIm::BashIm(QObject *parent) :
 
 QUrl BashIm::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<div id=\"the_strip\"><img src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<div id=\"the_strip\"><img src=\"([^\"]*)\"");
 }

@@ -8,8 +8,6 @@
 #include "WizardOfId.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 WizardOfId::WizardOfId(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ WizardOfId::WizardOfId(QObject *parent) :
 
 QUrl WizardOfId::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
 }

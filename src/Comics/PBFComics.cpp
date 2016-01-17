@@ -8,8 +8,6 @@
 #include "PBFComics.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 PBFComics::PBFComics(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ PBFComics::PBFComics(QObject *parent) :
 
 QUrl PBFComics::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("src=&quot;([^&]*/archive_b/[^&]*)&quot;");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "src=&quot;([^&]*/archive_b/[^&]*)&quot;");
 }

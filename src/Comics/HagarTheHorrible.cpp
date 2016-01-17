@@ -8,8 +8,6 @@
 #include "HagarTheHorrible.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 HagarTheHorrible::HagarTheHorrible(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ HagarTheHorrible::HagarTheHorrible(QObject *parent) :
 
 QUrl HagarTheHorrible::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*content\\.php[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*content\\.php[^\"]*)\"");
 }

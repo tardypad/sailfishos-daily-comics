@@ -8,8 +8,6 @@
 #include "SadSacks.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 SadSacks::SadSacks(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ SadSacks::SadSacks(QObject *parent) :
 
 QUrl SadSacks::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(images/comic/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://johnnylarocque.com/sadsacks/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(images/comic/[^\"]*)\"");
 }

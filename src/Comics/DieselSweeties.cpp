@@ -8,8 +8,6 @@
 #include "DieselSweeties.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 DieselSweeties::DieselSweeties(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ DieselSweeties::DieselSweeties(QObject *parent) :
 
 QUrl DieselSweeties::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/hstrips/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.dieselsweeties.com/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/hstrips/[^\"]*)\"");
 }

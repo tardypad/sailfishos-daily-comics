@@ -8,8 +8,6 @@
 #include "Sigmund.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Sigmund::Sigmund(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Sigmund::Sigmund(QObject *parent) :
 
 QUrl Sigmund::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=(strips/[^ ]*) ");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.sigmund.nl/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=(strips/[^ ]*) ");
 }

@@ -8,8 +8,6 @@
 #include "BeetleBailey.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 BeetleBailey::BeetleBailey(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ BeetleBailey::BeetleBailey(QObject *parent) :
 
 QUrl BeetleBailey::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<meta property=\"og:image\" content=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<meta property=\"og:image\" content=\"([^\"]*)\"");
 }

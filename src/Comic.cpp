@@ -12,6 +12,9 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QImageReader>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+#include <QRegularExpressionMatchIterator>
 
 #include "ComicDatabaseResource.h"
 #include "ComicFileResource.h"
@@ -271,4 +274,26 @@ void Comic::updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal)
         setFetchingProgress(bytesReceived / bytesTotal);
     else
         setFetchingProgress(0);
+}
+
+QUrl Comic::regexExtractStripImageUrl(QByteArray data, QString regex, int count)
+{
+    QString html(data);
+    QRegularExpression reg(regex);
+    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
+    QRegularExpressionMatch match;
+
+    for (int c = 0; c < count; ++c) {
+        if (!matchIterator.hasNext())
+            return QUrl();
+
+        match = matchIterator.next();
+    }
+
+    QUrl src = QUrl(match.captured(1));
+
+    if (src.isRelative())
+        return m_currentReply->url().resolved(src);
+
+    return src;
 }

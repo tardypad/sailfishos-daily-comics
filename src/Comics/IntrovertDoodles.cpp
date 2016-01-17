@@ -8,8 +8,6 @@
 #include "IntrovertDoodles.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 IntrovertDoodles::IntrovertDoodles(QObject *parent) :
     Comic(parent)
@@ -27,15 +25,5 @@ IntrovertDoodles::IntrovertDoodles(QObject *parent) :
 
 QUrl IntrovertDoodles::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
 }

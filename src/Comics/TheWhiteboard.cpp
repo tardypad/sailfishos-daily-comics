@@ -8,8 +8,6 @@
 #include "TheWhiteboard.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheWhiteboard::TheWhiteboard(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ TheWhiteboard::TheWhiteboard(QObject *parent) :
 
 QUrl TheWhiteboard::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img SRC=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.the-whiteboard.com/" + src);
+    return regexExtractStripImageUrl(data, "<img SRC=\"([^\"]*)\"");
 }

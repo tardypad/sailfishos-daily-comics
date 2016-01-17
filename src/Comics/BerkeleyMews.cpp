@@ -8,9 +8,6 @@
 #include "BerkeleyMews.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
-#include <QRegularExpressionMatchIterator>
 
 BerkeleyMews::BerkeleyMews(QObject *parent) :
     Comic(parent)
@@ -28,21 +25,5 @@ BerkeleyMews::BerkeleyMews(QObject *parent) :
 
 QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    matchIterator.next();
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    QRegularExpressionMatch match = matchIterator.next();
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"", 2);
 }

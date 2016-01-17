@@ -8,8 +8,6 @@
 #include "Pigknit.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Pigknit::Pigknit(QObject *parent) :
     Comic(parent)
@@ -28,21 +26,5 @@ Pigknit::Pigknit(QObject *parent) :
 
 QUrl Pigknit::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*pigknit.files.wordpress.com[^\"]*)\"");
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    matchIterator.next();
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    QRegularExpressionMatch match = matchIterator.next();
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*pigknit.files.wordpress.com[^\"]*)\"", 2);
 }

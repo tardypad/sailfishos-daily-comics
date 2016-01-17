@@ -8,8 +8,6 @@
 #include "RabbitualOffender.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 RabbitualOffender::RabbitualOffender(QObject *parent) :
     Comic(parent)
@@ -28,21 +26,5 @@ RabbitualOffender::RabbitualOffender(QObject *parent) :
 
 QUrl RabbitualOffender::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    matchIterator.next();
-
-    if (!matchIterator.hasNext())
-        return QUrl();
-
-    QRegularExpressionMatch match = matchIterator.next();
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"", 2);
 }

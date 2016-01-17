@@ -8,8 +8,6 @@
 #include "DinosaurComics.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 DinosaurComics::DinosaurComics(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ DinosaurComics::DinosaurComics(QObject *parent) :
 
 QUrl DinosaurComics::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
 }

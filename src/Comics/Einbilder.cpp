@@ -8,8 +8,6 @@
 #include "Einbilder.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Einbilder::Einbilder(QObject *parent) :
     Comic(parent)
@@ -27,15 +25,5 @@ Einbilder::Einbilder(QObject *parent) :
 
 QUrl Einbilder::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(images/cartoons/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.einbilder.de/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(images/cartoons/[^\"]*)\"");
 }

@@ -8,8 +8,6 @@
 #include "PhdComics.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 PhdComics::PhdComics(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ PhdComics::PhdComics(QObject *parent) :
 
 QUrl PhdComics::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img id=comic[^>]*src=([^ ]*)");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img id=comic[^>]*src=([^ ]*)");
 }

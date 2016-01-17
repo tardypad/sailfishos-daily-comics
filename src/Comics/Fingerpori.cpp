@@ -8,8 +8,6 @@
 #include "Fingerpori.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Fingerpori::Fingerpori(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Fingerpori::Fingerpori(QObject *parent) :
 
 QUrl Fingerpori::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");
 }

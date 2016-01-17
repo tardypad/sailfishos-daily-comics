@@ -8,8 +8,6 @@
 #include "WhatAWonderfulWorld.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
 
 QUrl WhatAWonderfulWorld::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/files/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/files/[^\"]*)\"");
 }

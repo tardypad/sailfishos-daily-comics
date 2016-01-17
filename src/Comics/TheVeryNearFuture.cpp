@@ -8,8 +8,6 @@
 #include "TheVeryNearFuture.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheVeryNearFuture::TheVeryNearFuture(QObject *parent) :
     Comic(parent)
@@ -25,15 +23,5 @@ TheVeryNearFuture::TheVeryNearFuture(QObject *parent) :
 
 QUrl TheVeryNearFuture::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
 }

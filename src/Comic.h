@@ -104,6 +104,7 @@ protected:
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
     bool stripImageDownloaded();
+    QUrl regexExtractStripImageUrl(QByteArray data, QString regex, int count = 1);
 
 private slots:
     void onFetchStripSourceFinished();

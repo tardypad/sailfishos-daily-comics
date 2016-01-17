@@ -8,8 +8,6 @@
 #include "TheBoondocks.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 TheBoondocks::TheBoondocks(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ TheBoondocks::TheBoondocks(QObject *parent) :
 
 QUrl TheBoondocks::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
 }

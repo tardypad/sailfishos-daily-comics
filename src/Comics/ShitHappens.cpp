@@ -8,8 +8,6 @@
 #include "ShitHappens.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 ShitHappens::ShitHappens(QObject *parent) :
     Comic(parent)
@@ -27,15 +25,5 @@ ShitHappens::ShitHappens(QObject *parent) :
 
 QUrl ShitHappens::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/cartoons/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://ruthe.de/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/cartoons/[^\"]*)\"");
 }

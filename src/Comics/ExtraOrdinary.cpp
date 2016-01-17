@@ -8,8 +8,6 @@
 #include "ExtraOrdinary.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 ExtraOrdinary::ExtraOrdinary(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ ExtraOrdinary::ExtraOrdinary(QObject *parent) :
 
 QUrl ExtraOrdinary::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"(.*/comics/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl(src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/comics/[^\"]*)\"");
 }

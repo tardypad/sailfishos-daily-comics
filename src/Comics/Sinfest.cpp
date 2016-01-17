@@ -8,8 +8,6 @@
 #include "Sinfest.h"
 
 #include <QDebug>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 
 Sinfest::Sinfest(QObject *parent) :
     Comic(parent)
@@ -28,15 +26,5 @@ Sinfest::Sinfest(QObject *parent) :
 
 QUrl Sinfest::extractStripImageUrl(QByteArray data)
 {
-    QString html(data);
-    QRegularExpression reg("<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
-    QRegularExpressionMatch match = reg.match(html);
-
-    if (!match.hasMatch()) {
-        return QUrl();
-    }
-
-    QString src = match.captured(1);
-
-    return QUrl("http://www.sinfest.net/" + src);
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
 }
