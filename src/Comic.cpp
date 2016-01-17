@@ -85,9 +85,13 @@ bool Comic::animated()
 QString Comic::sortName() const
 {
     QString lowerName = name().toLower();
+    QStringList prefixes = QStringList() << "the" << "le";
+    QString prefix;
 
-    if (lowerName.startsWith("the ")) {
-        return lowerName.remove(0, 4);
+    for (int i = 0; i < prefixes.size(); ++i) {
+        prefix = prefixes.at(i) + ' ';
+        if (lowerName.startsWith(prefix))
+            return lowerName.remove(0, prefix.size());
     }
 
     return lowerName;

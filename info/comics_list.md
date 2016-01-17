@@ -9,6 +9,7 @@
 - The Boondocks
 - Buni
 - Calvin and Hobbes
+- Le Chat
 - Cheer Up, Emo Kid
 - CommitStrip
 - Cyanide & Happiness
@@ -34,7 +35,6 @@
 - The Hat and Fat
 - Introvert Doodles
 - Is lieb?
-- Le Chat
 - Liz Climo
 - Loading Artist
 - Lunarbaboon
