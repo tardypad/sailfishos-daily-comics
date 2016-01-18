@@ -112,8 +112,12 @@ bool ComicDatabaseResource::saveFavorites(QStringList favoriteIds)
 
     if (!favoriteIds.isEmpty())
     {
-        result = query.exec("UPDATE " + _comicsTableName + " SET favorite = 1 \n"
-                            "WHERE id IN (\"" + favoriteIds.join("\",\"") + "\")");
+        QStringList values;
+        for (int i = 0; i < favoriteIds.size(); ++i) {
+            values.append("('" + favoriteIds.at(i) + "', '1')");
+        }
+        result = query.exec("REPLACE INTO " + _comicsTableName + " (id, favorite) \n"
+                            "VALUES " + values.join(','));
 
         if (!result) {
             db.rollback();
