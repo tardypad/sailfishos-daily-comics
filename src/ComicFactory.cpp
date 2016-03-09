@@ -81,6 +81,7 @@
 #include "Comics/OctopusPie.h"
 #include "Comics/QuestionableContent.h"
 #include "Comics/Gwtb.h"
+#include "Comics/Lwhag.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -162,6 +163,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<OctopusPie>("octopuspie");
     registerComic<QuestionableContent>("questionablecontent");
     registerComic<Gwtb>("gwtb");
+    registerComic<Lwhag>("lwhag");
 }
 
 ComicFactory* ComicFactory::instance()
