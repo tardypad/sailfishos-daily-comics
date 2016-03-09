@@ -31,6 +31,7 @@
 - Fred Basset
 - The GaMERCaT
 - Garfield
+- Gone With The Blastwave
 - Hagar the Horrible
 - The Hat and Fat
 - Introvert Doodles

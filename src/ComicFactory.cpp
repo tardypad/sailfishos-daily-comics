@@ -80,6 +80,7 @@
 #include "Comics/NedroidPictureDiary.h"
 #include "Comics/OctopusPie.h"
 #include "Comics/QuestionableContent.h"
+#include "Comics/Gwtb.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -160,6 +161,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<NedroidPictureDiary>("nedroidpicturediary");
     registerComic<OctopusPie>("octopuspie");
     registerComic<QuestionableContent>("questionablecontent");
+    registerComic<Gwtb>("gwtb");
 }
 
 ComicFactory* ComicFactory::instance()
