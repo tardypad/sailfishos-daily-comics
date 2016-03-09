@@ -47,6 +47,7 @@
 - Nichtlustig
 - Octopus Pie
 - Peanuts
+- Pearls Before Swine
 - The Perry Bible Fellowship (PBF Comics)
 - Pigknit
 - Piled Higher and Deeper (PHD Comics)
