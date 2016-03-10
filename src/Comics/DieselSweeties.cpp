@@ -21,10 +21,10 @@ DieselSweeties::DieselSweeties(QObject *parent) :
     m_info.language       = QLocale::English;
     m_info.startDate      = QDate::fromString("2000-04", "yyyy-MM");
     m_info.endDate        = QDate::currentDate();
-    m_info.stripSourceUrl = QUrl("http://dieselsweeties.com/");
+    m_info.stripSourceUrl = QUrl("http://www.dieselsweeties.com/ds-unifeed.xml");
 }
 
 QUrl DieselSweeties::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/hstrips/[^\"]*)\"");
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strips[^\"]*)\"");
 }
