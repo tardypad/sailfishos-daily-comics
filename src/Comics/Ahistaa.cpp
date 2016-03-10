@@ -16,15 +16,15 @@ Ahistaa::Ahistaa(QObject *parent) :
     m_info.name           = QString("Ahistaa");
     m_info.color          = QColor(177, 177, 177);
     m_info.authors        = QStringList("Kris K");
-    m_info.homepage       = QUrl("http://ahistaa.sarjakuvablogit.com/");
+    m_info.homepage       = QUrl("http://ahistaa.tumblr.com/");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.startDate      = QDate::fromString("2014-11-05", Qt::ISODate);
     m_info.endDate        = QDate::currentDate();
-    m_info.stripSourceUrl = QUrl("http://ahistaa.sarjakuvablogit.com/feed/");
+    m_info.stripSourceUrl = QUrl("http://ahistaa.tumblr.com/rss");
 }
 
 QUrl Ahistaa::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\"");
+    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
 }
