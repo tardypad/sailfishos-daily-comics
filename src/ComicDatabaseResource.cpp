@@ -112,16 +112,34 @@ bool ComicDatabaseResource::saveFavorites(QStringList favoriteIds)
 
     if (!favoriteIds.isEmpty())
     {
-        QStringList values;
-        for (int i = 0; i < favoriteIds.size(); ++i) {
-            values.append("('" + favoriteIds.at(i) + "', '1')");
-        }
-        result = query.exec("REPLACE INTO " + _comicsTableName + " (id, favorite) \n"
-                            "VALUES " + values.join(','));
+        result = query.exec("UPDATE " + _comicsTableName + " SET favorite = 1 \n"
+                            "WHERE id IN (\"" + favoriteIds.join("\",\"") + "\")");
 
         if (!result) {
             db.rollback();
             return false;
+        }
+
+        QSqlQuery query("SELECT id FROM " + _comicsTableName +  " \n");
+
+        while (query.next()) {
+            favoriteIds.removeAll(query.value(0).toString());
+        }
+
+        if (!favoriteIds.empty()) {
+
+            QStringList values;
+            for (int i = 0; i < favoriteIds.size(); ++i) {
+                values.append("('" + favoriteIds.at(i) + "', '1')");
+            }
+
+            result = query.exec("INSERT INTO " + _comicsTableName + " (id, favorite) \n"
+                                "VALUES " + values.join(','));
+
+            if (!result) {
+                db.rollback();
+                return false;
+            }
         }
     }
 
