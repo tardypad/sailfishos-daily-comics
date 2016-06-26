@@ -73,5 +73,6 @@
 - What a wonderful world!
 - The Whiteboard
 - Wizard of Id
+- Wrong Hands
 - xkcd
 - Yodablog
