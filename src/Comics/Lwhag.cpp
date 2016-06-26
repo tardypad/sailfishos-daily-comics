@@ -26,5 +26,5 @@ Lwhag::Lwhag(QObject *parent) :
 
 QUrl Lwhag::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\"[^>]*alt=\"[^\"]*LISH\"");
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\"[^>]*alt=\"[^\"]*english\"");
 }
