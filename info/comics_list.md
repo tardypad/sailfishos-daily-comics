@@ -15,6 +15,7 @@
 - Cyanide & Happiness
 - Darths and Droids
 - Dennis the Menace
+- Der Flix
 - Diesel Sweeties
 - Dilbert
 - Dinosaur Comics

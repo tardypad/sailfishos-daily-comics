@@ -83,6 +83,7 @@
 #include "Comics/Gwtb.h"
 #include "Comics/Lwhag.h"
 #include "Comics/PearlsBeforeSwine.h"
+#include "Comics/DerFlix.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -166,6 +167,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<Gwtb>("gwtb");
     registerComic<Lwhag>("lwhag");
     registerComic<PearlsBeforeSwine>("pearlsbeforeswine");
+    registerComic<DerFlix>("derflix");
 }
 
 ComicFactory* ComicFactory::instance()
