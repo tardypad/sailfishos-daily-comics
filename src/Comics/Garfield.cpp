@@ -26,5 +26,5 @@ Garfield::Garfield(QObject *parent) :
 
 QUrl Garfield::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strips/[^\"]*)\"");
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
 }
