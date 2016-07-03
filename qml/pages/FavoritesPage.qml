@@ -25,9 +25,13 @@ Page {
     SilicaGridView {
         id: gridView
 
+
+        property int targetWidth: Screen.width < 1500
+                                  ? (favoriteComicsModel.count > 8 ? 180 : 270)
+                                  : 350
         property int cellNumberPerRow: isPortrait
-                                       ? (favoriteComicsModel.count > 8 ? 3 : 2)
-                                       : (favoriteComicsModel.count > 8 ? 5 : 4)
+                                       ? Math.round(Screen.width / targetWidth)
+                                       : Math.round(Screen.height / targetWidth)
         property int cellSize: parent.width / cellNumberPerRow
 
         property Item contextMenu
@@ -44,6 +48,7 @@ Page {
         }
         delegate: ComicsGridDelegate { }
         model: comicsModelProxy
+
 
         Rectangle {
             property bool active: gridView.currentItem && gridView.currentItem.down && !gridView.contextMenuActive
