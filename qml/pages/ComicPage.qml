@@ -86,6 +86,10 @@ Page {
                                               constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
             }
             MenuItem {
+                text: "Copy url to clipboard"
+                onClicked: Clipboard.text = comic.stripImageUrl
+            }
+            MenuItem {
                 text: "Show comic info"
                 onClicked: comicView._showComicInfo()
             }
