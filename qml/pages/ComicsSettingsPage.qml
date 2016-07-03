@@ -21,7 +21,13 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellSize: isPortrait ? parent.width / 3 : parent.width / 5
+        property int targetWidth: Screen.width < 1500
+                                  ? 180
+                                  : 350
+        property int cellNumberPerRow: isPortrait
+                                       ? Math.round(Screen.width / targetWidth)
+                                       : Math.round(Screen.height / targetWidth)
+        property int cellSize: parent.width / cellNumberPerRow
 
         anchors.fill: parent
         cellWidth: cellSize
