@@ -25,14 +25,15 @@ Page {
     SilicaGridView {
         id: gridView
 
+        property int cellNumberPerRow: Screen.sizeCategory >= Screen.Large
+                                       ? (isPortrait ? 3 : 5)
+                                       : (isPortrait ? 2 : 4)
 
-        property int targetWidth: Screen.width < 1500
-                                  ? (favoriteComicsModel.count > 8 ? 180 : 270)
-                                  : 350
-        property int cellNumberPerRow: isPortrait
-                                       ? Math.round(Screen.width / targetWidth)
-                                       : Math.round(Screen.height / targetWidth)
-        property int cellSize: parent.width / cellNumberPerRow
+        property int cellNumberPerRowFav: favoriteComicsModel.count >= cellNumberPerRow * 4
+                                          ? cellNumberPerRow + 1
+                                          : cellNumberPerRow
+
+        property int cellSize: parent.width / cellNumberPerRowFav
 
         property Item contextMenu
         property int minOffsetIndex: contextMenu && contextMenu.parent
