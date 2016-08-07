@@ -26,5 +26,5 @@ Smbc::Smbc(QObject *parent) :
 
 QUrl Smbc::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\" id=\"comic\"");
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\" id=\"cc-comic\"");
 }
