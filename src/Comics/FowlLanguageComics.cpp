@@ -21,10 +21,10 @@ FowlLanguageComics::FowlLanguageComics(QObject *parent) :
     m_info.language       = QLocale::English;
     m_info.startDate      = QDate::fromString("2013-07-22", Qt::ISODate);
     m_info.endDate        = QDate::currentDate();
-    m_info.stripSourceUrl = QUrl("http://www.fowllanguagecomics.com/?bypass-regular-homepage-cache-problem");
+    m_info.stripSourceUrl = QUrl("http://www.fowllanguagecomics.com");
 }
 
 QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
+    return regexExtractStripImageUrl(data, "<meta property=\"og:image\" content=\"([^\"]*)\"");
 }
