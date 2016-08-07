@@ -25,5 +25,11 @@ Poyroot::Poyroot(QObject *parent) :
 
 QUrl Poyroot::extractStripImageUrl(QByteArray data)
 {
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");
+    QUrl extractedStripImageUrl = regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");
+
+    if (extractedStripImageUrl.isValid()) {
+        return extractedStripImageUrl;
+    }
+
+    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/Pöyrööt_[^\"]*)\"");
 }
