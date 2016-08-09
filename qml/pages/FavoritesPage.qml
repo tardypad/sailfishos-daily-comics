@@ -25,10 +25,15 @@ Page {
     SilicaGridView {
         id: gridView
 
-        property int cellNumberPerRow: isPortrait
-                                       ? (favoriteComicsModel.count > 8 ? 3 : 2)
-                                       : (favoriteComicsModel.count > 8 ? 5 : 4)
-        property int cellSize: parent.width / cellNumberPerRow
+        property int cellNumberPerRow: Screen.sizeCategory >= Screen.Large
+                                       ? (isPortrait ? 3 : 5)
+                                       : (isPortrait ? 2 : 4)
+
+        property int cellNumberPerRowFav: favoriteComicsModel.count >= cellNumberPerRow * 4
+                                          ? cellNumberPerRow + 1
+                                          : cellNumberPerRow
+
+        property int cellSize: parent.width / cellNumberPerRowFav
 
         property Item contextMenu
         property int minOffsetIndex: contextMenu && contextMenu.parent
@@ -44,6 +49,7 @@ Page {
         }
         delegate: ComicsGridDelegate { }
         model: comicsModelProxy
+
 
         Rectangle {
             property bool active: gridView.currentItem && gridView.currentItem.down && !gridView.contextMenuActive
