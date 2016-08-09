@@ -3,7 +3,8 @@ Daily Comics
 
 Daily Comic strips reader for [SailfishOS](https://sailfishos.org/) and your [Jolla](http://jolla.com/)
 
-Designed for phones only, no tablet support :(
+Designed for phones usage
+Basic tablet support
 
 
 Features
