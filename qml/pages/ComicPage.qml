@@ -80,10 +80,8 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                visible: !indicator.busy
-                text: "Report a problem with the comic"
-                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
-                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
+                text: "Copy url to clipboard"
+                onClicked: Clipboard.text = comic.stripImageUrl
             }
             MenuItem {
                 text: "Copy url to clipboard"
@@ -96,6 +94,15 @@ Page {
             MenuItem {
                 text: "Go to homepage"
                 onClicked: ExternalLinks.browse(comic.homepage)
+            }
+        }
+
+        PushUpMenu {
+            MenuItem {
+                visible: !indicator.busy
+                text: "Report a problem with the comic"
+                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
             }
         }
 
