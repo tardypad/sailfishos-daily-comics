@@ -47,3 +47,4 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/$${TARGET}-de.ts
+TRANSLATIONS += translations/$${TARGET}-en.ts
