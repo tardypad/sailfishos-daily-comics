@@ -164,14 +164,12 @@
         <translation>Das war alles!</translation>
     </message>
     <message>
-        <location filename="../qml/components/EndPanel.qml" line="53"/>
-        <source>If you like the app,
-please consider supporting
-your favorite comic artists</source>
-        <translation>Wenn dir die App gefällt, unterstütze deine Lieblings Comic Authoren</translation>
+        <location filename="../qml/components/EndPanel.qml" line="54"/>
+        <source>If you like the app, please consider supporting your favorite comic artists</source>
+        <translation>Wenn dir die App gefällt, unterstütze deine Lieblings Comic Autoren</translation>
     </message>
     <message>
-        <location filename="../qml/components/EndPanel.qml" line="71"/>
+        <location filename="../qml/components/EndPanel.qml" line="74"/>
         <source>Return to favorites</source>
         <translation>Zurück zu deinen Favoriten</translation>
     </message>
@@ -190,47 +188,47 @@ to read the strip for now.</source>
 <context>
     <name>FavoritesPage</name>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="69"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="70"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="73"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="74"/>
         <source>Report problems with comics</source>
         <translation>Melde Probleme mit den Comics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="88"/>
         <source>Read all new comics</source>
         <translation>Lese alle neuen Comics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="88"/>
         <source>No new comic</source>
         <translation>Kein neues Comic</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="98"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="99"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="105"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
         <source>No comic selected</source>
         <translation>Kein Comic ausgewählt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="107"/>
         <source>Choose your favorite comics in the settings page</source>
         <translation>Wähle deine Favoriten-Comics auf der Einstellungsseite</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="126"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="127"/>
         <source>Remove from favorites</source>
         <translation>Von Favoriten entfernen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="147"/>
         <source>Fetching comic strips</source>
         <translation>Lade Comics</translation>
     </message>
@@ -282,7 +280,7 @@ to read the strip for now.</source>
     <message>
         <location filename="../qml/components/RequestContactDevRectangle.qml" line="43"/>
         <source>Let me know if you&apos;re missing some of your favorite comics in this list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass mich wissen, wenn dir Comics in der Liste fehlen</translation>
     </message>
 </context>
 <context>

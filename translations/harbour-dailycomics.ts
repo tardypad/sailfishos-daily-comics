@@ -163,14 +163,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/EndPanel.qml" line="53"/>
-        <source>If you like the app,
-please consider supporting
-your favorite comic artists</source>
+        <location filename="../qml/components/EndPanel.qml" line="54"/>
+        <source>If you like the app, please consider supporting your favorite comic artists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/EndPanel.qml" line="71"/>
+        <location filename="../qml/components/EndPanel.qml" line="74"/>
         <source>Return to favorites</source>
         <translation type="unfinished"></translation>
     </message>
@@ -189,47 +187,47 @@ to read the strip for now.</source>
 <context>
     <name>FavoritesPage</name>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="69"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="70"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="73"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="74"/>
         <source>Report problems with comics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="88"/>
         <source>Read all new comics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="88"/>
         <source>No new comic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="98"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="99"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="105"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
         <source>No comic selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="107"/>
         <source>Choose your favorite comics in the settings page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="126"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="127"/>
         <source>Remove from favorites</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
+        <location filename="../qml/pages/FavoritesPage.qml" line="147"/>
         <source>Fetching comic strips</source>
         <translation type="unfinished"></translation>
     </message>
