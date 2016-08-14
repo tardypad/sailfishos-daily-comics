@@ -34,6 +34,8 @@ images.files = \
 
 images.path = /usr/share/$${TARGET}/images
 
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+
 INSTALLS += images
 
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
