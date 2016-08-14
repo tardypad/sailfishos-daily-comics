@@ -20,7 +20,7 @@ Loader {
             InteractionHintLabel {
                 id: interactionHintLabel
                 anchors.bottom: parent.bottom
-                text: "Hold cover to display comic info"
+                text: qsTr("Hold cover to display comic info")
                 Behavior on opacity { FadeAnimation { duration: 1000 } }
                 visible: opacity != 0
 

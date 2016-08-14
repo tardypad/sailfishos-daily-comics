@@ -61,7 +61,7 @@ Page {
                         horizontalCenter: parent.horizontalCenter
                     }
                     width: parent.width - 2*Theme.paddingLarge
-                    text: "Your daily fix of your favorite comic strips"
+                    text: qsTr("Your daily fix of your favorite comic strips")
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -73,7 +73,7 @@ Page {
                         horizontalCenter: parent.horizontalCenter
                     }
                     width: parent.width
-                    text: "version " + Qt.application.version
+                    text: qsTr("version %1").arg(Qt.application.version)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -98,7 +98,7 @@ Page {
                     }
                     color: Theme.highlightColor
                     horizontalAlignment: Text.AlignHCenter
-                    text: "by Damien Tardy-Panis"
+                    text: qsTr("by %1").arg("Damien Tardy-Panis")
                 }
 
                 Row {
@@ -152,14 +152,14 @@ Page {
             Label {
                 id: codeLabel
                 width: parent.width - 2*Theme.paddingLarge
-                text: "The source code is available at
-                       <br/><a href='" + constants.repoGithub + "'>" + constants.repoGithub + "</a>
+                text: qsTr("The source code is available at
+                       <br/><a href='%1'>%2</a>
                        <br/>You can contact me for any remarks,
                        <br/>bugs, feature requests, ideas,...
                        <br/>
                        <br/>Below are few resources to find new comics.
                        <br/>Let me know as well which additional comics
-                       <br/>you would like to be included in the app."
+                       <br/>you would like to be included in the app.").arg(constants.repoGithub).arg(constants.repoGithub)
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 font.pixelSize: Theme.fontSizeExtraSmall
                 horizontalAlignment: Text.AlignHCenter
@@ -188,7 +188,7 @@ Page {
             Label {
                 id: enjoyLabel
                 width: parent.width
-                text: "Enjoy!"
+                text: qsTr("Enjoy!")
                 font.pixelSize: Theme.fontSizeLarge
                 horizontalAlignment: Text.AlignHCenter
             }

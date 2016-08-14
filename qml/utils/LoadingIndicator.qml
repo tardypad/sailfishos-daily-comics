@@ -46,7 +46,7 @@ Item {
     Component {
         id: errorComponent
         ViewPlaceholder {
-            text: "An error occured"
+            text: qsTr("An error occured")
             hintText: defaultErrorText
 
             IconButton {
@@ -66,9 +66,9 @@ Item {
         id: connections
         onFetchSucceeded: state = "complete"
         onFetchStarted: state = "fetching"
-        onNetworkError: displayError("Network error", networkErrorText)
-        onParsingError: displayError("Parsing error", parsingErrorText)
-        onSavingError: displayError("Saving error",savingErrorText)
+        onNetworkError: displayError(qsTr("Network error"), networkErrorText)
+        onParsingError: displayError(qsTr("Parsing error"), parsingErrorText)
+        onSavingError: displayError(qsTr("Saving error"), savingErrorText)
         onDownloadProgress: _updateProgress(bytesReceived, bytesTotal)
     }
 

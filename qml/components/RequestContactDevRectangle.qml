@@ -20,26 +20,27 @@ Item {
     Rectangle {
         id: rect
 
-        width: label.width + mailButton.width + 3*Theme.paddingSmall
+        width: parent.width
         height: label.height + 2*Theme.paddingSmall
         anchors {
             top: parent.top
-            topMargin: Theme.paddingLarge
+            left: parent.left
             right: parent.right
-            rightMargin: Theme.paddingLarge
         }
+        anchors.margins: Theme.paddingLarge
 
         color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity / 3)
 
         Label {
             id: label
             anchors {
-                top: parent.top
-                topMargin: Theme.paddingSmall
                 left: parent.left
                 leftMargin: Theme.paddingSmall
+                verticalCenter: parent.verticalCenter
             }
-            text: "Let me know if you're missing some\nof your favorite comics in this list"
+            width: parent.width - mailButton.width - 3*Theme.paddingSmall
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: qsTr("Let me know if you're missing some of your favorite comics in this list")
             font.pixelSize: Theme.fontSizeExtraSmall
         }
 
@@ -50,7 +51,8 @@ Item {
             anchors {
                 left: label.right
                 leftMargin: Theme.paddingSmall
-                verticalCenter: label.verticalCenter
+                rightMargin: Theme.paddingSmall
+                verticalCenter: parent.verticalCenter
             }
             icon {
                 source: "image://theme/icon-m-mail"

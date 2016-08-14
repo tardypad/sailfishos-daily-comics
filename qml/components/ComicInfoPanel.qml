@@ -66,7 +66,7 @@ DockedPanel {
                 spacing: Theme.paddingLarge
                 Label {
                     id: authorsHeaderLabel
-                    text: comic.authors.length > 1 ? "Authors" : "Author"
+                    text: comic.authors.length > 1 ? qsTr("Authors") : qsTr("Author")
                     width: _headerWidth
                     font {
                         italic: true
@@ -88,7 +88,7 @@ DockedPanel {
                 spacing: Theme.paddingLarge
                 Label {
                     id: countryHeaderLabel
-                    text: "Country"
+                    text: qsTr("Country")
                     width: _headerWidth
                     font {
                         italic: true
@@ -110,7 +110,7 @@ DockedPanel {
                 spacing: Theme.paddingLarge
                 Label {
                     id: languageHeaderLabel
-                    text: "Language"
+                    text: qsTr("Language")
                     width: _headerWidth
                     font {
                         italic: true
@@ -132,7 +132,7 @@ DockedPanel {
                 spacing: Theme.paddingLarge
                 Label {
                     id: publicationHeaderLabel
-                    text: "Publication"
+                    text: qsTr("Publication")
                     width: _headerWidth
                     font {
                         italic: true
@@ -181,7 +181,7 @@ DockedPanel {
         id: homepagePushUpMenu
 
         MenuItem {
-            text: "Go to homepage"
+            text: qsTr("Go to homepage")
             onClicked: ExternalLinks.browse(comic.homepage)
         }
     }

@@ -41,7 +41,7 @@ CoverBackground {
         height: newComics ? Math.ceil(parent.height / 3.0) : 0
 
         Label {
-            text: newComicsCount == 1 ? "1 new comic" : newComicsCount + " new comics"
+            text: qsTr("%n new comic(s)", "", newComicsCount)
             color: Theme.highlightColor
             anchors.centerIn: parent
             horizontalAlignment: Text.AlignHCenter
