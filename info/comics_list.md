@@ -1,6 +1,7 @@
 - The Adventures of Dr. McNinja
 - Ahistaa
 - Andy Capp
+- Anonyymit Eläimet
 - The Awkward Yeti
 - bash.im
 - Beetle Bailey

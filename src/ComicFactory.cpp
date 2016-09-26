@@ -87,6 +87,7 @@
 #include "Comics/WrongHands.h"
 #include "Comics/JaatavaSpede.h"
 #include "Comics/Lunch.h"
+#include "Comics/AnonyymitElaimet.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -174,6 +175,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<WrongHands>("wronghands");
     registerComic<JaatavaSpede>("jaatavaspede");
     registerComic<Lunch>("lunch");
+    registerComic<AnonyymitElaimet>("anonyymitelaimet");
 }
 
 ComicFactory* ComicFactory::instance()
