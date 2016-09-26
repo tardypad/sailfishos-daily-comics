@@ -93,6 +93,7 @@
 #include "Comics/TruthFacts.h"
 #include "Comics/CCassandra.h"
 #include "Comics/BusinessCat.h"
+#include "Comics/UserFriendly.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -186,6 +187,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<TruthFacts>("truthfacts");
     registerComic<CCassandra>("ccassandra");
     registerComic<BusinessCat>("businesscat");
+    registerComic<UserFriendly>("userfriendly");
 }
 
 ComicFactory* ComicFactory::instance()

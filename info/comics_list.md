@@ -76,6 +76,7 @@
 - Truth Facts
 - Tubey Toons
 - The Very Near Future
+- User Friendly
 - Viivi ja Wagner
 - What a wonderful world!
 - The Whiteboard
