@@ -39,6 +39,7 @@
 - Introvert Doodles
 - Is lieb?
 - Jäätävä Spede
+- Kamala Luonto
 - Living with Hipstergirl and Gamergirl
 - Liz Climo
 - Loading Artist
