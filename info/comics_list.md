@@ -9,6 +9,7 @@
 - Bloom County 2015
 - The Boondocks
 - Buni
+- C. Cassandra
 - Calvin and Hobbes
 - Le Chat
 - Cheer Up, Emo Kid
