@@ -90,6 +90,7 @@
 #include "Comics/AnonyymitElaimet.h"
 #include "Comics/KamalaLuonto.h"
 #include "Comics/Wumo.h"
+#include "Comics/TruthFacts.h"
 
 ComicFactory* ComicFactory::m_instance = NULL;
 
@@ -180,6 +181,7 @@ ComicFactory::ComicFactory(QObject *parent) :
     registerComic<AnonyymitElaimet>("anonyymitelaimet");
     registerComic<KamalaLuonto>("kamalaluonto");
     registerComic<Wumo>("wumo");
+    registerComic<TruthFacts>("truthfacts");
 }
 
 ComicFactory* ComicFactory::instance()

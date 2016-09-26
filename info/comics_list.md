@@ -71,6 +71,7 @@
 - Sinfest
 - Swamp
 - Things in Squares
+- Truth Facts
 - Tubey Toons
 - The Very Near Future
 - Viivi ja Wagner
