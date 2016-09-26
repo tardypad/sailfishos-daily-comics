@@ -2,6 +2,7 @@
 - The Adventures of Dr. McNinja
 - Ahistaa
 - Andy Capp
+- Une année au lycée
 - Anonyymit Eläimet
 - The Awkward Yeti
 - bash.im
