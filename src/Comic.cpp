@@ -85,7 +85,7 @@ bool Comic::animated()
 QString Comic::sortName() const
 {
     QString lowerName = name().toLower();
-    QStringList prefixes = QStringList() << "the" << "le";
+    QStringList prefixes = QStringList() << "the" << "le" << "une";
     QString prefix;
 
     for (int i = 0; i < prefixes.size(); ++i) {

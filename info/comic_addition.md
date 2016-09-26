@@ -75,3 +75,4 @@ Extras
 - list resources urls used for the cover/example in the git commit
 - keep higher resolution cover in images/resources/comics covers
 - regenerate the comics covers grid: montage $(ls images/comics/covers/*.jpg | shuf) -tile 10 -geometry 80x80 info/comics_covers.jpg
+- update the prefixes to ignore for the sorting of comics name
