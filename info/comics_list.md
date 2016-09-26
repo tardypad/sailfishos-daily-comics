@@ -78,5 +78,6 @@
 - The Whiteboard
 - Wizard of Id
 - Wrong Hands
+- Wumo
 - xkcd
 - Yodablog
