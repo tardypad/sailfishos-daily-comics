@@ -19,7 +19,6 @@ KamalaLuonto::KamalaLuonto(QObject *parent) :
     m_info.homepage       = QUrl("http://kamalaluonto.com/");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.iltasanomat.fi/kamalaluonto/");
 }
 

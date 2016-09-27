@@ -19,8 +19,6 @@ FoxTrot::FoxTrot(QObject *parent) :
     m_info.homepage       = QUrl("http://www.foxtrot.com");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1988-04-10", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/foxtrot");
 }
 

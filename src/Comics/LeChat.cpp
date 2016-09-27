@@ -19,8 +19,6 @@ LeChat::LeChat(QObject *parent) :
     m_info.homepage       = QUrl("http://geluck.com/");
     m_info.country        = QLocale::Belgium;
     m_info.language       = QLocale::French;
-    m_info.startDate      = QDate::fromString("1983-03-22", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://geluck.com/dessin.html");
 }
 

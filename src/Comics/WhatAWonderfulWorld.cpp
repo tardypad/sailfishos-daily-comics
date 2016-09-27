@@ -19,8 +19,6 @@ WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
     m_info.homepage       = QUrl("http://zepworld.blog.lemonde.fr/");
     m_info.country        = QLocale::Switzerland;
     m_info.language       = QLocale::French;
-    m_info.startDate      = QDate::fromString("2014-11-01", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://zepworld.blog.lemonde.fr/feed/atom/");
 }
 

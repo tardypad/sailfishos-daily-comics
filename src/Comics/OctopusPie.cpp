@@ -19,8 +19,6 @@ OctopusPie::OctopusPie(QObject *parent) :
     m_info.homepage       = QUrl("http://octopuspie.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2007-05-14", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://octopuspie.com/");
 }
 

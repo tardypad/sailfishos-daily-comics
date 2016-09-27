@@ -19,8 +19,6 @@ Dilbert::Dilbert(QObject *parent) :
     m_info.homepage       = QUrl("http://dilbert.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1989-04-16", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://dilbert.com/");
 }
 

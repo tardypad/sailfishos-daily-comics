@@ -19,8 +19,6 @@ TheBoondocks::TheBoondocks(QObject *parent) :
     m_info.homepage       = QUrl("http://www.gocomics.com/boondocks");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1996-04-19", Qt::ISODate);
-    m_info.endDate        = QDate::fromString("2006-03-26", Qt::ISODate);
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/boondocks");
 }
 

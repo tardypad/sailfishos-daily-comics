@@ -19,8 +19,6 @@ Fingerpori::Fingerpori(QObject *parent) :
     m_info.homepage       = QUrl("http://fingerpori.org");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
-    m_info.startDate      = QDate::fromString("2007-02", "yyyy-MM");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/fingerpori/");
 }
 

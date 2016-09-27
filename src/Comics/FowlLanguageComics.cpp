@@ -19,8 +19,6 @@ FowlLanguageComics::FowlLanguageComics(QObject *parent) :
     m_info.homepage       = QUrl("http://www.fowllanguagecomics.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2013-07-22", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.fowllanguagecomics.com");
 }
 

@@ -19,8 +19,6 @@ Dirkjan::Dirkjan(QObject *parent) :
     m_info.homepage       = QUrl("http://dirkjan.nl/");
     m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
-    m_info.startDate      = QDate::fromString("1989", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://dirkjan.nl/");
 }
 

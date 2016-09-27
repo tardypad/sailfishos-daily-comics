@@ -19,8 +19,6 @@ Pigknit::Pigknit(QObject *parent) :
     m_info.homepage       = QUrl("https://pigknit.wordpress.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2014-10-28", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("https://pigknit.wordpress.com/");
 }
 

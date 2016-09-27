@@ -19,8 +19,6 @@ ViiviJaWagner::ViiviJaWagner(QObject *parent) :
     m_info.homepage       = QUrl("http://www.viivijawagner.net/");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
-    m_info.startDate      = QDate::fromString("1997-10-06", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/viivijawagner/");
 }
 

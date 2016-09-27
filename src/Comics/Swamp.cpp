@@ -19,8 +19,6 @@ Swamp::Swamp(QObject *parent) :
     m_info.homepage       = QUrl("https://www.swamp.com.au/");
     m_info.country        = QLocale::Australia;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1981", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.swamp.com.au/cartoons.php");
 }
 

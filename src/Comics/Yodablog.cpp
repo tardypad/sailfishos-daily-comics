@@ -19,8 +19,6 @@ Yodablog::Yodablog(QObject *parent) :
     m_info.homepage       = QUrl("http://www.yodablog.net/");
     m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
-    m_info.startDate      = QDate::fromString("2009-01-01", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.yodablog.net/?feed=rss2");
 }
 

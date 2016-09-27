@@ -19,8 +19,6 @@ TheHatAndFat::TheHatAndFat(QObject *parent) :
     m_info.homepage       = QUrl("https://thehatandfat.wordpress.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2013-02", "yyyy-MM");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("https://thehatandfat.wordpress.com/");
 }
 

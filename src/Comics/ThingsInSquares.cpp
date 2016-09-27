@@ -18,8 +18,6 @@ ThingsInSquares::ThingsInSquares(QObject *parent) :
     m_info.authors        = QStringList("Cale");
     m_info.homepage       = QUrl("http://www.thingsinsquares.com/");
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2014-03", "yyyy-MM");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://feeds.feedburner.com/ThingsInSquares?format=xml");
 }
 

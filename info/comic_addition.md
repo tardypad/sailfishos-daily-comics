@@ -13,7 +13,6 @@ Information needed
 - comic main representative color (homepage color/strips color/character color/...)
 - country of the authors
 - language used in the comic
-- start and end date of publication
 - where to find the latest strip (URL/RSS/API/...)
 
 

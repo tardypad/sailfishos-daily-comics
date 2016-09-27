@@ -21,8 +21,6 @@ DarthsAndDroids::DarthsAndDroids(QObject *parent) :
     m_info.homepage       = QUrl("http://www.darthsanddroids.net/");
     m_info.country        = QLocale::Australia;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2007-09-14", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.darthsanddroids.net/rss_noannotation.xml");
 }
 

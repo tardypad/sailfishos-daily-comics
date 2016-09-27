@@ -19,8 +19,6 @@ MacadamValley::MacadamValley(QObject *parent) :
     m_info.homepage       = QUrl("http://macadamvalley.com/");
     m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
-    m_info.startDate      = QDate::fromString("2012-01-23", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://macadamvalley.com/feed/");
 }
 

@@ -19,8 +19,6 @@ Sigmund::Sigmund(QObject *parent) :
     m_info.homepage       = QUrl("http://www.sigmund.nl/");
     m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
-    m_info.startDate      = QDate::fromString("1992", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.sigmund.nl/?p=home");
 }
 

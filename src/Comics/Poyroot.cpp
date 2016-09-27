@@ -19,7 +19,6 @@ Poyroot::Poyroot(QObject *parent) :
     m_info.homepage       = QUrl("http://www.poyroot.fi");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.poyroot.fi/sarjakuvat/");
 }
 

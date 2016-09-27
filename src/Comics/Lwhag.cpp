@@ -19,8 +19,6 @@ Lwhag::Lwhag(QObject *parent) :
     m_info.homepage       = QUrl("http://www.jagodibuja.com/webcomic-living-with-hipstergirl-and-gamergirl-english/");
     m_info.country        = QLocale::Colombia;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2015-04-10", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.jagodibuja.com/feed/");
 }
 

@@ -19,8 +19,6 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(homepageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(countryChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(startDateChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(endDateChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImagePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImageUrlChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(errorChanged()));
@@ -55,16 +53,6 @@ QString ComicProxy::country() const
 QString ComicProxy::language() const
 {
     return m_comic ? QLocale::languageToString(m_comic->language()) : "";
-}
-
-QDate ComicProxy::startDate() const
-{
-    return m_comic ? m_comic->startDate() : QDate();
-}
-
-QDate ComicProxy::endDate() const
-{
-    return m_comic ? m_comic->endDate() : QDate();
 }
 
 QUrl ComicProxy::stripImagePath() const

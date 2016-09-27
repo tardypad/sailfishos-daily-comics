@@ -19,8 +19,6 @@ SafelyEndangered::SafelyEndangered(QObject *parent) :
     m_info.homepage       = QUrl("http://www.safelyendangered.com/");
     m_info.country        = QLocale::UnitedKingdom;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2012-11-11", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.safelyendangered.com/");
 }
 

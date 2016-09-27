@@ -19,8 +19,6 @@ FredBasset::FredBasset(QObject *parent) :
     m_info.homepage       = QUrl("http://www.gocomics.com/fredbasset/");
     m_info.country        = QLocale::UnitedKingdom;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1963-07-08", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/fredbasset/");
 }
 

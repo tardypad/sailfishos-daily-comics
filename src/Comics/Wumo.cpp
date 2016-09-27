@@ -19,7 +19,6 @@ Wumo::Wumo(QObject *parent) :
     m_info.homepage       = QUrl("http://wumo.com/");
     m_info.country        = QLocale::Denmark;
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://wumo.com/wumo?view=rss");
 }
 

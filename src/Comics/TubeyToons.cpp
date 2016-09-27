@@ -19,8 +19,6 @@ TubeyToons::TubeyToons(QObject *parent) :
     m_info.homepage       = QUrl("http://tubeytoons.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2013-01-01", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://tubeytoons.tumblr.com/");
 }
 

@@ -37,8 +37,6 @@ public:
         QUrl homepage;
         QLocale::Country country;
         QLocale::Language language;
-        QDate startDate;
-        QDate endDate;
         QUrl stripSourceUrl;
 
         ComicInfo() {
@@ -49,8 +47,6 @@ public:
             homepage = QString();
             country = QLocale::AnyCountry;
             language = QLocale::AnyLanguage;
-            startDate = QDate();
-            endDate = QDate();
             stripSourceUrl = QUrl();
         }
     };
@@ -62,8 +58,6 @@ public:
     QUrl homepage() const { return m_info.homepage; }
     QLocale::Country country() const { return m_info.country; }
     QLocale::Language language() const { return m_info.language; }
-    QDate startDate() const { return m_info.startDate; }
-    QDate endDate() const { return m_info.endDate; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
 
     virtual QUrl extractStripImageUrl(QByteArray data) = 0;

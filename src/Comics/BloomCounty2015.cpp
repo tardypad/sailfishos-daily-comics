@@ -19,8 +19,6 @@ BloomCounty2015::BloomCounty2015(QObject *parent) :
     m_info.homepage       = QUrl("http://www.berkeleybreathed.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2015-07-13", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/bloom-county");
 }
 

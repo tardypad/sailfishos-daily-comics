@@ -19,8 +19,6 @@ NedroidPictureDiary::NedroidPictureDiary(QObject *parent) :
     m_info.homepage       = QUrl("http://nedroid.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2005-09", "yyyy-MM");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://nedroid.com/feed/");
 }
 

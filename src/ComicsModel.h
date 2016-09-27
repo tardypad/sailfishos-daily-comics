@@ -39,8 +39,6 @@ public:
         HomepageRole,
         CountryRole,
         LanguageRole,
-        StartDateRole,
-        EndDateRole,
         ImageRole,
         ImageUrlRole,
         FavoriteRole,

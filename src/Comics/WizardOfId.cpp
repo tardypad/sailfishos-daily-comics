@@ -19,8 +19,6 @@ WizardOfId::WizardOfId(QObject *parent) :
     m_info.homepage       = QUrl("http://www.gocomics.com/wizardofid");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1964-11-09", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/wizardofid");
 }
 

@@ -19,7 +19,6 @@ TruthFacts::TruthFacts(QObject *parent) :
     m_info.homepage       = QUrl("http://truthfacts.com/");
     m_info.country        = QLocale::Denmark;
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://truthfacts.com/truthfacts?view=rss");
 }
 

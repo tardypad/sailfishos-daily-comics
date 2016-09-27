@@ -19,8 +19,6 @@ AndyCapp::AndyCapp(QObject *parent) :
     m_info.homepage       = QUrl("http://www.gocomics.com/andycapp");
     m_info.country        = QLocale::UnitedKingdom;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1957-08-05", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/andycapp");
 }
 

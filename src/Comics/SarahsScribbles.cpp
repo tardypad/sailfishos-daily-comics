@@ -19,8 +19,6 @@ SarahsScribbles::SarahsScribbles(QObject *parent) :
     m_info.homepage       = QUrl("http://sarahcandersen.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2011-12-10", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://sarahcandersen.com/rss");
 }
 

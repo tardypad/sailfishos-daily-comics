@@ -19,8 +19,6 @@ SavageChickens::SavageChickens(QObject *parent) :
     m_info.homepage       = QUrl("http://www.savagechickens.com/");
     m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2005-01-31", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.savagechickens.com/feed");
 }
 

@@ -19,7 +19,6 @@ IsLieb::IsLieb(QObject *parent) :
     m_info.homepage       = QUrl("http://islieb.de/");
     m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://islieb.de/feed/");
 }
 

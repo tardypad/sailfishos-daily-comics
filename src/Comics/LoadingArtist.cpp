@@ -19,8 +19,6 @@ LoadingArtist::LoadingArtist(QObject *parent) :
     m_info.homepage       = QUrl("http://www.loadingartist.com/");
     m_info.country        = QLocale::NewZealand;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2011-01-04", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://www.loadingartist.com/latest");
 }
 

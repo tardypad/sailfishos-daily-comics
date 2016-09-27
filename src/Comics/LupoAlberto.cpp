@@ -19,8 +19,6 @@ LupoAlberto::LupoAlberto(QObject *parent) :
     m_info.homepage       = QUrl("http://lupoalberto.it/");
     m_info.country        = QLocale::Italy;
     m_info.language       = QLocale::Italian;
-    m_info.startDate      = QDate::fromString("1974-02", "yyyy-MM");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://lupoalberto.agenzia2d.it/");
 }
 

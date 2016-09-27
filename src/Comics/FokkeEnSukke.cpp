@@ -19,8 +19,6 @@ FokkeEnSukke::FokkeEnSukke(QObject *parent) :
     m_info.homepage       = QUrl("http://foksuk.nl/");
     m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
-    m_info.startDate      = QDate::fromString("1994", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://foksuk.nl/");
 }
 

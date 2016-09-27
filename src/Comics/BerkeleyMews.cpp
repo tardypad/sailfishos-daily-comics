@@ -19,7 +19,6 @@ BerkeleyMews::BerkeleyMews(QObject *parent) :
     m_info.homepage       = QUrl("http://www.berkeleymews.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2009-12-27", Qt::ISODate);
     m_info.stripSourceUrl = QUrl("http://www.berkeleymews.com/");
 }
 

@@ -128,35 +128,6 @@ DockedPanel {
                     truncationMode: TruncationMode.Fade
                 }
             }
-            Row {
-                spacing: Theme.paddingLarge
-                Label {
-                    id: publicationHeaderLabel
-                    text: "Publication"
-                    width: _headerWidth
-                    font {
-                        italic: true
-                        pixelSize: Theme.fontSizeExtraSmall
-                    }
-                    color: Theme.secondaryColor
-                    horizontalAlignment: Text.AlignRight
-                }
-                Label {
-                    property string _startYear: comic.startDate != "Invalid Date"
-                                                ? Qt.formatDate(comic.startDate, "yyyy")
-                                                : "unknown"
-                    property string _endYear: Qt.formatDate(comic.endDate, "yyyy") != Qt.formatDateTime(new Date(), "yyyy")
-                                              ? Qt.formatDate(comic.endDate, "yyyy")
-                                              : "present"
-
-                    id: publicationLabel
-                    text: _startYear + " - " + _endYear
-                    width: _textWidth
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors.baseline: publicationHeaderLabel.baseline
-                    truncationMode: TruncationMode.Fade
-                }
-            }
 
             Image {
                 id: exampleImage
@@ -169,7 +140,7 @@ DockedPanel {
                 height: isPortrait
                         ? Math.min(window.height / 4, implicitHeight)
                         : comicInfoPanel.height - (nameLabel.height + 7 * Theme.paddingMedium
-                          + authorsLabel.height + countryLabel.height + languageLabel.height + publicationLabel.height)
+                          + authorsLabel.height + countryLabel.height + languageLabel.height)
 
                 anchors.horizontalCenter: parent.horizontalCenter
             }

@@ -19,7 +19,6 @@ ShitHappens::ShitHappens(QObject *parent) :
     m_info.homepage       = QUrl("http://ruthe.de/");
     m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://ruthe.de/cartoon/");
 }
 

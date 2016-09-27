@@ -19,8 +19,6 @@ BashIm::BashIm(QObject *parent) :
     m_info.homepage       = QUrl("http://bash.im/comics/");
     m_info.country        = QLocale::Russia;
     m_info.language       = QLocale::Russian;
-    m_info.startDate      = QDate::fromString("2007-08-01", Qt::ISODate);
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://bash.im/comics/");
 }
 

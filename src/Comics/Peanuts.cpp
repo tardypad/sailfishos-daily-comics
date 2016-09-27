@@ -19,8 +19,6 @@ Peanuts::Peanuts(QObject *parent) :
     m_info.homepage       = QUrl("http://www.peanuts.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1950-10-02", Qt::ISODate);
-    m_info.endDate        = QDate::fromString("2000-02-13", Qt::ISODate);
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/peanuts/");
 }
 

@@ -19,8 +19,6 @@ FokIt::FokIt(QObject *parent) :
     m_info.homepage       = QUrl("https://fokit.wordpress.com/");
     m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
-    m_info.startDate      = QDate::fromString("2009", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://nyt.fi/aihe/fokit/");
 }
 

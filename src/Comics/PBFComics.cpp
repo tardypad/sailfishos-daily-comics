@@ -19,8 +19,6 @@ PBFComics::PBFComics(QObject *parent) :
     m_info.homepage       = QUrl("http://pbfcomics.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("2001", "yyyy");
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://pbfcomics.com/feed/feed.xml");
 }
 

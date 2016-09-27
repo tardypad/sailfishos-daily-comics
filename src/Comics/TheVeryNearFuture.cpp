@@ -17,7 +17,6 @@ TheVeryNearFuture::TheVeryNearFuture(QObject *parent) :
     m_info.color          = QColor(70, 120, 129);
     m_info.homepage       = QUrl("http://theverynearfuture.com/");
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://theverynearfuture.com/rss");
 }
 

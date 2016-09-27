@@ -19,7 +19,6 @@ CCassandra::CCassandra(QObject *parent) :
     m_info.homepage       = QUrl("http://c-cassandra.tumblr.com/");
     m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://c-cassandra.tumblr.com/rss");
 }
 

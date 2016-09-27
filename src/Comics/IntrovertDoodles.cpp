@@ -19,7 +19,6 @@ IntrovertDoodles::IntrovertDoodles(QObject *parent) :
     m_info.homepage       = QUrl("http://introvertdoodles.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://introvertdoodles.com/");
 }
 

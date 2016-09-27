@@ -19,7 +19,6 @@ WrongHands::WrongHands(QObject *parent) :
     m_info.homepage       = QUrl("https://wronghands1.com/");
     m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("https://wronghands1.com/feed/");
 }
 

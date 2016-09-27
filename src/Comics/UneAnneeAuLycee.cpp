@@ -19,7 +19,6 @@ UneAnneeAuLycee::UneAnneeAuLycee(QObject *parent) :
     m_info.homepage       = QUrl("http://uneanneeaulycee.blog.lemonde.fr/");
     m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
-    m_info.endDate        = QDate::currentDate();
     m_info.stripSourceUrl = QUrl("http://uneanneeaulycee.blog.lemonde.fr/feed/");
 }
 

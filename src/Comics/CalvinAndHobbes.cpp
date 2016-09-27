@@ -19,8 +19,6 @@ CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
     m_info.homepage       = QUrl("http://www.calvinandhobbes.com/");
     m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
-    m_info.startDate      = QDate::fromString("1985-11-18", Qt::ISODate);
-    m_info.endDate        = QDate::fromString("1995-12-31", Qt::ISODate);
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/calvinandhobbes/");
 }
 
