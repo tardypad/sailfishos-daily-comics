@@ -35,7 +35,6 @@ public:
         QColor color;
         QStringList authors;
         QUrl homepage;
-        QLocale::Country country;
         QLocale::Language language;
         QUrl stripSourceUrl;
 
@@ -45,7 +44,6 @@ public:
             color = QColor();
             authors = QStringList();
             homepage = QString();
-            country = QLocale::AnyCountry;
             language = QLocale::AnyLanguage;
             stripSourceUrl = QUrl();
         }
@@ -56,7 +54,6 @@ public:
     QColor color() const { return m_info.color; }
     QStringList authors() const { return m_info.authors; }
     QUrl homepage() const { return m_info.homepage; }
-    QLocale::Country country() const { return m_info.country; }
     QLocale::Language language() const { return m_info.language; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
 

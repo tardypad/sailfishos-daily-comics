@@ -17,7 +17,6 @@ BeetleBailey::BeetleBailey(QObject *parent) :
     m_info.color          = QColor(174, 169, 137);
     m_info.authors        = QStringList("Mort Walker");
     m_info.homepage       = QUrl("http://beetlebailey.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://beetlebailey.com/");
 }

@@ -17,7 +17,6 @@ WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
     m_info.color          = QColor(195, 143, 189);
     m_info.authors        = QStringList("Philippe Chappuis \"Zep\"");
     m_info.homepage       = QUrl("http://zepworld.blog.lemonde.fr/");
-    m_info.country        = QLocale::Switzerland;
     m_info.language       = QLocale::French;
     m_info.stripSourceUrl = QUrl("http://zepworld.blog.lemonde.fr/feed/atom/");
 }

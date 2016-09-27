@@ -17,7 +17,6 @@ Erzaehlmirnix::Erzaehlmirnix(QObject *parent) :
     m_info.color          = QColor(188, 197, 192);
     m_info.authors        = QStringList("Nadja Hermann");
     m_info.homepage       = QUrl("https://erzaehlmirnix.wordpress.com/");
-    m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
     m_info.stripSourceUrl = QUrl("https://erzaehlmirnix.wordpress.com/");
 }

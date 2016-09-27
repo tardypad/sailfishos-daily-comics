@@ -17,7 +17,6 @@ Yodablog::Yodablog(QObject *parent) :
     m_info.color          = QColor(154, 183, 93);
     m_info.authors        = QStringList("Thierry Vivien");
     m_info.homepage       = QUrl("http://www.yodablog.net/");
-    m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
     m_info.stripSourceUrl = QUrl("http://www.yodablog.net/?feed=rss2");
 }

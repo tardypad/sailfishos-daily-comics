@@ -17,7 +17,6 @@ LeChat::LeChat(QObject *parent) :
     m_info.color          = QColor(38, 203, 171);
     m_info.authors        = QStringList("Philippe Geluck");
     m_info.homepage       = QUrl("http://geluck.com/");
-    m_info.country        = QLocale::Belgium;
     m_info.language       = QLocale::French;
     m_info.stripSourceUrl = QUrl("http://geluck.com/dessin.html");
 }

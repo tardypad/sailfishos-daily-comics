@@ -17,7 +17,6 @@ KamalaLuonto::KamalaLuonto(QObject *parent) :
     m_info.color          = QColor(196, 138, 75);
     m_info.authors        = QStringList("Jarkko Vehniäisen");
     m_info.homepage       = QUrl("http://kamalaluonto.com/");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://www.iltasanomat.fi/kamalaluonto/");
 }

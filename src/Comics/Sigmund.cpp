@@ -17,7 +17,6 @@ Sigmund::Sigmund(QObject *parent) :
     m_info.color          = QColor(255, 255, 169);
     m_info.authors        = QStringList("Peter de Wit");
     m_info.homepage       = QUrl("http://www.sigmund.nl/");
-    m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
     m_info.stripSourceUrl = QUrl("http://www.sigmund.nl/?p=home");
 }

@@ -17,7 +17,6 @@ CCassandra::CCassandra(QObject *parent) :
     m_info.color          = QColor(186, 186, 186);
     m_info.authors        = QStringList("Cassandra Calin");
     m_info.homepage       = QUrl("http://c-cassandra.tumblr.com/");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://c-cassandra.tumblr.com/rss");
 }

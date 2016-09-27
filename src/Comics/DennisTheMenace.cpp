@@ -17,7 +17,6 @@ DennisTheMenace::DennisTheMenace(QObject *parent) :
     m_info.color          = QColor(253, 219, 0);
     m_info.authors        = QStringList() << "Hank Ketcham" << "Marcus Hamilton" << "Ron Ferdinand";
     m_info.homepage       = QUrl("http://dennisthemenace.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://dennisthemenace.com/");
 }

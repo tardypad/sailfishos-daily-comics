@@ -17,7 +17,6 @@ Peanuts::Peanuts(QObject *parent) :
     m_info.color          = QColor(255, 223, 30);
     m_info.authors        = QStringList("Charles Monroe Schulz");
     m_info.homepage       = QUrl("http://www.peanuts.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/peanuts/");
 }

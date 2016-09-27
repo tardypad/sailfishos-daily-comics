@@ -17,7 +17,6 @@ TruthFacts::TruthFacts(QObject *parent) :
     m_info.color          = QColor(255, 150, 0);
     m_info.authors        = QStringList() << "Mikael Wulff" << "Anders Morgenthaler";
     m_info.homepage       = QUrl("http://truthfacts.com/");
-    m_info.country        = QLocale::Denmark;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://truthfacts.com/truthfacts?view=rss");
 }

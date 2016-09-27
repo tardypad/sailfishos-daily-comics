@@ -17,7 +17,6 @@ IntrovertDoodles::IntrovertDoodles(QObject *parent) :
     m_info.color          = QColor(226, 28, 77);
     m_info.authors        = QStringList("Marzi");
     m_info.homepage       = QUrl("http://introvertdoodles.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://introvertdoodles.com/");
 }

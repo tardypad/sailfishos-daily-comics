@@ -17,7 +17,6 @@ BloomCounty2015::BloomCounty2015(QObject *parent) :
     m_info.color          = QColor(190, 154, 224);
     m_info.authors        = QStringList("Berkeley Breathed");
     m_info.homepage       = QUrl("http://www.berkeleybreathed.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/bloom-county");
 }

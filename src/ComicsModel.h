@@ -37,7 +37,6 @@ public:
         ColorRole,
         AuthorsRole,
         HomepageRole,
-        CountryRole,
         LanguageRole,
         ImageRole,
         ImageUrlRole,

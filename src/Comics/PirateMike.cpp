@@ -17,7 +17,6 @@ PirateMike::PirateMike(QObject *parent) :
     m_info.color          = QColor(0, 184, 238);
     m_info.authors        = QStringList("Brad Perri");
     m_info.homepage       = QUrl("http://piratemikecomics.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://piratemikecomics.com/feed/");
 }

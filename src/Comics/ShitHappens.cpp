@@ -17,7 +17,6 @@ ShitHappens::ShitHappens(QObject *parent) :
     m_info.color          = QColor(147, 209, 246);
     m_info.authors        = QStringList("Ralph Ruthe");
     m_info.homepage       = QUrl("http://ruthe.de/");
-    m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
     m_info.stripSourceUrl = QUrl("http://ruthe.de/cartoon/");
 }

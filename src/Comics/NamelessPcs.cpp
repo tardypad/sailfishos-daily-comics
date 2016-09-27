@@ -17,7 +17,6 @@ NamelessPcs::NamelessPcs(QObject *parent) :
     m_info.color          = QColor(116, 209, 240);
     m_info.authors        = QStringList("Wesley Hall");
     m_info.homepage       = QUrl("http://namelesspcs.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://namelesspcs.com/");
 }

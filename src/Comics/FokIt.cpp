@@ -17,7 +17,6 @@ FokIt::FokIt(QObject *parent) :
     m_info.color          = QColor(255, 135, 119);
     m_info.authors        = QStringList("Joonas Rinta-Kanto");
     m_info.homepage       = QUrl("https://fokit.wordpress.com/");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://nyt.fi/aihe/fokit/");
 }

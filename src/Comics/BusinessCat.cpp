@@ -17,7 +17,6 @@ BusinessCat::BusinessCat(QObject *parent) :
     m_info.color          = QColor(120, 138, 188);
     m_info.authors        = QStringList("Tom Fonder");
     m_info.homepage       = QUrl("http://www.businesscat.happyjar.com/");
-    m_info.country        = QLocale::UnitedKingdom;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.businesscat.happyjar.com/");
 }

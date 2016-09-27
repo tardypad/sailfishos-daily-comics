@@ -19,7 +19,6 @@ DarthsAndDroids::DarthsAndDroids(QObject *parent) :
                                           << "David McLeish" << "David Morgan-Mar" << "Ian Boreham"
                                           << "Loki Patrick" << "Steven Irrgang";
     m_info.homepage       = QUrl("http://www.darthsanddroids.net/");
-    m_info.country        = QLocale::Australia;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.darthsanddroids.net/rss_noannotation.xml");
 }

@@ -17,7 +17,6 @@ FokkeEnSukke::FokkeEnSukke(QObject *parent) :
     m_info.color          = QColor(213, 26, 33);
     m_info.authors        = QStringList() << "Jean-Marc van Tol" << "John Reid" << "Bastiaan Geleijnse";
     m_info.homepage       = QUrl("http://foksuk.nl/");
-    m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
     m_info.stripSourceUrl = QUrl("http://foksuk.nl/");
 }

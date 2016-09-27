@@ -17,7 +17,6 @@ UneAnneeAuLycee::UneAnneeAuLycee(QObject *parent) :
     m_info.color          = QColor(181, 181, 181);
     m_info.authors        = QStringList("Fabrice Erre");
     m_info.homepage       = QUrl("http://uneanneeaulycee.blog.lemonde.fr/");
-    m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
     m_info.stripSourceUrl = QUrl("http://uneanneeaulycee.blog.lemonde.fr/feed/");
 }

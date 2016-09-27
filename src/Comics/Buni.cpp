@@ -17,7 +17,6 @@ Buni::Buni(QObject *parent) :
     m_info.color          = QColor(87, 110, 152);
     m_info.authors        = QStringList("Ryan Pagelow");
     m_info.homepage       = QUrl("http://www.bunicomic.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.bunicomic.com/");
 }

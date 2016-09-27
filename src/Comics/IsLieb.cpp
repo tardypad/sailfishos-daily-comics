@@ -17,7 +17,6 @@ IsLieb::IsLieb(QObject *parent) :
     m_info.color          = QColor(226, 72, 64);
     m_info.authors        = QStringList("Ey Lou Flynn");
     m_info.homepage       = QUrl("http://islieb.de/");
-    m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
     m_info.stripSourceUrl = QUrl("http://islieb.de/feed/");
 }

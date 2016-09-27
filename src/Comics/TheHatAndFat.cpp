@@ -17,7 +17,6 @@ TheHatAndFat::TheHatAndFat(QObject *parent) :
     m_info.color          = QColor(50, 50, 50);
     m_info.authors        = QStringList() << "Eric Crowe" << "Dusty Perdue";
     m_info.homepage       = QUrl("https://thehatandfat.wordpress.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("https://thehatandfat.wordpress.com/");
 }

@@ -17,7 +17,6 @@ SafelyEndangered::SafelyEndangered(QObject *parent) :
     m_info.color          = QColor(71, 89, 127);
     m_info.authors        = QStringList("Chris McCoy");
     m_info.homepage       = QUrl("http://www.safelyendangered.com/");
-    m_info.country        = QLocale::UnitedKingdom;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.safelyendangered.com/");
 }

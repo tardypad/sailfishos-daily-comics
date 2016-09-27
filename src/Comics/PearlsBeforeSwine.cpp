@@ -17,7 +17,6 @@ PearlsBeforeSwine::PearlsBeforeSwine(QObject *parent) :
     m_info.color          = QColor(251, 192, 209);
     m_info.authors        = QStringList("Stephan Pastis");
     m_info.homepage       = QUrl("http://www.gocomics.com/pearlsbeforeswine");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.gocomics.com/pearlsbeforeswine");
 }

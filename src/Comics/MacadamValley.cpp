@@ -17,7 +17,6 @@ MacadamValley::MacadamValley(QObject *parent) :
     m_info.color          = QColor(185, 167, 131);
     m_info.authors        = QStringList("Ben Dessy");
     m_info.homepage       = QUrl("http://macadamvalley.com/");
-    m_info.country        = QLocale::France;
     m_info.language       = QLocale::French;
     m_info.stripSourceUrl = QUrl("http://macadamvalley.com/feed/");
 }

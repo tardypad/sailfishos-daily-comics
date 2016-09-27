@@ -17,7 +17,6 @@ FowlLanguageComics::FowlLanguageComics(QObject *parent) :
     m_info.color          = QColor(219, 232, 212);
     m_info.authors        = QStringList("Brian Gordon");
     m_info.homepage       = QUrl("http://www.fowllanguagecomics.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.fowllanguagecomics.com");
 }

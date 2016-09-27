@@ -20,7 +20,6 @@ Xkcd::Xkcd(QObject *parent) :
     m_info.color          = QColor(149, 168, 200);
     m_info.authors        = QStringList("Randall Munroe");
     m_info.homepage       = QUrl("http://xkcd.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://xkcd.com/info.0.json");
 }

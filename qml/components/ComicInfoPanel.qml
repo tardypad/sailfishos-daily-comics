@@ -84,28 +84,7 @@ DockedPanel {
                     truncationMode: TruncationMode.Fade
                 }
             }
-            Row {
-                spacing: Theme.paddingLarge
-                Label {
-                    id: countryHeaderLabel
-                    text: "Country"
-                    width: _headerWidth
-                    font {
-                        italic: true
-                        pixelSize: Theme.fontSizeExtraSmall
-                    }
-                    color: Theme.secondaryColor
-                    horizontalAlignment: Text.AlignRight
-                }
-                Label {
-                    id: countryLabel
-                    text: comic.country
-                    width: _textWidth
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors.baseline: countryHeaderLabel.baseline
-                    truncationMode: TruncationMode.Fade
-                }
-            }
+
             Row {
                 spacing: Theme.paddingLarge
                 Label {
@@ -140,7 +119,7 @@ DockedPanel {
                 height: isPortrait
                         ? Math.min(window.height / 4, implicitHeight)
                         : comicInfoPanel.height - (nameLabel.height + 7 * Theme.paddingMedium
-                          + authorsLabel.height + countryLabel.height + languageLabel.height)
+                          + authorsLabel.height + languageLabel.height)
 
                 anchors.horizontalCenter: parent.horizontalCenter
             }

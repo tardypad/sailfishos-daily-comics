@@ -17,7 +17,6 @@ WrongHands::WrongHands(QObject *parent) :
     m_info.color          = QColor(76, 121, 188);
     m_info.authors        = QStringList("John Atkinson");
     m_info.homepage       = QUrl("https://wronghands1.com/");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("https://wronghands1.com/feed/");
 }

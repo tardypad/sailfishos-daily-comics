@@ -17,7 +17,6 @@ OctopusPie::OctopusPie(QObject *parent) :
     m_info.color          = QColor(104, 183, 190);
     m_info.authors        = QStringList("Meredith Gran");
     m_info.homepage       = QUrl("http://octopuspie.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://octopuspie.com/");
 }

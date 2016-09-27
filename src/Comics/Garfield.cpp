@@ -17,7 +17,6 @@ Garfield::Garfield(QObject *parent) :
     m_info.color          = QColor(242, 186, 31);
     m_info.authors        = QStringList("Jim Davis");
     m_info.homepage       = QUrl("http://garfield.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://garfield.com/");
 }

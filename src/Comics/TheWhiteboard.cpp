@@ -17,7 +17,6 @@ TheWhiteboard::TheWhiteboard(QObject *parent) :
     m_info.color          = QColor(94, 204, 255);
     m_info.authors        = QStringList("\"Doc\" Nickel");
     m_info.homepage       = QUrl("http://www.the-whiteboard.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.the-whiteboard.com/");
 }

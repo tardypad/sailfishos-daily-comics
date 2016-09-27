@@ -17,7 +17,6 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(nameChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(authorsChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(homepageChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(countryChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImagePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImageUrlChanged()));
@@ -43,11 +42,6 @@ QStringList ComicProxy::authors() const
 QUrl ComicProxy::homepage() const
 {
     return m_comic ? m_comic->homepage() : QUrl();
-}
-
-QString ComicProxy::country() const
-{
-    return m_comic ? QLocale::countryToString(m_comic->country()) : "";
 }
 
 QString ComicProxy::language() const

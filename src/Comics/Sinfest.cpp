@@ -17,7 +17,6 @@ Sinfest::Sinfest(QObject *parent) :
     m_info.color          = QColor(253, 251, 78);
     m_info.authors        = QStringList("Tatsuya Ishida");
     m_info.homepage       = QUrl("http://sinfest.net/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.sinfest.net/");
 }

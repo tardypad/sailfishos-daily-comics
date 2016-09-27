@@ -17,7 +17,6 @@ Poyroot::Poyroot(QObject *parent) :
     m_info.color          = QColor(160, 207, 79);
     m_info.authors        = QStringList() << "Arttu Seppälä" << "Liisa Seppälä" << "Tiia Pelkola";
     m_info.homepage       = QUrl("http://www.poyroot.fi");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://www.poyroot.fi/sarjakuvat/");
 }

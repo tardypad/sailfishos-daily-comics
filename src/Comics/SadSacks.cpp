@@ -17,7 +17,6 @@ SadSacks::SadSacks(QObject *parent) :
     m_info.color          = QColor(167, 139, 118);
     m_info.authors        = QStringList() << "James \"Wiz\" Wallace" << "Johnny \"Wasabi\" Larocque";
     m_info.homepage       = QUrl("http://www.sadsacks.ca/");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://johnnylarocque.com/sadsacks/");
 }

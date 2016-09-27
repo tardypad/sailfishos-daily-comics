@@ -17,7 +17,6 @@ PoorlyDrawnLines::PoorlyDrawnLines(QObject *parent) :
     m_info.color          = QColor(211, 229, 229);
     m_info.authors        = QStringList("Reza Farazmand");
     m_info.homepage       = QUrl("http://poorlydrawnlines.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://feeds.feedburner.com/PoorlyDrawnLines?format=xml");
 }

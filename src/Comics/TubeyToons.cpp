@@ -17,7 +17,6 @@ TubeyToons::TubeyToons(QObject *parent) :
     m_info.color          = QColor(109, 79, 117);
     m_info.authors        = QStringList() << "Tubey" << "Wamn";
     m_info.homepage       = QUrl("http://tubeytoons.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://tubeytoons.tumblr.com/");
 }

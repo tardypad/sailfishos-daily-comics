@@ -11,7 +11,6 @@ Information needed
 - list of the authors (past/present, scenarist/cartoonist/...)
 - homepage where to find more info about the comic
 - comic main representative color (homepage color/strips color/character color/...)
-- country of the authors
 - language used in the comic
 - where to find the latest strip (URL/RSS/API/...)
 

@@ -17,7 +17,6 @@ DieselSweeties::DieselSweeties(QObject *parent) :
     m_info.color          = QColor(117, 141, 67);
     m_info.authors        = QStringList("Richard Stevens III");
     m_info.homepage       = QUrl("http://dieselsweeties.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.dieselsweeties.com/ds-unifeed.xml");
 }

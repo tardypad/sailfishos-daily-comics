@@ -17,7 +17,6 @@ UserFriendly::UserFriendly(QObject *parent) :
     m_info.color          = QColor(255, 255, 203);
     m_info.authors        = QStringList("J. D. Frazer \"Illiad\"");
     m_info.homepage       = QUrl("http://www.userfriendly.org");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.userfriendly.org/");
 }

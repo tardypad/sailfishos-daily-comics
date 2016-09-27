@@ -17,7 +17,6 @@ LizClimo::LizClimo(QObject *parent) :
     m_info.color          = QColor(233, 142, 139);
     m_info.authors        = QStringList("Liz Climo");
     m_info.homepage       = QUrl("http://lizclimo.tumblr.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://lizclimo.tumblr.com/rss");
 }

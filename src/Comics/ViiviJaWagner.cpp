@@ -17,7 +17,6 @@ ViiviJaWagner::ViiviJaWagner(QObject *parent) :
     m_info.color          = QColor(222, 42, 131);
     m_info.authors        = QStringList("Jussi \"Juba\" Tuomola");
     m_info.homepage       = QUrl("http://www.viivijawagner.net/");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/viivijawagner/");
 }

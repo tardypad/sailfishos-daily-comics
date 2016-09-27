@@ -17,7 +17,6 @@ LupoAlberto::LupoAlberto(QObject *parent) :
     m_info.color          = QColor(151, 205, 241);
     m_info.authors        = QStringList("Guido Silvestri");
     m_info.homepage       = QUrl("http://lupoalberto.it/");
-    m_info.country        = QLocale::Italy;
     m_info.language       = QLocale::Italian;
     m_info.stripSourceUrl = QUrl("http://lupoalberto.agenzia2d.it/");
 }

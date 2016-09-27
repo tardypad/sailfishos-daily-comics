@@ -17,7 +17,6 @@ Ahistaa::Ahistaa(QObject *parent) :
     m_info.color          = QColor(177, 177, 177);
     m_info.authors        = QStringList("Kris K");
     m_info.homepage       = QUrl("http://ahistaa.tumblr.com/");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://ahistaa.tumblr.com/rss");
 }

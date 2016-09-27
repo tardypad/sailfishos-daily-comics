@@ -17,7 +17,6 @@ Gwtb::Gwtb(QObject *parent) :
     m_info.color          = QColor(221, 171, 76);
     m_info.authors        = QStringList("Kimmo Lemetti");
     m_info.homepage       = QUrl("http://www.blastwave-comic.com");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.blastwave-comic.com/");
 }

@@ -17,7 +17,6 @@ Lwhag::Lwhag(QObject *parent) :
     m_info.color          = QColor(169, 99, 169);
     m_info.authors        = QStringList("Jago Dibuja");
     m_info.homepage       = QUrl("http://www.jagodibuja.com/webcomic-living-with-hipstergirl-and-gamergirl-english/");
-    m_info.country        = QLocale::Colombia;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.jagodibuja.com/feed/");
 }

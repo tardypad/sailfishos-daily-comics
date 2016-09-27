@@ -17,7 +17,6 @@ PBFComics::PBFComics(QObject *parent) :
     m_info.color          = QColor(216, 11, 16);
     m_info.authors        = QStringList("Nicholas Gurewitch");
     m_info.homepage       = QUrl("http://pbfcomics.com/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://pbfcomics.com/feed/feed.xml");
 }

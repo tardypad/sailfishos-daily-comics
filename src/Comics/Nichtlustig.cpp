@@ -17,7 +17,6 @@ Nichtlustig::Nichtlustig(QObject *parent) :
     m_info.color          = QColor(180, 0, 1);
     m_info.authors        = QStringList("Joscha Sauer");
     m_info.homepage       = QUrl("http://nichtlustig.de/");
-    m_info.country        = QLocale::Germany;
     m_info.language       = QLocale::German;
     m_info.stripSourceUrl = QUrl("http://nichtlustig.de/main.html");
 }

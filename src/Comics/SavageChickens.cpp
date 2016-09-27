@@ -17,7 +17,6 @@ SavageChickens::SavageChickens(QObject *parent) :
     m_info.color          = QColor(255, 251, 167);
     m_info.authors        = QStringList("Doug Savage");
     m_info.homepage       = QUrl("http://www.savagechickens.com/");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.savagechickens.com/feed");
 }

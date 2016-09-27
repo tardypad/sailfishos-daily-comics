@@ -17,7 +17,6 @@ AnonyymitElaimet::AnonyymitElaimet(QObject *parent) :
     m_info.color          = QColor(221, 234, 181);
     m_info.authors        = QStringList("Joonas Lehtimäki");
     m_info.homepage       = QUrl("http://anonyymitelaimet.com");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://nyt.fi/aihe/anonyymitelaimet/");
 }

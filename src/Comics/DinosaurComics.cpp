@@ -17,7 +17,6 @@ DinosaurComics::DinosaurComics(QObject *parent) :
     m_info.color          = QColor(71, 144, 255);
     m_info.authors        = QStringList("Ryan North");
     m_info.homepage       = QUrl("http://www.qwantz.com/");
-    m_info.country        = QLocale::Canada;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.qwantz.com/index.php");
 }

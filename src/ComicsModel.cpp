@@ -54,7 +54,6 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[ColorRole] = "idColor";
     roleNames[AuthorsRole] = "authors";
     roleNames[HomepageRole] = "homepage";
-    roleNames[CountryRole] = "country";
     roleNames[LanguageRole] = "language";
     roleNames[ImageRole] = "image";
     roleNames[ImageUrlRole] = "imageUrl";
@@ -94,8 +93,6 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->authors();
     case HomepageRole:
         return m_list.at(index.row())->homepage();
-    case CountryRole:
-        return m_list.at(index.row())->country();
     case LanguageRole:
         return m_list.at(index.row())->language();
     case ImageRole:

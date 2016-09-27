@@ -17,7 +17,6 @@ BashIm::BashIm(QObject *parent) :
     m_info.color          = QColor(81, 86, 178);
     m_info.authors        = QStringList("Lin");
     m_info.homepage       = QUrl("http://bash.im/comics/");
-    m_info.country        = QLocale::Russia;
     m_info.language       = QLocale::Russian;
     m_info.stripSourceUrl = QUrl("http://bash.im/comics/");
 }

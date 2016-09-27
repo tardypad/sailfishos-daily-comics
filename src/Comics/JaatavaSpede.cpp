@@ -17,7 +17,6 @@ JaatavaSpede::JaatavaSpede(QObject *parent) :
     m_info.color          = QColor(246, 94, 47);
     m_info.authors        = QStringList("Pertti Jarla");
     m_info.homepage       = QUrl("http://www.hs.fi/jaatavaspede/");
-    m_info.country        = QLocale::Finland;
     m_info.language       = QLocale::Finnish;
     m_info.stripSourceUrl = QUrl("http://www.hs.fi/jaatavaspede/");
 }

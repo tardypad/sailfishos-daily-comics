@@ -18,7 +18,6 @@ CyanideAndHappiness::CyanideAndHappiness(QObject *parent) :
     m_info.authors        = QStringList() << "Matt Melvin" << "Rob DenBleyker"
                                           << "Kris Wilson" << "Dave McElfatrick";
     m_info.homepage       = QUrl("http://explosm.net/");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://explosm.net/");
 }

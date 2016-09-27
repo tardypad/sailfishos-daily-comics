@@ -17,7 +17,6 @@ TheGamerCat::TheGamerCat(QObject *parent) :
     m_info.color          = QColor(179, 179, 179);
     m_info.authors        = QStringList("Samantha Whitten");
     m_info.homepage       = QUrl("http://www.thegamercat.com");
-    m_info.country        = QLocale::UnitedStates;
     m_info.language       = QLocale::English;
     m_info.stripSourceUrl = QUrl("http://www.thegamercat.com/");
 }

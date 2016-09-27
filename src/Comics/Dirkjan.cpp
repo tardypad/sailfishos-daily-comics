@@ -17,7 +17,6 @@ Dirkjan::Dirkjan(QObject *parent) :
     m_info.color          = QColor(255, 127, 0);
     m_info.authors        = QStringList("Mark Retera");
     m_info.homepage       = QUrl("http://dirkjan.nl/");
-    m_info.country        = QLocale::Netherlands;
     m_info.language       = QLocale::Dutch;
     m_info.stripSourceUrl = QUrl("http://dirkjan.nl/");
 }
