@@ -5,34 +5,34 @@
  * file 'LICENSE', which is part of this source code package.
  **/
 
-#ifndef COMICFILERESOURCE_H
-#define COMICFILERESOURCE_H
+#ifndef COMICSTRIPFILERESOURCE_H
+#define COMICSTRIPFILERESOURCE_H
 
 #include <QObject>
 #include <QSqlDatabase>
 
 class Comic;
 
-class ComicFileResource : public QObject
+class ComicStripFileResource : public QObject
 {
     Q_OBJECT
 
     static const QString _comicsDirName;
 
 public:
-    static ComicFileResource* instance();
+    static ComicStripFileResource* instance();
     QString path(QString id);
     bool isDownloaded(QString id);
     bool save(QString id, QByteArray data);
 
 private:
-    explicit ComicFileResource(QObject *parent = 0);
+    explicit ComicStripFileResource(QObject *parent = 0);
     QString dirPath();
     void checkCreateStructure();
 
 private:
-    static ComicFileResource* m_instance;
+    static ComicStripFileResource* m_instance;
     QString m_dirPath;
 };
 
-#endif // COMICFILERESOURCE_H
+#endif // COMICSTRIPFILERESOURCE_H

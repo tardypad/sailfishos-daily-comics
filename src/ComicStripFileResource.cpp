@@ -5,7 +5,7 @@
  * file 'LICENSE', which is part of this source code package.
  **/
 
-#include "ComicFileResource.h"
+#include "ComicStripFileResource.h"
 
 #include <QDebug>
 #include <QStandardPaths>
@@ -15,37 +15,37 @@
 
 #include "Comic.h"
 
-const QString ComicFileResource::_comicsDirName = "comics";
+const QString ComicStripFileResource::_comicsDirName = "comics";
 
-ComicFileResource* ComicFileResource::m_instance = NULL;
+ComicStripFileResource* ComicStripFileResource::m_instance = NULL;
 
-ComicFileResource::ComicFileResource(QObject *parent) :
+ComicStripFileResource::ComicStripFileResource(QObject *parent) :
     QObject(parent),
     m_dirPath("")
 {
 }
 
-ComicFileResource* ComicFileResource::instance()
+ComicStripFileResource* ComicStripFileResource::instance()
 {
     if (!m_instance) {
-        m_instance = new ComicFileResource();
+        m_instance = new ComicStripFileResource();
         m_instance->checkCreateStructure();
     }
 
     return m_instance;
 }
 
-QString ComicFileResource::path(QString id)
+QString ComicStripFileResource::path(QString id)
 {
     return dirPath().append(QDir::separator()).append(id);
 }
 
-bool ComicFileResource::isDownloaded(QString id)
+bool ComicStripFileResource::isDownloaded(QString id)
 {
     return QFile::exists(path(id));
 }
 
-bool ComicFileResource::save(QString id, QByteArray data)
+bool ComicStripFileResource::save(QString id, QByteArray data)
 {
     QFile* file = new QFile();
     file->setFileName(path(id));
@@ -63,7 +63,7 @@ bool ComicFileResource::save(QString id, QByteArray data)
     return writeResult > 0;
 }
 
-QString ComicFileResource::dirPath()
+QString ComicStripFileResource::dirPath()
 {
     if (m_dirPath.isEmpty()) {
         m_dirPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation)
@@ -72,7 +72,7 @@ QString ComicFileResource::dirPath()
     return m_dirPath;
 }
 
-void ComicFileResource::checkCreateStructure()
+void ComicStripFileResource::checkCreateStructure()
 {
     QDir dir = QDir(dirPath());
 

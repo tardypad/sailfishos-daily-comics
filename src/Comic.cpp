@@ -17,7 +17,7 @@
 #include <QRegularExpressionMatchIterator>
 
 #include "ComicDatabaseResource.h"
-#include "ComicFileResource.h"
+#include "ComicStripFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
@@ -40,7 +40,7 @@ Comic::Comic(QObject *parent) :
 {
     m_networkManager = new QNetworkAccessManager(this);
     dbResource = ComicDatabaseResource::instance();
-    fileResource = ComicFileResource::instance();
+    stripFileResource = ComicStripFileResource::instance();
 
     m_timeoutTimer = new QTimer(this);
     m_timeoutTimer->setInterval(_timeout);
@@ -67,7 +67,7 @@ void Comic::save()
 
 QString Comic::stripImagePath() const
 {
-     return fileResource->path(id());
+     return stripFileResource->path(id());
 }
 
 bool Comic::animated()
@@ -147,7 +147,7 @@ void Comic::read()
 
 bool Comic::stripImageDownloaded()
 {
-    return fileResource->isDownloaded(id());
+    return stripFileResource->isDownloaded(id());
 }
 
 QUrl Comic::redirectedToUrl()
@@ -243,7 +243,7 @@ void Comic::onFetchStripImageFinished()
     }
 
     QByteArray data = m_currentReply->readAll();
-    bool result = fileResource->save(id(), data);
+    bool result = stripFileResource->save(id(), data);
 
     if (!result) {
         setFetching(false);

@@ -19,7 +19,7 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class ComicDatabaseResource;
-class ComicFileResource;
+class ComicStripFileResource;
 
 class Comic : public QObject
 {
@@ -124,7 +124,7 @@ protected:
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;
-    ComicFileResource* fileResource;
+    ComicStripFileResource* stripFileResource;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;
