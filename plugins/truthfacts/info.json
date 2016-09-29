@@ -1,0 +1,11 @@
+{
+  "name": "Truth Facts",
+  "color": "ff9600",
+  "language": "en",
+  "authors": [
+    "Mikael Wulff",
+    "Anders Morgenthaler"
+  ],
+  "homepage": "http://truthfacts.com/",
+  "stripSource": "http://truthfacts.com/truthfacts?view=rss"
+}

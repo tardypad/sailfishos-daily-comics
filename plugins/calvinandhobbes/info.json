@@ -1,0 +1,10 @@
+{
+  "name": "Calvin and Hobbes",
+  "color": "ec1d23",
+  "language": "en",
+  "authors": [
+    "Bill Watterson"
+  ],
+  "homepage": "http://www.calvinandhobbes.com/",
+  "stripSource": "http://www.gocomics.com/calvinandhobbes/"
+}

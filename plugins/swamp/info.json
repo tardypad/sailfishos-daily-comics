@@ -1,0 +1,10 @@
+{
+  "name": "Swamp",
+  "color": "f15a45",
+  "language": "en",
+  "authors": [
+    "Gary Clark"
+  ],
+  "homepage": "https://www.swamp.com.au/",
+  "stripSource": "http://www.swamp.com.au/cartoons.php"
+}

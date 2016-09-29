@@ -1,0 +1,10 @@
+{
+  "name": "Le Chat",
+  "color": "26cbab",
+  "language": "fr",
+  "authors": [
+    "Philippe Geluck"
+  ],
+  "homepage": "http://geluck.com/",
+  "stripSource": "http://geluck.com/dessin.html"
+}

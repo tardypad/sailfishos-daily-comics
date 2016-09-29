@@ -1,0 +1,10 @@
+{
+  "name": "Pigknit",
+  "color": "c7e2dd",
+  "language": "en",
+  "authors": [
+    "Jessie Miller"
+  ],
+  "homepage": "https://pigknit.wordpress.com/",
+  "stripSource": "https://pigknit.wordpress.com/"
+}

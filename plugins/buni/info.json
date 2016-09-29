@@ -1,0 +1,10 @@
+{
+  "name": "Buni",
+  "color": "576e98",
+  "language": "en",
+  "authors": [
+    "Ryan Pagelow"
+  ],
+  "homepage": "http://www.bunicomic.com/",
+  "stripSource": "http://www.bunicomic.com/"
+}

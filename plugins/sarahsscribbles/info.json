@@ -1,0 +1,10 @@
+{
+  "name": "Sarah's Scribbles",
+  "color": "03c1d9",
+  "language": "en",
+  "authors": [
+    "Sarah Andersen"
+  ],
+  "homepage": "http://sarahcandersen.com/",
+  "stripSource": "http://sarahcandersen.com/rss"
+}

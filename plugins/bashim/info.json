@@ -1,0 +1,10 @@
+{
+  "name": "bash.im",
+  "color": "5156b2",
+  "language": "ru",
+  "authors": [
+    "Lin"
+  ],
+  "homepage": "http://bash.im/comics/",
+  "stripSource": "http://bash.im/comics/"
+}

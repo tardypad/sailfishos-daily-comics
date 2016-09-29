@@ -1,0 +1,10 @@
+{
+  "name": "Jäätävä Spede",
+  "color": "f65e2f",
+  "language": "fi",
+  "authors": [
+    "Pertti Jarla"
+  ],
+  "homepage": "http://www.hs.fi/jaatavaspede/",
+  "stripSource": "http://www.hs.fi/jaatavaspede/"
+}

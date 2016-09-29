@@ -1,0 +1,10 @@
+{
+  "name": "User Friendly",
+  "color": "ffffcb",
+  "language": "en",
+  "authors": [
+    "J. D. Frazer \"Illiad\""
+  ],
+  "homepage": "http://www.userfriendly.org",
+  "stripSource": "http://www.userfriendly.org/"
+}

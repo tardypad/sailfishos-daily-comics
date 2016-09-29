@@ -1,0 +1,12 @@
+{
+  "name": "Dennis The Menace",
+  "color": "fddb00",
+  "language": "en",
+  "authors": [
+    "Hank Ketcham",
+    "Marcus Hamilton",
+    "Ron Ferdinand"
+  ],
+  "homepage": "http://dennisthemenace.com/",
+  "stripSource": "http://dennisthemenace.com/"
+}

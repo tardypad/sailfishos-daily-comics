@@ -1,0 +1,10 @@
+{
+  "name": "Diesel Sweeties",
+  "color": "758d43",
+  "language": "en",
+  "authors": [
+    "Richard Stevens III"
+  ],
+  "homepage": "http://dieselsweeties.com/",
+  "stripSource": "http://www.dieselsweeties.com/ds-unifeed.xml"
+}

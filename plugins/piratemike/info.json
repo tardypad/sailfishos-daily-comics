@@ -1,0 +1,10 @@
+{
+  "name": "Pirate Mike",
+  "color": "00b8ee",
+  "language": "en",
+  "authors": [
+    "Brad Perri"
+  ],
+  "homepage": "http://piratemikecomics.com/",
+  "stripSource": "http://piratemikecomics.com/feed/"
+}

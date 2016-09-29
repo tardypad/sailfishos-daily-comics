@@ -1,0 +1,10 @@
+{
+  "name": "Lunch",
+  "color": "ab5594",
+  "language": "no",
+  "authors": [
+    "Børge Lund"
+  ],
+  "homepage": "http://www.lunchstriper.no/",
+  "stripSource": "http://www.dagbladet.no/tegneserie/lunch/"
+}

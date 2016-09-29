@@ -1,0 +1,10 @@
+{
+  "name": "Beetle Bailey",
+  "color": "aea989",
+  "language": "en",
+  "authors": [
+    "Mort Walker"
+  ],
+  "homepage": "http://beetlebailey.com/",
+  "stripSource": "http://beetlebailey.com/"
+}

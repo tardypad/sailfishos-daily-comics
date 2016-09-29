@@ -1,0 +1,10 @@
+{
+  "name": "Fowl Language Comics",
+  "color": "dbe8d4",
+  "language": "en",
+  "authors": [
+    "Brian Gordon"
+  ],
+  "homepage": "http://www.fowllanguagecomics.com/",
+  "stripSource": "http://www.fowllanguagecomics.com"
+}

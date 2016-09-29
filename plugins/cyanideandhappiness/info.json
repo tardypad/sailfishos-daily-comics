@@ -1,0 +1,13 @@
+{
+  "name": "Cyanide & Happiness",
+  "color": "2e264d",
+  "language": "en",
+  "authors": [
+    "Matt Melvin",
+    "Rob DenBleyker",
+    "Kris Wilson",
+    "Dave McElfatrick"
+  ],
+  "homepage": "http://explosm.net/",
+  "stripSource": "http://explosm.net/"
+}

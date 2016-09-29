@@ -1,0 +1,10 @@
+{
+  "name": "Sigmund",
+  "color": "ffffa9",
+  "language": "nl",
+  "authors": [
+    "Peter de Wit"
+  ],
+  "homepage": "http://www.sigmund.nl/",
+  "stripSource": "http://www.sigmund.nl/?p=home"
+}

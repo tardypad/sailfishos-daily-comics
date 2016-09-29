@@ -1,0 +1,10 @@
+{
+  "name": "Ahistaa",
+  "color": "b1b1b1",
+  "language": "fi",
+  "authors": [
+    "Kris K"
+  ],
+  "homepage": "http://ahistaa.tumblr.com/",
+  "stripSource": "http://ahistaa.tumblr.com/rss"
+}

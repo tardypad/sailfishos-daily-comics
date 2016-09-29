@@ -1,0 +1,10 @@
+{
+  "name": "The Awkward Yeti",
+  "color": "ffc82f",
+  "language": "en",
+  "authors": [
+    "Nick Seluk"
+  ],
+  "homepage": "http://theawkwardyeti.com/",
+  "stripSource": "http://theawkwardyeti.com/"
+}

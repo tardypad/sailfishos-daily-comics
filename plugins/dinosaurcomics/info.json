@@ -1,0 +1,10 @@
+{
+  "name": "Dinosaur Comics",
+  "color": "4790ff",
+  "language": "en",
+  "authors": [
+    "Ryan North"
+  ],
+  "homepage": "http://www.qwantz.com/",
+  "stripSource": "http://www.qwantz.com/index.php"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Loading Artist",
+  "color": "fd6801",
+  "language": "en",
+  "authors": [
+    "Gregor Czaykowski"
+  ],
+  "homepage": "http://www.loadingartist.com/",
+  "stripSource": "http://www.loadingartist.com/latest"
+}

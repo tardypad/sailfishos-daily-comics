@@ -1,0 +1,10 @@
+{
+  "name": "The Whiteboard",
+  "color": "5eccff",
+  "language": "en",
+  "authors": [
+    "\"Doc\" Nickel"
+  ],
+  "homepage": "http://www.the-whiteboard.com/",
+  "stripSource": "http://www.the-whiteboard.com/"
+}

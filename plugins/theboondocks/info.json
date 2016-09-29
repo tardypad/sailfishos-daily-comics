@@ -1,0 +1,10 @@
+{
+  "name": "The Boondocks",
+  "color": "af7953",
+  "language": "en",
+  "authors": [
+    "Aaron McGruder"
+  ],
+  "homepage": "http://www.gocomics.com/boondocks",
+  "stripSource": "http://www.gocomics.com/boondocks"
+}

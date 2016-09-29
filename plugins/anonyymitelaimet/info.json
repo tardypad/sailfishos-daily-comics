@@ -1,0 +1,10 @@
+{
+  "name": "Anonyymit Eläimet",
+  "color": "ddeab5",
+  "language": "fi",
+  "authors": [
+    "Joonas Lehtimäki"
+  ],
+  "homepage": "http://anonyymitelaimet.com",
+  "stripSource": "http://nyt.fi/aihe/anonyymitelaimet/"
+}

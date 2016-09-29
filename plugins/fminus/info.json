@@ -1,0 +1,10 @@
+{
+  "name": "F Minus",
+  "color": "9e2c22",
+  "language": "en",
+  "authors": [
+    "Tony Carrillo"
+  ],
+  "homepage": "http://www.fminus.net/",
+  "stripSource": "http://www.gocomics.com/fminus"
+}

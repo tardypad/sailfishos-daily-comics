@@ -1,0 +1,10 @@
+{
+  "name": "The Adventures of Business Cat",
+  "color": "788abc",
+  "language": "en",
+  "authors": [
+    "Tom Fonder"
+  ],
+  "homepage": "http://www.businesscat.happyjar.com/",
+  "stripSource": "http://www.businesscat.happyjar.com/"
+}

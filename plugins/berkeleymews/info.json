@@ -1,0 +1,10 @@
+{
+  "name": "Berkeley Mews",
+  "color": "ede9c3",
+  "language": "en",
+  "authors": [
+    "Ben Zaehringer"
+  ],
+  "homepage": "http://www.berkeleymews.com/",
+  "stripSource": "http://www.berkeleymews.com/"
+}

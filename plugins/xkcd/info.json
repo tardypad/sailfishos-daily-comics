@@ -1,0 +1,10 @@
+{
+  "name": "xkcd",
+  "color": "95a8c8",
+  "language": "en",
+  "authors": [
+    "Randall Munroe"
+  ],
+  "homepage": "http://xkcd.com/",
+  "stripSource": "http://xkcd.com/info.0.json"
+}

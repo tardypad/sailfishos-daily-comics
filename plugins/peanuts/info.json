@@ -1,0 +1,10 @@
+{
+  "name": "Peanuts",
+  "color": "ffdf1e",
+  "language": "en",
+  "authors": [
+    "Charles Monroe Schulz"
+  ],
+  "homepage": "http://www.peanuts.com/",
+  "stripSource": "http://www.gocomics.com/peanuts/"
+}

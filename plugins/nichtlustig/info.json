@@ -1,0 +1,10 @@
+{
+  "name": "Nichtlustig",
+  "color": "b40001",
+  "language": "de",
+  "authors": [
+    "Joscha Sauer"
+  ],
+  "homepage": "http://nichtlustig.de/",
+  "stripSource": "http://nichtlustig.de/main.html"
+}

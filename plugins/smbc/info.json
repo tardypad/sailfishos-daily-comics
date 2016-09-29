@@ -1,0 +1,10 @@
+{
+  "name": "Saturday Morning Breakfast Cereal",
+  "color": "516a92",
+  "language": "en",
+  "authors": [
+    "Zach Weinersmith"
+  ],
+  "homepage": "http://www.smbc-comics.com/",
+  "stripSource": "http://www.smbc-comics.com/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Garfield",
+  "color": "f2ba1f",
+  "language": "en",
+  "authors": [
+    "Jim Davis"
+  ],
+  "homepage": "http://garfield.com/",
+  "stripSource": "http://garfield.com/"
+}
