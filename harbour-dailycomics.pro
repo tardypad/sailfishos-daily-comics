@@ -22,6 +22,8 @@ OTHER_FILES = \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop
 
+include(plugins/plugins.pro)
+
 RESOURCES += $${TARGET}.qrc
 
 QT += \
@@ -34,6 +36,13 @@ images.files = \
 
 images.path = /usr/share/$${TARGET}/images
 
-INSTALLS += images
+plugins.files = \
+    plugins/*
+
+plugins.path = /usr/share/$${TARGET}/plugins
+
+INSTALLS += \
+    images \
+    plugins
 
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
