@@ -17,7 +17,7 @@
 #include <QColor>
 #include <QLocale>
 
-const QString ComicInfoFileResource::_pluginsFolderPath = "/usr/share/harbour-dailycomics/plugins/";
+const QString ComicInfoFileResource::_pluginsFolderPath = QString(PLUGINS_FOLDER_PATH);
 const QString ComicInfoFileResource::_infoFileName = "info.json";
 
 ComicInfoFileResource* ComicInfoFileResource::m_instance = NULL;

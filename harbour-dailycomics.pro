@@ -45,4 +45,6 @@ INSTALLS += \
     images \
     plugins
 
-DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
+DEFINES += \
+    APP_VERSION=\"\\\"$${VERSION}\\\"\" \
+    PLUGINS_FOLDER_PATH=\"\\\"$${plugins.path}\\\"\"
