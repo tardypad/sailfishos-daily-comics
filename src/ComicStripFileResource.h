@@ -9,7 +9,6 @@
 #define COMICSTRIPFILERESOURCE_H
 
 #include <QObject>
-#include <QSqlDatabase>
 
 class Comic;
 

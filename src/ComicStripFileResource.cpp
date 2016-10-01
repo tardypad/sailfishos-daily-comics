@@ -11,7 +11,6 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QFile>
-#include <QSqlQuery>
 
 #include "Comic.h"
 
