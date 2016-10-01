@@ -12,13 +12,7 @@
 LupoAlberto::LupoAlberto(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("lupoalberto");
-    m_info.name           = QString("Lupo Alberto");
-    m_info.color          = QColor(151, 205, 241);
-    m_info.authors        = QStringList("Guido Silvestri");
-    m_info.homepage       = QUrl("http://lupoalberto.it/");
-    m_info.language       = QLocale::Italian;
-    m_info.stripSourceUrl = QUrl("http://lupoalberto.agenzia2d.it/");
+    m_info.id = QString("lupoalberto");
 }
 
 QUrl LupoAlberto::extractStripImageUrl(QByteArray data)

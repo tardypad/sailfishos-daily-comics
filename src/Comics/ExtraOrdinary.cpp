@@ -12,13 +12,7 @@
 ExtraOrdinary::ExtraOrdinary(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("extraordinary");
-    m_info.name           = QString("Extra Ordinary");
-    m_info.color          = QColor(175, 175, 175);
-    m_info.authors        = QStringList("Li Chen");
-    m_info.homepage       = QUrl("http://www.exocomics.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.exocomics.com/");
+    m_info.id = QString("extraordinary");
 }
 
 QUrl ExtraOrdinary::extractStripImageUrl(QByteArray data)

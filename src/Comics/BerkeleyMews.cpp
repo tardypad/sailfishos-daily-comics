@@ -12,13 +12,7 @@
 BerkeleyMews::BerkeleyMews(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("berkeleymews");
-    m_info.name           = QString("Berkeley Mews");
-    m_info.color          = QColor(237, 233, 195);
-    m_info.authors        = QStringList("Ben Zaehringer");
-    m_info.homepage       = QUrl("http://www.berkeleymews.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.berkeleymews.com/");
+    m_info.id = QString("berkeleymews");
 }
 
 QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)

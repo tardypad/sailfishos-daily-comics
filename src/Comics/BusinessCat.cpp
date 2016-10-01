@@ -12,13 +12,7 @@
 BusinessCat::BusinessCat(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("businesscat");
-    m_info.name           = QString("The Adventures of Business Cat");
-    m_info.color          = QColor(120, 138, 188);
-    m_info.authors        = QStringList("Tom Fonder");
-    m_info.homepage       = QUrl("http://www.businesscat.happyjar.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.businesscat.happyjar.com/");
+    m_info.id = QString("businesscat");
 }
 
 QUrl BusinessCat::extractStripImageUrl(QByteArray data)

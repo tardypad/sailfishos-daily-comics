@@ -12,13 +12,7 @@
 TheBoondocks::TheBoondocks(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("theboondocks");
-    m_info.name           = QString("The Boondocks");
-    m_info.color          = QColor(175, 121, 83);
-    m_info.authors        = QStringList("Aaron McGruder");
-    m_info.homepage       = QUrl("http://www.gocomics.com/boondocks");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.gocomics.com/boondocks");
+    m_info.id = QString("theboondocks");
 }
 
 QUrl TheBoondocks::extractStripImageUrl(QByteArray data)

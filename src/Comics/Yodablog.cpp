@@ -12,13 +12,7 @@
 Yodablog::Yodablog(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("yodablog");
-    m_info.name           = QString("Yodablog");
-    m_info.color          = QColor(154, 183, 93);
-    m_info.authors        = QStringList("Thierry Vivien");
-    m_info.homepage       = QUrl("http://www.yodablog.net/");
-    m_info.language       = QLocale::French;
-    m_info.stripSourceUrl = QUrl("http://www.yodablog.net/?feed=rss2");
+    m_info.id = QString("yodablog");
 }
 
 QUrl Yodablog::extractStripImageUrl(QByteArray data)

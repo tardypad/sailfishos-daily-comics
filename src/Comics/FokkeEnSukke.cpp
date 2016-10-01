@@ -12,13 +12,7 @@
 FokkeEnSukke::FokkeEnSukke(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("fokkeensukke");
-    m_info.name           = QString("Fokke en Sukke");
-    m_info.color          = QColor(213, 26, 33);
-    m_info.authors        = QStringList() << "Jean-Marc van Tol" << "John Reid" << "Bastiaan Geleijnse";
-    m_info.homepage       = QUrl("http://foksuk.nl/");
-    m_info.language       = QLocale::Dutch;
-    m_info.stripSourceUrl = QUrl("http://foksuk.nl/");
+    m_info.id = QString("fokkeensukke");
 }
 
 QUrl FokkeEnSukke::extractStripImageUrl(QByteArray data)

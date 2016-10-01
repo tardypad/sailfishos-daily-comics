@@ -12,13 +12,7 @@
 ThingsInSquares::ThingsInSquares(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("thingsinsquares");
-    m_info.name           = QString("Things in Squares");
-    m_info.color          = QColor(176, 242, 180);
-    m_info.authors        = QStringList("Cale");
-    m_info.homepage       = QUrl("http://www.thingsinsquares.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://feeds.feedburner.com/ThingsInSquares?format=xml");
+    m_info.id = QString("thingsinsquares");
 }
 
 QUrl ThingsInSquares::extractStripImageUrl(QByteArray data)

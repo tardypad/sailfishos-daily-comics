@@ -12,13 +12,7 @@
 SavageChickens::SavageChickens(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("savagechickens");
-    m_info.name           = QString("Savage Chickens");
-    m_info.color          = QColor(255, 251, 167);
-    m_info.authors        = QStringList("Doug Savage");
-    m_info.homepage       = QUrl("http://www.savagechickens.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.savagechickens.com/feed");
+    m_info.id = QString("savagechickens");
 }
 
 QUrl SavageChickens::extractStripImageUrl(QByteArray data)

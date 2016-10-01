@@ -12,13 +12,7 @@
 WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("whatawonderfulworld");
-    m_info.name           = QString("What a wonderful world!");
-    m_info.color          = QColor(195, 143, 189);
-    m_info.authors        = QStringList("Philippe Chappuis \"Zep\"");
-    m_info.homepage       = QUrl("http://zepworld.blog.lemonde.fr/");
-    m_info.language       = QLocale::French;
-    m_info.stripSourceUrl = QUrl("http://zepworld.blog.lemonde.fr/feed/atom/");
+    m_info.id = QString("whatawonderfulworld");
 }
 
 QUrl WhatAWonderfulWorld::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 Lunch::Lunch(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("lunch");
-    m_info.name           = QString("Lunch");
-    m_info.color          = QColor(171, 85, 148);
-    m_info.authors        = QStringList("Børge Lund");
-    m_info.homepage       = QUrl("http://www.lunchstriper.no/");
-    m_info.language       = QLocale::Norwegian;
-    m_info.stripSourceUrl = QUrl("http://www.dagbladet.no/tegneserie/lunch/");
+    m_info.id = QString("lunch");
 }
 
 QUrl Lunch::extractStripImageUrl(QByteArray data)

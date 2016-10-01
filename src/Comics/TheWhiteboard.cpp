@@ -12,13 +12,7 @@
 TheWhiteboard::TheWhiteboard(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("thewhiteboard");
-    m_info.name           = QString("The Whiteboard");
-    m_info.color          = QColor(94, 204, 255);
-    m_info.authors        = QStringList("\"Doc\" Nickel");
-    m_info.homepage       = QUrl("http://www.the-whiteboard.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.the-whiteboard.com/");
+    m_info.id = QString("thewhiteboard");
 }
 
 QUrl TheWhiteboard::extractStripImageUrl(QByteArray data)

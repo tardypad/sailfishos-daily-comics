@@ -12,12 +12,7 @@
 TheVeryNearFuture::TheVeryNearFuture(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("theverynearfuture");
-    m_info.name           = QString("The Very Near Future");
-    m_info.color          = QColor(70, 120, 129);
-    m_info.homepage       = QUrl("http://theverynearfuture.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://theverynearfuture.com/rss");
+    m_info.id = QString("theverynearfuture");
 }
 
 QUrl TheVeryNearFuture::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 LizClimo::LizClimo(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("lizclimo");
-    m_info.name           = QString("Liz Climo");
-    m_info.color          = QColor(233, 142, 139);
-    m_info.authors        = QStringList("Liz Climo");
-    m_info.homepage       = QUrl("http://lizclimo.tumblr.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://lizclimo.tumblr.com/rss");
+    m_info.id = QString("lizclimo");
 }
 
 QUrl LizClimo::extractStripImageUrl(QByteArray data)

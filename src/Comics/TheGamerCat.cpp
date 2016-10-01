@@ -12,13 +12,7 @@
 TheGamerCat::TheGamerCat(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("thegamercat");
-    m_info.name           = QString("The GaMERCaT");
-    m_info.color          = QColor(179, 179, 179);
-    m_info.authors        = QStringList("Samantha Whitten");
-    m_info.homepage       = QUrl("http://www.thegamercat.com");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.thegamercat.com/");
+    m_info.id = QString("thegamercat");
 }
 
 QUrl TheGamerCat::extractStripImageUrl(QByteArray data)

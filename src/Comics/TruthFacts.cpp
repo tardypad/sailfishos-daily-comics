@@ -12,13 +12,7 @@
 TruthFacts::TruthFacts(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("truthfacts");
-    m_info.name           = QString("Truth Facts");
-    m_info.color          = QColor(255, 150, 0);
-    m_info.authors        = QStringList() << "Mikael Wulff" << "Anders Morgenthaler";
-    m_info.homepage       = QUrl("http://truthfacts.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://truthfacts.com/truthfacts?view=rss");
+    m_info.id = QString("truthfacts");
 }
 
 QUrl TruthFacts::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 SarahsScribbles::SarahsScribbles(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("sarahsscribbles");
-    m_info.name           = QString("Sarah's Scribbles");
-    m_info.color          = QColor(3, 193, 217);
-    m_info.authors        = QStringList("Sarah Andersen");
-    m_info.homepage       = QUrl("http://sarahcandersen.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://sarahcandersen.com/rss");
+    m_info.id = QString("sarahsscribbles");
 }
 
 QUrl SarahsScribbles::extractStripImageUrl(QByteArray data)

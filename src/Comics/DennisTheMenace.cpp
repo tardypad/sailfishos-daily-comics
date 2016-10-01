@@ -12,13 +12,7 @@
 DennisTheMenace::DennisTheMenace(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("dennisthemenace");
-    m_info.name           = QString("Dennis The Menace");
-    m_info.color          = QColor(253, 219, 0);
-    m_info.authors        = QStringList() << "Hank Ketcham" << "Marcus Hamilton" << "Ron Ferdinand";
-    m_info.homepage       = QUrl("http://dennisthemenace.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://dennisthemenace.com/");
+    m_info.id = QString("dennisthemenace");
 }
 
 QUrl DennisTheMenace::extractStripImageUrl(QByteArray data)

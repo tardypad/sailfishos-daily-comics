@@ -12,13 +12,7 @@
 ViiviJaWagner::ViiviJaWagner(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("viivijawagner");
-    m_info.name           = QString("Viivi ja Wagner");
-    m_info.color          = QColor(222, 42, 131);
-    m_info.authors        = QStringList("Jussi \"Juba\" Tuomola");
-    m_info.homepage       = QUrl("http://www.viivijawagner.net/");
-    m_info.language       = QLocale::Finnish;
-    m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/viivijawagner/");
+    m_info.id = QString("viivijawagner");
 }
 
 QUrl ViiviJaWagner::extractStripImageUrl(QByteArray data)

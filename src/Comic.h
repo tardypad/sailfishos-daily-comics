@@ -19,7 +19,28 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class ComicDatabaseResource;
+class ComicInfoFileResource;
 class ComicStripFileResource;
+
+struct ComicInfo {
+    QString id;
+    QString name;
+    QColor color;
+    QStringList authors;
+    QUrl homepage;
+    QLocale::Language language;
+    QUrl stripSourceUrl;
+
+    ComicInfo() {
+        id = QString();
+        name = QString();
+        color = QColor();
+        authors = QStringList();
+        homepage = QString();
+        language = QLocale::AnyLanguage;
+        stripSourceUrl = QUrl();
+    }
+};
 
 class Comic : public QObject
 {
@@ -28,26 +49,6 @@ class Comic : public QObject
 public:
     explicit Comic(QObject *parent = 0);
     ~Comic();
-
-    struct ComicInfo {
-        QString id;
-        QString name;
-        QColor color;
-        QStringList authors;
-        QUrl homepage;
-        QLocale::Language language;
-        QUrl stripSourceUrl;
-
-        ComicInfo() {
-            id = QString();
-            name = QString();
-            color = QColor();
-            authors = QStringList();
-            homepage = QString();
-            language = QLocale::AnyLanguage;
-            stripSourceUrl = QUrl();
-        }
-    };
 
     QString id() const { return m_info.id; }
     QString name() const { return m_info.name; }
@@ -70,6 +71,7 @@ public:
     bool isAnimatedDefined() const { return m_isAnimatedDefined; }
     int random() const { return m_random; }
 
+    void setInfo(const ComicInfo info) { m_info = info; }
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
@@ -124,6 +126,7 @@ protected:
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;
+    ComicInfoFileResource* infoFileResource;
     ComicStripFileResource* stripFileResource;
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;

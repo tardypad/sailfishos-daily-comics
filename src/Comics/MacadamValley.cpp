@@ -12,13 +12,7 @@
 MacadamValley::MacadamValley(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("macadamvalley");
-    m_info.name           = QString("Macadam Valley");
-    m_info.color          = QColor(185, 167, 131);
-    m_info.authors        = QStringList("Ben Dessy");
-    m_info.homepage       = QUrl("http://macadamvalley.com/");
-    m_info.language       = QLocale::French;
-    m_info.stripSourceUrl = QUrl("http://macadamvalley.com/feed/");
+    m_info.id = QString("macadamvalley");
 }
 
 QUrl MacadamValley::extractStripImageUrl(QByteArray data)

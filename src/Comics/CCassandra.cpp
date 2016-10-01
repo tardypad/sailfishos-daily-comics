@@ -12,13 +12,7 @@
 CCassandra::CCassandra(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("ccassandra");
-    m_info.name           = QString("C. Cassandra");
-    m_info.color          = QColor(186, 186, 186);
-    m_info.authors        = QStringList("Cassandra Calin");
-    m_info.homepage       = QUrl("http://c-cassandra.tumblr.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://c-cassandra.tumblr.com/rss");
+    m_info.id = QString("ccassandra");
 }
 
 QUrl CCassandra::extractStripImageUrl(QByteArray data)

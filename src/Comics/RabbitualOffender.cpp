@@ -12,13 +12,7 @@
 RabbitualOffender::RabbitualOffender(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("rabbitualoffender");
-    m_info.name           = QString("Rabbitual Offender");
-    m_info.color          = QColor(193, 189, 224);
-    m_info.authors        = QStringList() << "Edward Gee" << "Wade Crodhil";
-    m_info.homepage       = QUrl("http://rabbitualoffender.tumblr.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://rabbitualoffender.tumblr.com/");
+    m_info.id = QString("rabbitualoffender");
 }
 
 QUrl RabbitualOffender::extractStripImageUrl(QByteArray data)

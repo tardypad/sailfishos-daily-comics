@@ -12,13 +12,7 @@
 IsLieb::IsLieb(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("islieb");
-    m_info.name           = QString("Is lieb?");
-    m_info.color          = QColor(226, 72, 64);
-    m_info.authors        = QStringList("Ey Lou Flynn");
-    m_info.homepage       = QUrl("http://islieb.de/");
-    m_info.language       = QLocale::German;
-    m_info.stripSourceUrl = QUrl("http://islieb.de/feed/");
+    m_info.id = QString("islieb");
 }
 
 QUrl IsLieb::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 OctopusPie::OctopusPie(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("octopuspie");
-    m_info.name           = QString("Octopus Pie");
-    m_info.color          = QColor(104, 183, 190);
-    m_info.authors        = QStringList("Meredith Gran");
-    m_info.homepage       = QUrl("http://octopuspie.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://octopuspie.com/");
+    m_info.id = QString("octopuspie");
 }
 
 QUrl OctopusPie::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 WrongHands::WrongHands(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("wronghands");
-    m_info.name           = QString("Wrong Hands");
-    m_info.color          = QColor(76, 121, 188);
-    m_info.authors        = QStringList("John Atkinson");
-    m_info.homepage       = QUrl("https://wronghands1.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("https://wronghands1.com/feed/");
+    m_info.id = QString("wronghands");
 }
 
 QUrl WrongHands::extractStripImageUrl(QByteArray data)

@@ -17,6 +17,7 @@
 #include <QRegularExpressionMatchIterator>
 
 #include "ComicDatabaseResource.h"
+#include "ComicInfoFileResource.h"
 #include "ComicStripFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
@@ -39,6 +40,7 @@ Comic::Comic(QObject *parent) :
     m_isAnimatedDefined(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
+    infoFileResource = ComicInfoFileResource::instance();
     dbResource = ComicDatabaseResource::instance();
     stripFileResource = ComicStripFileResource::instance();
 
@@ -57,6 +59,7 @@ Comic::~Comic()
 
 void Comic::load()
 {
+    infoFileResource->load(this);
     dbResource->load(this);
 }
 

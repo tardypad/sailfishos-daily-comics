@@ -12,13 +12,7 @@
 TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("theawkwardyeti");
-    m_info.name           = QString("The Awkward Yeti");
-    m_info.color          = QColor(255, 200, 47);
-    m_info.authors        = QStringList("Nick Seluk");
-    m_info.homepage       = QUrl("http://theawkwardyeti.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://theawkwardyeti.com/");
+    m_info.id = QString("theawkwardyeti");
 }
 
 QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)

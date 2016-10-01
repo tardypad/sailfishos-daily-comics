@@ -12,13 +12,7 @@
 Smbc::Smbc(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("smbc");
-    m_info.name           = QString("Saturday Morning Breakfast Cereal");
-    m_info.color          = QColor(81, 106, 146);
-    m_info.authors        = QStringList("Zach Weinersmith");
-    m_info.homepage       = QUrl("http://www.smbc-comics.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.smbc-comics.com/");
+    m_info.id = QString("smbc");
 }
 
 QUrl Smbc::extractStripImageUrl(QByteArray data)

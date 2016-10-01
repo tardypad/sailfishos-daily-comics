@@ -12,13 +12,7 @@
 NedroidPictureDiary::NedroidPictureDiary(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("nedroidpicturediary");
-    m_info.name           = QString("Nedroid Picture Diary");
-    m_info.color          = QColor(120, 157, 202);
-    m_info.authors        = QStringList("Anthony Clark");
-    m_info.homepage       = QUrl("http://nedroid.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://nedroid.com/feed/");
+    m_info.id = QString("nedroidpicturediary");
 }
 
 QUrl NedroidPictureDiary::extractStripImageUrl(QByteArray data)

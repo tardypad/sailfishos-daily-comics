@@ -12,13 +12,7 @@
 PirateMike::PirateMike(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("piratemike");
-    m_info.name           = QString("Pirate Mike");
-    m_info.color          = QColor(0, 184, 238);
-    m_info.authors        = QStringList("Brad Perri");
-    m_info.homepage       = QUrl("http://piratemikecomics.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://piratemikecomics.com/feed/");
+    m_info.id = QString("piratemike");
 }
 
 QUrl PirateMike::extractStripImageUrl(QByteArray data)

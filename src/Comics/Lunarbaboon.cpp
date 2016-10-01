@@ -12,13 +12,7 @@
 Lunarbaboon::Lunarbaboon(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("lunarbaboon");
-    m_info.name           = QString("Lunarbaboon");
-    m_info.color          = QColor(205, 207, 206);
-    m_info.authors        = QStringList("Chris Grady");
-    m_info.homepage       = QUrl("http://www.lunarbaboon.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://www.lunarbaboon.com/");
+    m_info.id = QString("lunarbaboon");
 }
 
 QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)

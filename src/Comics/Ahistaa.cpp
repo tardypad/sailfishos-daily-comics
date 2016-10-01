@@ -12,13 +12,7 @@
 Ahistaa::Ahistaa(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("ahistaa");
-    m_info.name           = QString("Ahistaa");
-    m_info.color          = QColor(177, 177, 177);
-    m_info.authors        = QStringList("Kris K");
-    m_info.homepage       = QUrl("http://ahistaa.tumblr.com/");
-    m_info.language       = QLocale::Finnish;
-    m_info.stripSourceUrl = QUrl("http://ahistaa.tumblr.com/rss");
+    m_info.id = QString("ahistaa");
 }
 
 QUrl Ahistaa::extractStripImageUrl(QByteArray data)

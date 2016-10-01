@@ -12,13 +12,7 @@
 NamelessPcs::NamelessPcs(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("namelesspcs");
-    m_info.name           = QString("Nameless PCs");
-    m_info.color          = QColor(116, 209, 240);
-    m_info.authors        = QStringList("Wesley Hall");
-    m_info.homepage       = QUrl("http://namelesspcs.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://namelesspcs.com/");
+    m_info.id = QString("namelesspcs");
 }
 
 QUrl NamelessPcs::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 UneAnneeAuLycee::UneAnneeAuLycee(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("uneanneeaulycee");
-    m_info.name           = QString("Une année au lycée");
-    m_info.color          = QColor(181, 181, 181);
-    m_info.authors        = QStringList("Fabrice Erre");
-    m_info.homepage       = QUrl("http://uneanneeaulycee.blog.lemonde.fr/");
-    m_info.language       = QLocale::French;
-    m_info.stripSourceUrl = QUrl("http://uneanneeaulycee.blog.lemonde.fr/feed/");
+    m_info.id = QString("uneanneeaulycee");
 }
 
 QUrl UneAnneeAuLycee::extractStripImageUrl(QByteArray data)

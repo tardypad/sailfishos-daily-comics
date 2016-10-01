@@ -12,13 +12,7 @@
 DerFlix::DerFlix(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("derflix");
-    m_info.name           = QString("Der Flix");
-    m_info.color          = QColor(0, 97, 162);
-    m_info.authors        = QStringList("Felix Görmann");
-    m_info.homepage       = QUrl("http://www.der-flix.de");
-    m_info.language       = QLocale::German;
-    m_info.stripSourceUrl = QUrl("http://www.der-flix.de/index.php/heldentage");
+    m_info.id = QString("derflix");
 }
 
 QUrl DerFlix::extractStripImageUrl(QByteArray data)

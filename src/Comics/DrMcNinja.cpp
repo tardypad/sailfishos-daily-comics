@@ -12,13 +12,7 @@
 DrMcNinja::DrMcNinja(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("drmcninja");
-    m_info.name           = QString("The Adventures of Dr. McNinja");
-    m_info.color          = QColor(125, 125, 125);
-    m_info.authors        = QStringList("Christopher Hastings");
-    m_info.homepage       = QUrl("http://drmcninja.com/");
-    m_info.language       = QLocale::English;
-    m_info.stripSourceUrl = QUrl("http://drmcninja.com/");
+    m_info.id = QString("drmcninja");
 }
 
 QUrl DrMcNinja::extractStripImageUrl(QByteArray data)

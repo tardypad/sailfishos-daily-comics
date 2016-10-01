@@ -12,13 +12,7 @@
 Fingerpori::Fingerpori(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("fingerpori");
-    m_info.name           = QString("Fingerpori");
-    m_info.color          = QColor(148, 8, 11);
-    m_info.authors        = QStringList("Pertti Jarla");
-    m_info.homepage       = QUrl("http://fingerpori.org");
-    m_info.language       = QLocale::Finnish;
-    m_info.stripSourceUrl = QUrl("http://www.hs.fi/m/fingerpori/");
+    m_info.id = QString("fingerpori");
 }
 
 QUrl Fingerpori::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 Nichtlustig::Nichtlustig(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("nichtlustig");
-    m_info.name           = QString("Nichtlustig");
-    m_info.color          = QColor(180, 0, 1);
-    m_info.authors        = QStringList("Joscha Sauer");
-    m_info.homepage       = QUrl("http://nichtlustig.de/");
-    m_info.language       = QLocale::German;
-    m_info.stripSourceUrl = QUrl("http://nichtlustig.de/main.html");
+    m_info.id = QString("nichtlustig");
 }
 
 QUrl Nichtlustig::extractStripImageUrl(QByteArray data)

@@ -12,13 +12,7 @@
 BashIm::BashIm(QObject *parent) :
     Comic(parent)
 {
-    m_info.id             = QString("bashim");
-    m_info.name           = QString("bash.im");
-    m_info.color          = QColor(81, 86, 178);
-    m_info.authors        = QStringList("Lin");
-    m_info.homepage       = QUrl("http://bash.im/comics/");
-    m_info.language       = QLocale::Russian;
-    m_info.stripSourceUrl = QUrl("http://bash.im/comics/");
+    m_info.id = QString("bashim");
 }
 
 QUrl BashIm::extractStripImageUrl(QByteArray data)
