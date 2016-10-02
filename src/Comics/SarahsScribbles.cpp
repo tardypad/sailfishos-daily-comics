@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-SarahsScribbles::SarahsScribbles(QObject *parent) :
-    Comic(parent)
+SarahsScribbles::SarahsScribbles(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("sarahsscribbles");
 }
 
 QUrl SarahsScribbles::extractStripImageUrl(QByteArray data)

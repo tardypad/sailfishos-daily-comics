@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-WrongHands::WrongHands(QObject *parent) :
-    Comic(parent)
+WrongHands::WrongHands(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("wronghands");
 }
 
 QUrl WrongHands::extractStripImageUrl(QByteArray data)

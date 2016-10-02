@@ -15,7 +15,7 @@ class TheVeryNearFuture : public Comic
     Q_OBJECT
 
 public:
-    explicit TheVeryNearFuture(QObject *parent = 0);
+    explicit TheVeryNearFuture(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

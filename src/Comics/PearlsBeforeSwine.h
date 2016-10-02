@@ -15,7 +15,7 @@ class PearlsBeforeSwine : public Comic
     Q_OBJECT
 
 public:
-    explicit PearlsBeforeSwine(QObject *parent = 0);
+    explicit PearlsBeforeSwine(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

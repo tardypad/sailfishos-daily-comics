@@ -31,14 +31,14 @@ private:
     explicit ComicFactory(QObject *parent = 0);
 
     template <typename T>
-    static Comic* createFunc(QObject* parent = 0)
+    static Comic* createFunc(QString id, QObject* parent = 0)
     {
-        return new T(parent);
+        return new T(id, parent);
     }
 
 private:
     static ComicFactory* m_instance;
-    typedef Comic* (*PCreateFunc)(QObject*);
+    typedef Comic* (*PCreateFunc)(QString, QObject*);
     QMap<QString, PCreateFunc> m_map;
 };
 

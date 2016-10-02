@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Lunarbaboon::Lunarbaboon(QObject *parent) :
-    Comic(parent)
+Lunarbaboon::Lunarbaboon(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lunarbaboon");
 }
 
 QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)

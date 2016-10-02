@@ -15,7 +15,7 @@ class LoadingArtist : public Comic
     Q_OBJECT
 
 public:
-    explicit LoadingArtist(QObject *parent = 0);
+    explicit LoadingArtist(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

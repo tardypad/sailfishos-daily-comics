@@ -15,7 +15,7 @@ class BeetleBailey : public Comic
     Q_OBJECT
 
 public:
-    explicit BeetleBailey(QObject *parent = 0);
+    explicit BeetleBailey(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

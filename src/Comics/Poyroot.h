@@ -15,7 +15,7 @@ class Poyroot : public Comic
     Q_OBJECT
 
 public:
-    explicit Poyroot(QObject *parent = 0);
+    explicit Poyroot(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

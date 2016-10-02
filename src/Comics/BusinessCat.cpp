@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-BusinessCat::BusinessCat(QObject *parent) :
-    Comic(parent)
+BusinessCat::BusinessCat(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("businesscat");
 }
 
 QUrl BusinessCat::extractStripImageUrl(QByteArray data)

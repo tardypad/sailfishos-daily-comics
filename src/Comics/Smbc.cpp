@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Smbc::Smbc(QObject *parent) :
-    Comic(parent)
+Smbc::Smbc(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("smbc");
 }
 
 QUrl Smbc::extractStripImageUrl(QByteArray data)

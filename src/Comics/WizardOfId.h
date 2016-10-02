@@ -15,7 +15,7 @@ class WizardOfId : public Comic
     Q_OBJECT
 
 public:
-    explicit WizardOfId(QObject *parent = 0);
+    explicit WizardOfId(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

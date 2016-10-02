@@ -12,10 +12,9 @@
 #include <QJsonObject>
 #include <QJsonValue>
 
-Xkcd::Xkcd(QObject *parent) :
-    Comic(parent)
+Xkcd::Xkcd(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("xkcd");
 }
 
 QUrl Xkcd::extractStripImageUrl(QByteArray data)

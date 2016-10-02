@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheBoondocks::TheBoondocks(QObject *parent) :
-    Comic(parent)
+TheBoondocks::TheBoondocks(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("theboondocks");
 }
 
 QUrl TheBoondocks::extractStripImageUrl(QByteArray data)

@@ -15,7 +15,7 @@ class Smbc : public Comic
     Q_OBJECT
 
 public:
-    explicit Smbc(QObject *parent = 0);
+    explicit Smbc(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

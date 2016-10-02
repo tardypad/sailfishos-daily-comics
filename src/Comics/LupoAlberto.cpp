@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-LupoAlberto::LupoAlberto(QObject *parent) :
-    Comic(parent)
+LupoAlberto::LupoAlberto(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lupoalberto");
 }
 
 QUrl LupoAlberto::extractStripImageUrl(QByteArray data)

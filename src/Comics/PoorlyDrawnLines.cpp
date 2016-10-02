@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-PoorlyDrawnLines::PoorlyDrawnLines(QObject *parent) :
-    Comic(parent)
+PoorlyDrawnLines::PoorlyDrawnLines(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("poorlydrawnlines");
 }
 
 QUrl PoorlyDrawnLines::extractStripImageUrl(QByteArray data)

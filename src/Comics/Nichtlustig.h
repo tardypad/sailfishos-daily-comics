@@ -15,7 +15,7 @@ class Nichtlustig : public Comic
     Q_OBJECT
 
 public:
-    explicit Nichtlustig(QObject *parent = 0);
+    explicit Nichtlustig(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

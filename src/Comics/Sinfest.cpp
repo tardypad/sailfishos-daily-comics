@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Sinfest::Sinfest(QObject *parent) :
-    Comic(parent)
+Sinfest::Sinfest(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("sinfest");
 }
 
 QUrl Sinfest::extractStripImageUrl(QByteArray data)

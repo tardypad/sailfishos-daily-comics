@@ -15,7 +15,7 @@ class Pigknit : public Comic
     Q_OBJECT
 
 public:
-    explicit Pigknit(QObject *parent = 0);
+    explicit Pigknit(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

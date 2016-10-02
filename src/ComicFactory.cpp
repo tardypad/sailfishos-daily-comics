@@ -209,7 +209,7 @@ Comic *ComicFactory::create(QString id, QObject *parent)
         return NULL;
 
     PCreateFunc cf = it.value();
-    return cf(parent);
+    return cf(id, parent);
 }
 
 QStringList ComicFactory::fullList() const

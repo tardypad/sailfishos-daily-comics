@@ -15,7 +15,7 @@ class PBFComics : public Comic
     Q_OBJECT
 
 public:
-    explicit PBFComics(QObject *parent = 0);
+    explicit PBFComics(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

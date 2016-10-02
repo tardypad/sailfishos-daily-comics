@@ -15,7 +15,7 @@ class Lwhag : public Comic
     Q_OBJECT
 
 public:
-    explicit Lwhag(QObject *parent = 0);
+    explicit Lwhag(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

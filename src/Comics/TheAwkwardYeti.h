@@ -15,7 +15,7 @@ class TheAwkwardYeti : public Comic
     Q_OBJECT
 
 public:
-    explicit TheAwkwardYeti(QObject *parent = 0);
+    explicit TheAwkwardYeti(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

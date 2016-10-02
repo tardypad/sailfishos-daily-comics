@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DieselSweeties::DieselSweeties(QObject *parent) :
-    Comic(parent)
+DieselSweeties::DieselSweeties(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("dieselsweeties");
 }
 
 QUrl DieselSweeties::extractStripImageUrl(QByteArray data)

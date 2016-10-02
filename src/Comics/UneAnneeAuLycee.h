@@ -15,7 +15,7 @@ class UneAnneeAuLycee : public Comic
     Q_OBJECT
 
 public:
-    explicit UneAnneeAuLycee(QObject *parent = 0);
+    explicit UneAnneeAuLycee(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

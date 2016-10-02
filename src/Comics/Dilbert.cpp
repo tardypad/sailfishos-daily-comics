@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Dilbert::Dilbert(QObject *parent) :
-    Comic(parent)
+Dilbert::Dilbert(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("dilbert");
 }
 
 QUrl Dilbert::extractStripImageUrl(QByteArray data)

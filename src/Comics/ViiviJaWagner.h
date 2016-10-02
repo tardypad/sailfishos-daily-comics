@@ -15,7 +15,7 @@ class ViiviJaWagner : public Comic
     Q_OBJECT
 
 public:
-    explicit ViiviJaWagner(QObject *parent = 0);
+    explicit ViiviJaWagner(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

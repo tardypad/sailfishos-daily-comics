@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Einbilder::Einbilder(QObject *parent) :
-    Comic(parent)
+Einbilder::Einbilder(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("einbilder");
 }
 
 QUrl Einbilder::extractStripImageUrl(QByteArray data)

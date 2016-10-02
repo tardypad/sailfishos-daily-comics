@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Lwhag::Lwhag(QObject *parent) :
-    Comic(parent)
+Lwhag::Lwhag(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lwhag");
 }
 
 QUrl Lwhag::extractStripImageUrl(QByteArray data)

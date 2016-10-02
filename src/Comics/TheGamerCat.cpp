@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheGamerCat::TheGamerCat(QObject *parent) :
-    Comic(parent)
+TheGamerCat::TheGamerCat(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("thegamercat");
 }
 
 QUrl TheGamerCat::extractStripImageUrl(QByteArray data)

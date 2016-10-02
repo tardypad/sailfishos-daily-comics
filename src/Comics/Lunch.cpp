@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Lunch::Lunch(QObject *parent) :
-    Comic(parent)
+Lunch::Lunch(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lunch");
 }
 
 QUrl Lunch::extractStripImageUrl(QByteArray data)

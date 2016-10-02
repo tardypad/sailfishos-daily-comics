@@ -15,7 +15,7 @@ class LupoAlberto : public Comic
     Q_OBJECT
 
 public:
-    explicit LupoAlberto(QObject *parent = 0);
+    explicit LupoAlberto(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

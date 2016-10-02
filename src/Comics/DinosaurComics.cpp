@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DinosaurComics::DinosaurComics(QObject *parent) :
-    Comic(parent)
+DinosaurComics::DinosaurComics(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("dinosaurcomics");
 }
 
 QUrl DinosaurComics::extractStripImageUrl(QByteArray data)

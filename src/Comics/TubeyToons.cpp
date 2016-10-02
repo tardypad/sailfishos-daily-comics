@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TubeyToons::TubeyToons(QObject *parent) :
-    Comic(parent)
+TubeyToons::TubeyToons(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("tubeytoons");
 }
 
 QUrl TubeyToons::extractStripImageUrl(QByteArray data)

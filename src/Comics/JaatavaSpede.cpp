@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-JaatavaSpede::JaatavaSpede(QObject *parent) :
-    Comic(parent)
+JaatavaSpede::JaatavaSpede(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("jaatavaspede");
 }
 
 QUrl JaatavaSpede::extractStripImageUrl(QByteArray data)

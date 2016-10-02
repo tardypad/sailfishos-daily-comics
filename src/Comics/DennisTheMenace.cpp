@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DennisTheMenace::DennisTheMenace(QObject *parent) :
-    Comic(parent)
+DennisTheMenace::DennisTheMenace(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("dennisthemenace");
 }
 
 QUrl DennisTheMenace::extractStripImageUrl(QByteArray data)

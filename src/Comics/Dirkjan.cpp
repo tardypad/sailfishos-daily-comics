@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Dirkjan::Dirkjan(QObject *parent) :
-    Comic(parent)
+Dirkjan::Dirkjan(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("dirkjan");
 }
 
 QUrl Dirkjan::extractStripImageUrl(QByteArray data)

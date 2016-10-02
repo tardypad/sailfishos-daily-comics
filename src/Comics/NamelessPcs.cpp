@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-NamelessPcs::NamelessPcs(QObject *parent) :
-    Comic(parent)
+NamelessPcs::NamelessPcs(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("namelesspcs");
 }
 
 QUrl NamelessPcs::extractStripImageUrl(QByteArray data)

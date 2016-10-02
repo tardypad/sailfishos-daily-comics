@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-OctopusPie::OctopusPie(QObject *parent) :
-    Comic(parent)
+OctopusPie::OctopusPie(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("octopuspie");
 }
 
 QUrl OctopusPie::extractStripImageUrl(QByteArray data)

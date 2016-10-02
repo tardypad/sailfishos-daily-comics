@@ -15,7 +15,7 @@ class BloomCounty2015 : public Comic
     Q_OBJECT
 
 public:
-    explicit BloomCounty2015(QObject *parent = 0);
+    explicit BloomCounty2015(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

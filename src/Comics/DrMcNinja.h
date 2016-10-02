@@ -15,7 +15,7 @@ class DrMcNinja : public Comic
     Q_OBJECT
 
 public:
-    explicit DrMcNinja(QObject *parent = 0);
+    explicit DrMcNinja(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

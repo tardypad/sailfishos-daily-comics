@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Sigmund::Sigmund(QObject *parent) :
-    Comic(parent)
+Sigmund::Sigmund(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("sigmund");
 }
 
 QUrl Sigmund::extractStripImageUrl(QByteArray data)

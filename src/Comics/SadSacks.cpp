@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-SadSacks::SadSacks(QObject *parent) :
-    Comic(parent)
+SadSacks::SadSacks(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("sadsacks");
 }
 
 QUrl SadSacks::extractStripImageUrl(QByteArray data)

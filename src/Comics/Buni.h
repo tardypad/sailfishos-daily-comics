@@ -15,7 +15,7 @@ class Buni : public Comic
     Q_OBJECT
 
 public:
-    explicit Buni(QObject *parent = 0);
+    explicit Buni(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

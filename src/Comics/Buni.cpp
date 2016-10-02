@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Buni::Buni(QObject *parent) :
-    Comic(parent)
+Buni::Buni(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("buni");
 }
 
 QUrl Buni::extractStripImageUrl(QByteArray data)

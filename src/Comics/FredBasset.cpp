@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FredBasset::FredBasset(QObject *parent) :
-    Comic(parent)
+FredBasset::FredBasset(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fredbasset");
 }
 
 QUrl FredBasset::extractStripImageUrl(QByteArray data)

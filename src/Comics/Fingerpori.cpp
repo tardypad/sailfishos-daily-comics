@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Fingerpori::Fingerpori(QObject *parent) :
-    Comic(parent)
+Fingerpori::Fingerpori(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fingerpori");
 }
 
 QUrl Fingerpori::extractStripImageUrl(QByteArray data)

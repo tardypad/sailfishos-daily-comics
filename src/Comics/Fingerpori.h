@@ -15,7 +15,7 @@ class Fingerpori : public Comic
     Q_OBJECT
 
 public:
-    explicit Fingerpori(QObject *parent = 0);
+    explicit Fingerpori(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FMinus::FMinus(QObject *parent) :
-    Comic(parent)
+FMinus::FMinus(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fminus");
 }
 
 QUrl FMinus::extractStripImageUrl(QByteArray data)

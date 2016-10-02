@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-CheerUpEmoKid::CheerUpEmoKid(QObject *parent) :
-    Comic(parent)
+CheerUpEmoKid::CheerUpEmoKid(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("cheerupemokid");
 }
 
 QUrl CheerUpEmoKid::extractStripImageUrl(QByteArray data)

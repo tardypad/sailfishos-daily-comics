@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DerFlix::DerFlix(QObject *parent) :
-    Comic(parent)
+DerFlix::DerFlix(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("derflix");
 }
 
 QUrl DerFlix::extractStripImageUrl(QByteArray data)

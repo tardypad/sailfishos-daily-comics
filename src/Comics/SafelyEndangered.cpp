@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-SafelyEndangered::SafelyEndangered(QObject *parent) :
-    Comic(parent)
+SafelyEndangered::SafelyEndangered(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("safelyendangered");
 }
 
 QUrl SafelyEndangered::extractStripImageUrl(QByteArray data)

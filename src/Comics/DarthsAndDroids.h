@@ -15,7 +15,7 @@ class DarthsAndDroids : public Comic
     Q_OBJECT
 
 public:
-    explicit DarthsAndDroids(QObject *parent = 0);
+    explicit DarthsAndDroids(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

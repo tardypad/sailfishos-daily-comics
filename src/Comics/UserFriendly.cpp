@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-UserFriendly::UserFriendly(QObject *parent) :
-    Comic(parent)
+UserFriendly::UserFriendly(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("userfriendly");
 }
 
 QUrl UserFriendly::extractStripImageUrl(QByteArray data)

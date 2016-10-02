@@ -15,7 +15,7 @@ class SadSacks : public Comic
     Q_OBJECT
 
 public:
-    explicit SadSacks(QObject *parent = 0);
+    explicit SadSacks(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

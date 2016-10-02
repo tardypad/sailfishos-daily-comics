@@ -15,7 +15,7 @@ class LizClimo : public Comic
     Q_OBJECT
 
 public:
-    explicit LizClimo(QObject *parent = 0);
+    explicit LizClimo(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

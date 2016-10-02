@@ -15,7 +15,7 @@ class CCassandra : public Comic
     Q_OBJECT
 
 public:
-    explicit CCassandra(QObject *parent = 0);
+    explicit CCassandra(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

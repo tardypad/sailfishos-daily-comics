@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-CommitStrip::CommitStrip(QObject *parent) :
-    Comic(parent)
+CommitStrip::CommitStrip(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("commitstrip");
 }
 
 QUrl CommitStrip::extractStripImageUrl(QByteArray data)

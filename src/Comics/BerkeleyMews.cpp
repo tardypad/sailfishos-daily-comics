@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-BerkeleyMews::BerkeleyMews(QObject *parent) :
-    Comic(parent)
+BerkeleyMews::BerkeleyMews(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("berkeleymews");
 }
 
 QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)

@@ -15,7 +15,7 @@ class LeChat : public Comic
     Q_OBJECT
 
 public:
-    explicit LeChat(QObject *parent = 0);
+    explicit LeChat(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

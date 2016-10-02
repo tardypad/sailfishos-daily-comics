@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-HagarTheHorrible::HagarTheHorrible(QObject *parent) :
-    Comic(parent)
+HagarTheHorrible::HagarTheHorrible(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("hagarthehorrible");
 }
 
 QUrl HagarTheHorrible::extractStripImageUrl(QByteArray data)

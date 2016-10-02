@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-PearlsBeforeSwine::PearlsBeforeSwine(QObject *parent) :
-    Comic(parent)
+PearlsBeforeSwine::PearlsBeforeSwine(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("pearlsbeforeswine");
 }
 
 QUrl PearlsBeforeSwine::extractStripImageUrl(QByteArray data)

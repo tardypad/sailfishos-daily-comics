@@ -15,7 +15,7 @@ class IntrovertDoodles : public Comic
     Q_OBJECT
 
 public:
-    explicit IntrovertDoodles(QObject *parent = 0);
+    explicit IntrovertDoodles(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

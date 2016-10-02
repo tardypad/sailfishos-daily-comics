@@ -15,7 +15,7 @@ class CyanideAndHappiness : public Comic
     Q_OBJECT
 
 public:
-    explicit CyanideAndHappiness(QObject *parent = 0);
+    explicit CyanideAndHappiness(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

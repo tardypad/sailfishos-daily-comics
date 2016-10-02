@@ -15,7 +15,7 @@ class PoorlyDrawnLines : public Comic
     Q_OBJECT
 
 public:
-    explicit PoorlyDrawnLines(QObject *parent = 0);
+    explicit PoorlyDrawnLines(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

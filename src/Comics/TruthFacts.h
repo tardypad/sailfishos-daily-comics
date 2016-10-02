@@ -15,7 +15,7 @@ class TruthFacts : public Comic
     Q_OBJECT
 
 public:
-    explicit TruthFacts(QObject *parent = 0);
+    explicit TruthFacts(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

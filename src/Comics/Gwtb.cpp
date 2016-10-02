@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Gwtb::Gwtb(QObject *parent) :
-    Comic(parent)
+Gwtb::Gwtb(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("gwtb");
 }
 
 QUrl Gwtb::extractStripImageUrl(QByteArray data)

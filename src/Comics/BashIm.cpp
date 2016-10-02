@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-BashIm::BashIm(QObject *parent) :
-    Comic(parent)
+BashIm::BashIm(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("bashim");
 }
 
 QUrl BashIm::extractStripImageUrl(QByteArray data)

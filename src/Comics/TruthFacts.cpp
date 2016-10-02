@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TruthFacts::TruthFacts(QObject *parent) :
-    Comic(parent)
+TruthFacts::TruthFacts(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("truthfacts");
 }
 
 QUrl TruthFacts::extractStripImageUrl(QByteArray data)

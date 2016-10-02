@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-SavageChickens::SavageChickens(QObject *parent) :
-    Comic(parent)
+SavageChickens::SavageChickens(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("savagechickens");
 }
 
 QUrl SavageChickens::extractStripImageUrl(QByteArray data)

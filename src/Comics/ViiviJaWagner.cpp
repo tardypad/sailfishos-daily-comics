@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-ViiviJaWagner::ViiviJaWagner(QObject *parent) :
-    Comic(parent)
+ViiviJaWagner::ViiviJaWagner(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("viivijawagner");
 }
 
 QUrl ViiviJaWagner::extractStripImageUrl(QByteArray data)

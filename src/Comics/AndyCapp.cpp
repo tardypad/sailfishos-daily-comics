@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-AndyCapp::AndyCapp(QObject *parent) :
-    Comic(parent)
+AndyCapp::AndyCapp(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("andycapp");
 }
 
 QUrl AndyCapp::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Pigknit::Pigknit(QObject *parent) :
-    Comic(parent)
+Pigknit::Pigknit(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("pigknit");
 }
 
 QUrl Pigknit::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FowlLanguageComics::FowlLanguageComics(QObject *parent) :
-    Comic(parent)
+FowlLanguageComics::FowlLanguageComics(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fowllanguagecomics");
 }
 
 QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)

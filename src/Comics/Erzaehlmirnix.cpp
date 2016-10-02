@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Erzaehlmirnix::Erzaehlmirnix(QObject *parent) :
-    Comic(parent)
+Erzaehlmirnix::Erzaehlmirnix(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("erzaehlmirnix");
 }
 
 QUrl Erzaehlmirnix::extractStripImageUrl(QByteArray data)

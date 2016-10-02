@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-WizardOfId::WizardOfId(QObject *parent) :
-    Comic(parent)
+WizardOfId::WizardOfId(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("wizardofid");
 }
 
 QUrl WizardOfId::extractStripImageUrl(QByteArray data)

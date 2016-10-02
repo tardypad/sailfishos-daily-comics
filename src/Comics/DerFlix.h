@@ -15,7 +15,7 @@ class DerFlix : public Comic
     Q_OBJECT
 
 public:
-    explicit DerFlix(QObject *parent = 0);
+    explicit DerFlix(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

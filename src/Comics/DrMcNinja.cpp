@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DrMcNinja::DrMcNinja(QObject *parent) :
-    Comic(parent)
+DrMcNinja::DrMcNinja(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("drmcninja");
 }
 
 QUrl DrMcNinja::extractStripImageUrl(QByteArray data)

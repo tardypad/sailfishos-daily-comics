@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Yodablog::Yodablog(QObject *parent) :
-    Comic(parent)
+Yodablog::Yodablog(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("yodablog");
 }
 
 QUrl Yodablog::extractStripImageUrl(QByteArray data)

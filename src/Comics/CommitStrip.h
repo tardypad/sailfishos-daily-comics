@@ -15,7 +15,7 @@ class CommitStrip : public Comic
     Q_OBJECT
 
 public:
-    explicit CommitStrip(QObject *parent = 0);
+    explicit CommitStrip(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

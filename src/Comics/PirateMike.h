@@ -15,7 +15,7 @@ class PirateMike : public Comic
     Q_OBJECT
 
 public:
-    explicit PirateMike(QObject *parent = 0);
+    explicit PirateMike(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

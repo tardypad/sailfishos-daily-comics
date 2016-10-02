@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Swamp::Swamp(QObject *parent) :
-    Comic(parent)
+Swamp::Swamp(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("swamp");
 }
 
 QUrl Swamp::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Garfield::Garfield(QObject *parent) :
-    Comic(parent)
+Garfield::Garfield(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("garfield");
 }
 
 QUrl Garfield::extractStripImageUrl(QByteArray data)

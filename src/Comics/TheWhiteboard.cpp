@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheWhiteboard::TheWhiteboard(QObject *parent) :
-    Comic(parent)
+TheWhiteboard::TheWhiteboard(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("thewhiteboard");
 }
 
 QUrl TheWhiteboard::extractStripImageUrl(QByteArray data)

@@ -15,7 +15,7 @@ class Xkcd : public Comic
     Q_OBJECT
 
 public:
-    explicit Xkcd(QObject *parent = 0);
+    explicit Xkcd(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

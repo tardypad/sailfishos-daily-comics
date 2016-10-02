@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-PBFComics::PBFComics(QObject *parent) :
-    Comic(parent)
+PBFComics::PBFComics(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("pbfcomics");
 }
 
 QUrl PBFComics::extractStripImageUrl(QByteArray data)

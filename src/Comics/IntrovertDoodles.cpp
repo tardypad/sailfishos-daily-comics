@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-IntrovertDoodles::IntrovertDoodles(QObject *parent) :
-    Comic(parent)
+IntrovertDoodles::IntrovertDoodles(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("introvertdoodles");
 }
 
 QUrl IntrovertDoodles::extractStripImageUrl(QByteArray data)

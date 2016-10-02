@@ -15,7 +15,7 @@ class IsLieb : public Comic
     Q_OBJECT
 
 public:
-    explicit IsLieb(QObject *parent = 0);
+    explicit IsLieb(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

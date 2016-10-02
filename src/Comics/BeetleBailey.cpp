@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-BeetleBailey::BeetleBailey(QObject *parent) :
-    Comic(parent)
+BeetleBailey::BeetleBailey(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("beetlebailey");
 }
 
 QUrl BeetleBailey::extractStripImageUrl(QByteArray data)

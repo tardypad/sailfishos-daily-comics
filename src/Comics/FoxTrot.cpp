@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FoxTrot::FoxTrot(QObject *parent) :
-    Comic(parent)
+FoxTrot::FoxTrot(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("foxtrot");
 }
 
 QUrl FoxTrot::extractStripImageUrl(QByteArray data)

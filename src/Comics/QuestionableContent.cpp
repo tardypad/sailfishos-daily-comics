@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-QuestionableContent::QuestionableContent(QObject *parent) :
-    Comic(parent)
+QuestionableContent::QuestionableContent(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("questionablecontent");
 }
 
 QUrl QuestionableContent::extractStripImageUrl(QByteArray data)

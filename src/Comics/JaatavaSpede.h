@@ -15,7 +15,7 @@ class JaatavaSpede : public Comic
     Q_OBJECT
 
 public:
-    explicit JaatavaSpede(QObject *parent = 0);
+    explicit JaatavaSpede(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

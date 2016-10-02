@@ -15,7 +15,7 @@ class HagarTheHorrible : public Comic
     Q_OBJECT
 
 public:
-    explicit HagarTheHorrible(QObject *parent = 0);
+    explicit HagarTheHorrible(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

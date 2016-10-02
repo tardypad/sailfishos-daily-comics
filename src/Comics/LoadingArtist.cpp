@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-LoadingArtist::LoadingArtist(QObject *parent) :
-    Comic(parent)
+LoadingArtist::LoadingArtist(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("loadingartist");
 }
 
 QUrl LoadingArtist::extractStripImageUrl(QByteArray data)

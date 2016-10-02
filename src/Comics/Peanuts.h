@@ -15,7 +15,7 @@ class Peanuts : public Comic
     Q_OBJECT
 
 public:
-    explicit Peanuts(QObject *parent = 0);
+    explicit Peanuts(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

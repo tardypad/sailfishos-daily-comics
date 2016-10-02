@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-BloomCounty2015::BloomCounty2015(QObject *parent) :
-    Comic(parent)
+BloomCounty2015::BloomCounty2015(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("bloomcounty2015");
 }
 
 QUrl BloomCounty2015::extractStripImageUrl(QByteArray data)

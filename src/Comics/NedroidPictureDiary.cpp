@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-NedroidPictureDiary::NedroidPictureDiary(QObject *parent) :
-    Comic(parent)
+NedroidPictureDiary::NedroidPictureDiary(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("nedroidpicturediary");
 }
 
 QUrl NedroidPictureDiary::extractStripImageUrl(QByteArray data)

@@ -47,7 +47,6 @@ bool ComicInfoFileResource::load(Comic *comic)
         return false;
 
     ComicInfo info = parse(infoFile->readAll());
-    info.id = id;
     comic->setInfo(info);
 
     infoFile->close();

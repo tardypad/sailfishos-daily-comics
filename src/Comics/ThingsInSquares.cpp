@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-ThingsInSquares::ThingsInSquares(QObject *parent) :
-    Comic(parent)
+ThingsInSquares::ThingsInSquares(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("thingsinsquares");
 }
 
 QUrl ThingsInSquares::extractStripImageUrl(QByteArray data)

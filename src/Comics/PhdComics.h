@@ -15,7 +15,7 @@ class PhdComics : public Comic
     Q_OBJECT
 
 public:
-    explicit PhdComics(QObject *parent = 0);
+    explicit PhdComics(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

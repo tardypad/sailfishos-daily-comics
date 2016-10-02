@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheHatAndFat::TheHatAndFat(QObject *parent) :
-    Comic(parent)
+TheHatAndFat::TheHatAndFat(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("thehatandfat");
 }
 
 QUrl TheHatAndFat::extractStripImageUrl(QByteArray data)

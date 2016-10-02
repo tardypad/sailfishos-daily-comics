@@ -15,7 +15,7 @@ class RabbitualOffender : public Comic
     Q_OBJECT
 
 public:
-    explicit RabbitualOffender(QObject *parent = 0);
+    explicit RabbitualOffender(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

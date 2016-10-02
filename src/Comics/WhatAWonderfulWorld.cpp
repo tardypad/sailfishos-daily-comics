@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-WhatAWonderfulWorld::WhatAWonderfulWorld(QObject *parent) :
-    Comic(parent)
+WhatAWonderfulWorld::WhatAWonderfulWorld(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("whatawonderfulworld");
 }
 
 QUrl WhatAWonderfulWorld::extractStripImageUrl(QByteArray data)

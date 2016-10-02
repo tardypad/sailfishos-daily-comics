@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FokkeEnSukke::FokkeEnSukke(QObject *parent) :
-    Comic(parent)
+FokkeEnSukke::FokkeEnSukke(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fokkeensukke");
 }
 
 QUrl FokkeEnSukke::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheVeryNearFuture::TheVeryNearFuture(QObject *parent) :
-    Comic(parent)
+TheVeryNearFuture::TheVeryNearFuture(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("theverynearfuture");
 }
 
 QUrl TheVeryNearFuture::extractStripImageUrl(QByteArray data)

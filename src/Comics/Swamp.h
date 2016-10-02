@@ -15,7 +15,7 @@ class Swamp : public Comic
     Q_OBJECT
 
 public:
-    explicit Swamp(QObject *parent = 0);
+    explicit Swamp(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

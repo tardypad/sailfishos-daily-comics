@@ -15,7 +15,7 @@ class DennisTheMenace : public Comic
     Q_OBJECT
 
 public:
-    explicit DennisTheMenace(QObject *parent = 0);
+    explicit DennisTheMenace(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

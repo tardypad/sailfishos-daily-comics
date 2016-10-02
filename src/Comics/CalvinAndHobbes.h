@@ -15,7 +15,7 @@ class CalvinAndHobbes : public Comic
     Q_OBJECT
 
 public:
-    explicit CalvinAndHobbes(QObject *parent = 0);
+    explicit CalvinAndHobbes(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

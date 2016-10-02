@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Peanuts::Peanuts(QObject *parent) :
-    Comic(parent)
+Peanuts::Peanuts(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("peanuts");
 }
 
 QUrl Peanuts::extractStripImageUrl(QByteArray data)

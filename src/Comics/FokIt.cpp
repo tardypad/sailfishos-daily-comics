@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-FokIt::FokIt(QObject *parent) :
-    Comic(parent)
+FokIt::FokIt(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("fokit");
 }
 
 QUrl FokIt::extractStripImageUrl(QByteArray data)

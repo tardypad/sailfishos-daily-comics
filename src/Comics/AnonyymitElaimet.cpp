@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-AnonyymitElaimet::AnonyymitElaimet(QObject *parent) :
-    Comic(parent)
+AnonyymitElaimet::AnonyymitElaimet(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("anonyymitelaimet");
 }
 
 QUrl AnonyymitElaimet::extractStripImageUrl(QByteArray data)

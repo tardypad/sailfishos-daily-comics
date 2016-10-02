@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-IsLieb::IsLieb(QObject *parent) :
-    Comic(parent)
+IsLieb::IsLieb(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("islieb");
 }
 
 QUrl IsLieb::extractStripImageUrl(QByteArray data)

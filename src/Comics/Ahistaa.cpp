@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Ahistaa::Ahistaa(QObject *parent) :
-    Comic(parent)
+Ahistaa::Ahistaa(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("ahistaa");
 }
 
 QUrl Ahistaa::extractStripImageUrl(QByteArray data)

@@ -15,7 +15,7 @@ class DieselSweeties : public Comic
     Q_OBJECT
 
 public:
-    explicit DieselSweeties(QObject *parent = 0);
+    explicit DieselSweeties(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

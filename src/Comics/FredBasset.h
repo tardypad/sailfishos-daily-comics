@@ -15,7 +15,7 @@ class FredBasset : public Comic
     Q_OBJECT
 
 public:
-    explicit FredBasset(QObject *parent = 0);
+    explicit FredBasset(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

@@ -15,7 +15,7 @@ class Garfield : public Comic
     Q_OBJECT
 
 public:
-    explicit Garfield(QObject *parent = 0);
+    explicit Garfield(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

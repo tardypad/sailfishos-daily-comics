@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Poyroot::Poyroot(QObject *parent) :
-    Comic(parent)
+Poyroot::Poyroot(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("poyroot");
 }
 
 QUrl Poyroot::extractStripImageUrl(QByteArray data)

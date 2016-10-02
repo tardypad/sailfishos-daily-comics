@@ -15,7 +15,7 @@ class TubeyToons : public Comic
     Q_OBJECT
 
 public:
-    explicit TubeyToons(QObject *parent = 0);
+    explicit TubeyToons(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

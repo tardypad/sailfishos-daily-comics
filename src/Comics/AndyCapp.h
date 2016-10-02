@@ -15,7 +15,7 @@ class AndyCapp : public Comic
     Q_OBJECT
 
 public:
-    explicit AndyCapp(QObject *parent = 0);
+    explicit AndyCapp(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

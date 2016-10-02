@@ -15,7 +15,7 @@ class ShitHappens : public Comic
     Q_OBJECT
 
 public:
-    explicit ShitHappens(QObject *parent = 0);
+    explicit ShitHappens(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

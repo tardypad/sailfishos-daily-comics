@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-LeChat::LeChat(QObject *parent) :
-    Comic(parent)
+LeChat::LeChat(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lechat");
 }
 
 QUrl LeChat::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-RabbitualOffender::RabbitualOffender(QObject *parent) :
-    Comic(parent)
+RabbitualOffender::RabbitualOffender(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("rabbitualoffender");
 }
 
 QUrl RabbitualOffender::extractStripImageUrl(QByteArray data)

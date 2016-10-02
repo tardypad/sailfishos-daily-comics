@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-MacadamValley::MacadamValley(QObject *parent) :
-    Comic(parent)
+MacadamValley::MacadamValley(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("macadamvalley");
 }
 
 QUrl MacadamValley::extractStripImageUrl(QByteArray data)

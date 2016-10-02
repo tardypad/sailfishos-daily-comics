@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-CyanideAndHappiness::CyanideAndHappiness(QObject *parent) :
-    Comic(parent)
+CyanideAndHappiness::CyanideAndHappiness(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("cyanideandhappiness");
 }
 
 QUrl CyanideAndHappiness::extractStripImageUrl(QByteArray data)

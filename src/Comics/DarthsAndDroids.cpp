@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-DarthsAndDroids::DarthsAndDroids(QObject *parent) :
-    Comic(parent)
+DarthsAndDroids::DarthsAndDroids(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("darthsanddroids");
 }
 
 QUrl DarthsAndDroids::extractStripImageUrl(QByteArray data)

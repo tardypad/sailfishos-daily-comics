@@ -15,7 +15,7 @@ class TheBoondocks : public Comic
     Q_OBJECT
 
 public:
-    explicit TheBoondocks(QObject *parent = 0);
+    explicit TheBoondocks(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

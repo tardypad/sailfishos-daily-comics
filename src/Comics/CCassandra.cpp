@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-CCassandra::CCassandra(QObject *parent) :
-    Comic(parent)
+CCassandra::CCassandra(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("ccassandra");
 }
 
 QUrl CCassandra::extractStripImageUrl(QByteArray data)

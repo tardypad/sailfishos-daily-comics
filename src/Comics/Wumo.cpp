@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Wumo::Wumo(QObject *parent) :
-    Comic(parent)
+Wumo::Wumo(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("wumo");
 }
 
 QUrl Wumo::extractStripImageUrl(QByteArray data)

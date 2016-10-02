@@ -15,7 +15,7 @@ class Erzaehlmirnix : public Comic
     Q_OBJECT
 
 public:
-    explicit Erzaehlmirnix(QObject *parent = 0);
+    explicit Erzaehlmirnix(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 

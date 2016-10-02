@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-Nichtlustig::Nichtlustig(QObject *parent) :
-    Comic(parent)
+Nichtlustig::Nichtlustig(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("nichtlustig");
 }
 
 QUrl Nichtlustig::extractStripImageUrl(QByteArray data)

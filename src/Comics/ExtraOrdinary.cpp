@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-ExtraOrdinary::ExtraOrdinary(QObject *parent) :
-    Comic(parent)
+ExtraOrdinary::ExtraOrdinary(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("extraordinary");
 }
 
 QUrl ExtraOrdinary::extractStripImageUrl(QByteArray data)

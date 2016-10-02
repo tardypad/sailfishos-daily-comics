@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-LizClimo::LizClimo(QObject *parent) :
-    Comic(parent)
+LizClimo::LizClimo(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("lizclimo");
 }
 
 QUrl LizClimo::extractStripImageUrl(QByteArray data)

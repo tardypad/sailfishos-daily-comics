@@ -23,7 +23,6 @@ class ComicInfoFileResource;
 class ComicStripFileResource;
 
 struct ComicInfo {
-    QString id;
     QString name;
     QColor color;
     QStringList authors;
@@ -32,7 +31,6 @@ struct ComicInfo {
     QUrl stripSourceUrl;
 
     ComicInfo() {
-        id = QString();
         name = QString();
         color = QColor();
         authors = QStringList();
@@ -47,10 +45,10 @@ class Comic : public QObject
     Q_OBJECT
 
 public:
-    explicit Comic(QObject *parent = 0);
+    explicit Comic(QString id, QObject *parent = 0);
     ~Comic();
 
-    QString id() const { return m_info.id; }
+    QString id() const { return m_id; }
     QString name() const { return m_info.name; }
     QColor color() const { return m_info.color; }
     QStringList authors() const { return m_info.authors; }
@@ -123,6 +121,7 @@ protected:
     static const int _minFetchDelay;
     static const int _timeout;
 
+    QString m_id;
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;

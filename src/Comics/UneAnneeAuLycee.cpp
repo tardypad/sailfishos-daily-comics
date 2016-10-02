@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-UneAnneeAuLycee::UneAnneeAuLycee(QObject *parent) :
-    Comic(parent)
+UneAnneeAuLycee::UneAnneeAuLycee(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("uneanneeaulycee");
 }
 
 QUrl UneAnneeAuLycee::extractStripImageUrl(QByteArray data)

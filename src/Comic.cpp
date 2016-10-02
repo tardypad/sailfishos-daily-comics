@@ -23,8 +23,9 @@
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
 
-Comic::Comic(QObject *parent) :
+Comic::Comic(QString id, QObject *parent) :
     QObject(parent),
+    m_id(id),
     m_info(ComicInfo()),
     m_currentReply(NULL),
     m_random(rand()),

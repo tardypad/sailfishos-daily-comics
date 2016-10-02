@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-TheAwkwardYeti::TheAwkwardYeti(QObject *parent) :
-    Comic(parent)
+TheAwkwardYeti::TheAwkwardYeti(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("theawkwardyeti");
 }
 
 QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)

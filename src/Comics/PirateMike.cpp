@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-PirateMike::PirateMike(QObject *parent) :
-    Comic(parent)
+PirateMike::PirateMike(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("piratemike");
 }
 
 QUrl PirateMike::extractStripImageUrl(QByteArray data)

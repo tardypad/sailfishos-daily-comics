@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-ShitHappens::ShitHappens(QObject *parent) :
-    Comic(parent)
+ShitHappens::ShitHappens(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("shithappens");
 }
 
 QUrl ShitHappens::extractStripImageUrl(QByteArray data)

@@ -9,10 +9,9 @@
 
 #include <QDebug>
 
-CalvinAndHobbes::CalvinAndHobbes(QObject *parent) :
-    Comic(parent)
+CalvinAndHobbes::CalvinAndHobbes(QString id, QObject *parent) :
+    Comic(id, parent)
 {
-    m_info.id = QString("calvinandhobbes");
 }
 
 QUrl CalvinAndHobbes::extractStripImageUrl(QByteArray data)

@@ -15,7 +15,7 @@ class DinosaurComics : public Comic
     Q_OBJECT
 
 public:
-    explicit DinosaurComics(QObject *parent = 0);
+    explicit DinosaurComics(QString id, QObject *parent = 0);
     virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
