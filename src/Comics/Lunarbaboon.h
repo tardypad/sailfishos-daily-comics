@@ -16,7 +16,6 @@ class Lunarbaboon : public Comic
 
 public:
     explicit Lunarbaboon(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // LUNARBABOON_H

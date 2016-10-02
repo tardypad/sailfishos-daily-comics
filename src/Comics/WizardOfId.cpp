@@ -13,8 +13,3 @@ WizardOfId::WizardOfId(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl WizardOfId::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

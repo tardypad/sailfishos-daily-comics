@@ -13,8 +13,3 @@ ViiviJaWagner::ViiviJaWagner(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl ViiviJaWagner::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");
-}

@@ -13,8 +13,3 @@ TheBoondocks::TheBoondocks(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TheBoondocks::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

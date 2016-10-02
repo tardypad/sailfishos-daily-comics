@@ -16,7 +16,6 @@ class FoxTrot : public Comic
 
 public:
     explicit FoxTrot(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // FOXTROT_H

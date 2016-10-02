@@ -16,7 +16,6 @@ class TheWhiteboard : public Comic
 
 public:
     explicit TheWhiteboard(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // THEWHITEBOARD_H

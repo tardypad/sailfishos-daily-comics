@@ -13,8 +13,3 @@ DinosaurComics::DinosaurComics(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DinosaurComics::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
-}

@@ -13,8 +13,3 @@ Dilbert::Dilbert(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Dilbert::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*img-comic.*src=\"([^\"]*)\"");
-}

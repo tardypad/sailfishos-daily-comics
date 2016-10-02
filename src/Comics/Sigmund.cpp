@@ -14,7 +14,3 @@ Sigmund::Sigmund(QString id, QObject *parent) :
 {
 }
 
-QUrl Sigmund::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=(strips/[^ ]*) ");
-}

@@ -13,8 +13,3 @@ RabbitualOffender::RabbitualOffender(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl RabbitualOffender::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"", 2);
-}

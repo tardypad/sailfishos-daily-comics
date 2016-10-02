@@ -13,8 +13,3 @@ PBFComics::PBFComics(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl PBFComics::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "src=&quot;([^&]*/archive_b/[^&]*)&quot;");
-}

@@ -13,8 +13,3 @@ Wumo::Wumo(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Wumo::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/img/wumo/[^\"]*)\"");
-}

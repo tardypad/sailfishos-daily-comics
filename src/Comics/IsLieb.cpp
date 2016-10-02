@@ -13,8 +13,3 @@ IsLieb::IsLieb(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl IsLieb::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

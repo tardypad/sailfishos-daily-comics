@@ -16,7 +16,6 @@ class BusinessCat : public Comic
 
 public:
     explicit BusinessCat(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // BUSINESSCAT_H

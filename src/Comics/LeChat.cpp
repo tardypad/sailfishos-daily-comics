@@ -13,8 +13,3 @@ LeChat::LeChat(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl LeChat::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strip/[^\"]*)\"");
-}

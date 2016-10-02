@@ -13,8 +13,3 @@ SarahsScribbles::SarahsScribbles(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl SarahsScribbles::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-}

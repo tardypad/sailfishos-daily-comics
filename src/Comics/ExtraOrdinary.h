@@ -16,7 +16,6 @@ class ExtraOrdinary : public Comic
 
 public:
     explicit ExtraOrdinary(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // EXTRAORDINARY_H

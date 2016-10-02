@@ -13,8 +13,3 @@ FredBasset::FredBasset(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FredBasset::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

@@ -13,8 +13,3 @@ Buni::Buni(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Buni::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<div id=\"comic\">\n<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

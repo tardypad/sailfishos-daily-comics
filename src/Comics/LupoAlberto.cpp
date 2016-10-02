@@ -13,8 +13,3 @@ LupoAlberto::LupoAlberto(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl LupoAlberto::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "href=\"([^\"]*/tavola-settimana/[^\"]*)\"");
-}

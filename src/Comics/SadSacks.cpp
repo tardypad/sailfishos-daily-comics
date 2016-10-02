@@ -13,8 +13,3 @@ SadSacks::SadSacks(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl SadSacks::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(images/comic/[^\"]*)\"");
-}

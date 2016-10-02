@@ -13,8 +13,3 @@ FowlLanguageComics::FowlLanguageComics(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FowlLanguageComics::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<meta property=\"og:image\" content=\"([^\"]*)\"");
-}

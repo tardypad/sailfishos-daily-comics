@@ -13,8 +13,3 @@ DieselSweeties::DieselSweeties(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DieselSweeties::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strips[^\"]*)\"");
-}

@@ -13,8 +13,3 @@ CCassandra::CCassandra(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl CCassandra::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-}

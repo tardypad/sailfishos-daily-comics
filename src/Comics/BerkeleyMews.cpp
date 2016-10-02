@@ -13,8 +13,3 @@ BerkeleyMews::BerkeleyMews(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl BerkeleyMews::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"", 2);
-}

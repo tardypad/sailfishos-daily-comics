@@ -16,7 +16,6 @@ class BerkeleyMews : public Comic
 
 public:
     explicit BerkeleyMews(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // BERKELEYMEWS_H

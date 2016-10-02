@@ -13,8 +13,3 @@ NamelessPcs::NamelessPcs(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl NamelessPcs::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

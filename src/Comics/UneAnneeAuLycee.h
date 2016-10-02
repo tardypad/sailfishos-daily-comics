@@ -16,7 +16,6 @@ class UneAnneeAuLycee : public Comic
 
 public:
     explicit UneAnneeAuLycee(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // UNEANNEEAULYCEE_H

@@ -13,8 +13,3 @@ WhatAWonderfulWorld::WhatAWonderfulWorld(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl WhatAWonderfulWorld::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/files/[^\"]*)\"");
-}

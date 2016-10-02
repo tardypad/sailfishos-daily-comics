@@ -13,8 +13,3 @@ FokkeEnSukke::FokkeEnSukke(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FokkeEnSukke::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(content/formfield_files/[^\"]*)\"");
-}

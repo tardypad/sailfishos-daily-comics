@@ -16,7 +16,6 @@ class TheGamerCat : public Comic
 
 public:
     explicit TheGamerCat(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // THEGAMERCAT_H

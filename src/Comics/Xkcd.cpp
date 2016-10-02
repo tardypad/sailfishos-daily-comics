@@ -16,11 +16,3 @@ Xkcd::Xkcd(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Xkcd::extractStripImageUrl(QByteArray data)
-{
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
-    QString src = jsonDoc.object().value("img").toString();
-
-    return QUrl(src);
-}

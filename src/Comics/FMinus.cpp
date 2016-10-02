@@ -13,8 +13,3 @@ FMinus::FMinus(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FMinus::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

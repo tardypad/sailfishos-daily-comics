@@ -13,8 +13,3 @@ DrMcNinja::DrMcNinja(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DrMcNinja::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-}

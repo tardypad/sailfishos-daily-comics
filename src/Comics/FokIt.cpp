@@ -13,8 +13,3 @@ FokIt::FokIt(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FokIt::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/sarjis[^\"]*)\"");
-}

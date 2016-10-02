@@ -13,8 +13,3 @@ PirateMike::PirateMike(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl PirateMike::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<media:content url=\"([^\"]*piratemikecomics.files.wordpress.com/[^\"]*)\"");
-}

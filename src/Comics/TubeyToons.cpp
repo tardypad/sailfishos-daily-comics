@@ -13,8 +13,3 @@ TubeyToons::TubeyToons(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TubeyToons::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"", 2);
-}

@@ -13,8 +13,3 @@ Nichtlustig::Nichtlustig(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Nichtlustig::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<link rel=\"image_src\" href=\"([^\"]*)\"");
-}

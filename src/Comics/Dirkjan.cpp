@@ -13,8 +13,3 @@ Dirkjan::Dirkjan(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Dirkjan::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

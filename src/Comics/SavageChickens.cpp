@@ -13,8 +13,3 @@ SavageChickens::SavageChickens(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl SavageChickens::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

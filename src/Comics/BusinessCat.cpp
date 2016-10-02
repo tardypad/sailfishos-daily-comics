@@ -13,8 +13,3 @@ BusinessCat::BusinessCat(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl BusinessCat::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

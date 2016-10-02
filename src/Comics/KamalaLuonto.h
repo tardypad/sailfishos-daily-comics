@@ -16,7 +16,6 @@ class KamalaLuonto : public Comic
 
 public:
     explicit KamalaLuonto(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // KAMALALUONTO_H

@@ -16,7 +16,6 @@ class BashIm : public Comic
 
 public:
     explicit BashIm(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // BASHIM_H

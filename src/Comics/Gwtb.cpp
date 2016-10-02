@@ -13,8 +13,3 @@ Gwtb::Gwtb(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Gwtb::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(./comics/[^\"]*)\"");
-}

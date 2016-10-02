@@ -16,7 +16,6 @@ class Gwtb : public Comic
 
 public:
     explicit Gwtb(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // GWTB_H

@@ -16,7 +16,6 @@ class Yodablog : public Comic
 
 public:
     explicit Yodablog(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // YODABLOG_H

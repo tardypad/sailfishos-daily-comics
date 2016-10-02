@@ -16,7 +16,6 @@ class DerFlix : public Comic
 
 public:
     explicit DerFlix(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // DERFLIX_H

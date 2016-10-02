@@ -13,8 +13,3 @@ DerFlix::DerFlix(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DerFlix::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(http://der-flix.com/media/[^\"]*)\"");
-}

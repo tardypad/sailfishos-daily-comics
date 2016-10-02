@@ -16,7 +16,6 @@ class CyanideAndHappiness : public Comic
 
 public:
     explicit CyanideAndHappiness(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // CYANIDEANDHAPPINESS_H

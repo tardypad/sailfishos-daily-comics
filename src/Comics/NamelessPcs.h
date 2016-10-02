@@ -16,7 +16,6 @@ class NamelessPcs : public Comic
 
 public:
     explicit NamelessPcs(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // NAMELESSPCS_H

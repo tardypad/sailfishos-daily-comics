@@ -13,8 +13,3 @@ ShitHappens::ShitHappens(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl ShitHappens::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/cartoons/[^\"]*)\"");
-}

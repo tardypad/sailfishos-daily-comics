@@ -13,8 +13,3 @@ PhdComics::PhdComics(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl PhdComics::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img id=comic[^>]*src=([^ ]*)");
-}

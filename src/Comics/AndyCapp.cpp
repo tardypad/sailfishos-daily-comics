@@ -13,8 +13,3 @@ AndyCapp::AndyCapp(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl AndyCapp::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

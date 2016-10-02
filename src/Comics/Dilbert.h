@@ -16,7 +16,6 @@ class Dilbert : public Comic
 
 public:
     explicit Dilbert(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // DILBERT_H

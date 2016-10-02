@@ -13,8 +13,3 @@ TheVeryNearFuture::TheVeryNearFuture(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TheVeryNearFuture::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-}

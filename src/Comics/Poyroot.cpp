@@ -13,14 +13,3 @@ Poyroot::Poyroot(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Poyroot::extractStripImageUrl(QByteArray data)
-{
-    QUrl extractedStripImageUrl = regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/poyroot_[^\"]*)\"");
-
-    if (extractedStripImageUrl.isValid()) {
-        return extractedStripImageUrl;
-    }
-
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/Pöyrööt_[^\"]*)\"");
-}

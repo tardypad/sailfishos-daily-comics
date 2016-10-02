@@ -13,8 +13,3 @@ TheHatAndFat::TheHatAndFat(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TheHatAndFat::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(https://thehatandfat.files.wordpress.com/[^\"]*)\"");
-}

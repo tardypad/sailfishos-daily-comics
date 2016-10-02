@@ -13,8 +13,3 @@ CyanideAndHappiness::CyanideAndHappiness(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl CyanideAndHappiness::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-}

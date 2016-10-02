@@ -13,8 +13,3 @@ NedroidPictureDiary::NedroidPictureDiary(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl NedroidPictureDiary::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comic/[^\"]*)\"");
-}

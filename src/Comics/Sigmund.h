@@ -16,7 +16,6 @@ class Sigmund : public Comic
 
 public:
     explicit Sigmund(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // SIGMUND_H

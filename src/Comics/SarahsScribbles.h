@@ -16,7 +16,6 @@ class SarahsScribbles : public Comic
 
 public:
     explicit SarahsScribbles(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // SARAHSSCRIBBLES_H

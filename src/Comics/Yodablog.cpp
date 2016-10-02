@@ -13,8 +13,3 @@ Yodablog::Yodablog(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Yodablog::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

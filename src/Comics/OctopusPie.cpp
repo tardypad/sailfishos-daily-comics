@@ -13,8 +13,3 @@ OctopusPie::OctopusPie(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl OctopusPie::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/strippy/[^\"]*)\"");
-}

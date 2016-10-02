@@ -16,7 +16,6 @@ class FokIt : public Comic
 
 public:
     explicit FokIt(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // FOKIT_H

@@ -13,8 +13,3 @@ ExtraOrdinary::ExtraOrdinary(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl ExtraOrdinary::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/comics/[^\"]*)\"");
-}

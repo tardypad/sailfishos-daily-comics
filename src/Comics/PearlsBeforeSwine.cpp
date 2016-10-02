@@ -13,8 +13,3 @@ PearlsBeforeSwine::PearlsBeforeSwine(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl PearlsBeforeSwine::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

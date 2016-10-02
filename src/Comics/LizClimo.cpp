@@ -13,8 +13,3 @@ LizClimo::LizClimo(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl LizClimo::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "&lt;img[^&]*src=\"([^\"]*media.tumblr.com/[^\"]*)\"");
-}

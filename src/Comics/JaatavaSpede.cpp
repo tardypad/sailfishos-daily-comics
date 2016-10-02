@@ -13,8 +13,3 @@ JaatavaSpede::JaatavaSpede(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl JaatavaSpede::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/[^\"]*)\"", 2);
-}

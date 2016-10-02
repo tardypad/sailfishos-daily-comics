@@ -13,8 +13,3 @@ QuestionableContent::QuestionableContent(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl QuestionableContent::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/comics/[^\"]*)\"");
-}

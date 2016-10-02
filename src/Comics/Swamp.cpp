@@ -13,8 +13,3 @@ Swamp::Swamp(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Swamp::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src='(strips/[^']*)'");
-}

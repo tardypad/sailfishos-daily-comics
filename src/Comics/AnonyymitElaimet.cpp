@@ -13,8 +13,3 @@ AnonyymitElaimet::AnonyymitElaimet(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl AnonyymitElaimet::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/webkuva/sarjis[^\"]*)\"");
-}

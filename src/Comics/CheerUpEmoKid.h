@@ -16,7 +16,6 @@ class CheerUpEmoKid : public Comic
 
 public:
     explicit CheerUpEmoKid(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // CHEERUPEMOKID_H

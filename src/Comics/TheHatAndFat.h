@@ -16,7 +16,6 @@ class TheHatAndFat : public Comic
 
 public:
     explicit TheHatAndFat(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // THEHATANDFAT_H

@@ -16,7 +16,6 @@ class Dirkjan : public Comic
 
 public:
     explicit Dirkjan(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // DIRKJAN_H

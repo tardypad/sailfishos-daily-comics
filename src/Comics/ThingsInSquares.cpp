@@ -13,8 +13,3 @@ ThingsInSquares::ThingsInSquares(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl ThingsInSquares::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

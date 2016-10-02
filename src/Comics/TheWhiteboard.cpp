@@ -13,8 +13,3 @@ TheWhiteboard::TheWhiteboard(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TheWhiteboard::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img SRC=\"([^\"]*)\"");
-}

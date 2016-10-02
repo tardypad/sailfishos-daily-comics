@@ -13,8 +13,3 @@ Fingerpori::Fingerpori(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Fingerpori::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*/webkuva/[^\"]*)\"");
-}

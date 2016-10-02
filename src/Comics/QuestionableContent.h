@@ -16,7 +16,6 @@ class QuestionableContent : public Comic
 
 public:
     explicit QuestionableContent(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // QUESTIONABLECONTENT_H

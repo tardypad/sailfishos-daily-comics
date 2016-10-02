@@ -16,7 +16,6 @@ class UserFriendly : public Comic
 
 public:
     explicit UserFriendly(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // USERFRIENDLY_H

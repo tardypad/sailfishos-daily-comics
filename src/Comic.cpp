@@ -15,6 +15,10 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QRegularExpressionMatchIterator>
+#include <QJSEngine>
+#include <QJSValue>
+#include <QJSValueList>
+#include <QFile>
 
 #include "ComicDatabaseResource.h"
 #include "ComicInfoFileResource.h"
@@ -22,6 +26,8 @@
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
+
+QJSEngine* Comic::_jsEngine = new QJSEngine();
 
 Comic::Comic(QString id, QObject *parent) :
     QObject(parent),
@@ -212,6 +218,33 @@ void Comic::onFetchStripSourceFinished()
     }
 }
 
+QUrl Comic::extractStripImageUrl(QByteArray data)
+{
+    QString scriptFilePath = QString(PLUGINS_FOLDER_PATH) + "/" + id() + "/extract.js";
+    QFile* scriptFile = new QFile();
+    scriptFile->setFileName(scriptFilePath);
+
+    if (!scriptFile->open(QIODevice::ReadOnly))
+    {
+        return QUrl();
+    }
+
+    QString script = QString(scriptFile->readAll());
+
+    scriptFile->close();
+    scriptFile->deleteLater();
+
+    QJSValue function = _jsEngine->evaluate(script);
+    QJSValue result = function.call(QJSValueList() << QString(data));
+
+    QUrl src = result.toVariant().toUrl();
+
+    if (src.isRelative())
+        return m_currentReply->url().resolved(src);
+
+    return src;
+}
+
 void Comic::fetchStripImage(QUrl stripImageUrl)
 {
     delete m_currentReply;
@@ -282,26 +315,4 @@ void Comic::updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal)
         setFetchingProgress(bytesReceived / bytesTotal);
     else
         setFetchingProgress(0);
-}
-
-QUrl Comic::regexExtractStripImageUrl(QByteArray data, QString regex, int count)
-{
-    QString html(data);
-    QRegularExpression reg(regex);
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-    QRegularExpressionMatch match;
-
-    for (int c = 0; c < count; ++c) {
-        if (!matchIterator.hasNext())
-            return QUrl();
-
-        match = matchIterator.next();
-    }
-
-    QUrl src = QUrl(match.captured(1));
-
-    if (src.isRelative())
-        return m_currentReply->url().resolved(src);
-
-    return src;
 }

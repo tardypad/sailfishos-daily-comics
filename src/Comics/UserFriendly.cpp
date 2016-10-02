@@ -13,8 +13,3 @@ UserFriendly::UserFriendly(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl UserFriendly::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<IMG[^>]*SRC=\"([^\"]*/cartoons/archives/[^\"]*)\"");
-}

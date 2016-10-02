@@ -16,7 +16,6 @@ class FokkeEnSukke : public Comic
 
 public:
     explicit FokkeEnSukke(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // FOKKEENSUKKE_H

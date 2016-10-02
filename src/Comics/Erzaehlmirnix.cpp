@@ -13,8 +13,3 @@ Erzaehlmirnix::Erzaehlmirnix(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Erzaehlmirnix::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*erzaehlmirnix.files.wordpress.com[^\"]*)\"", 2);
-}

@@ -13,8 +13,3 @@ TheAwkwardYeti::TheAwkwardYeti(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TheAwkwardYeti::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<div id=\"comic\">\\s*<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

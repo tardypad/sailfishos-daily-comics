@@ -13,8 +13,3 @@ Lunarbaboon::Lunarbaboon(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Lunarbaboon::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(/storage/[^\"]*)\"");
-}

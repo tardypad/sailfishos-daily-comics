@@ -16,7 +16,6 @@ class FMinus : public Comic
 
 public:
     explicit FMinus(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // FMINUS_H

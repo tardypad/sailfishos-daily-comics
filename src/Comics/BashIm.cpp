@@ -13,8 +13,3 @@ BashIm::BashIm(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl BashIm::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<div id=\"the_strip\"><img src=\"([^\"]*)\"");
-}

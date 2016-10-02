@@ -16,7 +16,6 @@ class FowlLanguageComics : public Comic
 
 public:
     explicit FowlLanguageComics(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // FOWLLANGUAGECOMICS_H

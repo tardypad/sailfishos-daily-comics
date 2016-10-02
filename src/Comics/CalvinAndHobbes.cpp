@@ -14,7 +14,3 @@ CalvinAndHobbes::CalvinAndHobbes(QString id, QObject *parent) :
 {
 }
 
-QUrl CalvinAndHobbes::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

@@ -13,8 +13,3 @@ Peanuts::Peanuts(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Peanuts::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

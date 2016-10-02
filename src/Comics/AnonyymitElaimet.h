@@ -16,7 +16,6 @@ class AnonyymitElaimet : public Comic
 
 public:
     explicit AnonyymitElaimet(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // ANONYYMITELAIMET_H

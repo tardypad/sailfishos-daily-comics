@@ -16,7 +16,6 @@ class Lunch : public Comic
 
 public:
     explicit Lunch(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // LUNCH_H

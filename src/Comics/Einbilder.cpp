@@ -14,7 +14,3 @@ Einbilder::Einbilder(QString id, QObject *parent) :
 {
 }
 
-QUrl Einbilder::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(images/cartoons/[^\"]*)\"");
-}

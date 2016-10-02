@@ -16,7 +16,6 @@ class WrongHands : public Comic
 
 public:
     explicit WrongHands(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // WRONGHANDS_H

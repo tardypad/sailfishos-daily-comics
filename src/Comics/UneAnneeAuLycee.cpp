@@ -13,8 +13,3 @@ UneAnneeAuLycee::UneAnneeAuLycee(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl UneAnneeAuLycee::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/files/[^\"]*)\"");
-}

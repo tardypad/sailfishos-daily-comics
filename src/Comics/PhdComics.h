@@ -16,7 +16,6 @@ class PhdComics : public Comic
 
 public:
     explicit PhdComics(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // PHPCOMICS_H

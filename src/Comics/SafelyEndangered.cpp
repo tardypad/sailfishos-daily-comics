@@ -13,8 +13,3 @@ SafelyEndangered::SafelyEndangered(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl SafelyEndangered::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/wp-content/uploads/[^\"]*)\"");
-}

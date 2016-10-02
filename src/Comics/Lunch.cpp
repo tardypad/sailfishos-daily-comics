@@ -13,8 +13,3 @@ Lunch::Lunch(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Lunch::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/tegneserie/[^\"]*strip=lunch)\"");
-}

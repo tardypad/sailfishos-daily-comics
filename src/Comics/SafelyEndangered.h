@@ -16,7 +16,6 @@ class SafelyEndangered : public Comic
 
 public:
     explicit SafelyEndangered(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // SAFELYENDANGERED_H

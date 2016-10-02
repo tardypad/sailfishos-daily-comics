@@ -16,7 +16,6 @@ class SavageChickens : public Comic
 
 public:
     explicit SavageChickens(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // SAVAGECHICKENS_H

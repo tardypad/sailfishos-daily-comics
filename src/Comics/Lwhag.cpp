@@ -13,8 +13,3 @@ Lwhag::Lwhag(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Lwhag::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*)\"[^>]*alt=\"[^\"]*english\"");
-}

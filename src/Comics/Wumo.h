@@ -16,7 +16,6 @@ class Wumo : public Comic
 
 public:
     explicit Wumo(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // WUMO_H

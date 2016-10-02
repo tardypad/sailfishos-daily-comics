@@ -16,7 +16,6 @@ class Sinfest : public Comic
 
 public:
     explicit Sinfest(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // SINFEST_H

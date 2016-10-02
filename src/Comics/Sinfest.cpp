@@ -13,8 +13,3 @@ Sinfest::Sinfest(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Sinfest::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/comics/[^\"]*)\"");
-}

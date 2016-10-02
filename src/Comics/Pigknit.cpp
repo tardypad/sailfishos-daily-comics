@@ -13,8 +13,3 @@ Pigknit::Pigknit(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl Pigknit::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*pigknit.files.wordpress.com[^\"]*)\"", 2);
-}

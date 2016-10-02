@@ -13,8 +13,3 @@ TruthFacts::TruthFacts(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl TruthFacts::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"([^\"]*/img/truth_facts/[^\"]*)\"");
-}

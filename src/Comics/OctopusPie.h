@@ -16,7 +16,6 @@ class OctopusPie : public Comic
 
 public:
     explicit OctopusPie(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // OCTOPUSPIE_H

@@ -13,8 +13,3 @@ DarthsAndDroids::DarthsAndDroids(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DarthsAndDroids::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "src=&quot;([^&]*/comics/[^&]*)&quot;");
-}

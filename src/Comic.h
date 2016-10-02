@@ -21,6 +21,7 @@ class QNetworkReply;
 class ComicDatabaseResource;
 class ComicInfoFileResource;
 class ComicStripFileResource;
+class QJSEngine;
 
 struct ComicInfo {
     QString name;
@@ -56,7 +57,7 @@ public:
     QLocale::Language language() const { return m_info.language; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
 
-    virtual QUrl extractStripImageUrl(QByteArray data) = 0;
+    QUrl extractStripImageUrl(QByteArray data);
 
     QUrl stripImageUrl() const { return m_stripImageUrl; }
     bool favorite() const { return m_favorite; }
@@ -95,7 +96,6 @@ protected:
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
     bool stripImageDownloaded();
-    QUrl regexExtractStripImageUrl(QByteArray data, QString regex, int count = 1);
 
 private slots:
     void onFetchStripSourceFinished();
@@ -120,6 +120,8 @@ signals:
 protected:
     static const int _minFetchDelay;
     static const int _timeout;
+
+    static QJSEngine* _jsEngine;
 
     QString m_id;
     ComicInfo m_info;

@@ -13,8 +13,3 @@ DennisTheMenace::DennisTheMenace(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl DennisTheMenace::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<meta property=\"og:image\" content=\"([^\"]*)\"");
-}

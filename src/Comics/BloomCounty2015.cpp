@@ -13,8 +13,3 @@ BloomCounty2015::BloomCounty2015(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl BloomCounty2015::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

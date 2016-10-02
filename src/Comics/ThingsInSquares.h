@@ -16,7 +16,6 @@ class ThingsInSquares : public Comic
 
 public:
     explicit ThingsInSquares(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // THINGSINSQUARES_H

@@ -13,8 +13,3 @@ WrongHands::WrongHands(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl WrongHands::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*src=\"(.*wronghands1.files.wordpress.com/[^\"]*)\"");
-}

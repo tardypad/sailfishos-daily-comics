@@ -13,8 +13,3 @@ FoxTrot::FoxTrot(QString id, QObject *parent) :
     Comic(id, parent)
 {
 }
-
-QUrl FoxTrot::extractStripImageUrl(QByteArray data)
-{
-    return regexExtractStripImageUrl(data, "<img[^>]*class=\"strip\".*src=\"([^\"]*)\"");
-}

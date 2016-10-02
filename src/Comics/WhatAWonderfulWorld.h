@@ -16,7 +16,6 @@ class WhatAWonderfulWorld : public Comic
 
 public:
     explicit WhatAWonderfulWorld(QString id, QObject *parent = 0);
-    virtual QUrl extractStripImageUrl(QByteArray data);
 };
 
 #endif // WHATAWONDERFULWORLD_H
