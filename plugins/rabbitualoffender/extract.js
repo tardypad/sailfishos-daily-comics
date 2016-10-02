@@ -1,6 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*src="([^"]*media.tumblr.com\/[^"]*)"/;
-    var match1 = regex.exec(page);
-    var match2 = regex.exec(page);
-    return match2[1];
+    var regex = /&lt;img[^&]*src="([^"]*media.tumblr.com\/[^"]*)"/;
+    var match = regex.exec(page);
+    return match[1];
 }
