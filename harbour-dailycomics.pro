@@ -4,11 +4,9 @@ CONFIG += sailfishapp
 
 SOURCES += \
     $$files(src/*.cpp) \
-    $$files(src/Comics/*.cpp)
 
 HEADERS += \
     $$files(src/*.h) \
-    $$files(src/Comics/*.h)
 
 OTHER_FILES = \
     $$files(qml/*.qml) \
