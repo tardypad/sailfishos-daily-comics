@@ -28,7 +28,6 @@ QT += \
     sql
 
 images.files = \
-    images/comics \
     images/icons \
     $$files(images/*.png)
 
