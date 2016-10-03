@@ -2,41 +2,26 @@ TARGET = harbour-dailycomics
 
 CONFIG += sailfishapp
 
-SOURCES += \
-    $$files(src/*.cpp) \
+SOURCES += $$files(src/*.cpp)
 
-HEADERS += \
-    $$files(src/*.h) \
+HEADERS += $$files(src/*.h)
 
 OTHER_FILES = \
-    $$files(qml/*.qml) \
-    $$files(qml/cover/*.qml) \
-    $$files(qml/pages/*.qml) \
-    $$files(qml/delegates/*.qml) \
-    $$files(qml/components/*.qml) \
-    $$files(qml/utils/*.qml) \
-    $$files(qml/scripts/*.js) \
+    $$files(qml/*.qml, true) \
+    $$files(qml/*.js, true) \
     rpm/$${TARGET}.yaml \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop
 
-include(plugins.pro)
-
 RESOURCES += $${TARGET}.qrc
 
-QT += \
-    sql
+QT += sql
 
-images.files = \
-    images/icons \
-    $$files(images/*.png)
+images.files = images
+images.path = /usr/share/$${TARGET}
 
-images.path = /usr/share/$${TARGET}/images
-
-plugins.files = \
-    plugins/*
-
-plugins.path = /usr/share/$${TARGET}/plugins
+plugins.files = plugins
+plugins.path = /usr/share/$${TARGET}
 
 INSTALLS += \
     images \
@@ -44,4 +29,4 @@ INSTALLS += \
 
 DEFINES += \
     APP_VERSION=\"\\\"$${VERSION}\\\"\" \
-    PLUGINS_FOLDER_PATH=\"\\\"$${plugins.path}\\\"\"
+    PLUGINS_FOLDER_PATH=\"\\\"$${plugins.path}/plugins\\\"\"
