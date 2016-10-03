@@ -24,6 +24,8 @@ class ComicProxy : public QObject
     Q_PROPERTY(QStringList authors READ authors NOTIFY authorsChanged)
     Q_PROPERTY(QUrl homepage READ homepage NOTIFY homepageChanged)
     Q_PROPERTY(QString language READ language NOTIFY languageChanged)
+    Q_PROPERTY(QString coverPath READ coverPath NOTIFY coverPathChanged)
+    Q_PROPERTY(QString examplePath READ examplePath NOTIFY examplePathChanged)
     Q_PROPERTY(QUrl stripImagePath READ stripImagePath NOTIFY stripImagePathChanged)
     Q_PROPERTY(QUrl stripImageUrl READ stripImageUrl NOTIFY stripImageUrlChanged)
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
@@ -39,6 +41,8 @@ public:
     QString language() const;
     QUrl stripImagePath() const;
     QUrl stripImageUrl() const;
+    QString coverPath() const;
+    QString examplePath() const;
     bool error() const;
     bool animated() const;
 
@@ -57,6 +61,8 @@ signals:
     void languageChanged();
     void stripImagePathChanged();
     void stripImageUrlChanged();
+    void coverPathChanged();
+    void examplePathChanged();
     void errorChanged();
     void animatedChanged();
 

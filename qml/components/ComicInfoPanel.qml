@@ -110,7 +110,7 @@ DockedPanel {
 
             Image {
                 id: exampleImage
-                source: comic.id ? Qt.resolvedUrl("/usr/share/harbour-dailycomics/plugins/"+comic.id+"/example.jpg") : ''
+                source: comic.id ? comic.examplePath : ''
                 fillMode: Image.PreserveAspectFit
                 smooth: true
                 asynchronous: true

@@ -55,6 +55,8 @@ QHash<int, QByteArray> ComicsModel::roleNames() const
     roleNames[AuthorsRole] = "authors";
     roleNames[HomepageRole] = "homepage";
     roleNames[LanguageRole] = "language";
+    roleNames[CoverRole] = "coverPath";
+    roleNames[ExampleRole] = "examplePath";
     roleNames[ImageRole] = "image";
     roleNames[ImageUrlRole] = "imageUrl";
     roleNames[FavoriteRole] = "favorite";
@@ -95,6 +97,10 @@ QVariant ComicsModel::data(const QModelIndex &index, int role) const
         return m_list.at(index.row())->homepage();
     case LanguageRole:
         return m_list.at(index.row())->language();
+    case CoverRole:
+        return m_list.at(index.row())->coverPath();
+    case ExampleRole:
+        return m_list.at(index.row())->examplePath();
     case ImageRole:
         return m_list.at(index.row())->stripImagePath();
     case ImageUrlRole:

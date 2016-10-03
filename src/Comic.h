@@ -50,6 +50,9 @@ public:
     ~Comic();
 
     QString id() const { return m_id; }
+    QString coverPath() const { return m_coverPath; }
+    QString examplePath() const { return m_examplePath; }
+
     QString name() const { return m_info.name; }
     QColor color() const { return m_info.color; }
     QStringList authors() const { return m_info.authors; }
@@ -120,10 +123,15 @@ signals:
 protected:
     static const int _minFetchDelay;
     static const int _timeout;
+    static const QString _coverFilename;
+    static const QString _exampleFilename;
 
     static QJSEngine* _jsEngine;
 
     QString m_id;
+    QString m_coverPath;
+    QString m_examplePath;
+
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;

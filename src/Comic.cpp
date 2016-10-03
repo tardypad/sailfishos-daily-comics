@@ -18,6 +18,7 @@
 #include <QJSEngine>
 #include <QJSValue>
 #include <QJSValueList>
+#include <QDir>
 #include <QFile>
 
 #include "ComicDatabaseResource.h"
@@ -26,6 +27,8 @@
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
+const QString Comic::_coverFilename = "cover.jpg";
+const QString Comic::_exampleFilename = "example.jpg";
 
 QJSEngine* Comic::_jsEngine = new QJSEngine();
 
@@ -46,6 +49,14 @@ Comic::Comic(QString id, QObject *parent) :
     m_animated(false),
     m_isAnimatedDefined(false)
 {
+    m_coverPath = QDir(PLUGINS_FOLDER_PATH).path()
+            .append(QDir::separator()).append(id)
+            .append(QDir::separator()).append(_coverFilename);
+
+    m_examplePath = QDir(PLUGINS_FOLDER_PATH).path()
+            .append(QDir::separator()).append(id)
+            .append(QDir::separator()).append(_exampleFilename);
+
     m_networkManager = new QNetworkAccessManager(this);
     infoFileResource = ComicInfoFileResource::instance();
     dbResource = ComicDatabaseResource::instance();
