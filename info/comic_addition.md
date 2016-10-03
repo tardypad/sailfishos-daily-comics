@@ -72,5 +72,5 @@ Extras
 - list the comic in the info/comics_list.md file
 - list resources urls used for the cover/example in the git commit
 - keep higher resolution cover in images/resources/comics covers
-- regenerate the comics covers grid: montage $(ls images/comics/covers/*.jpg | shuf) -tile 10 -geometry 80x80 info/comics_covers.jpg
+- regenerate the comics covers grid with the resources/generate_covers_grid.sh script
 - update the prefixes to ignore for the sorting of comics name
