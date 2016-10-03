@@ -20,7 +20,7 @@ OTHER_FILES = \
     rpm/$${TARGET}.spec \
     $${TARGET}.desktop
 
-include(plugins/plugins.pro)
+include(plugins.pro)
 
 RESOURCES += $${TARGET}.qrc
 
