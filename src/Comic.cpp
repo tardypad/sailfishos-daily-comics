@@ -29,6 +29,7 @@ const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
 const QString Comic::_coverFilename = "cover.jpg";
 const QString Comic::_exampleFilename = "example.jpg";
+const QStringList Comic::_prefixes = QStringList() << "the" << "le" << "une";
 
 QJSEngine* Comic::_jsEngine = new QJSEngine();
 
@@ -106,11 +107,10 @@ bool Comic::animated()
 QString Comic::sortName() const
 {
     QString lowerName = name().toLower();
-    QStringList prefixes = QStringList() << "the" << "le" << "une";
     QString prefix;
 
-    for (int i = 0; i < prefixes.size(); ++i) {
-        prefix = prefixes.at(i) + ' ';
+    for (int i = 0; i < _prefixes.size(); ++i) {
+        prefix = _prefixes.at(i) + ' ';
         if (lowerName.startsWith(prefix))
             return lowerName.remove(0, prefix.size());
     }

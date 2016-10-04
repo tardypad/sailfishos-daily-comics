@@ -123,6 +123,7 @@ signals:
 protected:
     static const int _minFetchDelay;
     static const int _timeout;
+    static const QStringList _prefixes;
     static const QString _coverFilename;
     static const QString _exampleFilename;
 
