@@ -19,9 +19,8 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class ComicDatabaseResource;
-class ComicInfoFileResource;
+class ComicPluginResource;
 class ComicStripFileResource;
-class QJSEngine;
 
 struct ComicInfo {
     QString name;
@@ -60,8 +59,6 @@ public:
     QLocale::Language language() const { return m_info.language; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
 
-    QUrl extractStripImageUrl(QByteArray data);
-
     QUrl stripImageUrl() const { return m_stripImageUrl; }
     bool favorite() const { return m_favorite; }
     bool newStrip() const { return m_newStrip; }
@@ -74,6 +71,9 @@ public:
     int random() const { return m_random; }
 
     void setInfo(const ComicInfo info) { m_info = info; }
+    void setCoverPath(const QString coverPath) { m_coverPath = coverPath; }
+    void setExamplePath(const QString examplePath) { m_examplePath = examplePath; }
+
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
     void setError(const bool error) { m_error = error; emit errorChanged(this);}
@@ -124,20 +124,16 @@ protected:
     static const int _minFetchDelay;
     static const int _timeout;
     static const QStringList _prefixes;
-    static const QString _coverFilename;
-    static const QString _exampleFilename;
-
-    static QJSEngine* _jsEngine;
 
     QString m_id;
     QString m_coverPath;
     QString m_examplePath;
-
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;
-    ComicInfoFileResource* infoFileResource;
+    ComicPluginResource* pluginResource;
     ComicStripFileResource* stripFileResource;
+
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;

@@ -12,30 +12,20 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QImageReader>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
-#include <QRegularExpressionMatchIterator>
-#include <QJSEngine>
-#include <QJSValue>
-#include <QJSValueList>
-#include <QDir>
-#include <QFile>
 
 #include "ComicDatabaseResource.h"
-#include "ComicInfoFileResource.h"
+#include "ComicPluginResource.h"
 #include "ComicStripFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
-const QString Comic::_coverFilename = "cover.jpg";
-const QString Comic::_exampleFilename = "example.jpg";
 const QStringList Comic::_prefixes = QStringList() << "the" << "le" << "une";
-
-QJSEngine* Comic::_jsEngine = new QJSEngine();
 
 Comic::Comic(QString id, QObject *parent) :
     QObject(parent),
     m_id(id),
+    m_coverPath(""),
+    m_examplePath(""),
     m_info(ComicInfo()),
     m_currentReply(NULL),
     m_random(rand()),
@@ -50,16 +40,8 @@ Comic::Comic(QString id, QObject *parent) :
     m_animated(false),
     m_isAnimatedDefined(false)
 {
-    m_coverPath = QDir(PLUGINS_FOLDER_PATH).path()
-            .append(QDir::separator()).append(id)
-            .append(QDir::separator()).append(_coverFilename);
-
-    m_examplePath = QDir(PLUGINS_FOLDER_PATH).path()
-            .append(QDir::separator()).append(id)
-            .append(QDir::separator()).append(_exampleFilename);
-
     m_networkManager = new QNetworkAccessManager(this);
-    infoFileResource = ComicInfoFileResource::instance();
+    pluginResource = ComicPluginResource::instance();
     dbResource = ComicDatabaseResource::instance();
     stripFileResource = ComicStripFileResource::instance();
 
@@ -78,7 +60,7 @@ Comic::~Comic()
 
 void Comic::load()
 {
-    infoFileResource->load(this);
+    pluginResource->load(this);
     dbResource->load(this);
 }
 
@@ -206,7 +188,10 @@ void Comic::onFetchStripSourceFinished()
     }
 
     QByteArray data = m_currentReply->readAll();
-    QUrl extractedStripImageUrl = extractStripImageUrl(data);
+    QUrl extractedStripImageUrl = pluginResource->extractStripImageUrl(this, data);
+
+    if (extractedStripImageUrl.isRelative())
+        extractedStripImageUrl = m_currentReply->url().resolved(extractedStripImageUrl);
 
     if (!extractedStripImageUrl.isValid()) {
         setFetching(false);
@@ -227,33 +212,6 @@ void Comic::onFetchStripSourceFinished()
         setFetchTime(QDateTime::currentDateTime());
         save();
     }
-}
-
-QUrl Comic::extractStripImageUrl(QByteArray data)
-{
-    QString scriptFilePath = QString(PLUGINS_FOLDER_PATH) + "/" + id() + "/extract.js";
-    QFile* scriptFile = new QFile();
-    scriptFile->setFileName(scriptFilePath);
-
-    if (!scriptFile->open(QIODevice::ReadOnly))
-    {
-        return QUrl();
-    }
-
-    QString script = QString(scriptFile->readAll());
-
-    scriptFile->close();
-    scriptFile->deleteLater();
-
-    QJSValue function = _jsEngine->evaluate(script);
-    QJSValue result = function.call(QJSValueList() << QString(data));
-
-    QUrl src = result.toVariant().toUrl();
-
-    if (src.isRelative())
-        return m_currentReply->url().resolved(src);
-
-    return src;
 }
 
 void Comic::fetchStripImage(QUrl stripImageUrl)
