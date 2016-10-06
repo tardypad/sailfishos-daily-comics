@@ -69,7 +69,7 @@ Rectangle {
                     left: newImage.right
                     leftMargin: Theme.paddingSmall
                 }
-                text: newCount + " New"
+                text: qsTr("%n New", "", newCount)
                 font.pixelSize: Theme.fontSizeExtraSmall
             }
         }
@@ -96,7 +96,7 @@ Rectangle {
                     left: errorImage.right
                     leftMargin: Theme.paddingSmall
                 }
-                text: errorCount + (errorCount > 1 ? " Errors" : " Error")
+                text: qsTr("%n Error(s)", "", errorCount)
                 font.pixelSize: Theme.fontSizeExtraSmall
             }
         }

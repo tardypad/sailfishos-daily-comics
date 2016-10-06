@@ -32,7 +32,7 @@ DockedPanel {
             spacing: 2*Theme.paddingLarge
 
             Label {
-                text: "That's all for now!"
+                text: qsTr("That's all for now!")
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeLarge
@@ -40,17 +40,20 @@ DockedPanel {
 
             Rectangle {
                 color: Theme.secondaryHighlightColor
-                width: supportLabel.width + supportImage.width + 3*Theme.paddingLarge
+                width: parent.width
                 height: supportLabel.height + 2*Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 Row {
                     anchors.centerIn: parent
                     spacing: Theme.paddingLarge
+                    width: parent.width
 
                     Label {
                         id: supportLabel
-                        text: "If you like the app,\nplease consider supporting\nyour favorite comic artists"
+                        text: qsTr("If you like the app, please consider supporting your favorite comic artists")
+                        width: parent.width - supportImage.width - 3*Theme.paddingLarge
+                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                         font.pixelSize: Theme.fontSizeSmall
                         horizontalAlignment: Text.AlignLeft
                     }
@@ -68,7 +71,7 @@ DockedPanel {
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Return to favorites"
+                text: qsTr("Return to favorites")
                 onClicked: pageStack.pop()
             }
         }

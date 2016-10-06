@@ -66,11 +66,11 @@ Page {
             busy: favoriteComicsModel.newCount > 0 && !progressInfoBar.open
 
             MenuItem {
-                text: "Settings"
+                text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("ComicsSettingsPage.qml"))
             }
             MenuItem {
-                text: "Report problems with comics"
+                text: qsTr("Report problems with comics")
                 onClicked: {
                     var comicsNamesList = favoriteComicsModel.errorComicNames();
                     var encodedComicsNamesList = [];
@@ -84,7 +84,7 @@ Page {
                 visible: favoriteComicsModel.errorCount > 0
             }
             MenuItem {
-                text: favoriteComicsModel.newCount > 0 ? "Read all new comics" : "No new comic"
+                text: favoriteComicsModel.newCount > 0 ? qsTr("Read all new comics") : qsTr("No new comic")
                 onClicked: pageStack.push(Qt.resolvedUrl("NewComicsPage.qml"), {"comicsModel": favoriteComicsModel})
                 enabled: favoriteComicsModel.newCount > 0
                 visible: favoriteComicsModel.count > 0
@@ -95,15 +95,15 @@ Page {
             spacing: Theme.paddingLarge
 
             MenuItem {
-                text: "About"
+                text: qsTr("About")
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
         }
 
         ViewPlaceholder {
             enabled: gridView.count == 0
-            text: "No comic selected"
-            hintText: "Choose your favorite comics in the settings page"
+            text: qsTr("No comic selected")
+            hintText: qsTr("Choose your favorite comics in the settings page")
         }
 
         VerticalScrollDecorator { flickable: gridView }
@@ -123,7 +123,7 @@ Page {
                 width: gridView.width
 
                 MenuItem {
-                    text: "Remove from favorites"
+                    text: qsTr("Remove from favorites")
                     onClicked: gridView._removeFavorite(index)
                 }
             }
@@ -143,7 +143,7 @@ Page {
 
     ProgressInfoBar {
         id: progressInfoBar
-        label: "Fetching comic strips"
+        label: qsTr("Fetching comic strips")
         open: favoriteComicsModel.fetchedCount < favoriteComicsModel.count
         newCount: favoriteComicsModel.newCount
         errorCount: favoriteComicsModel.errorCount

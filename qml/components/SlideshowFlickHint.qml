@@ -24,7 +24,7 @@ Loader {
             InteractionHintLabel {
                 id: interactionHintLabel
                 anchors.bottom: parent.bottom
-                text: "Flick to display next comic"
+                text: qsTr("Flick to display next comic")
                 Behavior on opacity { FadeAnimation { duration: 1000 } }
                 opacity: touchInteractionHint.running ? 1.0 : 0.0
             }

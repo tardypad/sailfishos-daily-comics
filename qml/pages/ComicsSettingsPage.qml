@@ -31,7 +31,7 @@ Page {
         cellWidth: cellSize
         cellHeight: cellSize
         header: PageHeader {
-            title: "Select favorites"
+            title: qsTr("Select favorites")
         }
         delegate: ComicsSettingsGridDelegate { }
         model: comicsModelProxy
@@ -49,13 +49,13 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Clear all"
+                text: qsTr("Clear all")
                 onClicked: settingsComicsModel.unfavoriteAll()
                 visible: settingsComicsModel.favoritesCount > 0
 
             }
             MenuItem {
-                text: "Select all"
+                text: qsTr("Select all")
                 onClicked: settingsComicsModel.favoriteAll()
                 visible: settingsComicsModel.favoritesCount !== settingsComicsModel.count
             }

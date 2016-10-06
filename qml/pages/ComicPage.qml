@@ -54,7 +54,7 @@ Page {
                 if (status === Image.Ready)
                     comic.read()
                 else if (status === Image.Error) {
-                    indicator.displayError("Image error", "Can't display strip")
+                    indicator.displayError(qsTr("Image error"), qsTr("Can't display strip"))
                     comic.setError()
                 }
             }
@@ -64,11 +64,11 @@ Page {
             id: indicator
             model: comic
             flickable: comicView
-            loadingText: "Loading comic"
-            defaultErrorText: "Can't display comic"
-            networkErrorText: "Can't download comic"
-            parsingErrorText: "Can't extract comic"
-            savingErrorText: "Can't save comic"
+            loadingText: qsTr("Loading comic")
+            defaultErrorText: qsTr("Can't display comic")
+            networkErrorText: qsTr("Can't download comic")
+            parsingErrorText: qsTr("Can't extract comic")
+            savingErrorText: qsTr("Can't save comic")
         }
 
         ErrorContactDevRectangle {
@@ -81,20 +81,20 @@ Page {
         PullDownMenu {
             MenuItem {
                 visible: !indicator.busy
-                text: "Report a problem with the comic"
+                text: qsTr("Report a problem with the comic")
                 onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
                                               constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
             }
             MenuItem {
-                text: "Copy url to clipboard"
+                text: qsTr("Copy url to clipboard")
                 onClicked: Clipboard.text = comic.stripImageUrl
             }
             MenuItem {
-                text: "Show comic info"
+                text: qsTr("Show comic info")
                 onClicked: comicView._showComicInfo()
             }
             MenuItem {
-                text: "Go to homepage"
+                text: qsTr("Go to homepage")
                 onClicked: ExternalLinks.browse(comic.homepage)
             }
         }
