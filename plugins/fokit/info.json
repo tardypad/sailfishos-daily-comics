@@ -1,0 +1,10 @@
+{
+  "name": "Fok_it",
+  "color": "ff8777",
+  "language": "fi",
+  "authors": [
+    "Joonas Rinta-Kanto"
+  ],
+  "homepage": "https://fokit.wordpress.com/",
+  "stripSource": "http://nyt.fi/aihe/fokit/"
+}

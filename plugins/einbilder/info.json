@@ -1,0 +1,10 @@
+{
+  "name": "Einbilder",
+  "color": "4f5f6e",
+  "language": "de",
+  "authors": [
+    "Daniel Noll"
+  ],
+  "homepage": "http://www.einbilder.de/",
+  "stripSource": "http://www.einbilder.de/"
+}

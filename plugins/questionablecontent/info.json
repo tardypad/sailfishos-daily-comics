@@ -1,0 +1,10 @@
+{
+  "name": "Questionable Content",
+  "color": "76a1b2",
+  "language": "en",
+  "authors": [
+    "Jeph Jacques"
+  ],
+  "homepage": "http://questionablecontent.net/",
+  "stripSource": "http://www.questionablecontent.net/QCRSS.xml"
+}

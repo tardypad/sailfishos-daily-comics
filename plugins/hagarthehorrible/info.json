@@ -1,0 +1,11 @@
+{
+  "name": "Hägar the Horrible",
+  "color": "c08f30",
+  "language": "en",
+  "authors": [
+    "Dik Browne",
+    "Chris Browne"
+  ],
+  "homepage": "http://hagarthehorrible.com/",
+  "stripSource": "http://hagarthehorrible.com/"
+}

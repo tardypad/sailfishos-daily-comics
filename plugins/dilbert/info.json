@@ -1,0 +1,10 @@
+{
+  "name": "Dilbert",
+  "color": "ef3a43",
+  "language": "en",
+  "authors": [
+    "Scott Adams"
+  ],
+  "homepage": "http://dilbert.com/",
+  "stripSource": "http://dilbert.com/"
+}

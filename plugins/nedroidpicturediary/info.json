@@ -1,0 +1,10 @@
+{
+  "name": "Nedroid Picture Diary",
+  "color": "789dca",
+  "language": "en",
+  "authors": [
+    "Anthony Clark"
+  ],
+  "homepage": "http://nedroid.com/",
+  "stripSource": "http://nedroid.com/feed/"
+}

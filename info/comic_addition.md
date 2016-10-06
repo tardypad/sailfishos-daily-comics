@@ -2,7 +2,24 @@
 Addition of new comic
 =====================
 
-This document describes guidelines to follow for the addition of a new comic.
+This document describes guidelines to follow for the addition of a new comic plugin.
+
+
+Structure
+---------
+
+A subfolder with an unique identifier name needs to be created in the _plugins_ folder.  
+That identifier must contain only alphanumerical and lowercase characters.
+
+Example
+```
+plugins/
+  commitstrip/
+    cover.jpg
+    example.jpg
+    extract.js
+    info.json
+```
 
 
 Information needed
@@ -11,12 +28,31 @@ Information needed
 - list of the authors (past/present, scenarist/cartoonist/...)
 - homepage where to find more info about the comic
 - comic main representative color (homepage color/strips color/character color/...)
-- language used in the comic
-- where to find the latest strip (URL/RSS/API/...)
+- language used in the comic strips
+- source where to find a link to the latest strip (RSS/API/URL/...)
+
+This information needs to be in a JSON file named _info.json_
+
+Example
+```
+{
+  "name": "CommitStrip",                                // Display name
+  "color": "2a3f6a",                                    // Color in hexadecimal format
+  "language": "en",                                     // Language code
+  "authors": [                                          //
+    "Etienne Issartial",                                // List of authors
+    "Thomas Gx"                                         //
+  ],                                                    //
+  "homepage": "http://www.commitstrip.com/",            // Homepage url
+  "stripSource": "http://www.commitstrip.com/en/feed/"  // Source url for the current strip
+}
+```
 
 
 Comic cover
 -----------
+
+The cover needs to be a file named _cover.jpg_
 
 ### Goal:
 - The cover should be immediately recognizable while scanning the full list of comics
@@ -28,7 +64,7 @@ Comic cover
 - The foregound contains the main character(s) centered
 
 ### Technical:
-- format is JPEG with ".jpg" extension
+- format is JPEG
 - size is 300x300 pixels
 - minimize the size (remove metadata/use proper compression/...)
 
@@ -47,8 +83,11 @@ Comic cover
 - if the main color is the color of the main character, the main color can be darkened/lightened slightly to improve the contrast with the character
 - the characters are preferably shown in full color (if they appear even only sometimes as such in the strips)
 
+
 Comic example strip
 -------------------
+
+The cover needs to be a file named _example.jpg_
 
 ### Goal:
 - The example strip should give users that don't know the comic an accurate idea of it.
@@ -57,7 +96,7 @@ Comic example strip
 - The example strip should be characteristic of the comic regarding format, drawing style and topic.
 
 ### Technical:
-- format is JPEG with ".jpg" extension
+- format is JPEG
 - remove the not necessary surrounding parts of the strip
 - maximum width and height is 600 pixels
 - minimize the size (remove metadata/use proper compression/...)
@@ -66,11 +105,31 @@ Comic example strip
 - ensure the text is legible when displayed in the smallest size in the app
 
 
+Extraction script
+-----------------
+
+The script needs to be a file named _extract.js_
+
+That script is used to extract the current strip url from the source as defined in the information.  
+The Javascript needs to consist of an unique function with a single parameter.  
+That function will be called in the application with the content of the source.  
+It needs to return a string containing an absolute or relative url to the current strip.
+
+Example
+```
+function(page) {
+    var regex = /<img[^>]*src="([^"]*\/wp-content\/uploads\/[^"]*)"/;
+    var match = regex.exec(page);
+    return match[1];
+}
+```
+
+
 Extras
 ------
 
-- list the comic in the info/comics_list.md file
-- list resources urls used for the cover/example in the git commit
-- keep higher resolution cover in images/resources/comics covers
-- regenerate the comics covers grid: montage $(ls images/comics/covers/*.jpg | shuf) -tile 10 -geometry 80x80 info/comics_covers.jpg
-- update the prefixes to ignore for the sorting of comics name
+- list the comic in the _info/comics_list.md_ file
+- list, in the git commit message, the resource urls used for the cover and example
+- keep higher resolution cover in the _resources/comics covers/_ folder
+- regenerate the comics covers grid with the _resources/generate_covers_grid.sh_ script
+- if needed, update, in the _Comic_ class, the prefixes to ignore for the sorting of comics names

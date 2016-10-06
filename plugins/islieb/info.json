@@ -1,0 +1,10 @@
+{
+  "name": "Is lieb?",
+  "color": "e24840",
+  "language": "de",
+  "authors": [
+    "Ey Lou Flynn"
+  ],
+  "homepage": "http://islieb.de/",
+  "stripSource": "http://islieb.de/feed/"
+}

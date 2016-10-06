@@ -1,0 +1,10 @@
+{
+  "name": "Octopus Pie",
+  "color": "68b7be",
+  "language": "en",
+  "authors": [
+    "Meredith Gran"
+  ],
+  "homepage": "http://octopuspie.com/",
+  "stripSource": "http://octopuspie.com/"
+}

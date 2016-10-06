@@ -1,0 +1,17 @@
+{
+  "name": "Darths and Droids",
+  "color": "f3fe64",
+  "language": "en",
+  "authors": [
+    "Andrew Coker",
+    "Andrew Shellshear",
+    "David Karlov",
+    "David McLeish",
+    "David Morgan-Mar",
+    "Ian Boreham",
+    "Loki Patrick",
+    "Steven Irrgang"
+  ],
+  "homepage": "http://www.darthsanddroids.net/",
+  "stripSource": "http://www.darthsanddroids.net/rss_noannotation.xml"
+}

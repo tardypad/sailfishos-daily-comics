@@ -64,7 +64,7 @@ CoverBackground {
         model: comicsModelProxy
 
         delegate: Image {
-            source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
+            source: coverPath
             width: grid.cellWidth
             height: grid.cellHeight
             sourceSize.width: width

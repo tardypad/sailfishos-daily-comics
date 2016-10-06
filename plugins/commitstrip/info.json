@@ -1,0 +1,11 @@
+{
+  "name": "CommitStrip",
+  "color": "2a3f6a",
+  "language": "en",
+  "authors": [
+    "Etienne Issartial",
+    "Thomas Gx"
+  ],
+  "homepage": "http://www.commitstrip.com/",
+  "stripSource": "http://www.commitstrip.com/en/feed/"
+}

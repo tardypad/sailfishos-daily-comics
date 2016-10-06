@@ -1,0 +1,10 @@
+{
+  "name": "FoxTrot",
+  "color": "facb7b",
+  "language": "en",
+  "authors": [
+    "Bill Amend"
+  ],
+  "homepage": "http://www.foxtrot.com",
+  "stripSource": "http://www.gocomics.com/foxtrot"
+}

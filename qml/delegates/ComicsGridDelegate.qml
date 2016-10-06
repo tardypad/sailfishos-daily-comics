@@ -37,7 +37,7 @@ Item {
         highlighted: down || _hasContextMenu
 
         Image {
-            source: Qt.resolvedUrl("../../images/comics/covers/"+id+".jpg")
+            source: coverPath
             anchors.fill: parent
             sourceSize.width: Screen.width / 2
             sourceSize.height: Screen.width / 2

@@ -1,0 +1,10 @@
+{
+  "name": "What a wonderful world!",
+  "color": "c38fbd",
+  "language": "fr",
+  "authors": [
+    "Philippe Chappuis \"Zep\""
+  ],
+  "homepage": "http://zepworld.blog.lemonde.fr/",
+  "stripSource": "http://zepworld.blog.lemonde.fr/feed/atom/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "The Perry Bible Fellowship",
+  "color": "d80b10",
+  "language": "en",
+  "authors": [
+    "Nicholas Gurewitch"
+  ],
+  "homepage": "http://pbfcomics.com/",
+  "stripSource": "http://pbfcomics.com/feed/feed.xml"
+}

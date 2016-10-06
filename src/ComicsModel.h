@@ -38,6 +38,8 @@ public:
         AuthorsRole,
         HomepageRole,
         LanguageRole,
+        CoverRole,
+        ExampleRole,
         ImageRole,
         ImageUrlRole,
         FavoriteRole,

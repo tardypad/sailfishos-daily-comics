@@ -1,0 +1,10 @@
+{
+  "name": "Sinfest",
+  "color": "fdfb4e",
+  "language": "en",
+  "authors": [
+    "Tatsuya Ishida"
+  ],
+  "homepage": "http://sinfest.net/",
+  "stripSource": "http://www.sinfest.net/"
+}

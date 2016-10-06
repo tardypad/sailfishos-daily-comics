@@ -21,25 +21,13 @@ public:
     Comic *create(QString id, QObject *parent = 0);
     QStringList fullList() const;
 
-    template <typename T>
-    void registerComic(QString id)
-    {
-        m_map[id] = &createFunc<T>;
-    }
-
 private:
     explicit ComicFactory(QObject *parent = 0);
-
-    template <typename T>
-    static Comic* createFunc(QObject* parent = 0)
-    {
-        return new T(parent);
-    }
+    void discoverComics();
 
 private:
     static ComicFactory* m_instance;
-    typedef Comic* (*PCreateFunc)(QObject*);
-    QMap<QString, PCreateFunc> m_map;
+    QStringList m_list;
 };
 
 #endif // COMICFACTORY_H

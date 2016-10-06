@@ -1,0 +1,11 @@
+{
+  "name": "Wumo",
+  "color": "8bc808",
+  "language": "en",
+  "authors": [
+    "Mikael Wulff",
+    "Anders Morgenthaler"
+  ],
+  "homepage": "http://wumo.com/",
+  "stripSource": "http://wumo.com/"
+}

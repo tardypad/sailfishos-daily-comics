@@ -1,0 +1,10 @@
+{
+  "name": "Shit happens!",
+  "color": "93d1f6",
+  "language": "de",
+  "authors": [
+    "Ralph Ruthe"
+  ],
+  "homepage": "http://ruthe.de/",
+  "stripSource": "http://ruthe.de/cartoon/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Der Flix",
+  "color": "0061a2",
+  "language": "de",
+  "authors": [
+    "Felix Görmann"
+  ],
+  "homepage": "http://www.der-flix.de",
+  "stripSource": "http://www.der-flix.de/index.php/heldentage"
+}

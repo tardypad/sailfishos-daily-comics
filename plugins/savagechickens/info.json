@@ -1,0 +1,10 @@
+{
+  "name": "Savage Chickens",
+  "color": "fffba7",
+  "language": "en",
+  "authors": [
+    "Doug Savage"
+  ],
+  "homepage": "http://www.savagechickens.com/",
+  "stripSource": "http://www.savagechickens.com/feed"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Yodablog",
+  "color": "9ab75d",
+  "language": "fr",
+  "authors": [
+    "Thierry Vivien"
+  ],
+  "homepage": "http://www.yodablog.net/",
+  "stripSource": "http://www.yodablog.net/?feed=rss2"
+}

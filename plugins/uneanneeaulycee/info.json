@@ -1,0 +1,10 @@
+{
+  "name": "Une année au lycée",
+  "color": "b5b5b5",
+  "language": "fr",
+  "authors": [
+    "Fabrice Erre"
+  ],
+  "homepage": "http://uneanneeaulycee.blog.lemonde.fr/",
+  "stripSource": "http://uneanneeaulycee.blog.lemonde.fr/feed/"
+}

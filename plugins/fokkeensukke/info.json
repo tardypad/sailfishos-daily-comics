@@ -1,0 +1,12 @@
+{
+  "name": "Fokke en Sukke",
+  "color": "d51a21",
+  "language": "nl",
+  "authors": [
+    "Jean-Marc van Tol",
+    "John Reid",
+    "Bastiaan Geleijnse"
+  ],
+  "homepage": "http://foksuk.nl/",
+  "stripSource": "http://foksuk.nl/"
+}

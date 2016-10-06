@@ -1,0 +1,10 @@
+{
+  "name": "The Adventures of Dr. McNinja",
+  "color": "7d7d7d",
+  "language": "en",
+  "authors": [
+    "Christopher Hastings"
+  ],
+  "homepage": "http://drmcninja.com/",
+  "stripSource": "http://drmcninja.com/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Things in Squares",
+  "color": "b0f2b4",
+  "language": "en",
+  "authors": [
+    "Cale"
+  ],
+  "homepage": "http://www.thingsinsquares.com/",
+  "stripSource": "http://feeds.feedburner.com/ThingsInSquares?format=xml"
+}

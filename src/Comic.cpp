@@ -12,18 +12,20 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QImageReader>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
-#include <QRegularExpressionMatchIterator>
 
 #include "ComicDatabaseResource.h"
-#include "ComicFileResource.h"
+#include "ComicPluginResource.h"
+#include "ComicStripFileResource.h"
 
 const int Comic::_minFetchDelay = 1800; // 30 min
 const int Comic::_timeout = 30000; // 30 sec
+const QStringList Comic::_prefixes = QStringList() << "the" << "le" << "une";
 
-Comic::Comic(QObject *parent) :
+Comic::Comic(QString id, QObject *parent) :
     QObject(parent),
+    m_id(id),
+    m_coverPath(""),
+    m_examplePath(""),
     m_info(ComicInfo()),
     m_currentReply(NULL),
     m_random(rand()),
@@ -39,8 +41,9 @@ Comic::Comic(QObject *parent) :
     m_isAnimatedDefined(false)
 {
     m_networkManager = new QNetworkAccessManager(this);
+    pluginResource = ComicPluginResource::instance();
     dbResource = ComicDatabaseResource::instance();
-    fileResource = ComicFileResource::instance();
+    stripFileResource = ComicStripFileResource::instance();
 
     m_timeoutTimer = new QTimer(this);
     m_timeoutTimer->setInterval(_timeout);
@@ -57,6 +60,7 @@ Comic::~Comic()
 
 void Comic::load()
 {
+    pluginResource->load(this);
     dbResource->load(this);
 }
 
@@ -67,7 +71,7 @@ void Comic::save()
 
 QString Comic::stripImagePath() const
 {
-     return fileResource->path(id());
+     return stripFileResource->path(id());
 }
 
 bool Comic::animated()
@@ -85,11 +89,10 @@ bool Comic::animated()
 QString Comic::sortName() const
 {
     QString lowerName = name().toLower();
-    QStringList prefixes = QStringList() << "the" << "le" << "une";
     QString prefix;
 
-    for (int i = 0; i < prefixes.size(); ++i) {
-        prefix = prefixes.at(i) + ' ';
+    for (int i = 0; i < _prefixes.size(); ++i) {
+        prefix = _prefixes.at(i) + ' ';
         if (lowerName.startsWith(prefix))
             return lowerName.remove(0, prefix.size());
     }
@@ -147,7 +150,7 @@ void Comic::read()
 
 bool Comic::stripImageDownloaded()
 {
-    return fileResource->isDownloaded(id());
+    return stripFileResource->isDownloaded(id());
 }
 
 QUrl Comic::redirectedToUrl()
@@ -185,7 +188,10 @@ void Comic::onFetchStripSourceFinished()
     }
 
     QByteArray data = m_currentReply->readAll();
-    QUrl extractedStripImageUrl = extractStripImageUrl(data);
+    QUrl extractedStripImageUrl = pluginResource->extractStripImageUrl(this, data);
+
+    if (extractedStripImageUrl.isRelative())
+        extractedStripImageUrl = m_currentReply->url().resolved(extractedStripImageUrl);
 
     if (!extractedStripImageUrl.isValid()) {
         setFetching(false);
@@ -243,7 +249,7 @@ void Comic::onFetchStripImageFinished()
     }
 
     QByteArray data = m_currentReply->readAll();
-    bool result = fileResource->save(id(), data);
+    bool result = stripFileResource->save(id(), data);
 
     if (!result) {
         setFetching(false);
@@ -278,26 +284,4 @@ void Comic::updateFetchingProgress(qint64 bytesReceived, qint64 bytesTotal)
         setFetchingProgress(bytesReceived / bytesTotal);
     else
         setFetchingProgress(0);
-}
-
-QUrl Comic::regexExtractStripImageUrl(QByteArray data, QString regex, int count)
-{
-    QString html(data);
-    QRegularExpression reg(regex);
-    QRegularExpressionMatchIterator matchIterator = reg.globalMatch(html);
-    QRegularExpressionMatch match;
-
-    for (int c = 0; c < count; ++c) {
-        if (!matchIterator.hasNext())
-            return QUrl();
-
-        match = matchIterator.next();
-    }
-
-    QUrl src = QUrl(match.captured(1));
-
-    if (src.isRelative())
-        return m_currentReply->url().resolved(src);
-
-    return src;
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Poorly Drawn Lines",
+  "color": "d3e5e5",
+  "language": "en",
+  "authors": [
+    "Reza Farazmand"
+  ],
+  "homepage": "http://poorlydrawnlines.com/",
+  "stripSource": "http://feeds.feedburner.com/PoorlyDrawnLines?format=xml"
+}

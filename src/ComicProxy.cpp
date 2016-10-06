@@ -20,6 +20,8 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImagePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(stripImageUrlChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(coverPathChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(examplePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(errorChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(animatedChanged()));
 }
@@ -57,6 +59,16 @@ QUrl ComicProxy::stripImagePath() const
 QUrl ComicProxy::stripImageUrl() const
 {
     return m_comic ? m_comic->stripImageUrl() : QUrl();
+}
+
+QString ComicProxy::coverPath() const
+{
+    return m_comic ? m_comic->coverPath() : QString();
+}
+
+QString ComicProxy::examplePath() const
+{
+    return m_comic ? m_comic->examplePath() : QString();
 }
 
 bool ComicProxy::error() const

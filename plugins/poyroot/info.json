@@ -1,0 +1,12 @@
+{
+  "name": "Pöyrööt",
+  "color": "a0cf4f",
+  "language": "fi",
+  "authors": [
+    "Arttu Seppälä",
+    "Liisa Seppälä",
+    "Tiia Pelkola"
+  ],
+  "homepage": "http://www.poyroot.fi",
+  "stripSource": "http://www.poyroot.fi/sarjakuvat/"
+}

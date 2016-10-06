@@ -1,0 +1,10 @@
+{
+  "name": "Pearls Before Swine",
+  "color": "fbc0d1",
+  "language": "en",
+  "authors": [
+    "Stephan Pastis"
+  ],
+  "homepage": "http://www.gocomics.com/pearlsbeforeswine",
+  "stripSource": "http://www.gocomics.com/pearlsbeforeswine"
+}

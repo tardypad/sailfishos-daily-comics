@@ -19,45 +19,45 @@
 class QNetworkAccessManager;
 class QNetworkReply;
 class ComicDatabaseResource;
-class ComicFileResource;
+class ComicPluginResource;
+class ComicStripFileResource;
+
+struct ComicInfo {
+    QString name;
+    QColor color;
+    QStringList authors;
+    QUrl homepage;
+    QLocale::Language language;
+    QUrl stripSourceUrl;
+
+    ComicInfo() {
+        name = QString();
+        color = QColor();
+        authors = QStringList();
+        homepage = QString();
+        language = QLocale::AnyLanguage;
+        stripSourceUrl = QUrl();
+    }
+};
 
 class Comic : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Comic(QObject *parent = 0);
+    explicit Comic(QString id, QObject *parent = 0);
     ~Comic();
 
-    struct ComicInfo {
-        QString id;
-        QString name;
-        QColor color;
-        QStringList authors;
-        QUrl homepage;
-        QLocale::Language language;
-        QUrl stripSourceUrl;
+    QString id() const { return m_id; }
+    QString coverPath() const { return m_coverPath; }
+    QString examplePath() const { return m_examplePath; }
 
-        ComicInfo() {
-            id = QString();
-            name = QString();
-            color = QColor();
-            authors = QStringList();
-            homepage = QString();
-            language = QLocale::AnyLanguage;
-            stripSourceUrl = QUrl();
-        }
-    };
-
-    QString id() const { return m_info.id; }
     QString name() const { return m_info.name; }
     QColor color() const { return m_info.color; }
     QStringList authors() const { return m_info.authors; }
     QUrl homepage() const { return m_info.homepage; }
     QLocale::Language language() const { return m_info.language; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
-
-    virtual QUrl extractStripImageUrl(QByteArray data) = 0;
 
     QUrl stripImageUrl() const { return m_stripImageUrl; }
     bool favorite() const { return m_favorite; }
@@ -69,6 +69,10 @@ public:
     int fetchingProgress() const { return m_fetchingProgress; }
     bool isAnimatedDefined() const { return m_isAnimatedDefined; }
     int random() const { return m_random; }
+
+    void setInfo(const ComicInfo info) { m_info = info; }
+    void setCoverPath(const QString coverPath) { m_coverPath = coverPath; }
+    void setExamplePath(const QString examplePath) { m_examplePath = examplePath; }
 
     void setFavorite(const bool favorite) { m_favorite = favorite; emit favoriteChanged(this);}
     void setNewStrip(const bool newStrip) { m_newStrip = newStrip; emit newStripChanged(this); }
@@ -95,7 +99,6 @@ protected:
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
     bool stripImageDownloaded();
-    QUrl regexExtractStripImageUrl(QByteArray data, QString regex, int count = 1);
 
 private slots:
     void onFetchStripSourceFinished();
@@ -120,11 +123,17 @@ signals:
 protected:
     static const int _minFetchDelay;
     static const int _timeout;
+    static const QStringList _prefixes;
 
+    QString m_id;
+    QString m_coverPath;
+    QString m_examplePath;
     ComicInfo m_info;
 
     ComicDatabaseResource* dbResource;
-    ComicFileResource* fileResource;
+    ComicPluginResource* pluginResource;
+    ComicStripFileResource* stripFileResource;
+
     QNetworkAccessManager* m_networkManager;
     QNetworkReply* m_currentReply;
     QTimer* m_timeoutTimer;

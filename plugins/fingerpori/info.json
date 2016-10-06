@@ -1,0 +1,10 @@
+{
+  "name": "Fingerpori",
+  "color": "94080b",
+  "language": "fi",
+  "authors": [
+    "Pertti Jarla"
+  ],
+  "homepage": "http://fingerpori.org",
+  "stripSource": "http://www.hs.fi/m/fingerpori/"
+}
