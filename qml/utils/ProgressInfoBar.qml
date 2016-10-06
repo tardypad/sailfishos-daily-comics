@@ -21,12 +21,12 @@ Rectangle {
 
     color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
     width: parent.width
-    height: 100
+    height: progressBar.height + Theme.paddingSmall
     enabled: opacity != 0
 
     ProgressBar {
         id: progressBar
-        width: parent.width - statusColumn.width
+        width: parent.width - statusColumn.width - Theme.paddingSmall
         anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
@@ -41,15 +41,16 @@ Rectangle {
         }
         spacing: Theme.paddingSmall
         visible: newCount > 0 || errorCount > 0
-        width: visible ? 140 : 0
+        width: visible ? Math.max(newItem.width, errorItem.width) : 0
 
         Behavior on width {
             NumberAnimation {}
         }
 
         Item {
+            id: newItem
             height: newImage.height
-            width: newImage.width + newLabel.width + Theme.paddingSmall
+            width: visible ? newImage.width + newLabel.width + Theme.paddingSmall : 0
             visible: newCount > 0
 
             Image {
@@ -74,8 +75,9 @@ Rectangle {
         }
 
         Item {
+            id: errorItem
             height: errorImage.height
-            width: errorImage.width + errorLabel.width + Theme.paddingSmall
+            width: visible ? errorImage.width + errorLabel.width + Theme.paddingSmall : 0
             visible: errorCount > 0
 
             Image {
