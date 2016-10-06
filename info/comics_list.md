@@ -37,6 +37,7 @@
 - The GaMERCaT
 - Garfield
 - Gone With The Blastwave
+- GWTB 404
 - Hagar the Horrible
 - The Hat and Fat
 - Introvert Doodles
