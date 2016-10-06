@@ -27,6 +27,8 @@ INSTALLS += \
     images \
     plugins
 
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+
 DEFINES += \
     APP_VERSION=\"\\\"$${VERSION}\\\"\" \
     PLUGINS_FOLDER_PATH=\"\\\"$${plugins.path}/plugins\\\"\"
