@@ -13,7 +13,7 @@ Name:       harbour-dailycomics
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Daily comic strips reader
-Version:    1.6.0
+Version:    1.7.0
 Release:    1
 Group:      Utilities
 License:    MIT
