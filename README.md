@@ -65,6 +65,6 @@ Source code is released under the MIT license (See the [LICENSE](LICENSE) file)
 Application specific graphics are released under Creative Commons CC BY
 
 
-Contributions are welcomed.
+Contributions are welcome.
 
 Enjoy!
