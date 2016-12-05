@@ -34,6 +34,7 @@
 - Fokke en Sukke
 - Fowl Language Comics
 - Fred Basset
+- Fuchskind
 - The GaMERCaT
 - Garfield
 - Gone With The Blastwave

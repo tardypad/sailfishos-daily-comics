@@ -1,0 +1,10 @@
+{
+  "name": "Fuchskind",
+  "color": "95d076",
+  "language": "de",
+  "authors": [
+    "Daniela Schreiter"
+  ],
+  "homepage": "http://www.fuchskind.de/",
+  "stripSource": "http://www.fuchskind.de/"
+}
