@@ -1,0 +1,10 @@
+{
+  "name": "Geek&Poke",
+  "color": "d4ecdc",
+  "language": "en",
+  "authors": [
+    "Oliver Widder"
+  ],
+  "homepage": "http://geek-and-poke.com/",
+  "stripSource": "http://feeds.feedburner.com/GeekAndPoke"
+}
