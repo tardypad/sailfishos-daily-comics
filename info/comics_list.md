@@ -80,6 +80,7 @@
 - Truth Facts
 - Tubey Toons
 - The Very Near Future
+- They can talk
 - User Friendly
 - Viivi ja Wagner
 - What a wonderful world!

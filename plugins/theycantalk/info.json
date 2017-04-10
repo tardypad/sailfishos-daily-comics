@@ -1,0 +1,10 @@
+{
+  "name": "They can talk",
+  "color": "adbeda",
+  "language": "en",
+  "authors": [
+    "Jimmy Craig"
+  ],
+  "homepage": "http://theycantalk.com/",
+  "stripSource": "http://theycantalk.com/rss"
+}
