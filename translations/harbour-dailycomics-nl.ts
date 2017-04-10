@@ -263,6 +263,7 @@ van de strip om ze te lezen.</translation>
         <source>%n New</source>
         <translation>
             <numerusform>%n nieuw</numerusform>
+            <numerusform>%n nieuw</numerusform>
         </translation>
     </message>
     <message numerus="yes">
