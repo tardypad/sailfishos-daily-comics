@@ -7,6 +7,6 @@ function(page) {
     }
 
     var regex2 = /<img[^>]*src="(.*\/Pöyrööt_[^"]*)"/;
-    var match2 = regex.exec(page);
+    var match2 = regex2.exec(page);
     return match2[1];
 }
