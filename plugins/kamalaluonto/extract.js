@@ -1,5 +1,7 @@
 function(page) {
-    var regex = /data-original="([^"]*)"/;
+    var regex = /data-image="[^"]*\/([^"\/]*).jpg"/;
     var match = regex.exec(page);
-    return match[1];
+    var hash = match[1]
+
+    return "http://is.mediadelivery.fi/img/1920/" + hash + ".jpg";
 }
