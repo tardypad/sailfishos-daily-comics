@@ -1,5 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*data-original="(\/\/hs.mediadelivery.io\/img\/[^"]*)"/;
+    var regex = /<img[^>]*src="(\/\/hs.mediadelivery.fi\/img\/[^"]*)"/;
     var match = regex.exec(page);
     return match[1];
 }
