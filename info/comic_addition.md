@@ -132,4 +132,6 @@ Extras
 - list, in the git commit message, the resource urls used for the cover and example
 - keep higher resolution cover in the _resources/comics covers/_ folder
 - regenerate the comics covers grid with the _resources/generate_covers_grid.sh_ script
-- if needed, update, in the _Comic_ class, the prefixes to ignore for the sorting of comics names
+- regenerate the comics list with the _resources/generate_list.sh_ script
+- if needed, update, in the _Comic_ class and in the _resources/generate_list.sh_ script,
+  the prefixes to ignore for the sorting of comics names

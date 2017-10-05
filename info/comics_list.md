@@ -10,14 +10,14 @@
 - Bloom County 2015
 - The Boondocks
 - Buni
-- C. Cassandra
 - Calvin and Hobbes
+- C. Cassandra
 - Le Chat
 - Cheer Up, Emo Kid
 - CommitStrip
 - Cyanide & Happiness
 - Darths and Droids
-- Dennis the Menace
+- Dennis The Menace
 - Der Flix
 - Diesel Sweeties
 - Dilbert
@@ -26,12 +26,12 @@
 - Einbilder
 - Erzaehlmirnix
 - Extra Ordinary
-- F Minus
 - Fingerpori
+- F Minus
 - Fok_it
-- FoxTrot
 - Fokke en Sukke
 - Fowl Language Comics
+- FoxTrot
 - Fred Basset
 - Fuchskind
 - The GaMERCaT
@@ -39,7 +39,7 @@
 - Geek&Poke
 - Gone With The Blastwave
 - GWTB 404
-- Hagar the Horrible
+- Hägar the Horrible
 - Introvert Doodles
 - Is lieb?
 - Jäätävä Spede
@@ -55,25 +55,25 @@
 - Nedroid Picture Diary
 - Peanuts
 - Pearls Before Swine
-- The Perry Bible Fellowship (PBF Comics)
+- The Perry Bible Fellowship
 - Pigknit
-- Piled Higher and Deeper (PHD Comics)
+- Piled Higher and Deeper
 - Poorly Drawn Lines
 - Pöyrööt
 - Questionable Content
 - Safely Endangered
 - Sarah's Scribbles
-- Saturday Morning Breakfast Cereal (SMBC Comics)
+- Saturday Morning Breakfast Cereal
 - Savage Chickens
 - Shit happens!
 - Sigmund
 - Sinfest
 - Swamp
+- They can talk
 - Things in Squares
 - Truth Facts
-- The Very Near Future
-- They can talk
 - User Friendly
+- The Very Near Future
 - Viivi ja Wagner
 - What a wonderful world!
 - The Whiteboard
