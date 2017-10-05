@@ -57,6 +57,7 @@ rm -rf %{buildroot}
 
 # >> install post
 find %{buildroot} -name .directory -type f -delete
+find %{buildroot}%{_datadir}/%{name}/plugins/ -name cover_big.jpg -type f -delete
 # << install post
 
 desktop-file-install --delete-original       \
