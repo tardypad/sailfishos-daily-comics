@@ -42,6 +42,7 @@ Translations
 The app is available in the following languages:
 - English
 - German
+- Dutch
 
 You can contribute by translating the application in your own language.
 
