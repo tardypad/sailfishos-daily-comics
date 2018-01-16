@@ -205,7 +205,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
         <source>No new comic</source>
-        <translation>Pas de nouvelle planche</translation>
+        <translation>Pas de nouvelles planches</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="98"/>
@@ -230,7 +230,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
         <source>Fetching comic strips</source>
-        <translation>Téléchargement des nouvelles planches</translation>
+        <translation>Téléchargement des planches</translation>
     </message>
 </context>
 <context>
