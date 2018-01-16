@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AboutPage</name>
     <message>
@@ -28,11 +28,14 @@
                        &lt;br/&gt;Below are few resources to find new comics.
                        &lt;br/&gt;Let me know as well which additional comics
                        &lt;br/&gt;you would like to be included in the app.</source>
-        <translation>Code source : &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;.
-                       &lt;br/&gt;N'hésitez pas à me contacter pour me signaler un bug ou me faire part de vos remarques, requêtes ou suggestions...
+        <translation>Le code source est disponible sur 
+                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
+                       &lt;br/&gt;N'hésitez pas à me contacter pour me signaler un bug
+                       &lt;br/&gt;ou me faire part de vos remarques, requêtes, suggestions...
                        &lt;br/&gt;
                        &lt;br/&gt;Ci-dessous, quelques adresses pour dénicher de nouvelles BD.
-                       &lt;br/&gt;Encore une fois, n'hésitez pas à me souffler le nom des BD que vous souhaiteriez voir dans l'appli.</translation>
+                       &lt;br/&gt;Encore une fois, n'hésitez pas à me souffler le nom des BD
+                       &lt;br/&gt;que vous souhaiteriez consulter au sein de l'appli.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="191"/>
@@ -60,7 +63,7 @@
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
         <source>Go to homepage</source>
-        <translation>Accéder à la page d'accueil</translation>
+        <translation>Accéder à la source</translation>
     </message>
 </context>
 <context>
@@ -78,12 +81,12 @@
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="67"/>
         <source>Loading comic</source>
-        <translation>Chargement en cours</translation>
+        <translation>Chargement en cours...</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="68"/>
         <source>Can&apos;t display comic</source>
-        <translation>Impossible d'accéder à la BD</translation>
+        <translation>Impossible d'afficher la BD</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="69"/>
@@ -118,7 +121,7 @@
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="97"/>
         <source>Go to homepage</source>
-        <translation>Accéder à la page d'accueil</translation>
+        <translation>Accéder à la source</translation>
     </message>
 </context>
 <context>
@@ -131,7 +134,7 @@
     <message>
         <location filename="../qml/pages/ComicsSettingsPage.qml" line="52"/>
         <source>Clear all</source>
-        <translation>Effacer tout</translation>
+        <translation>Retirer tout</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicsSettingsPage.qml" line="58"/>
@@ -178,8 +181,8 @@ Use the comic homepage
 to read the strip for now.</source>
         <translation>Merci de me contacter
 si le problème n'est toujours pas résolu.
-En attendant, accédez à la page d'accueil
-pour lire la BD.</translation>
+En attendant, vous pouvez accéder à
+la source de la BD pour la consulter.</translation>
     </message>
 </context>
 <context>
@@ -227,7 +230,7 @@ pour lire la BD.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
         <source>Fetching comic strips</source>
-        <translation>Aller chercher des BD</translation>
+        <translation>Téléchargement des nouvelles planches</translation>
     </message>
 </context>
 <context>
@@ -277,7 +280,7 @@ pour lire la BD.</translation>
     <message>
         <location filename="../qml/components/RequestContactDevRectangle.qml" line="43"/>
         <source>Let me know if you&apos;re missing some of your favorite comics in this list</source>
-        <translation>Votre BD favorite n'est pas dans la liste ? Faites-le moi savoir !</translation>
+        <translation>Votre BD favorite n'est pas dans la liste ? Contactez-moi pour me la suggérer !</translation>
     </message>
 </context>
 <context>
