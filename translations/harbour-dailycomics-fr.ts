@@ -30,12 +30,12 @@
                        &lt;br/&gt;you would like to be included in the app.</source>
         <translation>Le code source est disponible sur 
                        &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
-                       &lt;br/&gt;N'hésitez pas à me contacter pour me signaler un bug
+                       &lt;br/&gt;N&apos;hésitez pas à me contacter pour me signaler un bug
                        &lt;br/&gt;ou me faire part de vos remarques, requêtes, suggestions...
                        &lt;br/&gt;
                        &lt;br/&gt;Ci-dessous, quelques adresses pour dénicher de nouvelles BD.
-                       &lt;br/&gt;Encore une fois, n'hésitez pas à me souffler le nom des BD
-                       &lt;br/&gt;que vous souhaiteriez consulter au sein de l'appli.</translation>
+                       &lt;br/&gt;Encore une fois, n&apos;hésitez pas à me souffler le nom des BD
+                       &lt;br/&gt;que vous souhaiteriez consulter au sein de l&apos;appli.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="191"/>
@@ -71,22 +71,22 @@
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="57"/>
         <source>Image error</source>
-        <translation>Erreur lors du chargement de l'image</translation>
+        <translation>Erreur lors du chargement de l&apos;image</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="57"/>
         <source>Can&apos;t display strip</source>
-        <translation>Impossible d'afficher la planche</translation>
+        <translation>Impossible d&apos;afficher la planche</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="67"/>
         <source>Loading comic</source>
-        <translation>Chargement en cours...</translation>
+        <translation>Chargement en cours</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="68"/>
         <source>Can&apos;t display comic</source>
-        <translation>Impossible d'afficher la BD</translation>
+        <translation>Impossible d&apos;afficher la BD</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="69"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="70"/>
         <source>Can&apos;t extract comic</source>
-        <translation>Impossible d'extraire la BD</translation>
+        <translation>Impossible d&apos;extraire la BD</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="71"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="89"/>
         <source>Copy url to clipboard</source>
-        <translation>Copier l'URL dans le presse-papier</translation>
+        <translation>Copier l&apos;URL dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicPage.qml" line="93"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../qml/components/EndPanel.qml" line="54"/>
         <source>If you like the app, please consider supporting your favorite comic artists</source>
-        <translation>Vous aimez l'appli ? Merci de supporter au mieux vos artistes préférés !</translation>
+        <translation>Vous aimez l&apos;appli ? Merci de supporter au mieux vos artistes préférés !</translation>
     </message>
     <message>
         <location filename="../qml/components/EndPanel.qml" line="74"/>
@@ -180,7 +180,7 @@ if the problem persists.
 Use the comic homepage
 to read the strip for now.</source>
         <translation>Merci de me contacter
-si le problème n'est toujours pas résolu.
+si le problème n&apos;est toujours pas résolu.
 En attendant, vous pouvez accéder à
 la source de la BD pour la consulter.</translation>
     </message>
@@ -220,7 +220,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
         <source>Choose your favorite comics in the settings page</source>
-        <translation>Choisissez vos BD favorites dans les paramètres de l'appli</translation>
+        <translation>Choisissez vos BD favorites dans les paramètres de l&apos;appli</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="126"/>
@@ -248,7 +248,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="70"/>
         <source>Parsing error</source>
-        <translation>Erreur d'analyse</translation>
+        <translation>Erreur d&apos;analyse</translation>
     </message>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="71"/>
@@ -280,7 +280,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/components/RequestContactDevRectangle.qml" line="43"/>
         <source>Let me know if you&apos;re missing some of your favorite comics in this list</source>
-        <translation>Votre BD favorite n'est pas dans la liste ? Contactez-moi pour me la suggérer !</translation>
+        <translation>Votre BD favorite n&apos;est pas dans la liste ? Contactez-moi pour me la suggérer !</translation>
     </message>
 </context>
 <context>
