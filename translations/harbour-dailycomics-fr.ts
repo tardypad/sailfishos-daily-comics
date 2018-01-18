@@ -262,8 +262,8 @@ la source de la BD pour la consulter.</translation>
         <location filename="../qml/utils/ProgressInfoBar.qml" line="72"/>
         <source>%n New</source>
         <translation>
-            <numerusform>%n Nouvelle</numerusform>
-            <numerusform>%n Nouvelles</numerusform>
+            <numerusform>%n Nouveauté</numerusform>
+            <numerusform>%n Nouveautés</numerusform>
         </translation>
     </message>
     <message numerus="yes">
