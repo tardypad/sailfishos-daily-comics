@@ -148,8 +148,8 @@
         <location filename="../qml/cover/DefaultCover.qml" line="44"/>
         <source>%n new comic(s)</source>
         <translation>
-            <numerusform>%n nouvelle planche</numerusform>
-            <numerusform>%n nouvelles planches</numerusform>
+            <numerusform>%n nouv. planche</numerusform>
+            <numerusform>%n nouv. planches</numerusform>
         </translation>
     </message>
 </context>
@@ -262,8 +262,8 @@ la source de la BD pour la consulter.</translation>
         <location filename="../qml/utils/ProgressInfoBar.qml" line="72"/>
         <source>%n New</source>
         <translation>
-            <numerusform>%n Nouveauté</numerusform>
-            <numerusform>%n Nouveautés</numerusform>
+            <numerusform>%n Nouv.</numerusform>
+            <numerusform>%n Nouv.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
