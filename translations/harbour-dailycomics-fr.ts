@@ -180,7 +180,7 @@ if the problem persists.
 Use the comic homepage
 to read the strip for now.</source>
         <translation>Merci de me contacter
-si le problème n&apos;est toujours pas résolu.
+si le problème n&apos;était toujours pas résolu.
 En attendant, vous pouvez accéder à
 la source de la BD pour la consulter.</translation>
     </message>
@@ -200,7 +200,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
         <source>Read all new comics</source>
-        <translation>Lire toutes les nouvelles planches</translation>
+        <translation>Lire les nouvelles planches</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
@@ -230,7 +230,7 @@ la source de la BD pour la consulter.</translation>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
         <source>Fetching comic strips</source>
-        <translation>Téléchargement des planches</translation>
+        <translation>Téléchargement des planches...</translation>
     </message>
 </context>
 <context>
