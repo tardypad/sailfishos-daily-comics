@@ -12,7 +12,6 @@
 - Buni
 - Calvin and Hobbes
 - C. Cassandra
-- Le Chat
 - Cheer Up, Emo Kid
 - CommitStrip
 - Cyanide & Happiness
