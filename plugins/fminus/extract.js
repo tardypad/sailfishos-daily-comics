@@ -1,5 +1,5 @@
 function(page) {
-    var regex = /<meta property="og:image" content="([^"]*)"/;
+    var regex = /<picture class="[^"]*cropped-strip[^<]*<img[^>]* src="([^"]*)"/;
     var match = regex.exec(page);
     return match[1];
 }
