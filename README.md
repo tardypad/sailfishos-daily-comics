@@ -40,9 +40,10 @@ Translations
 ------------
 
 The app is available in the following languages:
-- English
-- German
 - Dutch
+- English
+- French
+- German
 
 You can contribute by translating the application in your own language.
 
