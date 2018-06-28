@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2015 Damien Tardy-Panis
  * Copyright (c) 2018 Oleg Linkin
  *
  * This file is subject to the terms and conditions defined in
@@ -26,34 +27,40 @@ Item {
         contentWidth: width
         contentHeight: Math.max(comicImage.height + 2 * Theme.paddingLarge, parent.height)
 
-        AnimatedImage {
-            id: comicImage
-            source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
+        MouseArea {
+            anchors.fill: parent
 
-            anchors.centerIn: parent
-            fillMode: Image.PreserveAspectFit
-            smooth: true
-            clip: true
-            asynchronous: true
+            AnimatedImage {
+                id: comicImage
+                source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
 
-            width: parent.width
-            height: (sourceSize.height / sourceSize.width) * width
+                anchors.centerIn: parent
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                clip: true
+                asynchronous: true
 
-            Rectangle {
-                anchors.fill: parent
-                color: "white"
-                visible: status == Image.Ready
-                z: -10
-            }
+                width: parent.width
+                height: (sourceSize.height / sourceSize.width) * width
 
-            onStatusChanged: {
-                if (status === Image.Ready)
-                    comic.read()
-                else if (status === Image.Error) {
-                    indicator.displayError(qsTr("Image error"), qsTr("Can't display strip"))
-                    comic.setError()
+                Rectangle {
+                    anchors.fill: parent
+                    color: "white"
+                    visible: status == Image.Ready
+                    z: -10
+                }
+
+                onStatusChanged: {
+                    if (status === Image.Ready)
+                        comic.read()
+                    else if (status === Image.Error) {
+                        indicator.displayError(qsTr("Image error"), qsTr("Can't display strip"))
+                        comic.setError()
+                    }
                 }
             }
+
+            onClicked: overlay.active = !overlay.active
         }
 
         LoadingIndicator {
@@ -79,41 +86,13 @@ Item {
             running: comicImage.status === Image.Loading
             size: BusyIndicatorSize.Large
         }
-
-        PullDownMenu {
-            MenuItem {
-                visible: !indicator.busy
-                text: qsTr("Report a problem with the comic")
-                onClicked: ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
-                                              constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(comic.name) + "\"")
-            }
-            MenuItem {
-                text: qsTr("Copy url to clipboard")
-                onClicked: Clipboard.text = comic.stripImageUrl
-            }
-            MenuItem {
-                text: qsTr("Show comic info")
-                onClicked: comicView._showComicInfo()
-            }
-            MenuItem {
-                text: qsTr("Go to homepage")
-                onClicked: ExternalLinks.browse(comic.homepage)
-            }
-        }
-
-        function _showComicInfo() {
-            if (infoPanelLoader.status === Loader.Null) {
-                infoPanelLoader.source = Qt.resolvedUrl("../components/ComicInfoPanel.qml")
-                infoPanelLoader.item.parent = comicPage
-                infoPanelLoader.item.index = index
-                infoPanelLoader.item.comicsModel = comicsModel
-                infoPanelLoader.item.homepageMenu = false
-            }
-            infoPanelLoader.item.showComicInfo()
-        }
     }
 
-    Loader {
-        id: infoPanelLoader
+    ImageOverlay {
+        id: overlay
+
+        comicProxy: comic
+        anchors.fill: parent
+        z: 2
     }
 }
