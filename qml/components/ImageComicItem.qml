@@ -281,7 +281,12 @@ Item {
     ImageOverlay {
         id: overlay
 
+        visible: comicImage.source !== "" && !comic.error && !indicator.busy
+
         comicProxy: comic
+        comicIndex: index
+        comicsModel: model
+
         anchors.fill: parent
         z: 2
     }

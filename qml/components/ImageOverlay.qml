@@ -26,9 +26,13 @@ Item {
     property real fadeOpacity: 0.6
 
     property var comicProxy
+    property var comicIndex
+    property ComicsModel comicsModel
+
 
     property string itemId
     property bool error
+
 
     enabled: active && allowed && comicProxy !== null
     Behavior on opacity { FadeAnimator {}}
@@ -62,8 +66,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             onClicked: {
                 pageStack.push("../pages/ComicInfoPage.qml",
-                        {
-                        })
+                        { index: comicIndex, model: comicsModel })
             }
         }
 
@@ -74,7 +77,16 @@ Item {
             onClicked: {
                 ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
                         constants.mailBodyHeader + "There is a problem with comic \"" +
-                                encodeURIComponent(comic.name) + "\"")
+                                encodeURIComponent(comicProxy.name) + "\"")
+            }
+        }
+
+        IconButton {
+            id: clipboardButton
+            icon.source: "image://Theme/icon-m-clipboard"
+            anchors.verticalCenter: parent.verticalCenter
+            onClicked: {
+                Clipboard.text = comicProxy.stripImageUrl
             }
         }
 

@@ -41,6 +41,8 @@ Page {
         visible: status == Loader.Ready
 
         property var comic: comicProxy
+        property int index: comicPage.index
+        property ComicsModel model: comicPage.comicsModel
     }
 
     Component.onCompleted: {
