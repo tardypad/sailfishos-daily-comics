@@ -97,9 +97,9 @@ Item {
             onClicked: {
                 pageStack.push("Sailfish.TransferEngine.SharePage",
                         {
-                           "source": comicProxy.stripImageUrl,
+                           "source": comicProxy.stripImageUrl.toString(),
                            "mimeType": "text/x-url",
-                           "content": { "type": "text/x-url", "status": comicProxy.stripImageUrl },
+                           "content": { "type": "text/x-url", "status": comicProxy.stripImageUrl.toString() },
                            "serviceFilter": ["sharing", "e-mail"]
                         })
             }

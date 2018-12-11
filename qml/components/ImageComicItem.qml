@@ -221,7 +221,7 @@ Item {
                 }
                 onClicked: overlay.active = !overlay.active
                 onDoubleClicked: {
-                    if (_scale !== _fittedScale) {
+                    if (flickable._scale !== flickable._fittedScale) {
                         zoomOutAnimation.start()
                     }
                 }
@@ -239,7 +239,7 @@ Item {
                             duration: 200
                         }
                         ScriptAction {
-                            script: scaled = false
+                            script: flickable.scaled = false
                         }
                     }
                     NumberAnimation {
