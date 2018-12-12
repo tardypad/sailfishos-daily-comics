@@ -37,6 +37,67 @@
     </message>
 </context>
 <context>
+    <name>AnimatedComicItem</name>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Image error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="255"/>
+        <source>Loading comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="256"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="257"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="258"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="259"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ComicInfoPage</name>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="45"/>
+        <source>Comic info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="54"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ComicInfoPanel</name>
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="69"/>
@@ -55,64 +116,6 @@
     </message>
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
-        <source>Go to homepage</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ComicPage</name>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Image error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Can&apos;t display strip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="67"/>
-        <source>Loading comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="68"/>
-        <source>Can&apos;t display comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="69"/>
-        <source>Can&apos;t download comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="70"/>
-        <source>Can&apos;t extract comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="71"/>
-        <source>Can&apos;t save comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="84"/>
-        <source>Report a problem with the comic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="89"/>
-        <source>Copy url to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="93"/>
-        <source>Show comic info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="97"/>
         <source>Go to homepage</source>
         <translation type="unfinished"></translation>
     </message>
@@ -223,6 +226,44 @@ to read the strip for now.</source>
     </message>
 </context>
 <context>
+    <name>ImageComicItem</name>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Image error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="260"/>
+        <source>Loading comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="261"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="262"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="263"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="264"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LoadingIndicator</name>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
@@ -275,6 +316,19 @@ to read the strip for now.</source>
     <message>
         <location filename="../qml/components/SettingsInfoHint.qml" line="23"/>
         <source>Hold cover to display comic info</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ShareLinkPage</name>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="15"/>
+        <source>Share comics link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="26"/>
+        <source>No sharing accounts available. You can add accounts in settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
