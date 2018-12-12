@@ -40,3 +40,6 @@ TRANSLATIONS += \
     translations/$${TARGET}-de.ts \
     translations/$${TARGET}-en.ts \
     translations/$${TARGET}-nl.ts
+
+DISTFILES += \
+    qml/components/ShareLinkPage.qml
