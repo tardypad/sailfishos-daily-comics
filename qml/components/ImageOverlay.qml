@@ -95,12 +95,10 @@ Item {
             icon.source: "image://Theme/icon-m-share"
             anchors.verticalCenter: parent.verticalCenter
             onClicked: {
-                pageStack.push("Sailfish.TransferEngine.SharePage",
+                pageStack.push(Qt.resolvedUrl("../pages/ShareLinkPage.qml"),
                         {
-                           "source": comicProxy.stripImageUrl.toString(),
-                           "mimeType": "text/x-url",
-                           "content": { "type": "text/x-url", "status": comicProxy.stripImageUrl.toString() },
-                           "serviceFilter": ["sharing", "e-mail"]
+                           "link": comicProxy.stripImageUrl.toString(),
+                           "linkTitle": comicProxy.name
                         })
             }
         }

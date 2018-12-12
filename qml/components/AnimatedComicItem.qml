@@ -143,7 +143,6 @@ Item {
                 smooth: !(flickable.movingVertically || flickable.movingHorizontally)
                 width: Math.ceil(implicitWidth * flickable._scale)
                 height: Math.ceil(implicitHeight * flickable._scale)
-//                sourceSize.width: Screen.height
                 fillMode:  Image.PreserveAspectFit
                 asynchronous: true
                 anchors.centerIn: parent
@@ -248,45 +247,6 @@ Item {
                 }
             }
         }
-        //
-//        contentWidth: width
-//        contentHeight: Math.max(comicImage.height + 2 * Theme.paddingLarge, parent.height)
-
-//        MouseArea {
-//            anchors.fill: parent
-
-//            AnimatedImage {
-//                id: comicImage
-//                source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
-
-//                anchors.centerIn: parent
-//                fillMode: Image.PreserveAspectFit
-//                smooth: true
-//                clip: true
-//                asynchronous: true
-
-//                width: parent.width
-//                height: (sourceSize.height / sourceSize.width) * width
-
-//                Rectangle {
-//                    anchors.fill: parent
-//                    color: "white"
-//                    visible: status == Image.Ready
-//                    z: -10
-//                }
-
-//                onStatusChanged: {
-//                    if (status === Image.Ready)
-//                        comic.read()
-//                    else if (status === Image.Error) {
-//                        indicator.displayError(qsTr("Image error"), qsTr("Can't display strip"))
-//                        comic.setError()
-//                    }
-//                }
-//            }
-
-//            onClicked: overlay.active = !overlay.active
-//        }
 
         LoadingIndicator {
             id: indicator

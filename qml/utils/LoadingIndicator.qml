@@ -88,12 +88,14 @@ Item {
 
     function displayError(text, hintText) {
         state = "error"
-        placeholderLoader.item.text = text
-        placeholderLoader.item.hintText = hintText
+        if (placeholderLoader.item) {
+            placeholderLoader.item.text = text
+            placeholderLoader.item.hintText = hintText
+        }
     }
 
     function removePlaceholder() {
-        if (placeholderLoader.status === Loader.Ready) {
+        if (placeholderLoader.status === Loader.Ready && placeholderLoader.item) {
             placeholderLoader.item.enabled = false
         }
     }
@@ -114,7 +116,9 @@ Item {
             StateChangeScript {
                 script: {
                     placeholderLoader.sourceComponent = errorComponent
-                    placeholderLoader.item.enabled = true
+                    if (placeholderLoader.item) {
+                        placeholderLoader.item.enabled = true
+                    }
                 }
             }
         },
