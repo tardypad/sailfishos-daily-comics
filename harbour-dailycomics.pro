@@ -30,7 +30,7 @@ INSTALLS += \
     images \
     plugins
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172 256x256
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 DEFINES += \
     APP_VERSION=\"\\\"$${VERSION}\\\"\" \
@@ -39,4 +39,6 @@ DEFINES += \
 TRANSLATIONS += \
     translations/$${TARGET}-de.ts \
     translations/$${TARGET}-en.ts \
-    translations/$${TARGET}-nl.ts
+    translations/$${TARGET}-nl.ts \
+    translations/$${TARGET}-sv.ts \
+    translations/$${TARGET}-fr.ts
