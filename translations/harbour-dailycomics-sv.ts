@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv_SE">
+<context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="64"/>
+        <source>Your daily fix of your favorite comic strips</source>
+        <translation>Din dagliga dos av favoritserierna</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <source>version %1</source>
+        <translation>version %1</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="101"/>
+        <source>by %1</source>
+        <translation>av %1</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="155"/>
+        <source>The source code is available at
+                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
+                       &lt;br/&gt;You can contact me for any remarks,
+                       &lt;br/&gt;bugs, feature requests, ideas,...
+                       &lt;br/&gt;
+                       &lt;br/&gt;Below are few resources to find new comics.
+                       &lt;br/&gt;Let me know as well which additional comics
+                       &lt;br/&gt;you would like to be included in the app.</source>
+        <translation>Källkoden är tillgänglig på
+                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
+                       &lt;br/&gt;Du kan kontakta mig angående anmärkningar,
+                       &lt;br/&gt;buggar, önskemål om nya funktioner, idéer,...
+                       &lt;br/&gt;
+                       &lt;br/&gt;Här är några ställen för att hitta nya serier.
+                       &lt;br/&gt;Säg till om det finns någon serie du vill se
+                       &lt;br/&gt;tillagd i appen.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="191"/>
+        <source>Enjoy!</source>
+        <translation>Mycket nöje!</translation>
+    </message>
+</context>
+<context>
+    <name>ComicInfoPanel</name>
+    <message>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="69"/>
+        <source>Authors</source>
+        <translation>Författare</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="69"/>
+        <source>Author</source>
+        <translation>Författare</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="92"/>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
+        <source>Go to homepage</source>
+        <translation>Gå till webbplats</translation>
+    </message>
+</context>
+<context>
+    <name>ComicPage</name>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="57"/>
+        <source>Image error</source>
+        <translation>Bildfel</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="57"/>
+        <source>Can&apos;t display strip</source>
+        <translation>Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="67"/>
+        <source>Loading comic</source>
+        <translation>Laddar serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="68"/>
+        <source>Can&apos;t display comic</source>
+        <translation>Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="69"/>
+        <source>Can&apos;t download comic</source>
+        <translation>Kan inte ladda ner serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="70"/>
+        <source>Can&apos;t extract comic</source>
+        <translation>Kan inte packa upp serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="71"/>
+        <source>Can&apos;t save comic</source>
+        <translation>Kan inte spara serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="84"/>
+        <source>Report a problem with the comic</source>
+        <translation>Rapportera ett problem med serien</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="89"/>
+        <source>Copy url to clipboard</source>
+        <translation>Kopiera webbadressen till urklipp</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="93"/>
+        <source>Show comic info</source>
+        <translation>Visa info om serien</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicPage.qml" line="97"/>
+        <source>Go to homepage</source>
+        <translation>Gå till webbplats</translation>
+    </message>
+</context>
+<context>
+    <name>ComicsSettingsPage</name>
+    <message>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="34"/>
+        <source>Select favorites</source>
+        <translation>Välj favoriter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="52"/>
+        <source>Clear all</source>
+        <translation>Rensa alla</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="58"/>
+        <source>Select all</source>
+        <translation>Välj alla</translation>
+    </message>
+</context>
+<context>
+    <name>DefaultCover</name>
+    <message numerus="yes">
+        <location filename="../qml/cover/DefaultCover.qml" line="44"/>
+        <source>%n new comic(s)</source>
+        <translation>
+            <numerusform>%n ny serie</numerusform>
+            <numerusform>%n nya serier</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>EndPanel</name>
+    <message>
+        <location filename="../qml/components/EndPanel.qml" line="35"/>
+        <source>That&apos;s all for now!</source>
+        <translation>Det var allt för den här gången!</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/EndPanel.qml" line="54"/>
+        <source>If you like the app, please consider supporting your favorite comic artists</source>
+        <translation>Om du gillar appen, stöd gärna din favoritseries författare</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/EndPanel.qml" line="74"/>
+        <source>Return to favorites</source>
+        <translation>Tillbaka till favoriter</translation>
+    </message>
+</context>
+<context>
+    <name>ErrorContactDevRectangle</name>
+    <message>
+        <location filename="../qml/components/ErrorContactDevRectangle.qml" line="35"/>
+        <source>Please contact me
+if the problem persists.
+Use the comic homepage
+to read the strip for now.</source>
+        <translation>Kontakta mig om
+problemet inte försvinner.
+Läs serien på dess
+webbplats så länge.</translation>
+    </message>
+</context>
+<context>
+    <name>FavoritesPage</name>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="69"/>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="73"/>
+        <source>Report problems with comics</source>
+        <translation>Rapportera problem med serien</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <source>Read all new comics</source>
+        <translation>Läs alla nya serier</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
+        <source>No new comic</source>
+        <translation>Inga nya serier</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="98"/>
+        <source>About</source>
+        <translation>Om</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="105"/>
+        <source>No comic selected</source>
+        <translation>Ingen serie vald</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
+        <source>Choose your favorite comics in the settings page</source>
+        <translation>Välj dina favoritserier på inställningssidan</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="126"/>
+        <source>Remove from favorites</source>
+        <translation>Ta bort från favoriter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
+        <source>Fetching comic strips</source>
+        <translation>Hämtar serier</translation>
+    </message>
+</context>
+<context>
+    <name>LoadingIndicator</name>
+    <message>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
+        <source>An error occured</source>
+        <translation>Ett fel inträffade</translation>
+    </message>
+    <message>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="69"/>
+        <source>Network error</source>
+        <translation>Nätverksfel</translation>
+    </message>
+    <message>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="70"/>
+        <source>Parsing error</source>
+        <translation>Tolkningsfel</translation>
+    </message>
+    <message>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="71"/>
+        <source>Saving error</source>
+        <translation>Lagringsfel</translation>
+    </message>
+</context>
+<context>
+    <name>ProgressInfoBar</name>
+    <message numerus="yes">
+        <location filename="../qml/utils/ProgressInfoBar.qml" line="72"/>
+        <source>%n New</source>
+        <translation>
+            <numerusform>%n ny</numerusform>
+            <numerusform>%n nya</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/utils/ProgressInfoBar.qml" line="99"/>
+        <source>%n Error(s)</source>
+        <translation>
+            <numerusform>%n fel</numerusform>
+            <numerusform>%n fel</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>RequestContactDevRectangle</name>
+    <message>
+        <location filename="../qml/components/RequestContactDevRectangle.qml" line="43"/>
+        <source>Let me know if you&apos;re missing some of your favorite comics in this list</source>
+        <translation>Säg till om du saknar någon av dina favoritserier i den här listan</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsInfoHint</name>
+    <message>
+        <location filename="../qml/components/SettingsInfoHint.qml" line="23"/>
+        <source>Hold cover to display comic info</source>
+        <translation>Tryck och håll på omslaget för att visa info om serien</translation>
+    </message>
+</context>
+<context>
+    <name>SlideshowFlickHint</name>
+    <message>
+        <location filename="../qml/components/SlideshowFlickHint.qml" line="27"/>
+        <source>Flick to display next comic</source>
+        <translation>Svep för att visa nästa serie</translation>
+    </message>
+</context>
+</TS>
