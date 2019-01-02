@@ -28,19 +28,73 @@
                        &lt;br/&gt;Below are few resources to find new comics.
                        &lt;br/&gt;Let me know as well which additional comics
                        &lt;br/&gt;you would like to be included in the app.</source>
-        <translation>Källkoden är tillgänglig på
-                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
-                       &lt;br/&gt;Du kan kontakta mig angående anmärkningar,
-                       &lt;br/&gt;buggar, önskemål om nya funktioner, idéer,...
-                       &lt;br/&gt;
-                       &lt;br/&gt;Här är några ställen för att hitta nya serier.
-                       &lt;br/&gt;Säg till om det finns någon serie du vill se
-                       &lt;br/&gt;tillagd i appen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="191"/>
         <source>Enjoy!</source>
         <translation>Mycket nöje!</translation>
+    </message>
+</context>
+<context>
+    <name>AnimatedComicItem</name>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Image error</source>
+        <translation type="unfinished">Bildfel</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished">Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="255"/>
+        <source>Loading comic</source>
+        <translation type="unfinished">Laddar serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="256"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished">Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="257"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished">Kan inte ladda ner serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="258"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished">Kan inte packa upp serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="259"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished">Kan inte spara serie</translation>
+    </message>
+</context>
+<context>
+    <name>ComicInfoPage</name>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="45"/>
+        <source>Comic info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Authors</source>
+        <translation type="unfinished">Författare</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Author</source>
+        <translation type="unfinished">Författare</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="54"/>
+        <source>Language</source>
+        <translation type="unfinished">Språk</translation>
     </message>
 </context>
 <context>
@@ -62,64 +116,6 @@
     </message>
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
-        <source>Go to homepage</source>
-        <translation>Gå till webbplats</translation>
-    </message>
-</context>
-<context>
-    <name>ComicPage</name>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Image error</source>
-        <translation>Bildfel</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Can&apos;t display strip</source>
-        <translation>Kan inte visa serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="67"/>
-        <source>Loading comic</source>
-        <translation>Laddar serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="68"/>
-        <source>Can&apos;t display comic</source>
-        <translation>Kan inte visa serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="69"/>
-        <source>Can&apos;t download comic</source>
-        <translation>Kan inte ladda ner serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="70"/>
-        <source>Can&apos;t extract comic</source>
-        <translation>Kan inte packa upp serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="71"/>
-        <source>Can&apos;t save comic</source>
-        <translation>Kan inte spara serie</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="84"/>
-        <source>Report a problem with the comic</source>
-        <translation>Rapportera ett problem med serien</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="89"/>
-        <source>Copy url to clipboard</source>
-        <translation>Kopiera webbadressen till urklipp</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="93"/>
-        <source>Show comic info</source>
-        <translation>Visa info om serien</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="97"/>
         <source>Go to homepage</source>
         <translation>Gå till webbplats</translation>
     </message>
@@ -234,6 +230,44 @@ webbplats så länge.</translation>
     </message>
 </context>
 <context>
+    <name>ImageComicItem</name>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Image error</source>
+        <translation type="unfinished">Bildfel</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished">Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="260"/>
+        <source>Loading comic</source>
+        <translation type="unfinished">Laddar serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="261"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished">Kan inte visa serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="262"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished">Kan inte ladda ner serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="263"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished">Kan inte packa upp serie</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="264"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished">Kan inte spara serie</translation>
+    </message>
+</context>
+<context>
     <name>LoadingIndicator</name>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
@@ -289,6 +323,19 @@ webbplats så länge.</translation>
         <location filename="../qml/components/SettingsInfoHint.qml" line="23"/>
         <source>Hold cover to display comic info</source>
         <translation>Tryck och håll på omslaget för att visa info om serien</translation>
+    </message>
+</context>
+<context>
+    <name>ShareLinkPage</name>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="15"/>
+        <source>Share comics link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="26"/>
+        <source>No sharing accounts available. You can add accounts in settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

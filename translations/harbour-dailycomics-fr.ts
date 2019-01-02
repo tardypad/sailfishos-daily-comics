@@ -28,19 +28,73 @@
                        &lt;br/&gt;Below are few resources to find new comics.
                        &lt;br/&gt;Let me know as well which additional comics
                        &lt;br/&gt;you would like to be included in the app.</source>
-        <translation>Le code source est disponible sur 
-                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
-                       &lt;br/&gt;N&apos;hésitez pas à me contacter pour me signaler un bug
-                       &lt;br/&gt;ou me faire part de vos remarques, requêtes, suggestions...
-                       &lt;br/&gt;
-                       &lt;br/&gt;Ci-dessous, quelques adresses pour dénicher de nouvelles BD.
-                       &lt;br/&gt;Encore une fois, n&apos;hésitez pas à me souffler le nom des BD
-                       &lt;br/&gt;que vous souhaiteriez consulter au sein de l&apos;appli.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="191"/>
         <source>Enjoy!</source>
         <translation>Bonne lecture !</translation>
+    </message>
+</context>
+<context>
+    <name>AnimatedComicItem</name>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Image error</source>
+        <translation type="unfinished">Erreur lors du chargement de l&apos;image</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished">Impossible d&apos;afficher la planche</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="255"/>
+        <source>Loading comic</source>
+        <translation type="unfinished">Chargement en cours</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="256"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished">Impossible d&apos;afficher la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="257"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished">Impossible de télécharger la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="258"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished">Impossible d&apos;extraire la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/AnimatedComicItem.qml" line="259"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished">Impossible de sauvegarder la BD</translation>
+    </message>
+</context>
+<context>
+    <name>ComicInfoPage</name>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="45"/>
+        <source>Comic info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Authors</source>
+        <translation type="unfinished">Auteurs</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <source>Author</source>
+        <translation type="unfinished">Auteur</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="54"/>
+        <source>Language</source>
+        <translation type="unfinished">Langue</translation>
     </message>
 </context>
 <context>
@@ -62,64 +116,6 @@
     </message>
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
-        <source>Go to homepage</source>
-        <translation>Accéder à la source</translation>
-    </message>
-</context>
-<context>
-    <name>ComicPage</name>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Image error</source>
-        <translation>Erreur lors du chargement de l&apos;image</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="57"/>
-        <source>Can&apos;t display strip</source>
-        <translation>Impossible d&apos;afficher la planche</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="67"/>
-        <source>Loading comic</source>
-        <translation>Chargement en cours</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="68"/>
-        <source>Can&apos;t display comic</source>
-        <translation>Impossible d&apos;afficher la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="69"/>
-        <source>Can&apos;t download comic</source>
-        <translation>Impossible de télécharger la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="70"/>
-        <source>Can&apos;t extract comic</source>
-        <translation>Impossible d&apos;extraire la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="71"/>
-        <source>Can&apos;t save comic</source>
-        <translation>Impossible de sauvegarder la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="84"/>
-        <source>Report a problem with the comic</source>
-        <translation>Signaler un problème avec la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="89"/>
-        <source>Copy url to clipboard</source>
-        <translation>Copier l&apos;URL dans le presse-papier</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="93"/>
-        <source>Show comic info</source>
-        <translation>À propos de la BD</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ComicPage.qml" line="97"/>
         <source>Go to homepage</source>
         <translation>Accéder à la source</translation>
     </message>
@@ -158,7 +154,7 @@
     <message>
         <location filename="../qml/components/EndPanel.qml" line="35"/>
         <source>That&apos;s all for now!</source>
-        <translation>C'est tout pour le moment !</translation>
+        <translation>C&apos;est tout pour le moment !</translation>
     </message>
     <message>
         <location filename="../qml/components/EndPanel.qml" line="54"/>
@@ -234,6 +230,44 @@ la source de la BD pour la consulter.</translation>
     </message>
 </context>
 <context>
+    <name>ImageComicItem</name>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Image error</source>
+        <translation type="unfinished">Erreur lors du chargement de l&apos;image</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished">Impossible d&apos;afficher la planche</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="260"/>
+        <source>Loading comic</source>
+        <translation type="unfinished">Chargement en cours</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="261"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished">Impossible d&apos;afficher la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="262"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished">Impossible de télécharger la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="263"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished">Impossible d&apos;extraire la BD</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageComicItem.qml" line="264"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished">Impossible de sauvegarder la BD</translation>
+    </message>
+</context>
+<context>
     <name>LoadingIndicator</name>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
@@ -289,6 +323,19 @@ la source de la BD pour la consulter.</translation>
         <location filename="../qml/components/SettingsInfoHint.qml" line="23"/>
         <source>Hold cover to display comic info</source>
         <translation>Maintenez pour afficher les informations de la BD</translation>
+    </message>
+</context>
+<context>
+    <name>ShareLinkPage</name>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="15"/>
+        <source>Share comics link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="26"/>
+        <source>No sharing accounts available. You can add accounts in settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
