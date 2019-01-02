@@ -21,6 +21,8 @@ Requires:
 - sailfishsilica-qt5 >= 0.10.9
 - qt5-plugin-imageformat-gif
 Files:
+- '%defattr(644,root,root,-)'
+- '%attr(755,-,-) %{_bindir}'
 - '%{_bindir}'
 - '%{_datadir}/%{name}'
 - '%{_datadir}/applications/%{name}.desktop'

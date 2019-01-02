@@ -66,6 +66,8 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
+%defattr(644,root,root,-)
+%attr(755,-,-) %{_bindir}
 %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
