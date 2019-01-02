@@ -70,7 +70,6 @@
 - Swamp
 - They can talk
 - Things in Squares
-- Tjeerd Royaards Political Cartoons
 - Truth Facts
 - User Friendly
 - The Very Near Future
