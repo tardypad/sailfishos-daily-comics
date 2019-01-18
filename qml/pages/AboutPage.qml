@@ -111,18 +111,6 @@ Page {
                     spacing: Theme.paddingLarge
 
                     IconButton {
-                        id: twitterButton
-                        height: Theme.iconSizeMedium
-                        width: Theme.iconSizeMedium
-                        icon {
-                            source: "qrc:/icon/medium/twitter"
-                            height: Theme.iconSizeMedium
-                            fillMode: Image.PreserveAspectFit
-                        }
-                        onClicked: ExternalLinks.browse(constants.devTwitter)
-                    }
-
-                    IconButton {
                         id: githubButton
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
