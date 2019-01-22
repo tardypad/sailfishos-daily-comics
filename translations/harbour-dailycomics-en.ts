@@ -19,7 +19,7 @@
         <translation>by %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="155"/>
+        <location filename="../qml/pages/AboutPage.qml" line="143"/>
         <source>The source code is available at
                        &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
                        &lt;br/&gt;You can contact me for any remarks,
@@ -31,7 +31,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="191"/>
+        <location filename="../qml/pages/AboutPage.qml" line="179"/>
         <source>Enjoy!</source>
         <translation>Enjoy!</translation>
     </message>
