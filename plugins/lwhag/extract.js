@@ -6,7 +6,7 @@ function(page) {
         return match1[1];
     }
 
-    var regex2 = /<img[^>]*src="([^"]*en\.[^"]*)"/;
+    var regex2 = /<img[^>]*src="([^"]*[eE][nN][\.-][^"]*)"/;
     var match2 = regex2.exec(page);
     return match2[1];
 }
