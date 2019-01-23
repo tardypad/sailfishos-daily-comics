@@ -1,5 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*src="(.*\/comics\/comics\/[^"]*)"/;
+    var regex = /<meta property="og:image" *content="([^"]*)"/;
     var match = regex.exec(page);
     return match[1];
 }
