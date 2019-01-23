@@ -23,7 +23,6 @@
 - Dinosaur Comics
 - Dirkjan
 - Einbilder
-- Erzaehlmirnix
 - Extra Ordinary
 - Fingerpori
 - F Minus
