@@ -3,5 +3,6 @@ function(page) {
     var match = regex.exec(page);
     var match2 = regex.exec(page);
     var match3 = regex.exec(page);
-    return match3[1];
+    var match4 = regex.exec(page);
+    return match4[1];
 }
