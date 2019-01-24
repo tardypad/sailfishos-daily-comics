@@ -32,7 +32,7 @@ Loader {
                     left: parent.left
                     leftMargin: Theme.paddingSmall
                 }
-                text: qsTr("Please contact me\nif the problem persists.\nUse the comic homepage\nto read the strip for now.")
+                text: qsTr("Please contact me\nif the problem persists.")
                 font.pixelSize: Theme.fontSizeExtraSmall
             }
 

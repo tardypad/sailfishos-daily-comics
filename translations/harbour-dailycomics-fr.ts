@@ -40,7 +40,7 @@
                        &lt;br/&gt;
                        &lt;br/&gt;Quelques sources pour dénicher de nouvelles BD ci-dessous.
                        &lt;br/&gt;Dites-moi celles que vous souhaiteriez
-                       &lt;br/&gt;voir apparaître au sein de l'appli !</translation>
+                       &lt;br/&gt;voir apparaître au sein de l&apos;appli !</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="237"/>
@@ -184,13 +184,9 @@
     <message>
         <location filename="../qml/components/ErrorContactDevRectangle.qml" line="35"/>
         <source>Please contact me
-if the problem persists.
-Use the comic homepage
-to read the strip for now.</source>
+if the problem persists.</source>
         <translation>Merci de me contacter
-si le problème n&apos;était toujours pas résolu.
-En attendant, vous pouvez accéder à
-la source de la BD pour la consulter.</translation>
+si le problème n&apos;était toujours pas résolu.</translation>
     </message>
 </context>
 <context>

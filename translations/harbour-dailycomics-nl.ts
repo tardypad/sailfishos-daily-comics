@@ -177,13 +177,9 @@
     <message>
         <location filename="../qml/components/ErrorContactDevRectangle.qml" line="35"/>
         <source>Please contact me
-if the problem persists.
-Use the comic homepage
-to read the strip for now.</source>
+if the problem persists.</source>
         <translation>Laat me iets weten als
-het probleem zich blijft voordoen.
-Gebruik momenteel de website
-van de strip om ze te lezen.</translation>
+het probleem zich blijft voordoen.</translation>
     </message>
 </context>
 <context>
