@@ -8,8 +8,11 @@
 import QtQuick 2.0
 
 QtObject {
-    property string devMail: "maledictusdemagog@gmail.com"
+    property string devMail: "damien@tardypad.me"
     property url devGithub: "https://github.com/tardypad"
+
+    property string maintainerMail: "maledictusdemagog@gmail.com"
+    property string maintainerGithub: "https://github.com/Maledictus"
 
     property url repoGithub: "https://github.com/tardypad/sailfishos-daily-comics"
 

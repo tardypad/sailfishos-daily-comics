@@ -98,11 +98,11 @@ Page {
                     }
                     color: Theme.highlightColor
                     horizontalAlignment: Text.AlignHCenter
-                    text: qsTr("by %1").arg("Damien Tardy-Panis")
+                    text: qsTr("created by %1").arg("Damien Tardy-Panis")
                 }
 
                 Row {
-                    id: linksRow
+                    id: authorLinksRow
                     anchors {
                         top: authorLabel.bottom
                         topMargin: Theme.paddingMedium
@@ -111,7 +111,7 @@ Page {
                     spacing: Theme.paddingLarge
 
                     IconButton {
-                        id: githubButton
+                        id: authorGithubButton
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
@@ -123,7 +123,7 @@ Page {
                     }
 
                     IconButton {
-                        id: mailButton
+                        id: authorMailButton
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
@@ -132,6 +132,64 @@ Page {
                             fillMode: Image.PreserveAspectFit
                         }
                         onClicked: ExternalLinks.mail(constants.devMail, constants.mailSubjectHeader, constants.mailBodyHeader)
+                    }
+                }
+
+            }
+
+            Rectangle {
+                color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity / 3)
+                width: coverImage.width - 2*Theme.paddingLarge
+                height: childrenRect.height + 2*Theme.paddingMedium
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Label {
+                    id: maintainerLabel
+                    anchors {
+                        top: parent.top
+                        topMargin: Theme.paddingMedium
+                        horizontalCenter: parent.horizontalCenter
+                    }
+                    font {
+                        italic: true
+                        pixelSize: Theme.fontSizeExtraSmall
+                    }
+                    color: Theme.highlightColor
+                    horizontalAlignment: Text.AlignHCenter
+                    text: qsTr("maintained by %1").arg("Oleg Linkin")
+                }
+
+                Row {
+                    id: maintainerLinksRow
+                    anchors {
+                        top: maintainerLabel.bottom
+                        topMargin: Theme.paddingMedium
+                        horizontalCenter: parent.horizontalCenter
+                    }
+                    spacing: Theme.paddingLarge
+
+                    IconButton {
+                        id: maintainerGithubButton
+                        height: Theme.iconSizeMedium
+                        width: Theme.iconSizeMedium
+                        icon {
+                            source: "qrc:/icon/medium/github"
+                            height: Theme.iconSizeMedium
+                            fillMode: Image.PreserveAspectFit
+                        }
+                        onClicked: ExternalLinks.browse(constants.maintainerGithub)
+                    }
+
+                    IconButton {
+                        id: maintainerMailButton
+                        height: Theme.iconSizeMedium
+                        width: Theme.iconSizeMedium
+                        icon {
+                            source: "image://theme/icon-m-mail"
+                            height: Theme.iconSizeMedium
+                            fillMode: Image.PreserveAspectFit
+                        }
+                        onClicked: ExternalLinks.mail(constants.maintainerMail, constants.mailSubjectHeader, constants.mailBodyHeader)
                     }
                 }
 

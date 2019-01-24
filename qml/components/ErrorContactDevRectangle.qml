@@ -55,7 +55,7 @@ Loader {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    var mailErrorMail    = constants.devMail
+                    var mailErrorMail    = constants.maintainerMail
                     var mailErrorSubject = constants.mailErrorSubjectHeader
                     var mailErrorMessage = constants.mailBodyHeader + "There is a problem with comic \"" + encodeURIComponent(loader.comicName) + "\""
                     ExternalLinks.mail(mailErrorMail, mailErrorSubject, mailErrorMessage)

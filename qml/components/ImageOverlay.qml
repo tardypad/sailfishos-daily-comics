@@ -75,7 +75,7 @@ Item {
             icon.source: "image://Theme/icon-m-mail"
             anchors.verticalCenter: parent.verticalCenter
             onClicked: {
-                ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                ExternalLinks.mail(constants.maintainerMail, constants.mailErrorSubjectHeader,
                         constants.mailBodyHeader + "There is a problem with comic \"" +
                                 encodeURIComponent(comicProxy.name) + "\"")
             }

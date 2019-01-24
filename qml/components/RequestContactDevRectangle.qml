@@ -64,7 +64,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                var mailRequestMail    = constants.devMail
+                var mailRequestMail    = constants.maintainerMail
                 var mailRequestSubject = constants.mailSubjectHeader
                 var mailRequestMessage = constants.mailBodyHeader + "Please add these comics to the app: "
                 ExternalLinks.mail(mailRequestMail, mailRequestSubject, mailRequestMessage)

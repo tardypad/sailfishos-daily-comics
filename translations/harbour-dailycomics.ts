@@ -15,11 +15,16 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="101"/>
-        <source>by %1</source>
+        <source>created by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="143"/>
+        <location filename="../qml/pages/AboutPage.qml" line="159"/>
+        <source>maintained by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="201"/>
         <source>The source code is available at
                        &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
                        &lt;br/&gt;You can contact me for any remarks,
@@ -31,7 +36,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="179"/>
+        <location filename="../qml/pages/AboutPage.qml" line="237"/>
         <source>Enjoy!</source>
         <translation type="unfinished"></translation>
     </message>

@@ -78,7 +78,7 @@ Page {
                         encodedComicsNamesList.push(encodeURIComponent(comicsNamesList[i]))
                     }
                     var finalComicsList = "\"" + encodedComicsNamesList.join("\", \"") + "\""
-                    ExternalLinks.mail(constants.devMail, constants.mailErrorSubjectHeader,
+                    ExternalLinks.mail(constants.maintainerMail, constants.mailErrorSubjectHeader,
                                               constants.mailBodyHeader + "There are problems with comics: " + finalComicsList)
                 }
                 visible: favoriteComicsModel.errorCount > 0
