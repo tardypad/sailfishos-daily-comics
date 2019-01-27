@@ -36,18 +36,6 @@ See the [screenshots](info/screenshots/) folder for an overview of the applicati
 Check the [issues](https://github.com/tardypad/daily-comics/issues) tab for current issues and possibly upcoming features
 
 
-Translations
-------------
-
-The app is available in the following languages:
-- Dutch
-- English
-- French
-- German
-
-You can contribute by translating the application in your own language.
-
-
 Resources
 ---------
 
