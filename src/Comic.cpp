@@ -119,7 +119,11 @@ void Comic::fetchStripSource(QUrl stripSrcUrl)
 
     QUrl requestUrl = !stripSrcUrl.isEmpty() ? stripSrcUrl : stripSourceUrl();
     QNetworkRequest request(requestUrl);
-    request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics curl");
+    if (requestUrl.toString().contains(".tumblr.com")) {
+        request.setHeader(QNetworkRequest::UserAgentHeader, "curl");
+    } else {
+        request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
+    }
     m_currentReply = m_networkManager->get(request);
 
     m_timeoutTimer->start();
@@ -220,7 +224,11 @@ void Comic::fetchStripImage(QUrl stripImageUrl)
     m_currentReply = NULL;
 
     QNetworkRequest request(stripImageUrl);
-    request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics curl");
+    if (stripImageUrl.toString().contains(".tumblr.com")) {
+        request.setHeader(QNetworkRequest::UserAgentHeader, "curl");
+    } else {
+        request.setHeader(QNetworkRequest::UserAgentHeader, "sailfishos/tardypad/dailycomics");
+    }
     m_currentReply = m_networkManager->get(request);
 
     m_timeoutTimer->start();
