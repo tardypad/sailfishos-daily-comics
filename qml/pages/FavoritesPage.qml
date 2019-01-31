@@ -37,7 +37,7 @@ Page {
 
         property Item contextMenu
         property int minOffsetIndex: contextMenu && contextMenu.parent
-                                     ? contextMenu.parent.idx - (contextMenu.parent.idx % cellNumberPerRow) + cellNumberPerRow
+                                     ? contextMenu.parent.idx - (contextMenu.parent.idx % cellNumberPerRowFav) + cellNumberPerRowFav
                                      : 0
         property bool contextMenuActive: contextMenu && contextMenu.active
 
