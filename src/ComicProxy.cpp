@@ -81,14 +81,20 @@ bool ComicProxy::animated() const
     return m_comic ? m_comic->animated() : false;
 }
 
+Comic *ComicProxy::comic() const
+{
+    return m_comic;
+}
+
 void ComicProxy::setComic(Comic *comic)
 {
-    if (comic == NULL)
+    if (comic == NULL || m_comic == comic)
         return;
 
     m_comic = comic;
 
     emit idChanged();
+    emit comicChanged();
 
     connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
     connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(fetchSucceeded()));
