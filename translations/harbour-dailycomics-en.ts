@@ -44,22 +44,22 @@
 <context>
     <name>ComicInfoPage</name>
     <message>
-        <location filename="../qml/pages/ComicInfoPage.qml" line="45"/>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="47"/>
         <source>Comic info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="51"/>
         <source>Authors</source>
         <translation type="unfinished">Authors</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicInfoPage.qml" line="49"/>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="51"/>
         <source>Author</source>
         <translation type="unfinished">Author</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicInfoPage.qml" line="54"/>
+        <location filename="../qml/pages/ComicInfoPage.qml" line="56"/>
         <source>Language</source>
         <translation type="unfinished">Language</translation>
     </message>
@@ -281,12 +281,12 @@ if the problem persists.</translation>
 <context>
     <name>ShareLinkPage</name>
     <message>
-        <location filename="../qml/pages/ShareLinkPage.qml" line="15"/>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="25"/>
         <source>Share comics link</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShareLinkPage.qml" line="26"/>
+        <location filename="../qml/pages/ShareLinkPage.qml" line="36"/>
         <source>No sharing accounts available. You can add accounts in settings</source>
         <translation type="unfinished"></translation>
     </message>
