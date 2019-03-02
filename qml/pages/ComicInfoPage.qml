@@ -19,6 +19,8 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 Page {
     id: comicInfoPage
 
+    allowedOrientations: Orientation.All
+
     property int index
     property ComicsModel model
 

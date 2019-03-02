@@ -16,6 +16,8 @@ Page {
     property string link
     property string linkTitle
 
+    allowedOrientations: Orientation.All
+
     ShareMethodList {
         id: shareMethodList
         anchors.fill: parent
