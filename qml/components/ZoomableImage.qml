@@ -20,11 +20,10 @@ SilicaFlickable {
 
     property string name
     property string imagePath
-    property var loadingTarget
     property bool error: false
-    property bool ready: comicImage.source !== "" && !indicator.busy
+    property bool ready: false
     signal read()
-    signal setError()
+    signal setError(var errorText, var hintText)
 
     signal clicked()
 
@@ -146,18 +145,15 @@ SilicaFlickable {
             clip: true
             anchors.centerIn: parent
             cache: true
-            source: !zoomableImage.error && !indicator.busy ? zoomableImage.imagePath : ''
-
+            source: zoomableImage.imagePath
             onSourceChanged: {
                 zoomableImage.scaled = false
             }
-
             onStatusChanged: {
                 if (status === Image.Ready)
                     zoomableImage.read()
                 else if (status === Image.Error) {
-                    indicator.displayError(qsTr("Image error"), qsTr("Can't display strip"))
-                    zoomableImage.setError()
+                    zoomableImage.setError(qsTr("Image error"), qsTr("Can't display strip"))
                 }
             }
 
@@ -245,24 +241,6 @@ SilicaFlickable {
                 }
             }
         }
-    }
-
-    LoadingIndicator {
-        id: indicator
-        model: loadingTarget
-        flickable: zoomableImage
-        loadingText: qsTr("Loading comic")
-        defaultErrorText: qsTr("Can't display comic")
-        networkErrorText: qsTr("Can't download comic")
-        parsingErrorText: qsTr("Can't extract comic")
-        savingErrorText: qsTr("Can't save comic")
-    }
-
-    ErrorContactDevRectangle {
-        comicName: zoomableImage.name
-        flickable: zoomableImage
-        active: indicator.error
-        z: 10
     }
 
     BusyIndicator {
