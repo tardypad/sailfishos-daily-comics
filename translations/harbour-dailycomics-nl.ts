@@ -223,22 +223,22 @@ het probleem zich blijft voordoen.</translation>
 <context>
     <name>LoadingIndicator</name>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="51"/>
         <source>An error occured</source>
         <translation>Er is een fout opgetreden</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="69"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="84"/>
         <source>Network error</source>
         <translation>Netwerkfout</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="70"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="85"/>
         <source>Parsing error</source>
         <translation>Fout bij verwerken</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="71"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="86"/>
         <source>Saving error</source>
         <translation>Fout bij opslaan</translation>
     </message>
