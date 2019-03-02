@@ -18,6 +18,9 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 
 Item {
     anchors.fill: parent
+    property var comic
+    property int index
+    property ComicsModel model
 
     SilicaFlickable {
         id: flickable
@@ -145,8 +148,9 @@ Item {
                 height: Math.ceil(implicitHeight * flickable._scale)
                 fillMode:  Image.PreserveAspectFit
                 asynchronous: true
+                clip: true
                 anchors.centerIn: parent
-                cache: false
+                cache: true
                 source: !comic.error && !indicator.busy ? comic.stripImagePath : ''
 
                 onSourceChanged: {
@@ -169,7 +173,7 @@ Item {
                 id: largeComicImage
                     width: 3264
                     height: 3264
-                cache: false
+                cache: true
                 asynchronous: true
                 anchors.fill: comicImage
             }

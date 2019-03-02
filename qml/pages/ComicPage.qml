@@ -25,24 +25,13 @@ Page {
 
     ComicProxy {
         id: comicProxy
-
-        onIdChanged: {
-            comicViewLoader.source = comicProxy.animated ?
-                    "../components/AnimatedComicItem.qml" :
-                    "../components/ImageComicItem.qml"
-        }
     }
 
-    Loader {
-        id: comicViewLoader
+    AnimatedComicItem {
         anchors.fill: parent
-        active: source !== ""
-        asynchronous: true
-        visible: status == Loader.Ready
-
-        property var comic: comicProxy
-        property int index: comicPage.index
-        property ComicsModel model: comicPage.comicsModel
+        comic: comicProxy
+        index: comicPage.index
+        model: comicPage.comicsModel
     }
 
     Component.onCompleted: {
