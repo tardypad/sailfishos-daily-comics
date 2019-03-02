@@ -8,6 +8,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import "../scripts/ExternalLinks.js" as ExternalLinks
+
 Item {
     id: loadingIndicator
 
@@ -51,6 +53,19 @@ Item {
 
             IconButton {
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: -parent.width / 4
+                y: parent.height + Theme.paddingLarge
+                icon.width: Theme.iconSizeLarge
+                icon.height: Theme.iconSizeLarge
+                icon.asynchronous: true
+                icon.source: "image://theme/icon-m-region"
+                onClicked: ExternalLinks.browse(model.homepage)
+                z: 10
+            }
+
+            IconButton {
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: parent.width / 4
                 y: parent.height + Theme.paddingLarge
                 icon.width: Theme.iconSizeLarge
                 icon.height: Theme.iconSizeLarge

@@ -19,6 +19,7 @@ SilicaFlickable {
 
     property string name
     property string imagePath
+    property string homepage
     property bool error: false
     property bool ready: false
     signal read()
@@ -42,7 +43,6 @@ SilicaFlickable {
     property bool _zoomAllowed: enableZoom && _fittedScale !== maximumZoom
     property int _fullWidth: Math.max(comicImage.implicitWidth, largeComicImage.implicitWidth)
     property int _fullHeight: Math.max(comicImage.implicitHeight, largeComicImage.implicitHeight)
-
 
     pressDelay: 0
     enabled: !zoomOutAnimation.running

@@ -230,22 +230,22 @@ si le problème n&apos;était toujours pas résolu.</translation>
 <context>
     <name>LoadingIndicator</name>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="51"/>
         <source>An error occured</source>
         <translation>Une erreur est survenue</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="69"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="84"/>
         <source>Network error</source>
         <translation>Erreur de connexion</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="70"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="85"/>
         <source>Parsing error</source>
         <translation>Erreur d&apos;analyse</translation>
     </message>
     <message>
-        <location filename="../qml/utils/LoadingIndicator.qml" line="71"/>
+        <location filename="../qml/utils/LoadingIndicator.qml" line="86"/>
         <source>Saving error</source>
         <translation>Erreur de sauvegarde</translation>
     </message>
