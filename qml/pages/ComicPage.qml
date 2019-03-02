@@ -1,5 +1,6 @@
 /**
  * Copyright (c) 2015 Damien Tardy-Panis
+ * Copyright (c) 2018-2019 Oleg Linkin <maledictusdemagog@gmail.com>
  *
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE', which is part of this source code package.
@@ -25,24 +26,33 @@ Page {
 
     ComicProxy {
         id: comicProxy
-
-        onIdChanged: {
-            comicViewLoader.source = comicProxy.animated ?
-                    "../components/AnimatedComicItem.qml" :
-                    "../components/ImageComicItem.qml"
-        }
     }
 
-    Loader {
-        id: comicViewLoader
+    ComicItem {
+        id: comicItem
         anchors.fill: parent
-        active: source !== ""
-        asynchronous: true
-        visible: status == Loader.Ready
 
-        property var comic: comicProxy
-        property int index: comicPage.index
-        property ComicsModel model: comicPage.comicsModel
+        comicProxy: comicProxy
+        name: comicProxy.name
+        imagePath: !comicProxy.error && !indicator.busy ? comicProxy.stripImagePath : ""
+        error: comicProxy.error
+        onRead: comicProxy.read()
+        onSetError: {
+            indicator.displayError(errorText, hintText)
+            comicProxy.setError()
+        }
+        onClicked: overlay.active = !overlay.active
+    }
+
+    ImageOverlay {
+        id: overlay
+        anchors.fill: parent
+
+        visible: comicItem.ready && !comicProxy.error
+        comicProxy: comicProxy
+        comicIndex: comicPage.index
+        comicsModel: comicPage.comicsModel
+        z: comicItem.z + 1
     }
 
     Component.onCompleted: {

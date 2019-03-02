@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Oleg Linkin
+ * Copyright (c) 2018-2019 Oleg Linkin <maledictusdemagog@gmail.com>
  *
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE', which is part of this source code package.

@@ -31,6 +31,8 @@ class ComicProxy : public QObject
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
     Q_PROPERTY(bool animated READ animated NOTIFY animatedChanged)
 
+    Q_PROPERTY(Comic* comic READ comic WRITE setComic NOTIFY comicChanged)
+
 public:
     explicit ComicProxy(QObject *parent = 0);
 
@@ -45,6 +47,8 @@ public:
     QString examplePath() const;
     bool error() const;
     bool animated() const;
+    Comic* comic() const;
+
 
     Q_INVOKABLE void setComic(Comic* comic);
 
@@ -65,6 +69,7 @@ signals:
     void examplePathChanged();
     void errorChanged();
     void animatedChanged();
+    void comicChanged();
 
     void fetchStarted();
     void fetchSucceeded();

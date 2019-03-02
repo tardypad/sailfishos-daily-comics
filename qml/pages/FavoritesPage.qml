@@ -111,7 +111,7 @@ Page {
         function _showContextMenu(item) {
             if (!contextMenu)
                 contextMenu = actionsComponent.createObject(gridView)
-            contextMenu.show(item)
+            contextMenu.open(item)
         }
 
         Component {
