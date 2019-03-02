@@ -16,7 +16,6 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 
 SilicaFlickable {
     id: zoomableImage
-    anchors.fill: parent
 
     property string name
     property string imagePath
