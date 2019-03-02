@@ -27,6 +27,7 @@ Page {
         clip: true
 
         model: comicsModelProxy
+        currentIndex: -1
 
         delegate: ComicItem {
             id: zoomableImage
@@ -35,7 +36,9 @@ Page {
 
             width: slideshowView.width
             height: slideshowView.height
+
             name: name
+            homepage: comicProxy.homepage
             imagePath: !comicProxy.error && !indicator.busy ? image : ""
             error: comicProxy.error
 
@@ -48,7 +51,7 @@ Page {
         }
 
         onCurrentIndexChanged: {
-            currentItem.comicProxy.setComic(comicsModel.comicAt(comicsModelProxy.sourceRow(currentIndex)))
+            currentItem.comicProxy.comic = comicsModel.comicAt(comicsModelProxy.sourceRow(currentIndex))
             if (currentItem.markRead) {
                 comicsModel.read(comicsModelProxy.sourceRow(currentIndex))
             }
