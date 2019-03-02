@@ -42,44 +42,6 @@
     </message>
 </context>
 <context>
-    <name>AnimatedComicItem</name>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
-        <source>Image error</source>
-        <translation type="unfinished">Bildfehler</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="160"/>
-        <source>Can&apos;t display strip</source>
-        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="255"/>
-        <source>Loading comic</source>
-        <translation type="unfinished">Lade Comic</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="256"/>
-        <source>Can&apos;t display comic</source>
-        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="257"/>
-        <source>Can&apos;t download comic</source>
-        <translation type="unfinished">Kann Comic nicht laden</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="258"/>
-        <source>Can&apos;t extract comic</source>
-        <translation type="unfinished">Comic nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/AnimatedComicItem.qml" line="259"/>
-        <source>Can&apos;t save comic</source>
-        <translation type="unfinished">Kann Comic nicht speichern</translation>
-    </message>
-</context>
-<context>
     <name>ComicInfoPage</name>
     <message>
         <location filename="../qml/pages/ComicInfoPage.qml" line="45"/>
@@ -123,6 +85,34 @@
         <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
         <source>Go to homepage</source>
         <translation>Gehe zur Webseite</translation>
+    </message>
+</context>
+<context>
+    <name>ComicItem</name>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="29"/>
+        <source>Loading comic</source>
+        <translation type="unfinished">Lade Comic</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="30"/>
+        <source>Can&apos;t display comic</source>
+        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="31"/>
+        <source>Can&apos;t download comic</source>
+        <translation type="unfinished">Kann Comic nicht laden</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="32"/>
+        <source>Can&apos;t extract comic</source>
+        <translation type="unfinished">Comic nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="33"/>
+        <source>Can&apos;t save comic</source>
+        <translation type="unfinished">Kann Comic nicht speichern</translation>
     </message>
 </context>
 <context>
@@ -230,44 +220,6 @@ if the problem persists.</source>
     </message>
 </context>
 <context>
-    <name>ImageComicItem</name>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
-        <source>Image error</source>
-        <translation type="unfinished">Bildfehler</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="163"/>
-        <source>Can&apos;t display strip</source>
-        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="260"/>
-        <source>Loading comic</source>
-        <translation type="unfinished">Lade Comic</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="261"/>
-        <source>Can&apos;t display comic</source>
-        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="262"/>
-        <source>Can&apos;t download comic</source>
-        <translation type="unfinished">Kann Comic nicht laden</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="263"/>
-        <source>Can&apos;t extract comic</source>
-        <translation type="unfinished">Comic nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/ImageComicItem.qml" line="264"/>
-        <source>Can&apos;t save comic</source>
-        <translation type="unfinished">Kann Comic nicht speichern</translation>
-    </message>
-</context>
-<context>
     <name>LoadingIndicator</name>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="49"/>
@@ -344,6 +296,19 @@ if the problem persists.</source>
         <location filename="../qml/components/SlideshowFlickHint.qml" line="27"/>
         <source>Flick to display next comic</source>
         <translation>Wische um nächstes Comic anzuzeigen</translation>
+    </message>
+</context>
+<context>
+    <name>ZoomableImage</name>
+    <message>
+        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <source>Image error</source>
+        <translation type="unfinished">Bildfehler</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <source>Can&apos;t display strip</source>
+        <translation type="unfinished">Kann Comic nicht anzeigen</translation>
     </message>
 </context>
 </TS>
