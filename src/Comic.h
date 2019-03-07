@@ -93,12 +93,13 @@ public:
     QString sortName() const;
     void abortFetching();
     void read();
+    bool saveToGallery();
+    bool stripImageDownloaded();
 
 protected:
     void fetchStripSource(QUrl stripSrcUrl = QUrl());
     void fetchStripImage(QUrl stripImageUrl);
     QUrl redirectedToUrl();
-    bool stripImageDownloaded();
 
 private slots:
     void onFetchStripSourceFinished();

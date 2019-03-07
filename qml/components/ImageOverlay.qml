@@ -7,7 +7,6 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
 import harbour.dailycomics.Comics 1.0
 
 import "../utils"
@@ -25,7 +24,7 @@ Item {
     readonly property bool allowed: true
     property real fadeOpacity: 0.6
 
-    property var comicProxy
+    property var comicProxy: null
     property var comicIndex
     property ComicsModel comicsModel
 
@@ -62,8 +61,9 @@ Item {
 
         IconButton {
             id: infoButton
-            icon.source: "image://Theme/icon-m-about"
+            icon.source: "image://theme/icon-m-about"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: comicProxy
             onClicked: {
                 pageStack.push("../pages/ComicInfoPage.qml",
                         { index: comicIndex, model: comicsModel })
@@ -71,29 +71,35 @@ Item {
         }
 
         IconButton {
-            id: problemButton
-            icon.source: "image://Theme/icon-m-mail"
+            id: saveToGalleryButton
+            icon.source: "image://theme/icon-m-cloud-download"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: !comicProxy ? false : comicProxy.stripImageDownloaded
             onClicked: {
-                ExternalLinks.mail(constants.maintainerMail, constants.mailErrorSubjectHeader,
-                        constants.mailBodyHeader + "There is a problem with comic \"" +
-                                encodeURIComponent(comicProxy.name) + "\"")
+                window.notify(comicProxy.saveToGallery() ?
+                        qsTr("Comic strip was saved to gallery") :
+                        qsTr("Unable to save comic strip to gallery"))
             }
         }
 
         IconButton {
             id: clipboardButton
-            icon.source: "image://Theme/icon-m-clipboard"
+            icon.source: "image://theme/icon-m-clipboard"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: comicProxy
             onClicked: {
                 Clipboard.text = comicProxy.stripImageUrl
+                window.notify(Clipboard.text !== "" ?
+                        qsTr("Comic strip url copied to clipboard") :
+                        qsTr("Unable to copy comic strip url to clipboard"))
             }
         }
 
         IconButton {
             id: shareButton
-            icon.source: "image://Theme/icon-m-share"
+            icon.source: "image://theme/icon-m-share"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: comicProxy
             onClicked: {
                 pageStack.push(Qt.resolvedUrl("../pages/ShareLinkPage.qml"),
                         {
@@ -105,11 +111,10 @@ Item {
 
         IconButton {
             id: browserButton
-            icon.source: "image://Theme/icon-m-region"
+            icon.source: "image://theme/icon-m-region"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: {
-                Qt.openUrlExternally(encodeURI(comicProxy.homepage))
-            }
+            enabled: comicProxy
+            onClicked: Qt.openUrlExternally(encodeURI(comicProxy.homepage))
         }
     }
 }

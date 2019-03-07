@@ -27,7 +27,6 @@ Page {
         clip: true
 
         model: comicsModelProxy
-        currentIndex: -1
 
         delegate: ComicItem {
             id: zoomableImage
@@ -50,15 +49,27 @@ Page {
             onClicked: overlay.active = !overlay.active
         }
 
-        onCurrentIndexChanged: {
-            currentItem.comicProxy.comic = comicsModel.comicAt(comicsModelProxy.sourceRow(currentIndex))
+        function changeCurrentIndex(index) {
+            currentItem.comicProxy.comic = comicsModel.comicAt(comicsModelProxy.sourceRow(index))
+            overlay.comicProxy = currentItem.comicProxy
             if (currentItem.markRead) {
-                comicsModel.read(comicsModelProxy.sourceRow(currentIndex))
+                comicsModel.read(comicsModelProxy.sourceRow(index))
             }
 
             if (comicsModel.newCount === 0 && !endPanel.shown) {
                 endPanel.showInfo()
             }
+        }
+
+        Component.onCompleted: {
+            changeCurrentIndex(0)
+        }
+
+        onCurrentIndexChanged: {
+            if (currentIndex < 0) {
+                return
+            }
+            changeCurrentIndex(currentIndex)
         }
     }
 
@@ -66,9 +77,8 @@ Page {
         id: overlay
         anchors.fill: parent
 
-        visible: !endPanel.shown && !slideshowView.currentItem.comicProxy.error &&
+        visible: !endPanel.open && !slideshowView.currentItem.comicProxy.error &&
                 slideshowView.currentItem.ready
-        comicProxy: slideshowView.currentItem.comicProxy
         comicIndex: comicsModelProxy.sourceRow(slideshowView.currentIndex)
         comicsModel: page.comicsModel
         z: slideshowView.z + 1
