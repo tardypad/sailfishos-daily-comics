@@ -33,14 +33,7 @@
                        &lt;br/&gt;Below are few resources to find new comics.
                        &lt;br/&gt;Let me know as well which additional comics
                        &lt;br/&gt;you would like to be included in the app.</source>
-        <translation>Le code source est disponible sur
-                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
-                       &lt;br/&gt;Contactez-moi pour la moindre remarque,
-                       &lt;br/&gt;le moindre bug, la moindre idée...
-                       &lt;br/&gt;
-                       &lt;br/&gt;Quelques sources pour dénicher de nouvelles BD ci-dessous.
-                       &lt;br/&gt;Dites-moi celles que vous souhaiteriez
-                       &lt;br/&gt;voir apparaître au sein de l&apos;appli !</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="237"/>
@@ -126,16 +119,21 @@
     <name>ComicsSettingsPage</name>
     <message>
         <location filename="../qml/pages/ComicsSettingsPage.qml" line="34"/>
-        <source>Select favorites</source>
-        <translation>Définir les favoris</translation>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicsSettingsPage.qml" line="52"/>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="53"/>
         <source>Clear all</source>
         <translation>Retirer tout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicsSettingsPage.qml" line="58"/>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="59"/>
         <source>Select all</source>
         <translation>Sélectionner tout</translation>
     </message>

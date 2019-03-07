@@ -119,16 +119,21 @@
     <name>ComicsSettingsPage</name>
     <message>
         <location filename="../qml/pages/ComicsSettingsPage.qml" line="34"/>
-        <source>Select favorites</source>
-        <translation>Selektiere Favoriten</translation>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicsSettingsPage.qml" line="52"/>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="53"/>
         <source>Clear all</source>
         <translation>Leeren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComicsSettingsPage.qml" line="58"/>
+        <location filename="../qml/pages/ComicsSettingsPage.qml" line="59"/>
         <source>Select all</source>
         <translation>Alle selektieren</translation>
     </message>
