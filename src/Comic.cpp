@@ -198,7 +198,7 @@ void Comic::onFetchStripSourceFinished()
     QByteArray data = m_currentReply->readAll();
     QUrl extractedStripImageUrl = pluginResource->extractStripImageUrl(this, data);
 
-    if (extractedStripImageUrl.isRelative())
+    if (!extractedStripImageUrl.isEmpty() && extractedStripImageUrl.isRelative())
         extractedStripImageUrl = m_currentReply->url().resolved(extractedStripImageUrl);
 
     if (!extractedStripImageUrl.isValid()) {
