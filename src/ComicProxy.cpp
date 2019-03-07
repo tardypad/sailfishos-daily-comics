@@ -7,6 +7,8 @@
 
 #include "ComicProxy.h"
 
+#include <QtDebug>
+
 #include "Comic.h"
 #include "ComicFactory.h"
 
@@ -24,6 +26,7 @@ ComicProxy::ComicProxy(QObject *parent) :
     connect(this, SIGNAL(idChanged()), SIGNAL(examplePathChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(errorChanged()));
     connect(this, SIGNAL(idChanged()), SIGNAL(animatedChanged()));
+    connect(this, SIGNAL(idChanged()), SIGNAL(stripImageDownloadedChanged()));
 }
 
 QString ComicProxy::id() const
@@ -86,15 +89,17 @@ Comic *ComicProxy::comic() const
     return m_comic;
 }
 
+bool ComicProxy::stripImageDownloaded() const
+{
+    return m_comic ? m_comic->stripImageDownloaded() : false;
+}
+
 void ComicProxy::setComic(Comic *comic)
 {
     if (comic == NULL || m_comic == comic)
         return;
 
     m_comic = comic;
-
-    emit idChanged();
-    emit comicChanged();
 
     connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
     connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(fetchSucceeded()));
@@ -105,7 +110,11 @@ void ComicProxy::setComic(Comic *comic)
     connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImagePathChanged()));
     connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImageUrlChanged()));
     connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(animatedChanged()));
+    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImageDownloadedChanged()));
     connect(m_comic, SIGNAL(errorChanged(Comic*)), this, SIGNAL(errorChanged()));
+
+    emit idChanged();
+    emit comicChanged();
 }
 
 void ComicProxy::fetch()
@@ -134,4 +143,9 @@ void ComicProxy::setError()
     if (m_comic) {
         m_comic->setError(true);
     }
+}
+
+bool ComicProxy::saveToGallery()
+{
+    return m_comic ? m_comic->saveToGallery() : false;
 }

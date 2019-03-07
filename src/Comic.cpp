@@ -7,7 +7,6 @@
 
 #include "Comic.h"
 
-#include <QDebug>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
@@ -150,6 +149,11 @@ void Comic::read()
 {
     setNewStrip(false);
     save();
+}
+
+bool Comic::saveToGallery()
+{
+    return stripFileResource->saveToGallery(id());
 }
 
 bool Comic::stripImageDownloaded()

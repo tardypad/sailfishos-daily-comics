@@ -30,6 +30,7 @@ class ComicProxy : public QObject
     Q_PROPERTY(QUrl stripImageUrl READ stripImageUrl NOTIFY stripImageUrlChanged)
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
     Q_PROPERTY(bool animated READ animated NOTIFY animatedChanged)
+    Q_PROPERTY(bool stripImageDownloaded READ stripImageDownloaded NOTIFY stripImageDownloadedChanged)
 
     Q_PROPERTY(Comic* comic READ comic WRITE setComic NOTIFY comicChanged)
 
@@ -48,6 +49,7 @@ public:
     bool error() const;
     bool animated() const;
     Comic* comic() const;
+    bool stripImageDownloaded() const;
 
 
     Q_INVOKABLE void setComic(Comic* comic);
@@ -56,6 +58,7 @@ public:
     Q_INVOKABLE void abortFetching();
     Q_INVOKABLE void read();
     Q_INVOKABLE void setError();
+    Q_INVOKABLE bool saveToGallery();
 
 signals:
     void idChanged();
@@ -70,6 +73,7 @@ signals:
     void errorChanged();
     void animatedChanged();
     void comicChanged();
+    void stripImageDownloadedChanged();
 
     void fetchStarted();
     void fetchSucceeded();
