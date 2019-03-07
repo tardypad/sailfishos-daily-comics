@@ -25,7 +25,7 @@ Item {
     readonly property bool allowed: true
     property real fadeOpacity: 0.6
 
-    property var comicProxy
+    property var comicProxy: null
     property var comicIndex
     property ComicsModel comicsModel
 
@@ -64,6 +64,7 @@ Item {
             id: infoButton
             icon.source: "image://Theme/icon-m-about"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: comicProxy
             onClicked: {
                 pageStack.push("../pages/ComicInfoPage.qml",
                         { index: comicIndex, model: comicsModel })
@@ -71,29 +72,26 @@ Item {
         }
 
         IconButton {
-            id: problemButton
-            icon.source: "image://Theme/icon-m-mail"
+            id: saveToGalleryButton
+            icon.source: "image://Theme/icon-m-cloud-download"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: {
-                ExternalLinks.mail(constants.maintainerMail, constants.mailErrorSubjectHeader,
-                        constants.mailBodyHeader + "There is a problem with comic \"" +
-                                encodeURIComponent(comicProxy.name) + "\"")
-            }
+            enabled: !comicProxy ? false : comicProxy.stripImageDownloaded
+            onClicked: comicProxy.saveToGallery()
         }
 
         IconButton {
             id: clipboardButton
             icon.source: "image://Theme/icon-m-clipboard"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: {
-                Clipboard.text = comicProxy.stripImageUrl
-            }
+            enabled: comicProxy
+            onClicked: Clipboard.text = comicProxy.stripImageUrl
         }
 
         IconButton {
             id: shareButton
             icon.source: "image://Theme/icon-m-share"
             anchors.verticalCenter: parent.verticalCenter
+            enabled: comicProxy
             onClicked: {
                 pageStack.push(Qt.resolvedUrl("../pages/ShareLinkPage.qml"),
                         {
@@ -107,9 +105,8 @@ Item {
             id: browserButton
             icon.source: "image://Theme/icon-m-region"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: {
-                Qt.openUrlExternally(encodeURI(comicProxy.homepage))
-            }
+            enabled: comicProxy
+            onClicked: Qt.openUrlExternally(encodeURI(comicProxy.homepage))
         }
     }
 }
