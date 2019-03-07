@@ -20,7 +20,6 @@ SilicaFlickable {
     property string name
     property string imagePath
     property string homepage
-    property bool error: false
     property bool ready: false
     signal read()
     signal setError(var errorText, var hintText)

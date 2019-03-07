@@ -39,7 +39,7 @@ Page {
             name: name
             homepage: comicProxy.homepage
             imagePath: !comicProxy.error && !indicator.busy ? image : ""
-            error: comicProxy.error
+            indicator.error: comicProxy.error
 
             onRead: markRead = true
             onSetError: {

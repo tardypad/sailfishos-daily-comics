@@ -35,8 +35,8 @@ Page {
         comicProxy: comicProxy
         name: comicProxy.name
         homepage: comicProxy.homepage
-        imagePath: !comicProxy.error && !indicator.busy ? comicProxy.stripImagePath : ""
-        error: comicProxy.error
+        imagePath: comicProxy.stripImagePath
+        indicator.error: comicProxy.error
         onRead: comicProxy.read()
         onSetError: {
             indicator.displayError(errorText, hintText)
