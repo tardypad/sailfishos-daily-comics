@@ -23,15 +23,18 @@ public:
     QString path(QString id);
     bool isDownloaded(QString id);
     bool save(QString id, QByteArray data);
+    bool saveToGallery(QString id);
 
 private:
     explicit ComicStripFileResource(QObject *parent = 0);
     QString dirPath();
+    QString picturesDirPath();
     void checkCreateStructure();
 
 private:
     static ComicStripFileResource* m_instance;
     QString m_dirPath;
+    QString m_picturesDirPath;
 };
 
 #endif // COMICSTRIPFILERESOURCE_H

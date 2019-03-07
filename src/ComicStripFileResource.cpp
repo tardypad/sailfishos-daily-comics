@@ -7,7 +7,7 @@
 
 #include "ComicStripFileResource.h"
 
-#include <QDebug>
+#include <QtDebug>
 #include <QStandardPaths>
 #include <QDir>
 #include <QFile>
@@ -62,6 +62,18 @@ bool ComicStripFileResource::save(QString id, QByteArray data)
     return writeResult > 0;
 }
 
+bool ComicStripFileResource::saveToGallery(QString id)
+{
+    if (!isDownloaded(id))
+    {
+        return false;
+    }
+
+    QUrl stripPath = QUrl::fromLocalFile(path(id));
+    return QFile::copy(stripPath.toLocalFile(), m_picturesDirPath + "/" + stripPath.fileName() +
+            "_" + QString::number(QDateTime::currentMSecsSinceEpoch()));
+}
+
 QString ComicStripFileResource::dirPath()
 {
     if (m_dirPath.isEmpty()) {
@@ -71,10 +83,23 @@ QString ComicStripFileResource::dirPath()
     return m_dirPath;
 }
 
+QString ComicStripFileResource::picturesDirPath()
+{
+    if (m_picturesDirPath.isEmpty()) {
+        m_picturesDirPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)
+                    .append(QDir::separator()).append("DailyComics");
+    }
+    return m_picturesDirPath;
+}
+
 void ComicStripFileResource::checkCreateStructure()
 {
     QDir dir = QDir(dirPath());
 
     if (!dir.exists())
         dir.mkpath(dirPath());
+
+    QDir picturesDir = QDir(picturesDirPath());
+    if (!picturesDir.exists())
+        picturesDir.mkpath(picturesDirPath());
 }
