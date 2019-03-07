@@ -13,7 +13,7 @@ import harbour.dailycomics.Comics 1.0
 import "../delegates"
 import "../components"
 
-Page {
+Dialog {
     id: comicPage
 
     allowedOrientations: Orientation.All
@@ -30,8 +30,9 @@ Page {
         anchors.fill: parent
         cellWidth: cellSize
         cellHeight: cellSize
-        header: PageHeader {
-            title: qsTr("Select favorites")
+        header: DialogHeader {
+            acceptText: qsTr("Save")
+            cancelText: qsTr("Cancel")
         }
         delegate: ComicsSettingsGridDelegate { }
         model: comicsModelProxy
@@ -100,13 +101,17 @@ Page {
 
     SettingsInfoHint { }
 
-    onStatusChanged: {
-        if (status === PageStatus.Deactivating) {
-            settingsComicsModel.saveAll()
-            _settings.emitFavoritesChanged();
-        }
-    }
+//    onStatusChanged: {
+//        if (status === PageStatus.Deactivating) {
+//            settingsComicsModel.saveAll()
+//            _settings.emitFavoritesChanged();
+//        }
+//    }
 
+    onAccepted: {
+        settingsComicsModel.saveAll()
+        _settings.emitFavoritesChanged();
+    }
 }
 
 
