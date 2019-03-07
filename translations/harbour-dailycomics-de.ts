@@ -225,6 +225,29 @@ if the problem persists.</source>
     </message>
 </context>
 <context>
+    <name>ImageOverlay</name>
+    <message>
+        <location filename="../qml/components/ImageOverlay.qml" line="80"/>
+        <source>Comic strip was saved to gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageOverlay.qml" line="81"/>
+        <source>Unable to save comic strip to gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageOverlay.qml" line="93"/>
+        <source>Comic strip url copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ImageOverlay.qml" line="94"/>
+        <source>Unable to copy comic strip url to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LoadingIndicator</name>
     <message>
         <location filename="../qml/utils/LoadingIndicator.qml" line="51"/>

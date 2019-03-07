@@ -7,7 +7,6 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
 import harbour.dailycomics.Comics 1.0
 
 import "../utils"
@@ -62,7 +61,7 @@ Item {
 
         IconButton {
             id: infoButton
-            icon.source: "image://Theme/icon-m-about"
+            icon.source: "image://theme/icon-m-about"
             anchors.verticalCenter: parent.verticalCenter
             enabled: comicProxy
             onClicked: {
@@ -73,23 +72,32 @@ Item {
 
         IconButton {
             id: saveToGalleryButton
-            icon.source: "image://Theme/icon-m-cloud-download"
+            icon.source: "image://theme/icon-m-cloud-download"
             anchors.verticalCenter: parent.verticalCenter
             enabled: !comicProxy ? false : comicProxy.stripImageDownloaded
-            onClicked: comicProxy.saveToGallery()
+            onClicked: {
+                window.notify(comicProxy.saveToGallery() ?
+                        qsTr("Comic strip was saved to gallery") :
+                        qsTr("Unable to save comic strip to gallery"))
+            }
         }
 
         IconButton {
             id: clipboardButton
-            icon.source: "image://Theme/icon-m-clipboard"
+            icon.source: "image://theme/icon-m-clipboard"
             anchors.verticalCenter: parent.verticalCenter
             enabled: comicProxy
-            onClicked: Clipboard.text = comicProxy.stripImageUrl
+            onClicked: {
+                Clipboard.text = comicProxy.stripImageUrl
+                window.notify(Clipboard.text !== "" ?
+                        qsTr("Comic strip url copied to clipboard") :
+                        qsTr("Unable to copy comic strip url to clipboard"))
+            }
         }
 
         IconButton {
             id: shareButton
-            icon.source: "image://Theme/icon-m-share"
+            icon.source: "image://theme/icon-m-share"
             anchors.verticalCenter: parent.verticalCenter
             enabled: comicProxy
             onClicked: {
@@ -103,7 +111,7 @@ Item {
 
         IconButton {
             id: browserButton
-            icon.source: "image://Theme/icon-m-region"
+            icon.source: "image://theme/icon-m-region"
             anchors.verticalCenter: parent.verticalCenter
             enabled: comicProxy
             onClicked: Qt.openUrlExternally(encodeURI(comicProxy.homepage))

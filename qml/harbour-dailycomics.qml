@@ -7,6 +7,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
 
 import "pages"
 import "cover"
@@ -23,6 +24,17 @@ ApplicationWindow
 
     Constants {
         id: constants
+    }
+
+    Notification {
+        id:notification
+        appName: "Daily Comics"
+    }
+
+    function notify(text) {
+        notification.previewBody = text
+        notification.icon = "image://theme/icon-lock-information"
+        notification.publish()
     }
 
     function showNewComicsPage() {
