@@ -329,12 +329,12 @@ if the problem persists.</source>
 <context>
     <name>ZoomableImage</name>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Image error</source>
         <translation type="unfinished">Bildfehler</translation>
     </message>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Can&apos;t display strip</source>
         <translation type="unfinished">Kann Comic nicht anzeigen</translation>
     </message>

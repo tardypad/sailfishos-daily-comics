@@ -330,12 +330,12 @@ problemet inte försvinner.</translation>
 <context>
     <name>ZoomableImage</name>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Image error</source>
         <translation type="unfinished">Bildfel</translation>
     </message>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Can&apos;t display strip</source>
         <translation type="unfinished">Kan inte visa serie</translation>
     </message>

@@ -330,12 +330,12 @@ si le problème n&apos;était toujours pas résolu.</translation>
 <context>
     <name>ZoomableImage</name>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Image error</source>
         <translation type="unfinished">Erreur lors du chargement de l&apos;image</translation>
     </message>
     <message>
-        <location filename="../qml/components/ZoomableImage.qml" line="155"/>
+        <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Can&apos;t display strip</source>
         <translation type="unfinished">Impossible d&apos;afficher la planche</translation>
     </message>
