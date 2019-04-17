@@ -99,6 +99,20 @@ void ComicProxy::setComic(Comic *comic)
     if (comic == NULL || m_comic == comic)
         return;
 
+    if (m_comic != NULL) {
+        disconnect(m_comic, &Comic::fetchStarted, this, &ComicProxy::fetchStarted);
+        disconnect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::fetchSucceeded);
+        disconnect(m_comic, &Comic::networkError, this, &ComicProxy::networkError);
+        disconnect(m_comic, &Comic::parsingError, this, &ComicProxy::parsingError);
+        disconnect(m_comic, &Comic::savingError, this, &ComicProxy::savingError);
+        disconnect(m_comic, &Comic::downloadProgress, this, &ComicProxy::downloadProgress);
+        disconnect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImagePathChanged);
+        disconnect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImageUrlChanged);
+        disconnect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::animatedChanged);
+        disconnect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImageDownloadedChanged);
+        disconnect(m_comic, &Comic::errorChanged, this, &ComicProxy::errorChanged);
+    }
+
     m_comic = comic;
 
     connect(m_comic, &Comic::fetchStarted, this, &ComicProxy::fetchStarted);
