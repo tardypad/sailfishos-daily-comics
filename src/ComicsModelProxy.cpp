@@ -14,7 +14,7 @@ ComicsModelProxy::ComicsModelProxy(QObject *parent) :
 {
     setDynamicSortFilter(false);
 
-    connect(this, SIGNAL(sourceModelChanged()), this, SIGNAL(comicsModelChanged()));
+    connect(this, &ComicsModelProxy::sourceModelChanged, this, &ComicsModelProxy::comicsModelChanged);
 }
 
 bool ComicsModelProxy::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const

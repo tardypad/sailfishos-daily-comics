@@ -25,9 +25,9 @@ ComicsModel::ComicsModel(QObject *parent) :
     factory    = ComicFactory::instance();
     settings   = Settings::instance();
 
-    connect(this, SIGNAL(modelReset()), this, SLOT(emitCountsChanged()));
-    connect(this, SIGNAL(rowsInserted(QModelIndex,int,int)), this, SLOT(emitCountsChanged()));
-    connect(this, SIGNAL(rowsRemoved(QModelIndex,int,int)), this, SLOT(emitCountsChanged()));
+    connect(this, &ComicsModel::modelReset, this, &ComicsModel::emitCountsChanged);
+    connect(this, &ComicsModel::rowsInserted, this, &ComicsModel::emitCountsChanged);
+    connect(this, &ComicsModel::rowsRemoved, this, &ComicsModel::emitCountsChanged);
 }
 
 ComicsModel::~ComicsModel()
@@ -140,11 +140,11 @@ void ComicsModel::loadAll()
 
         comic->load();
 
-        connect(comic, SIGNAL(favoriteChanged(Comic*)), this, SLOT(emitFavoriteChanged(Comic*)));
-        connect(comic, SIGNAL(newStripChanged(Comic*)), this, SLOT(emitNewStripChanged(Comic*)));
-        connect(comic, SIGNAL(errorChanged(Comic*)), this, SLOT(emitErrorChanged(Comic*)));
-        connect(comic, SIGNAL(fetchingChanged(Comic*)), this, SLOT(emitFetchingChanged(Comic*)));
-        connect(comic, SIGNAL(fetchingProgressChanged(Comic*)), this, SLOT(emitFetchingProgressChanged(Comic*)));
+        connect(comic, &Comic::favoriteChanged, this, &ComicsModel::emitFavoriteChanged);
+        connect(comic, &Comic::newStripChanged, this, &ComicsModel::emitNewStripChanged);
+        connect(comic, &Comic::errorChanged, this, &ComicsModel::emitErrorChanged);
+        connect(comic, &Comic::fetchingChanged, this, &ComicsModel::emitFetchingChanged);
+        connect(comic, &Comic::fetchingProgressChanged, this, &ComicsModel::emitFetchingProgressChanged);
 
         m_list.append(comic);
     }
@@ -277,7 +277,7 @@ void ComicsModel::startAutomaticFetch(int interval)
 {
     m_automaticFetchTimer = new QTimer(this);
     m_automaticFetchTimer->start(interval);
-    connect(m_automaticFetchTimer, SIGNAL(timeout()), this, SLOT(fetchAll()));
+    connect(m_automaticFetchTimer, &QTimer::timeout, this, &ComicsModel::fetchAll);
 }
 
 int ComicsModel::count() const

@@ -16,17 +16,17 @@ ComicProxy::ComicProxy(QObject *parent) :
     QObject(parent),
     m_comic(NULL)
 {
-    connect(this, SIGNAL(idChanged()), SIGNAL(nameChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(authorsChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(homepageChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(languageChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(stripImagePathChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(stripImageUrlChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(coverPathChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(examplePathChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(errorChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(animatedChanged()));
-    connect(this, SIGNAL(idChanged()), SIGNAL(stripImageDownloadedChanged()));
+    connect(this, &ComicProxy::idChanged, &ComicProxy::nameChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::authorsChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::homepageChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::languageChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::stripImagePathChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::stripImageUrlChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::coverPathChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::examplePathChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::errorChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::animatedChanged);
+    connect(this, &ComicProxy::idChanged, &ComicProxy::stripImageDownloadedChanged);
 }
 
 QString ComicProxy::id() const
@@ -101,17 +101,17 @@ void ComicProxy::setComic(Comic *comic)
 
     m_comic = comic;
 
-    connect(m_comic, SIGNAL(fetchStarted()), this, SIGNAL(fetchStarted()));
-    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(fetchSucceeded()));
-    connect(m_comic, SIGNAL(networkError()), this, SIGNAL(networkError()));
-    connect(m_comic, SIGNAL(parsingError()), this, SIGNAL(parsingError()));
-    connect(m_comic, SIGNAL(savingError()), this, SIGNAL(savingError()));
-    connect(m_comic, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImagePathChanged()));
-    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImageUrlChanged()));
-    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(animatedChanged()));
-    connect(m_comic, SIGNAL(fetchSucceeded()), this, SIGNAL(stripImageDownloadedChanged()));
-    connect(m_comic, SIGNAL(errorChanged(Comic*)), this, SIGNAL(errorChanged()));
+    connect(m_comic, &Comic::fetchStarted, this, &ComicProxy::fetchStarted);
+    connect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::fetchSucceeded);
+    connect(m_comic, &Comic::networkError, this, &ComicProxy::networkError);
+    connect(m_comic, &Comic::parsingError, this, &ComicProxy::parsingError);
+    connect(m_comic, &Comic::savingError, this, &ComicProxy::savingError);
+    connect(m_comic, &Comic::downloadProgress, this, &ComicProxy::downloadProgress);
+    connect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImagePathChanged);
+    connect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImageUrlChanged);
+    connect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::animatedChanged);
+    connect(m_comic, &Comic::fetchSucceeded, this, &ComicProxy::stripImageDownloadedChanged);
+    connect(m_comic, &Comic::errorChanged, this, &ComicProxy::errorChanged);
 
     emit idChanged();
     emit comicChanged();
