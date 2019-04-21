@@ -1,0 +1,10 @@
+{
+  "name": "Donald Duck",
+  "color": "52b7a5",
+  "language": "nl",
+  "authors": [
+    "Donald Duck"
+  ],
+  "homepage": "https://www.donaldduck.nl/",
+  "stripSource": "https://www.donaldduck.nl/lees/strip-van-de-dag/"
+}

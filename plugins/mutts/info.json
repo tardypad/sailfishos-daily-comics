@@ -1,0 +1,10 @@
+{
+  "name": "Mutts",
+  "color": "b0e1e5",
+  "language": "en",
+  "authors": [
+    "Patrick McDonnell"
+  ],
+  "homepage": "https://mutts.com/",
+  "stripSource": "https://mutts.com/"
+}
