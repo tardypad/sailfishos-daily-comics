@@ -70,6 +70,7 @@ The cover needs to be a file named _cover.jpg_
 
 ### Remarks:
 - ensure the text is legible when displayed in the smallest size in the app
+- the logo and the characters must not overlap
 - good contrast between logo/character and background color
 - main character(s) is preferably shown in a characteristic attitude
 - no shadows or effects on the main character(s)
