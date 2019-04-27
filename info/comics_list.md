@@ -17,6 +17,7 @@
 - Cul de Sac
 - Cyanide & Happiness
 - Darths and Droids
+- Deathbulge
 - Dennis The Menace
 - Der Flix
 - Diesel Sweeties
