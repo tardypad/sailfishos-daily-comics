@@ -128,7 +128,6 @@ function(page) {
 Extras
 ------
 
-- list the comic in the _info/comics_list.md_ file
 - list, in the git commit message, the resource urls used for the cover and example
 - keep higher resolution cover in the plugin folder with name _cover_big.jpg_
 - regenerate the comics covers grid with the _resources/generate_covers_grid.sh_ script
