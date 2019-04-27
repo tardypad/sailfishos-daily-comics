@@ -22,6 +22,7 @@
 - Dilbert
 - Dinosaur Comics
 - Dirkjan
+- Donald Duck
 - Einbilder
 - Extra Ordinary
 - Fingerpori
@@ -48,6 +49,7 @@
 - Lunarbaboon
 - Lunch
 - Lupo Alberto
+- Mutts
 - Nameless PCs
 - Nedroid Picture Diary
 - Peanuts
