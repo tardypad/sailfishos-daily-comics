@@ -14,6 +14,7 @@
 - C. Cassandra
 - Cheer Up, Emo Kid
 - CommitStrip
+- Cul de Sac
 - Cyanide & Happiness
 - Darths and Droids
 - Dennis The Menace
