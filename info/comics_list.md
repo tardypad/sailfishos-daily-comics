@@ -26,6 +26,7 @@
 - Dirkjan
 - Donald Duck
 - Einbilder
+- Extra Fabulous Comics
 - Extra Ordinary
 - Fingerpori
 - F Minus
