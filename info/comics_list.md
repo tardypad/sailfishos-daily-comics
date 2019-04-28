@@ -42,6 +42,7 @@
 - Gone With The Blastwave
 - GWTB 404
 - Hägar the Horrible
+- HTZ comic
 - Introvert Doodles
 - Is lieb?
 - Jäätävä Spede
