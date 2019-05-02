@@ -54,6 +54,7 @@
 - Lunch
 - Lupo Alberto
 - Martin Perscheid
+- Monkey User
 - Mutts
 - Nameless PCs
 - Nedroid Picture Diary
