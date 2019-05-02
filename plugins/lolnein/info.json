@@ -1,0 +1,10 @@
+{
+  "name": "LOLNEIN",
+  "color": "7eb5de",
+  "language": "en",
+  "authors": [
+    "Vincent Kunert"
+  ],
+  "homepage": "https://lolnein.com/",
+  "stripSource": "https://lolnein.com/feed/"
+}
