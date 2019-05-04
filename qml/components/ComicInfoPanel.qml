@@ -41,9 +41,6 @@ DockedPanel {
         onClicked: hide()
     }
 
-    property int _headerWidth: 125
-    property int _textWidth: width - _headerWidth - Theme.paddingLarge
-
     Rectangle {
         anchors.fill: parent
         color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
@@ -52,58 +49,52 @@ DockedPanel {
             id: infoColumn
             spacing: Theme.paddingMedium
             anchors.centerIn: parent
+            width: parent.width - 2 * Theme.paddingMedium
 
             Label {
                 id: nameLabel
                 text: comic.name
-                width: parent.width - 2 * Theme.paddingMedium
+                width: parent.width
                 font.pixelSize: Theme.fontSizeMedium
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            Row {
-                spacing: Theme.paddingLarge
+            Grid {
+                columns: 2
+                spacing: Theme.paddingMedium
+
                 Label {
                     id: authorsHeaderLabel
                     text: comic.authors.length > 1 ? qsTr("Authors") : qsTr("Author")
-                    width: _headerWidth
                     font {
                         italic: true
                         pixelSize: Theme.fontSizeExtraSmall
                     }
                     color: Theme.secondaryColor
-                    horizontalAlignment: Text.AlignRight
                 }
+
                 Label {
                     id: authorsLabel
                     text: comic.authors.join("\n")
-                    width: _textWidth
                     font.pixelSize: Theme.fontSizeSmall
-                    anchors.baseline: authorsHeaderLabel.baseline
                     truncationMode: TruncationMode.Fade
                 }
-            }
 
-            Row {
-                spacing: Theme.paddingLarge
                 Label {
                     id: languageHeaderLabel
                     text: qsTr("Language")
-                    width: _headerWidth
                     font {
                         italic: true
                         pixelSize: Theme.fontSizeExtraSmall
                     }
                     color: Theme.secondaryColor
-                    horizontalAlignment: Text.AlignRight
                 }
+
                 Label {
                     id: languageLabel
                     text: comic.language
-                    width: _textWidth
                     font.pixelSize: Theme.fontSizeSmall
-                    anchors.baseline: languageHeaderLabel.baseline
                     truncationMode: TruncationMode.Fade
                 }
             }
@@ -115,7 +106,7 @@ DockedPanel {
                 smooth: true
                 asynchronous: true
 
-                width: parent.width - 2 * Theme.paddingMedium
+                width: parent.width
                 height: isPortrait
                         ? Math.min(window.height / 4, implicitHeight)
                         : comicInfoPanel.height - (nameLabel.height + 7 * Theme.paddingMedium

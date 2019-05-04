@@ -77,12 +77,12 @@
         <translation>Author</translation>
     </message>
     <message>
-        <location filename="../qml/components/ComicInfoPanel.qml" line="92"/>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="86"/>
         <source>Language</source>
         <translation>Language</translation>
     </message>
     <message>
-        <location filename="../qml/components/ComicInfoPanel.qml" line="134"/>
+        <location filename="../qml/components/ComicInfoPanel.qml" line="125"/>
         <source>Go to homepage</source>
         <translation>Go to homepage</translation>
     </message>
