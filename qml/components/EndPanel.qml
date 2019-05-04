@@ -24,7 +24,7 @@ DockedPanel {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
+        color: Theme.rgba(Theme.highlightDimmerColor, 0.9)
 
         Column {
             anchors.centerIn: parent
@@ -39,7 +39,7 @@ DockedPanel {
             }
 
             Rectangle {
-                color: Theme.secondaryHighlightColor
+                color: Theme.highlightBackgroundColor
                 width: parent.width
                 height: supportLabel.height + 2*Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter

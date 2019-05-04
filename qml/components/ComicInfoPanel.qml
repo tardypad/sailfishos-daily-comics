@@ -43,7 +43,7 @@ DockedPanel {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
+        color: Theme.rgba(Theme.highlightDimmerColor, 0.9)
 
         Column {
             id: infoColumn
