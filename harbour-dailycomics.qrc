@@ -1,6 +1,10 @@
 <RCC>
-    <qresource prefix="/icon">
-        <file alias="github">images/icons/github.png</file>
-        <file alias="support">images/icons/support.png</file>
+    <qresource prefix="/icon/light">
+        <file alias="github">images/icons/light/github.png</file>
+        <file alias="support">images/icons/light/support.png</file>
+    </qresource>
+    <qresource prefix="/icon/dark">
+        <file alias="github">images/icons/dark/github.png</file>
+        <file alias="support">images/icons/dark/support.png</file>
     </qresource>
 </RCC>
