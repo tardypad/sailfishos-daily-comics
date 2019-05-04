@@ -63,7 +63,7 @@ DockedPanel {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:/icon/medium/support"
+                        source: "qrc:/icon/support"
                         fillMode: Image.PreserveAspectFit
                     }
                 }
