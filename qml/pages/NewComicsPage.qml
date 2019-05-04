@@ -50,14 +50,14 @@ Page {
         }
 
         function changeCurrentIndex(index) {
+            if (comicsModel.newCount === 0 && !endPanel.shown) {
+                endPanel.showInfo()
+            }
+
             currentItem.comicProxy.comic = comicsModel.comicAt(comicsModelProxy.sourceRow(index))
             overlay.comicProxy = currentItem.comicProxy
             if (currentItem.markRead) {
                 comicsModel.read(comicsModelProxy.sourceRow(index))
-            }
-
-            if (comicsModel.newCount === 0 && !endPanel.shown) {
-                endPanel.showInfo()
             }
         }
 
