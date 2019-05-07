@@ -80,6 +80,7 @@
 - Truth Facts
 - User Friendly
 - The Very Near Future
+- Vida de Programador
 - Viivi ja Wagner
 - What a wonderful world!
 - The Whiteboard
