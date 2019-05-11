@@ -15,6 +15,9 @@ Features
 - display basic information about comics
 - quick view all new strips in a row
 - glance at unread comics in cover
+- save your preferred strips to the gallery
+- share strips with people
+- zoom strip for better readability
 - full landscape view support
 - comics from multiple languages
 - animate gif comics

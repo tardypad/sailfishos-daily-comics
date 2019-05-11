@@ -70,6 +70,8 @@ The cover needs to be a file named _cover.jpg_
 
 ### Remarks:
 - ensure the text is legible when displayed in the smallest size in the app
+- the logo and the characters must not overlap
+- there must not be any other item than the logo and the characters
 - good contrast between logo/character and background color
 - main character(s) is preferably shown in a characteristic attitude
 - no shadows or effects on the main character(s)
@@ -128,7 +130,6 @@ function(page) {
 Extras
 ------
 
-- list the comic in the _info/comics_list.md_ file
 - list, in the git commit message, the resource urls used for the cover and example
 - keep higher resolution cover in the plugin folder with name _cover_big.jpg_
 - regenerate the comics covers grid with the _resources/generate_covers_grid.sh_ script

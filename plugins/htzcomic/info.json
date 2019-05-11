@@ -1,0 +1,10 @@
+{
+  "name": "HTZ comic",
+  "color": "b11623",
+  "language": "es",
+  "authors": [
+    "Albert Gonzalez"
+  ],
+  "homepage": "http://www.htzcomic.com/",
+  "stripSource": "http://www.htzcomic.com/"
+}

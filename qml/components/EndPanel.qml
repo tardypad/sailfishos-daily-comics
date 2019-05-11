@@ -24,7 +24,7 @@ DockedPanel {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
+        color: Theme.rgba(Theme.highlightDimmerColor, 0.9)
 
         Column {
             anchors.centerIn: parent
@@ -39,20 +39,20 @@ DockedPanel {
             }
 
             Rectangle {
-                color: Theme.secondaryHighlightColor
+                color: Theme.highlightBackgroundColor
                 width: parent.width
                 height: supportLabel.height + 2*Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 Row {
                     anchors.centerIn: parent
-                    spacing: Theme.paddingLarge
-                    width: parent.width
+                    spacing: Theme.paddingMedium
+                    width: parent.width - 2 * Theme.paddingMedium
 
                     Label {
                         id: supportLabel
                         text: qsTr("If you like the app, please consider supporting your favorite comic artists")
-                        width: parent.width - supportImage.width - 3*Theme.paddingLarge
+                        width: parent.width - supportImage.width - 3*Theme.paddingMedium
                         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                         font.pixelSize: Theme.fontSizeSmall
                         horizontalAlignment: Text.AlignLeft
@@ -63,7 +63,7 @@ DockedPanel {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:/icon/medium/support"
+                        source: Theme.colorScheme == 0  ? "qrc:/icon/light/support" : "qrc:/icon/dark/support"
                         fillMode: Image.PreserveAspectFit
                     }
                 }

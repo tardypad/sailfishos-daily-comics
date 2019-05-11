@@ -1,0 +1,11 @@
+{
+  "name": "Monkey User",
+  "color": "e3e3e3",
+  "language": "en",
+  "authors": [
+    "Cornel Stefanache",
+    "Constantin Orasanu"
+  ],
+  "homepage": "https://www.monkeyuser.com/",
+  "stripSource": "https://www.monkeyuser.com/feed.xml"
+}

@@ -115,7 +115,7 @@ Page {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
-                            source: "qrc:/icon/medium/github"
+                            source: Theme.colorScheme == 0  ? "qrc:/icon/light/github" : "qrc:/icon/dark/github"
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }
@@ -173,7 +173,7 @@ Page {
                         height: Theme.iconSizeMedium
                         width: Theme.iconSizeMedium
                         icon {
-                            source: "qrc:/icon/medium/github"
+                            source: Theme.colorScheme == 0  ? "qrc:/icon/light/github" : "qrc:/icon/dark/github"
                             height: Theme.iconSizeMedium
                             fillMode: Image.PreserveAspectFit
                         }

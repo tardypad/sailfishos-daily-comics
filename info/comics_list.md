@@ -14,15 +14,19 @@
 - C. Cassandra
 - Cheer Up, Emo Kid
 - CommitStrip
+- Cul de Sac
 - Cyanide & Happiness
 - Darths and Droids
+- Deathbulge
 - Dennis The Menace
 - Der Flix
 - Diesel Sweeties
 - Dilbert
 - Dinosaur Comics
 - Dirkjan
+- Donald Duck
 - Einbilder
+- Extra Fabulous Comics
 - Extra Ordinary
 - Fingerpori
 - F Minus
@@ -38,6 +42,7 @@
 - Gone With The Blastwave
 - GWTB 404
 - Hägar the Horrible
+- HTZ comic
 - Introvert Doodles
 - Is lieb?
 - Jäätävä Spede
@@ -45,9 +50,13 @@
 - Living with Hipstergirl and Gamergirl
 - Liz Climo
 - Loading Artist
+- LOLNEIN
 - Lunarbaboon
 - Lunch
 - Lupo Alberto
+- Martin Perscheid
+- Monkey User
+- Mutts
 - Nameless PCs
 - Nedroid Picture Diary
 - Peanuts

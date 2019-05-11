@@ -19,7 +19,7 @@ Rectangle {
     property int newCount: 0
     property int errorCount: 0
 
-    color: Theme.rgba(Theme.secondaryHighlightColor, 0.9)
+    color: Theme.rgba(Theme.highlightDimmerColor, 0.9)
     width: parent.width
     height: progressBar.height + Theme.paddingSmall
     enabled: opacity != 0

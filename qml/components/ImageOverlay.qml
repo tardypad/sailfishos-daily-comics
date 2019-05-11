@@ -17,7 +17,7 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 Item {
     id: overlay
 
-    property bool active: true
+    property bool active: false
     property bool viewerOnlyMode
 
     property alias toolbar: toolbar

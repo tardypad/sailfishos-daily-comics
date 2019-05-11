@@ -1,0 +1,10 @@
+{
+  "name": "Extra Fabulous Comics",
+  "color": "ffcece",
+  "language": "en",
+  "authors": [
+    "Zach"
+  ],
+  "homepage": "http://extrafabulouscomics.com",
+  "stripSource": "http://extrafabulouscomics.com"
+}

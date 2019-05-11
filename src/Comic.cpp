@@ -47,7 +47,7 @@ Comic::Comic(QString id, QObject *parent) :
     m_timeoutTimer = new QTimer(this);
     m_timeoutTimer->setInterval(_timeout);
     m_timeoutTimer->setSingleShot(true);
-    connect(m_timeoutTimer, SIGNAL(timeout()), this, SLOT(timeout()));
+    connect(m_timeoutTimer, &QTimer::timeout, this, &Comic::timeout);
 }
 
 Comic::~Comic()
@@ -130,9 +130,9 @@ void Comic::fetchStripSource(QUrl stripSrcUrl)
     setFetching(true);
     setFetchingProgress(0);
 
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchStripSourceFinished()));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
+    connect(m_currentReply, &QNetworkReply::finished, this, &Comic::onFetchStripSourceFinished);
+    connect(m_currentReply, &QNetworkReply::downloadProgress, this, &Comic::downloadProgress);
+    connect(m_currentReply, &QNetworkReply::downloadProgress, this, &Comic::updateFetchingProgress);
 }
 
 void Comic::abortFetching()
@@ -237,9 +237,9 @@ void Comic::fetchStripImage(QUrl stripImageUrl)
 
     m_timeoutTimer->start();
 
-    connect(m_currentReply, SIGNAL(finished()), this, SLOT(onFetchStripImageFinished()));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SIGNAL(downloadProgress(qint64,qint64)));
-    connect(m_currentReply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(updateFetchingProgress(qint64,qint64)));
+    connect(m_currentReply, &QNetworkReply::finished, this, &Comic::onFetchStripImageFinished);
+    connect(m_currentReply, &QNetworkReply::downloadProgress, this, &Comic::downloadProgress);
+    connect(m_currentReply, &QNetworkReply::downloadProgress, this, &Comic::updateFetchingProgress);
 }
 
 void Comic::onFetchStripImageFinished()
