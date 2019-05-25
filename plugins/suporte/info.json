@@ -1,0 +1,10 @@
+{
+  "name": "Vida de Suporte",
+  "color": "79a841",
+  "language": "pt_BR",
+  "authors": [
+    "André Farias"
+  ],
+  "homepage": "https://vidadesuporte.com.br",
+  "stripSource": "http://feeds.feedburner.com/vidasuporte"
+}
