@@ -1,5 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*src='(strips\/[^']*)'/;
+    var regex = /<!-- Main Image -->\n.*\n.*<img[^>]*src="([^"]*)"/;
     var match = regex.exec(page);
     return match[1];
 }
