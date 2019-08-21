@@ -2,7 +2,8 @@ TARGET = harbour-dailycomics
 
 CONFIG += \
     sailfishapp \
-    sailfishapp_i18n
+    sailfishapp_i18n \
+    c++11
 
 SOURCES += $$files(src/*.cpp)
 
