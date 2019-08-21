@@ -70,6 +70,7 @@ public:
     int fetchingProgress() const { return m_fetchingProgress; }
     bool isAnimatedDefined() const { return m_isAnimatedDefined; }
     int random() const { return m_random; }
+    QString extractScript() const { return m_ExtractScript; }
 
     void setInfo(const ComicInfo info) { m_info = info; }
     void setCoverPath(const QString coverPath) { m_coverPath = coverPath; }
@@ -84,6 +85,7 @@ public:
     void setStripImageUrl(const QUrl stripImageUrl) { m_stripImageUrl = stripImageUrl; }
     void setExtractedStripImageUrl(const QUrl extractedStripImageUrl) { m_extractedStripImageUrl = extractedStripImageUrl; }
     void setIsAnimatedDefined(const bool isAnimatedDefined) { m_isAnimatedDefined = isAnimatedDefined; }
+    void setExtractScript(const QString& extractScript) { m_ExtractScript = extractScript; }
 
     void load();
     void save();
@@ -151,6 +153,7 @@ protected:
     int m_fetchingProgress;
     bool m_animated;
     bool m_isAnimatedDefined;
+    QString m_ExtractScript;
 };
 
 #endif // COMIC_H

@@ -141,7 +141,7 @@ void Comic::abortFetching()
 
     if (m_currentReply != NULL && m_currentReply->isRunning()) {
         m_currentReply->disconnect(this);
-        m_currentReply->abort();        
+        m_currentReply->abort();
     }
 }
 
@@ -189,7 +189,6 @@ void Comic::onFetchStripSourceFinished()
     }
 
     QUrl redirectUrl = redirectedToUrl();
-
     if (!redirectUrl.isEmpty()) {
         fetchStripSource(redirectUrl);
         return;
