@@ -11,6 +11,7 @@
 #include <QObject>
 
 #include <QSettings>
+#include <QUrl>
 
 class Settings : public QObject
 {
@@ -29,6 +30,8 @@ public:
 
     Q_INVOKABLE void hideSettingsFavoritesInfoHint();
     Q_INVOKABLE void hideNewSlideshowFlickHint();
+
+    QUrl getUpdaterUrl() const;
 
 protected:
     QVariant value(const QString &key);

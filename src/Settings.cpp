@@ -67,6 +67,12 @@ void Settings::hideNewSlideshowFlickHint()
     setValue(_newSlideshowFlickHintField, false);
 }
 
+QUrl Settings::getUpdaterUrl() const
+{
+    return m_settings->value("updater/url",
+        "https://raw.githubusercontent.com/tardypad/sailfishos-daily-comics/master/plugins/update.json").toUrl();
+}
+
 QVariant Settings::value(const QString &key)
 {
     return m_settings->value(key);
