@@ -58,6 +58,7 @@ public:
     QUrl homepage() const { return m_info.homepage; }
     QLocale::Language language() const { return m_info.language; }
     QUrl stripSourceUrl() const { return m_info.stripSourceUrl; }
+    ComicInfo getInfo() const { return m_info; }
 
     QUrl stripImageUrl() const { return m_stripImageUrl; }
     bool favorite() const { return m_favorite; }
