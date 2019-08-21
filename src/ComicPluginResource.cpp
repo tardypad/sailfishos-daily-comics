@@ -108,16 +108,24 @@ ComicInfo ComicPluginResource::parseInfo(QByteArray infoData)
 
 QUrl ComicPluginResource::extractStripImageUrl(Comic *comic, QByteArray data)
 {
-    QString scriptFilePath = path(comic->id(), _extractScriptFilename);
-    QFile scriptFile(scriptFilePath);
-
-    if (!scriptFile.open(QIODevice::ReadOnly))
+    QByteArray script;
+    if (comic->extractScript().isEmpty())
     {
-        return QUrl();
-    }
+        QString scriptFilePath = path(comic->id(), _extractScriptFilename);
+        QFile scriptFile(scriptFilePath);
 
-    QByteArray script = scriptFile.readAll();
-    scriptFile.close();
+        if (!scriptFile.open(QIODevice::ReadOnly))
+        {
+            return QUrl();
+        }
+
+        script = scriptFile.readAll();
+        scriptFile.close();
+    }
+    else
+    {
+        script = comic->extractScript().toUtf8();
+    }
 
     QJSValue function = _jsEngine->evaluate(script);
     QJSValue result = function.call(QJSValueList() << QString(data));
