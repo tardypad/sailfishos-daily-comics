@@ -73,7 +73,7 @@ public:
 
 public slots:
     Q_INVOKABLE virtual void loadAll();
-    Q_INVOKABLE void fetchAll();
+    Q_INVOKABLE virtual void fetchAll();
 
 protected:
     void clear();
