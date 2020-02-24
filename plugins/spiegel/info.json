@@ -1,0 +1,11 @@
+{
+  "name": "spiegel",
+  "color": "e04010",
+  "language": "de",
+  "authors": [
+    "Thomas Plaßmann",
+    "Klaus Stuttmann"
+  ],
+  "homepage": "https://www.spiegel.de/",
+  "stripSource": "https://www.spiegel.de/"
+}
