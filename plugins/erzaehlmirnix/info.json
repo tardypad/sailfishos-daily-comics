@@ -1,10 +1,10 @@
 {
-"name": "erzaehlmirnix",
-"color": "c1c3c2",
-"language": "de",
-"authors": [
-  "Nadja Hermann"
-],
-"homepage": "https://mobile.twitter.com/erzaehlmirnix/",
-"stripSource": "https://mobile.twitter.com/erzaehlmirnix/media/grid"
+  "name": "erzaehlmirnix",
+  "color": "c1c3c2",
+  "language": "de",
+  "authors": [
+    "Nadja Hermann"
+  ],
+  "homepage": "https://mobile.twitter.com/erzaehlmirnix/",
+  "stripSource": "https://mobile.twitter.com/erzaehlmirnix/media/grid"
 }
