@@ -1,0 +1,10 @@
+{
+  "name": "Vida de Programador",
+  "color": "6f4e37",
+  "language": "pt_BR",
+  "authors": [
+    "André Noel"
+  ],
+  "homepage": "https://vidadeprogramador.com.br/",
+  "stripSource": "https://vidadeprogramador.com.br/feed.xml"
+}
