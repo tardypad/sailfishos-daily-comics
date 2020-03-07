@@ -1,19 +1,4 @@
 {
   "plugins": [
-    {
-      "id":"ccassandra",
-      "stripSource":"https://tapas.io/series/CassandraComics",
-      "extractJson":"function(page) {var regex = \/<img class=\"art-image\"(.|\\s)*?src=\"([^\"]*)\"\/;var match = regex.exec(page);return match[2];}"
-    },
-    {
-      "id":"swamp",
-      "stripSource":"https://swamp.com.au/",
-      "extractJson":"function(page) {var regex = \/<img[^>]src=\"([^\"]*)\"\\s*alt=\"Swamp\\sCartoon\\sof\\sthe\\sDay/;var match = regex.exec(page);return match[1];}"
-    },
-    {
-      "id":"einbilder",
-      "stripSource":"http://www.einbilder.de/cartoons.php",
-      "extractJson":"function(page) {var regex = \/<meta property=\"og:image\" content=\"([^\"]*)\"\/;var match = regex.exec(page);return match[1];}"
-    }
   ]
 }
