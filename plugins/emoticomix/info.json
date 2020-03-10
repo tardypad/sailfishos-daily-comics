@@ -1,0 +1,10 @@
+{
+  "name": "emoticomix",
+  "color": "d6d8d7",
+  "language": "en",
+  "authors": [
+    "Nadja Hermann"
+  ],
+  "homepage": "https://www.facebook.com/emoticomix/",
+  "stripSource": "https://www.facebook.com/emoticomix/?_fb_noscript=1"
+}
