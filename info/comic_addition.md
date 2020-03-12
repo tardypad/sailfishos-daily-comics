@@ -131,7 +131,7 @@ Extras
 ------
 
 - list, in the git commit message, the resource urls used for the cover and example
-- keep higher resolution cover in the plugin folder with name _cover_big.jpg_
+- keep higher resolution cover ([1000x1000 px²](https://github.com/tardypad/sailfishos-daily-comics/pull/86#issuecomment-491614824)) in the plugin folder with name _cover_big.jpg_
 - regenerate the comics covers grid with the _resources/generate_covers_grid.sh_ script
 - regenerate the comics list with the _resources/generate_list.sh_ script
 - if needed, update, in the _Comic_ class and in the _resources/generate_list.sh_ script,

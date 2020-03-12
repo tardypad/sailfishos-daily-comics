@@ -12,38 +12,38 @@
 
 #include "Comic.h"
 
-class QJSEngine;
+class QQmlEngine;
 
 class ComicPluginResource : public QObject
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    static ComicPluginResource* instance();
+	static ComicPluginResource* instance();
 
-    void load(Comic* comic);
-    QUrl extractStripImageUrl(Comic* comic, QByteArray data);
-
-private:
-    explicit ComicPluginResource(QObject *parent = 0);
-
-    void loadInfo(Comic* comic);
-    void loadCoverPath(Comic* comic);
-    void loadExamplePath(Comic* comic);
-
-    QString path(QString id, QString filename);
-    ComicInfo parseInfo(QByteArray infoData);
+	void load(Comic* comic);
+	QUrl extractStripImageUrl(Comic* comic, QByteArray data);
 
 private:
-    static const QString _pluginsFolderPath;
-    static const QString _infoFileName;
-    static const QString _coverFilename;
-    static const QString _exampleFilename;
-    static const QString _extractScriptFilename;
+	explicit ComicPluginResource(QObject *parent = 0);
 
-    static QJSEngine* _jsEngine;
+	void loadInfo(Comic* comic);
+	void loadCoverPath(Comic* comic);
+	void loadExamplePath(Comic* comic);
 
-    static ComicPluginResource* m_instance;
+	QString path(QString id, QString filename);
+	ComicInfo parseInfo(QByteArray infoData);
+
+private:
+	static const QString _pluginsFolderPath;
+	static const QString _infoFileName;
+	static const QString _coverFilename;
+	static const QString _exampleFilename;
+	static const QString _extractScriptFilename;
+
+	QQmlEngine* _jsEngine;
+
+	static ComicPluginResource* m_instance;
 };
 
 #endif //  COMICPLUGINRESOURCE_H
