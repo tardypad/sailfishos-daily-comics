@@ -1,4 +1,9 @@
 {
   "plugins": [
+    {
+      "id":"truthfacts",
+      "stripSource":"http://truthfacts.com/",
+      "extractJson":"function(page) {var regex = \/<img[^>]*data-src=\"([^\"]*)\"\/;var match = regex.exec(page);return match[1];}"
+    }
   ]
 }
