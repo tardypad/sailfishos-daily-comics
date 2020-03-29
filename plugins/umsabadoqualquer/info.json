@@ -1,0 +1,10 @@
+{
+  "name": "Um Sábado Qualquer",
+  "color": "645939",
+  "language": "pt_BR",
+  "authors": [
+    "Carlos Ruas"
+  ],
+  "homepage": "https://www.umsabadoqualquer.com/",
+  "stripSource": "https://www.umsabadoqualquer.com/feed/"
+}

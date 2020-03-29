@@ -13,6 +13,7 @@
 - Calvin and Hobbes
 - C. Cassandra
 - Cheer Up, Emo Kid
+- Clay Bennett
 - CommitStrip
 - Cul de Sac
 - Cyanide & Happiness
@@ -26,6 +27,7 @@
 - Dirkjan
 - Donald Duck
 - Einbilder
+- emoticomix
 - Extra Fabulous Comics
 - Extra Ordinary
 - Fingerpori
@@ -74,10 +76,12 @@
 - Shit happens!
 - Sigmund
 - Sinfest
+- SPIEGEL
 - Swamp
 - They can talk
 - Things in Squares
 - Truth Facts
+- Um Sábado Qualquer
 - User Friendly
 - The Very Near Future
 - Vida de Programador
