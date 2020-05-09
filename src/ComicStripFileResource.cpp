@@ -11,6 +11,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QFile>
+#include <QMimeDatabase>
 
 #include "Comic.h"
 
@@ -70,8 +71,12 @@ bool ComicStripFileResource::saveToGallery(QString id)
     }
 
     QUrl stripPath = QUrl::fromLocalFile(path(id));
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForFile(stripPath.toLocalFile());
+    QString suffix = mime.preferredSuffix().isEmpty() ? "" : ("." + mime.preferredSuffix());
+
     return QFile::copy(stripPath.toLocalFile(), m_picturesDirPath + "/" + stripPath.fileName() +
-            "_" + QString::number(QDateTime::currentMSecsSinceEpoch()));
+            "_" + QString::number(QDateTime::currentMSecsSinceEpoch()) + suffix);
 }
 
 QString ComicStripFileResource::dirPath()
