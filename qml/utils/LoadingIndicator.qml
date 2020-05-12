@@ -1,5 +1,6 @@
 /**
  * Copyright (c) 2015 Damien Tardy-Panis
+ * Copyright (c) 2020 Mirian Margiani
  *
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE', which is part of this source code package.
@@ -12,67 +13,74 @@ import "../scripts/ExternalLinks.js" as ExternalLinks
 
 Item {
     id: loadingIndicator
+    anchors.fill: parent
 
-    property Item flickable
+    property string comicName: ""
     property alias model: connections.target
     property alias loadingText: progressIndicator.label
     property string defaultErrorText
     property string networkErrorText
     property string parsingErrorText
     property string savingErrorText
+    property string _currentErrorTitle: qsTr("An error occured")
+    property string _currentErrorDescription: defaultErrorText
 
+    visible: false
     property bool busy: false
     property bool error: false
+    property bool overlayVisible: (busy || error)
 
-    parent: flickable.contentItem
+    PinchArea {
+        anchors.fill: parent
+        enabled: overlayVisible // disables all PinchAreas below the overlay
+    }
 
-    y: flickable.originY + (flickable.height - height) / 2
-    width: parent.width - 2*Theme.paddingLarge
-    height: progressIndicator.height
-    anchors.horizontalCenter: parent.horizontalCenter
-
-    state: "init"
-
-    ProgressBar {
-        id: progressIndicator
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
-        indeterminate: true
+    Rectangle {
+        anchors.fill: parent
+        color: Theme.highlightDimmerColor
+        opacity: Theme.opacityOverlay
+        visible: overlayVisible
     }
 
     Loader {
         id: placeholderLoader
-        parent: flickable
+        width: parent.width - 2*Theme.paddingLarge
+        anchors.centerIn: parent
+    }
+
+    ProgressBar {
+        id: progressIndicator
+        anchors.centerIn: parent
+        width: parent.width - 2*Theme.paddingLarge
+        maximumValue: -1; minimumValue: maximumValue > 0 ? 0 : -1
+        indeterminate: maximumValue < 0
+        visible: busy && parent.state !== "error"
     }
 
     Component {
         id: errorComponent
         ViewPlaceholder {
-            text: qsTr("An error occured")
-            hintText: defaultErrorText
+            text: _currentErrorTitle
+            hintText: _currentErrorDescription
+            _mainLabel.color: Theme.primaryColor
+            _hintLabel.color: Theme.primaryColor
 
-            IconButton {
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: -parent.width / 4
-                y: parent.height + Theme.paddingLarge
-                icon.width: Theme.iconSizeLarge
-                icon.height: Theme.iconSizeLarge
-                icon.asynchronous: true
-                icon.source: "image://theme/icon-m-region"
-                onClicked: ExternalLinks.browse(model.homepage)
-                z: 10
-            }
-
-            IconButton {
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: parent.width / 4
-                y: parent.height + Theme.paddingLarge
-                icon.width: Theme.iconSizeLarge
-                icon.height: Theme.iconSizeLarge
-                icon.asynchronous: true
-                icon.source: "image://theme/icon-m-refresh"
-                onClicked: _fetch()
-                z: 10
+            Row {
+                spacing: 3*Theme.paddingLarge
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                    top: parent.bottom; topMargin: 2*Theme.paddingLarge
+                }
+                IconButton {
+                    icon.width: Theme.iconSizeLarge; icon.height: icon.width
+                    icon.source: "image://theme/icon-m-region"
+                    onClicked: ExternalLinks.browse(model.homepage)
+                }
+                IconButton {
+                    icon.width: Theme.iconSizeLarge; icon.height: icon.width
+                    icon.source: "image://theme/icon-m-refresh"
+                    onClicked: _fetch()
+                }
             }
         }
     }
@@ -84,29 +92,27 @@ Item {
         onNetworkError: displayError(qsTr("Network error"), networkErrorText)
         onParsingError: displayError(qsTr("Parsing error"), parsingErrorText)
         onSavingError: displayError(qsTr("Saving error"), savingErrorText)
-        onDownloadProgress: _updateProgress(bytesReceived, bytesTotal)
+        onDownloadProgress: {
+            progressIndicator.maximumValue = bytesTotal
+            progressIndicator.value = bytesReceived
+        }
+    }
+
+    onVisibleChanged: {
+        if (state !== "error") return
+        if (visible) showPlaceholder()
+        else removePlaceholder()
     }
 
     function _fetch() {
-        progressIndicator.indeterminate = true
+        progressIndicator.maximumValue = -1
         model.fetch()
-    }
-
-    function _updateProgress(bytesReceived, bytesTotal) {
-        if (bytesTotal === -1) {
-            progressIndicator.indeterminate = true
-        } else {
-            progressIndicator.indeterminate = false
-            progressIndicator.value = bytesReceived / bytesTotal
-        }
     }
 
     function displayError(text, hintText) {
         state = "error"
-        if (placeholderLoader.item) {
-            placeholderLoader.item.text = text
-            placeholderLoader.item.hintText = hintText
-        }
+        _currentErrorTitle = text
+        _currentErrorDescription = hintText
     }
 
     function removePlaceholder() {
@@ -115,31 +121,25 @@ Item {
         }
     }
 
+    function showPlaceholder() {
+        placeholderLoader.sourceComponent = errorComponent
+        if (placeholderLoader.item) placeholderLoader.item.enabled = true
+    }
+
     states: [
         State {
-            name: "init"
-            PropertyChanges { target: loadingIndicator; visible: false; busy: false; error: false }
-        },
-        State {
             name: "fetching"
-            PropertyChanges { target: loadingIndicator; visible: true; busy: true; error: false }
+            PropertyChanges { target: loadingIndicator; busy: true; error: false; visible: true }
             StateChangeScript { script: removePlaceholder() }
         },
         State {
             name: "error"
-            PropertyChanges { target: loadingIndicator; visible: false; busy: true; error: true }
-            StateChangeScript {
-                script: {
-                    placeholderLoader.sourceComponent = errorComponent
-                    if (placeholderLoader.item) {
-                        placeholderLoader.item.enabled = true
-                    }
-                }
-            }
+            PropertyChanges { target: loadingIndicator; busy: true; error: true; visible: true }
+            StateChangeScript { script: showPlaceholder() }
         },
         State {
             name: "complete"
-            PropertyChanges { target: loadingIndicator; visible: false; busy: false; error: false }
-            StateChangeScript { script: removePlaceholder() }
-        }]
+            PropertyChanges { target: loadingIndicator; busy: false; error: false; visible: false }
+        }
+    ]
 }
