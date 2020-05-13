@@ -25,7 +25,7 @@ ZoomableImage {
 
     ready: imagePath !== "" && !indicator.busy
 
-    LoadingIndicator {
+    StatusOverlay {
         id: indicator
         loadingText: qsTr("Loading comic")
         defaultErrorText: qsTr("Can't display comic")
