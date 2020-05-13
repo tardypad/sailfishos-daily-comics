@@ -114,6 +114,11 @@
         <source>Can&apos;t save comic</source>
         <translation type="unfinished">Impossible de sauvegarder la BD</translation>
     </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="72"/>
+        <source>Please contact me if the problem persists.</source>
+        <translation>Merci de me contacter si le problème n&apos;était toujours pas résolu.</translation>
+    </message>
 </context>
 <context>
     <name>ComicsSettingsPage</name>
