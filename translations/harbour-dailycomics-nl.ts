@@ -114,6 +114,11 @@
         <source>Can&apos;t save comic</source>
         <translation type="unfinished">Kan strip niet opslaan</translation>
     </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="72"/>
+        <source>Please contact me if the problem persists.</source>
+        <translation>Laat me iets weten als het probleem zich blijft voordoen.</translation>
+    </message>
 </context>
 <context>
     <name>ComicsSettingsPage</name>

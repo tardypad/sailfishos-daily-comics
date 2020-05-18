@@ -26,6 +26,7 @@ SilicaFlickable {
 
     signal clicked()
 
+    property alias imageOpacity: comicImage.opacity
     property bool scaled: false
     readonly property bool enableZoom: true
     property bool active: true

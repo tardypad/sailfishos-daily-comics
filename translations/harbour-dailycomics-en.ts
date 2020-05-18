@@ -114,6 +114,11 @@
         <source>Can&apos;t save comic</source>
         <translation type="unfinished">Can&apos;t save comic</translation>
     </message>
+    <message>
+        <location filename="../qml/components/ComicItem.qml" line="72"/>
+        <source>Please contact me if the problem persists.</source>
+        <translation>Please contact me if the problem persists.</translation>
+    </message>
 </context>
 <context>
     <name>ComicsSettingsPage</name>
