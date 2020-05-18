@@ -33,12 +33,19 @@
                        &lt;br/&gt;Below are few resources to find new comics.
                        &lt;br/&gt;Let me know as well which additional comics
                        &lt;br/&gt;you would like to be included in the app.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Quellcode ist hier verfügbar:
+                       &lt;br/&gt;&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;
+                       &lt;br/&gt;Sie können mich bei Fragen, Fehlern
+                       &lt;br/&gt;Feature-Requests, Ideen usw. gerne kontaktieren.
+                       &lt;br/&gt;
+                       &lt;br/&gt;Unten finden Sie einige Quellen für neue Comics.
+                       &lt;br/&gt;Lassen Sie mich wissen, wenn Sie sich neue Comics
+                       &lt;br/&gt;in der App wünschen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="237"/>
         <source>Enjoy!</source>
-        <translation>Genieße!</translation>
+        <translation>Viel Spass!</translation>
     </message>
 </context>
 <context>
@@ -46,7 +53,7 @@
     <message>
         <location filename="../qml/pages/ComicInfoPage.qml" line="47"/>
         <source>Comic info</source>
-        <translation>Comic Info</translation>
+        <translation>Comic-Info</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComicInfoPage.qml" line="51"/>
@@ -84,7 +91,7 @@
     <message>
         <location filename="../qml/components/ComicInfoPanel.qml" line="125"/>
         <source>Go to homepage</source>
-        <translation>Gehe zur Webseite</translation>
+        <translation>Webseite aufrufen</translation>
     </message>
 </context>
 <context>
@@ -92,27 +99,27 @@
     <message>
         <location filename="../qml/components/ComicItem.qml" line="29"/>
         <source>Loading comic</source>
-        <translation>Lade Comic</translation>
+        <translation>Comic wird geladen</translation>
     </message>
     <message>
         <location filename="../qml/components/ComicItem.qml" line="30"/>
         <source>Can&apos;t display comic</source>
-        <translation>Kann Comic nicht anzeigen</translation>
+        <translation>Comic kann nicht angezeigt werden</translation>
     </message>
     <message>
         <location filename="../qml/components/ComicItem.qml" line="31"/>
         <source>Can&apos;t download comic</source>
-        <translation>Kann Comic nicht laden</translation>
+        <translation>Comic kann nicht geladen werden</translation>
     </message>
     <message>
         <location filename="../qml/components/ComicItem.qml" line="32"/>
         <source>Can&apos;t extract comic</source>
-        <translation>Comic nicht gefunden</translation>
+        <translation>Comic konnte nicht gefunden werden</translation>
     </message>
     <message>
         <location filename="../qml/components/ComicItem.qml" line="33"/>
         <source>Can&apos;t save comic</source>
-        <translation>Kann Comic nicht speichern</translation>
+        <translation>Comic konnte nicht gespeichert werden</translation>
     </message>
 </context>
 <context>
@@ -135,7 +142,7 @@
     <message>
         <location filename="../qml/pages/ComicsSettingsPage.qml" line="59"/>
         <source>Select all</source>
-        <translation>Alle selektieren</translation>
+        <translation>Alle auswählen</translation>
     </message>
 </context>
 <context>
@@ -159,12 +166,12 @@
     <message>
         <location filename="../qml/components/EndPanel.qml" line="54"/>
         <source>If you like the app, please consider supporting your favorite comic artists</source>
-        <translation>Wenn dir die App gefällt, unterstütze deine Lieblings Comic Autoren</translation>
+        <translation>Wenn Ihnen die App gefällt, unterstützen Sie Ihre liebsten Comic-Autoren</translation>
     </message>
     <message>
         <location filename="../qml/components/EndPanel.qml" line="74"/>
         <source>Return to favorites</source>
-        <translation>Zurück zu deinen Favoriten</translation>
+        <translation>Zurück zu den Favoriten</translation>
     </message>
 </context>
 <context>
@@ -173,7 +180,8 @@
         <location filename="../qml/components/ErrorContactDevRectangle.qml" line="35"/>
         <source>Please contact me
 if the problem persists.</source>
-        <translation>Bitte kontaktiere mich, wenn dass Problem weiter besteht.</translation>
+        <translation>Bitte kontaktieren Sie mich,
+wenn das Problem weiter besteht.</translation>
     </message>
 </context>
 <context>
@@ -186,12 +194,12 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="73"/>
         <source>Report problems with comics</source>
-        <translation>Melde Probleme mit den Comics</translation>
+        <translation>Probleme mit den Comics melden</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
         <source>Read all new comics</source>
-        <translation>Lese alle neuen Comics</translation>
+        <translation>Alle neuen Comics lesen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="87"/>
@@ -211,17 +219,17 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="106"/>
         <source>Choose your favorite comics in the settings page</source>
-        <translation>Wähle deine Favoriten-Comics auf der Einstellungsseite</translation>
+        <translation>Wählen Sie Ihre Lieblingscomics auf der Einstellungsseite</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="126"/>
         <source>Remove from favorites</source>
-        <translation>Von Favoriten entfernen</translation>
+        <translation>Aus den Favoriten entfernen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FavoritesPage.qml" line="146"/>
         <source>Fetching comic strips</source>
-        <translation>Lade Comics</translation>
+        <translation>Comics werden geladen</translation>
     </message>
 </context>
 <context>
@@ -229,22 +237,22 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/components/ImageOverlay.qml" line="80"/>
         <source>Comic strip was saved to gallery</source>
-        <translation>Comic wurd in der Galerie gespeichert</translation>
+        <translation>Comic wurde in der Galerie gespeichert</translation>
     </message>
     <message>
         <location filename="../qml/components/ImageOverlay.qml" line="81"/>
         <source>Unable to save comic strip to gallery</source>
-        <translation>Konnte Comic nicht in der Galerie speichern</translation>
+        <translation>Comic konnte nicht in der Galerie gespeichert werden</translation>
     </message>
     <message>
         <location filename="../qml/components/ImageOverlay.qml" line="93"/>
         <source>Comic strip url copied to clipboard</source>
-        <translation>Comic URL kopiert</translation>
+        <translation>Comic-URL kopiert</translation>
     </message>
     <message>
         <location filename="../qml/components/ImageOverlay.qml" line="94"/>
         <source>Unable to copy comic strip url to clipboard</source>
-        <translation>Konnte die Comic URL nicht kopieren</translation>
+        <translation>Die Comic-URL konnte nicht kopiert werden</translation>
     </message>
 </context>
 <context>
@@ -276,8 +284,8 @@ if the problem persists.</source>
         <location filename="../qml/utils/ProgressInfoBar.qml" line="72"/>
         <source>%n New</source>
         <translation>
-            <numerusform>%n Neu</numerusform>
-            <numerusform>%n Neue</numerusform>
+            <numerusform>%n neu</numerusform>
+            <numerusform>%n neue</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -294,7 +302,7 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/components/RequestContactDevRectangle.qml" line="43"/>
         <source>Let me know if you&apos;re missing some of your favorite comics in this list</source>
-        <translation>Lass mich wissen, wenn dir Comics in der Liste fehlen</translation>
+        <translation>Lassen Sie mich wissen, wenn Ihnen Comics in der Liste fehlen</translation>
     </message>
 </context>
 <context>
@@ -302,7 +310,7 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/components/SettingsInfoHint.qml" line="23"/>
         <source>Hold cover to display comic info</source>
-        <translation>Cover halten um Comic Info anzuzeigen</translation>
+        <translation>Cover halten, um Comic-Info anzuzeigen</translation>
     </message>
 </context>
 <context>
@@ -310,12 +318,12 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/pages/ShareLinkPage.qml" line="25"/>
         <source>Share comics link</source>
-        <translation>Comic URL teilen</translation>
+        <translation>Comic-URL teilen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ShareLinkPage.qml" line="36"/>
         <source>No sharing accounts available. You can add accounts in settings</source>
-        <translation>Es sind keine Sharing-Accounts eingerichtet. Du kannst welche in den globalen Einstellungen hinzufügen.</translation>
+        <translation>Es sind keine Konten für das Teilen eingerichtet. Sie können welche in den globalen Einstellungen hinzufügen.</translation>
     </message>
 </context>
 <context>
@@ -323,7 +331,7 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/components/SlideshowFlickHint.qml" line="27"/>
         <source>Flick to display next comic</source>
-        <translation>Wische um nächstes Comic anzuzeigen</translation>
+        <translation>Wischen, um das nächste Comic anzuzeigen</translation>
     </message>
 </context>
 <context>
@@ -336,7 +344,7 @@ if the problem persists.</source>
     <message>
         <location filename="../qml/components/ZoomableImage.qml" line="154"/>
         <source>Can&apos;t display strip</source>
-        <translation>Kann Comic nicht anzeigen</translation>
+        <translation>Comic kann nicht angezeigt werden</translation>
     </message>
 </context>
 </TS>
