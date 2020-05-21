@@ -1,0 +1,10 @@
+{
+  "name": "Lectrr",
+  "color": "6adbaf",
+  "language": "nl",
+  "authors": [
+    "Lectrr"
+  ],
+  "homepage": "http://www.lectrr.be/",
+  "stripSource": "https://www.standaard.be/foto"
+}
