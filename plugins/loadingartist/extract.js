@@ -1,5 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*src="([^"]*\/wp-content\/uploads\/[^"]*)"/;
+    var regex = /<img src=(\/comic[^\s]*.jpg)/;
     var match = regex.exec(page);
     return match[1];
 }
