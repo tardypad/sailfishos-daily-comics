@@ -1,5 +1,5 @@
 function(page) {
-var regex = /url\('([^']*)'/;
-var match = regex.exec(page);
-return match[1];
+  var regex = /<img[^>]* data-srcset="([^ "]+)"/;
+  var match = regex.exec(page);
+  return match[1];
 }
