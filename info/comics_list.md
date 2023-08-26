@@ -78,7 +78,6 @@
 - They can talk
 - Things in Squares
 - Truth Facts
-- User Friendly
 - The Very Near Future
 - Vida de Programador
 - Vida de Suporte
