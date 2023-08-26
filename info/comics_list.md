@@ -21,7 +21,6 @@
 - Dennis The Menace
 - Der Flix
 - Diesel Sweeties
-- Dilbert
 - Dinosaur Comics
 - Dirkjan
 - Donald Duck
