@@ -12,6 +12,7 @@
 - Buni
 - Calvin and Hobbes
 - C. Cassandra
+- Chattanooga Free Times Press (Clay Bennett, Lisa Benson, Michael Ramirez)
 - Cheer Up, Emo Kid
 - CommitStrip
 - Cul de Sac
