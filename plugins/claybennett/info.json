@@ -1,11 +1,11 @@
 {
-  "name": "Chattanooga Times Free Press",
+  "name": "Chattanooga Times",
   "color": "97ffe7",
   "language": "en",
   "authors": [
     "Clay Bennett",
-    "Michael Ramirez",
-    "Lisa Benson"
+    "Lisa Benson",
+    "Michael Ramirez"    
   ],
   "homepage": "https://www.timesfreepress.com/cartoons/",
   "stripSource": "https://www.timesfreepress.com/cartoons/"
