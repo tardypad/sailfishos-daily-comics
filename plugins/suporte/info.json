@@ -5,6 +5,6 @@
   "authors": [
     "André Farias"
   ],
-  "homepage": "https://vidadesuporte.com.br",
-  "stripSource": "http://feeds.feedburner.com/vidasuporte"
+  "homepage": "https://vidadesuporte.com.br/",
+  "stripSource": "https://vidadesuporte.com.br/"
 }
