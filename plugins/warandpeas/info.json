@@ -1,0 +1,11 @@
+{
+  "name": "War and Peas",
+  "color": "8ee5ff",
+  "language": "en",
+  "authors": [
+    "Jonathan Kunz",
+    "Elisabeth Pich"
+  ],
+  "homepage": "https://warandpeas.com/",
+  "stripSource": "https://warandpeas.com/"
+}
