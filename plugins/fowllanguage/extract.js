@@ -1,5 +1,5 @@
 function(page) {
-    var regex = / href="(/fowl-language/20[2-9][0-9]/[01][0-9]/[0-3][0-9])">/;
+    var regex = /<img[^>]+src="(https:\/\/assets.amuniversal.com\/[0-9a-f]+)"/;
     var match = regex.exec(page);
     return match[1];
 }
