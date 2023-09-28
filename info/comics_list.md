@@ -12,7 +12,9 @@
 - Buni
 - Calvin and Hobbes
 - C. Cassandra
+- Chattanooga Times
 - Cheer Up, Emo Kid
+- Clay Bennett
 - CommitStrip
 - Cul de Sac
 - Cyanide & Happiness
@@ -21,11 +23,11 @@
 - Dennis The Menace
 - Der Flix
 - Diesel Sweeties
-- Dilbert
 - Dinosaur Comics
 - Dirkjan
 - Donald Duck
 - Einbilder
+- emoticomix
 - Extra Fabulous Comics
 - Extra Ordinary
 - Fingerpori
@@ -38,7 +40,6 @@
 - Fuchskind
 - The GaMERCaT
 - Garfield
-- Geek&Poke
 - Gone With The Blastwave
 - GWTB 404
 - Hägar the Horrible
@@ -74,17 +75,18 @@
 - Shit happens!
 - Sigmund
 - Sinfest
+- SPIEGEL
 - Swamp
 - They can talk
 - Things in Squares
-- Truth Facts
-- User Friendly
+- Um Sábado Qualquer
 - The Very Near Future
 - Vida de Programador
 - Vida de Suporte
 - Viivi ja Wagner
 - What a wonderful world!
 - The Whiteboard
+- War and Peas
 - Wizard of Id
 - Wrong Hands
 - Wumo
