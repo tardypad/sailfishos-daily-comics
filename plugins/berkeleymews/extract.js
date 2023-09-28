@@ -1,6 +1,5 @@
 function(page) {
-    var regex = /<img[^>]*src="([^"]*\/comics\/[^"]*)"/g;
-    var match1 = regex.exec(page);
-    var match2 = regex.exec(page);
-    return match2[1];
+    var regex = /<img[^>]* src="([^"]+)"[^>]* class="aligncenter size-full/;
+    var match = regex.exec(page);
+    return match[1];
 }
