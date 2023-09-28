@@ -12,6 +12,7 @@
 - Buni
 - Calvin and Hobbes
 - C. Cassandra
+- Chattanooga Times
 - Cheer Up, Emo Kid
 - Clay Bennett
 - CommitStrip
