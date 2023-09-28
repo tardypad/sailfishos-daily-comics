@@ -88,6 +88,7 @@
 - Viivi ja Wagner
 - What a wonderful world!
 - The Whiteboard
+- War and Peas
 - Wizard of Id
 - Wrong Hands
 - Wumo
