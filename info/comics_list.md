@@ -82,7 +82,6 @@
 - Things in Squares
 - Truth Facts
 - Um Sábado Qualquer
-- User Friendly
 - The Very Near Future
 - Vida de Programador
 - Vida de Suporte
