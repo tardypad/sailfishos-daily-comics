@@ -80,7 +80,6 @@
 - Swamp
 - They can talk
 - Things in Squares
-- Truth Facts
 - Um Sábado Qualquer
 - The Very Near Future
 - Vida de Programador
