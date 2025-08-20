@@ -1,3 +1,5 @@
+See active fork in https://github.com/sailfishos-applications/daily-comics
+
 Daily Comics
 ============
 
